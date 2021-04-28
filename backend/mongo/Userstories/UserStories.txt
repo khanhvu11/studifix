@@ -1,0 +1,30 @@
+[LOGIN]
+#1 Vanessa - login - Anmelden
+#2 Frank - login - Anmelden
+#3 Stipendiengeber  - login - Anmelden
+
+[DASHBOARD Stipendiengeber]
+Stipendiengeber - dashboard - Infos {
+    #4 Stipendiengeber - Ansicht - Eingegangene Anfragen ansehen {
+        #5 Stipendiengeber - Detailansicht - Bewerberdaten einsehen
+        #6 Stipendiengeber - Schaltfläche - Nutzer antworten oder Ablehnen 
+        #7 Stipendiengeber - Formular - Nutzerfeedback
+        #8 Stipendiengeber - Schaltfläche - Nutzer Annehmen
+        #9 Stipendiengeber - Stipendium hinzufügen - Auf sich aufmerksam zu machen 
+    }
+}
+
+[DASHBOARD USER]
+Vanessa - dashboard - infos {
+    #9 Vanessa - ansicht angebote - Übersicht von top 10 Angeboten 
+    #10 Frank - ansicht angebote - Übersicht alle Angebote 
+    #11 Vanessa - aufgeräumte navbar - gezielt informationen zum jeweiligen zeitpunkt 
+    #12 Frank -  navbar - alle möglichen informationen zum jedem zeitpunkt 
+    #13 User - Searchbar - suche nach angeboten (land, topic)
+    #14 User - Linksammlung - weiterleiten zu anderen Bereichen der Seite 
+}
+
+[REGISTER]
+#15 Vanessa - register - Konto anlegen
+#16 Frank - register - Konto anlegen
+#17 Stipendiengeber  - register - Konto anlegen

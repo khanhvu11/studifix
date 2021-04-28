@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b59"
+  },
+  "text_DE": "Baden Württemberg"
+},{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b5a"
+  },
+  "text_DE": "Bayern"
+},{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b5b"
+  },
+  "text_DE": "Berlin"
+},{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b5c"
+  },
+  "text_DE": "Brandenburg"
+},{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b5d"
+  },
+  "text_DE": "Bremen"
+},{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b5e"
+  },
+  "text_DE": "Hamburg"
+},{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b5f"
+  },
+  "text_DE": "Hessen"
+},{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b60"
+  },
+  "text_DE": "Mecklenburg-Vorpommern"
+},{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b61"
+  },
+  "text_DE": "Niedersachsen"
+},{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b62"
+  },
+  "text_DE": "Nordrhein Westfalen"
+},{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b63"
+  },
+  "text_DE": "Rheinland-Pfalz"
+},{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b64"
+  },
+  "text_DE": "Saarland"
+},{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b65"
+  },
+  "text_DE": "Sachsen"
+},{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b66"
+  },
+  "text_DE": "Sachsen-Anhalt"
+},{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b67"
+  },
+  "text_DE": "Schleswig-Holstein"
+},{
+  "_id": {
+    "$oid": "607c4936c59a9135d08e7b68"
+  },
+  "text_DE": "Thüringen"
+}]

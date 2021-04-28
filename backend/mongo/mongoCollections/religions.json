@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "607c4a3dc59a9135d08e7c3c"
+  },
+  "text_DE": "Christlich"
+},{
+  "_id": {
+    "$oid": "607c4a3dc59a9135d08e7c3d"
+  },
+  "text_DE": "Muslimisch"
+},{
+  "_id": {
+    "$oid": "607c4a3dc59a9135d08e7c3e"
+  },
+  "text_DE": "Sonstiges"
+}]

@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "607c4984c59a9135d08e7c20"
+  },
+  "text_DE": "Förderung von Absolventen"
+},{
+  "_id": {
+    "$oid": "607c4984c59a9135d08e7c21"
+  },
+  "text_DE": "Forschungsprojekt (Kosten)"
+},{
+  "_id": {
+    "$oid": "607c4984c59a9135d08e7c22"
+  },
+  "text_DE": "Praktikum"
+},{
+  "_id": {
+    "$oid": "607c4984c59a9135d08e7c23"
+  },
+  "text_DE": "Praktikum im Ausland"
+},{
+  "_id": {
+    "$oid": "607c4984c59a9135d08e7c24"
+  },
+  "text_DE": "Preise und Auszeichnungen"
+},{
+  "_id": {
+    "$oid": "607c4984c59a9135d08e7c25"
+  },
+  "text_DE": "Sach- und Reisekosten"
+},{
+  "_id": {
+    "$oid": "607c4984c59a9135d08e7c26"
+  },
+  "text_DE": "Sprachkurse"
+},{
+  "_id": {
+    "$oid": "607c4984c59a9135d08e7c27"
+  },
+  "text_DE": "Studiengebühren"
+},{
+  "_id": {
+    "$oid": "607c4984c59a9135d08e7c28"
+  },
+  "text_DE": "Studium im Ausland"
+},{
+  "_id": {
+    "$oid": "607c4984c59a9135d08e7c29"
+  },
+  "text_DE": "Unternehmensgründung"
+},{
+  "_id": {
+    "$oid": "607c4984c59a9135d08e7c2a"
+  },
+  "text_DE": "Wohn- und Arbeitsraum"
+}]

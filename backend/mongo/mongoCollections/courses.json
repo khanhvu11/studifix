@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "607c8908757c409b0ca192a7"
+  },
+  "text_DE": "Agrar- und Forstwirtschaft"
+},{
+  "_id": {
+    "$oid": "607c8908757c409b0ca192a8"
+  },
+  "text_DE": "Gesellschafts- und Sozialwissenschaften"
+},{
+  "_id": {
+    "$oid": "607c8908757c409b0ca192a9"
+  },
+  "text_DE": "Ingenieurswissenschaften"
+},{
+  "_id": {
+    "$oid": "607c8908757c409b0ca192aa"
+  },
+  "text_DE": "Lehrämter"
+},{
+  "_id": {
+    "$oid": "607c8908757c409b0ca192ab"
+  },
+  "text_DE": "Mathematik, Naturwissenschaften"
+},{
+  "_id": {
+    "$oid": "607c8908757c409b0ca192ac"
+  },
+  "text_DE": "Medizin, Gesundheitswesen"
+},{
+  "_id": {
+    "$oid": "607c8908757c409b0ca192ad"
+  },
+  "text_DE": "Rechts- und Wirtschaftswissenschaften"
+},{
+  "_id": {
+    "$oid": "607c8908757c409b0ca192ae"
+  },
+  "text_DE": "Sprach- und Kulturwissenschaften, Kunst und Gestaltung"
+}]

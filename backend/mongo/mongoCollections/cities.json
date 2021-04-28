@@ -1,0 +1,901 @@
+[{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b69"
+  },
+  "text_DE": "Aachen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b6a"
+  },
+  "text_DE": "Aalen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b6b"
+  },
+  "text_DE": "Albstadt"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b6c"
+  },
+  "text_DE": "Alfter"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b6d"
+  },
+  "text_DE": "Amberg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b6e"
+  },
+  "text_DE": "Augsburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b6f"
+  },
+  "text_DE": "Bad Homburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b70"
+  },
+  "text_DE": "Bad Honnef"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b71"
+  },
+  "text_DE": "Bamberg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b72"
+  },
+  "text_DE": "Bayreuth"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b73"
+  },
+  "text_DE": "Bergisch Gladbach"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b74"
+  },
+  "text_DE": "Berlin"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b75"
+  },
+  "text_DE": "Biberach"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b76"
+  },
+  "text_DE": "Bielefeld"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b77"
+  },
+  "text_DE": "Bocholt"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b78"
+  },
+  "text_DE": "Bochum"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b79"
+  },
+  "text_DE": "Bonn"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b7a"
+  },
+  "text_DE": "Bottrop"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b7b"
+  },
+  "text_DE": "Braunschweig"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b7c"
+  },
+  "text_DE": "Bremen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b7d"
+  },
+  "text_DE": "Bremerhaven"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b7e"
+  },
+  "text_DE": "Burghausen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b7f"
+  },
+  "text_DE": "Buxtehude"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b80"
+  },
+  "text_DE": "Chemenitz"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b81"
+  },
+  "text_DE": "Claustahl"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b82"
+  },
+  "text_DE": "Coburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b83"
+  },
+  "text_DE": "Cottbus"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b84"
+  },
+  "text_DE": "Darmstadt"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b85"
+  },
+  "text_DE": "Deggendorf"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b86"
+  },
+  "text_DE": "Detmold"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b87"
+  },
+  "text_DE": "Dillingen a. d. Donau"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b88"
+  },
+  "text_DE": "Dortmund"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b89"
+  },
+  "text_DE": "Dresden"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b8a"
+  },
+  "text_DE": "Duisburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b8b"
+  },
+  "text_DE": "Düsseldorf"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b8c"
+  },
+  "text_DE": "Eberswalde"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b8d"
+  },
+  "text_DE": "Eichstätt"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b8e"
+  },
+  "text_DE": "Elsfeth"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b8f"
+  },
+  "text_DE": "Emden"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b90"
+  },
+  "text_DE": "Erfurt"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b91"
+  },
+  "text_DE": "Erding"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b92"
+  },
+  "text_DE": "Erlangen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b93"
+  },
+  "text_DE": "Essen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b94"
+  },
+  "text_DE": "Esslingen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b95"
+  },
+  "text_DE": "Flensburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b96"
+  },
+  "text_DE": "Frankfurt"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b97"
+  },
+  "text_DE": "Frankfurt am Main"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b98"
+  },
+  "text_DE": "Freiberg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b99"
+  },
+  "text_DE": "Freiburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b9a"
+  },
+  "text_DE": "Friedrichshafen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b9b"
+  },
+  "text_DE": "Fürth"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b9c"
+  },
+  "text_DE": "Furtwangen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b9d"
+  },
+  "text_DE": "Geisenheim"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b9e"
+  },
+  "text_DE": "Gelsenkirchen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7b9f"
+  },
+  "text_DE": "Gera"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7ba0"
+  },
+  "text_DE": "Giessen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7ba1"
+  },
+  "text_DE": "Gießen Frankfurt am Main"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7ba2"
+  },
+  "text_DE": "Görlitz"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7ba3"
+  },
+  "text_DE": "Göttingen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7ba4"
+  },
+  "text_DE": "Greifswald"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7ba5"
+  },
+  "text_DE": "Hagen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7ba6"
+  },
+  "text_DE": "Halberstadt"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7ba7"
+  },
+  "text_DE": "Halle"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7ba8"
+  },
+  "text_DE": "Halle-Württenberg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7ba9"
+  },
+  "text_DE": "Hamburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7baa"
+  },
+  "text_DE": "Hamm"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bab"
+  },
+  "text_DE": "Hannover"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bac"
+  },
+  "text_DE": "Heilbronn"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bad"
+  },
+  "text_DE": "Heide (Holstein)"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bae"
+  },
+  "text_DE": "Heidelberg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7baf"
+  },
+  "text_DE": "Heilbronn"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bb0"
+  },
+  "text_DE": "Hennef"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bb1"
+  },
+  "text_DE": "Hildesheim"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bb2"
+  },
+  "text_DE": "Hohenheim"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bb3"
+  },
+  "text_DE": "Hohenlohe-Franken"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bb4"
+  },
+  "text_DE": "Holzminden"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bb5"
+  },
+  "text_DE": "Höxter"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bb6"
+  },
+  "text_DE": "Idstein"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bb7"
+  },
+  "text_DE": "Ilmenau"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bb8"
+  },
+  "text_DE": "Ingoldstadt"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bb9"
+  },
+  "text_DE": "Iserlohn"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bba"
+  },
+  "text_DE": "Jena"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bbb"
+  },
+  "text_DE": "Jever"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bbc"
+  },
+  "text_DE": "Kaiserslautern"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bbd"
+  },
+  "text_DE": "Kamp-Lintfort"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bbe"
+  },
+  "text_DE": "Karlsruhe"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bbf"
+  },
+  "text_DE": "Kassel"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bc0"
+  },
+  "text_DE": "Kempten"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bc1"
+  },
+  "text_DE": "Kiel"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bc2"
+  },
+  "text_DE": "Kleve"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bc3"
+  },
+  "text_DE": "Koblenz"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bc4"
+  },
+  "text_DE": "Köln"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bc5"
+  },
+  "text_DE": "Konstanz"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bc6"
+  },
+  "text_DE": "Krefeld"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bc7"
+  },
+  "text_DE": "Landau"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bc8"
+  },
+  "text_DE": "Leer"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bc9"
+  },
+  "text_DE": "Leipzig"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bca"
+  },
+  "text_DE": "Lemgo"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bcb"
+  },
+  "text_DE": "Lindai"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bcc"
+  },
+  "text_DE": "Lippstadt"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bcd"
+  },
+  "text_DE": "Lörrach"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bce"
+  },
+  "text_DE": "Lübeck"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bcf"
+  },
+  "text_DE": "Ludwigshafen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bd0"
+  },
+  "text_DE": "Ludwigshafen am Rhein"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bd1"
+  },
+  "text_DE": "Lüneburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bd2"
+  },
+  "text_DE": "Magdeburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bd3"
+  },
+  "text_DE": "Mainz"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bd4"
+  },
+  "text_DE": "Mannheim"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bd5"
+  },
+  "text_DE": "Marburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bd6"
+  },
+  "text_DE": "Markneukirchen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bd7"
+  },
+  "text_DE": "Merseburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bd8"
+  },
+  "text_DE": "Meschede"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bd9"
+  },
+  "text_DE": "Mettmann"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bda"
+  },
+  "text_DE": "Mittweida"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bdb"
+  },
+  "text_DE": "Mönchengladbach"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bdc"
+  },
+  "text_DE": "Mülheim an der Ruhr"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bdd"
+  },
+  "text_DE": "München"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bde"
+  },
+  "text_DE": "Münster"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bdf"
+  },
+  "text_DE": "Neu-Ulm"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7be0"
+  },
+  "text_DE": "Nordhausen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7be1"
+  },
+  "text_DE": "Nürnberg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7be2"
+  },
+  "text_DE": "Oestrick-Winkel"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7be3"
+  },
+  "text_DE": "Offenbach am Main"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7be4"
+  },
+  "text_DE": "Offenburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7be5"
+  },
+  "text_DE": "Oldenburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7be6"
+  },
+  "text_DE": "Osnabrück"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7be7"
+  },
+  "text_DE": "Ostwestfalen-Lippe"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7be8"
+  },
+  "text_DE": "Paderborn"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7be9"
+  },
+  "text_DE": "Passau"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bea"
+  },
+  "text_DE": "Pforzheim"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7beb"
+  },
+  "text_DE": "Pullheim"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bec"
+  },
+  "text_DE": "Rastatt"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bed"
+  },
+  "text_DE": "Ravensburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bee"
+  },
+  "text_DE": "Recklinghausen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bef"
+  },
+  "text_DE": "Regensburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bf0"
+  },
+  "text_DE": "Reichenbach"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bf1"
+  },
+  "text_DE": "Reutlingen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bf2"
+  },
+  "text_DE": "Rheinbach"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bf3"
+  },
+  "text_DE": "Rheine"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bf4"
+  },
+  "text_DE": "Riedlingen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bf5"
+  },
+  "text_DE": "Rostock"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bf6"
+  },
+  "text_DE": "Rüsselsheim"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bf7"
+  },
+  "text_DE": "Saarbrücken"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bf8"
+  },
+  "text_DE": "Saarlouis"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bf9"
+  },
+  "text_DE": "Salzgitter"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bfa"
+  },
+  "text_DE": "Sankt Augustin"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bfb"
+  },
+  "text_DE": "Schneeberg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bfc"
+  },
+  "text_DE": "Schweinfurt"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bfd"
+  },
+  "text_DE": "Schwerin"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bfe"
+  },
+  "text_DE": "Siegen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7bff"
+  },
+  "text_DE": "Sigmaringen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c00"
+  },
+  "text_DE": "Soest"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c01"
+  },
+  "text_DE": "Stendal"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c02"
+  },
+  "text_DE": "Stuttgart"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c03"
+  },
+  "text_DE": "Suderburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c04"
+  },
+  "text_DE": "Trier"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c05"
+  },
+  "text_DE": "Tübingen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c06"
+  },
+  "text_DE": "Tuttlingen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c07"
+  },
+  "text_DE": "Überlingen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c08"
+  },
+  "text_DE": "Ulm"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c09"
+  },
+  "text_DE": "Vallendar"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c0a"
+  },
+  "text_DE": "Vechta"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c0b"
+  },
+  "text_DE": "Villingen-Schwenningen"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c0c"
+  },
+  "text_DE": "Waldenburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c0d"
+  },
+  "text_DE": "Wedel"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c0e"
+  },
+  "text_DE": "Weiden"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c0f"
+  },
+  "text_DE": "Weimar"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c10"
+  },
+  "text_DE": "Weingarten"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c11"
+  },
+  "text_DE": "Wernigerode"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c12"
+  },
+  "text_DE": "Wiesbaden"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c13"
+  },
+  "text_DE": "Wildau"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c14"
+  },
+  "text_DE": "Wilhelmshaven"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c15"
+  },
+  "text_DE": "Witten/Herdecke"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c16"
+  },
+  "text_DE": "Wittenberg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c17"
+  },
+  "text_DE": "Wolfenbüttel"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c18"
+  },
+  "text_DE": "Wolfsburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c19"
+  },
+  "text_DE": "Wuppertal"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c1a"
+  },
+  "text_DE": "Würzburg"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c1b"
+  },
+  "text_DE": "Zittau"
+},{
+  "_id": {
+    "$oid": "607c4951c59a9135d08e7c1c"
+  },
+  "text_DE": "Zwickau"
+}]

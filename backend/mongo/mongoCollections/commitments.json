@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "607c4a4cc59a9135d08e7c3f"
+  },
+  "text_DE": "fachlich"
+},{
+  "_id": {
+    "$oid": "607c4a4cc59a9135d08e7c40"
+  },
+  "text_DE": "politisch"
+},{
+  "_id": {
+    "$oid": "607c4a4cc59a9135d08e7c41"
+  },
+  "text_DE": "sozial"
+},{
+  "_id": {
+    "$oid": "607c4a4cc59a9135d08e7c42"
+  },
+  "text_DE": "nachhaltig"
+},{
+  "_id": {
+    "$oid": "607c4a4cc59a9135d08e7c43"
+  },
+  "text_DE": "gesellschaftlich"
+},{
+  "_id": {
+    "$oid": "607c4a4cc59a9135d08e7c44"
+  },
+  "text_DE": "keins"
+}]

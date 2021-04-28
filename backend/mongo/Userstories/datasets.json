@@ -1,0 +1,52 @@
+    {
+        "userDataSets" : {
+            "sets" : [
+                {
+                    "title" : "Bildungsphase",
+                    "values" : [
+                        {"_id" : "eduPer_00", "text": "Weiterführende Schule / Gymnasium / Fachholschulreife"},
+                        {"_id" : "eduPer_01", "text": "Berufsausbildung oder Weiterbildung"},
+                        {"_id" : "eduPer_02", "text": "Studium" },
+                        {"_id" : "eduPer_03", "text": "Promotion" },
+                        {"_id" : "eduPer_04", "text": "Berufstätig" },
+                        {"_id" : "eduPer_05", "text": "Promotion" },
+                        {"_id" : "eduPer_06", "text": "Gründer*innen" }
+                    ]  
+                },
+                {
+                    "title" : "Angestrebter Abschluss",
+                    "values" : [
+                        {"_id" : "pursGrad_00", "text": "Bachelor"},
+                        {"_id" : "pursGrad_01", "text": "Master"},
+                        {"_id" : "pursGrad_02", "text": "Promotion"},
+                        {"_id" : "pursGrad_03", "text": "Staatsexamen"},
+                        {"_id" : "pursGrad_04", "text": "Diplom"},
+                        {"_id" : "pursGrad_05", "text": "Magister"},
+                        {"_id" : "pursGrad_06", "text": "Meister"},
+                        {"_id" : "pursGrad_07", "text": "Andere Förderung"}
+                    ]  
+                },
+                {
+                    "title" : "Semester",
+                    "values" : [
+                        {"_id" : "sem_00", "text": 1},
+                        {"_id" : "sem_01", "text": 2},
+                        {"_id" : "sem_02", "text": 3},
+                        {"_id" : "sem_03", "text": 4},
+                        {"_id" : "sem_04", "text": 5},
+                        {"_id" : "sem_05", "text": 6},
+                        {"_id" : "sem_06", "text": 7},
+                        {"_id" : "sem_07", "text": 8},
+                        {"_id" : "sem_08", "text": 9},
+                        {"_id" : "sem_09", "text": 10},
+                        {"_id" : "sem_10", "text": 11},
+                        {"_id" : "sem_11", "text": 12},
+                        {"_id" : "sem_12", "text": 13},
+                        {"_id" : "sem_13", "text": 14},
+                        {"_id" : "sem_14", "text": 15}
+                        
+                    ]  
+                }
+            ]
+        }
+    }     

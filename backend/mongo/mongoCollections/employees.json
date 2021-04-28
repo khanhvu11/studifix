@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "607c4ade21244792d5a226b4"
+  },
+  "firstName": "alex",
+  "position": "CEO"
+},{
+  "_id": {
+    "$oid": "607c4b1762fba443ac46951c"
+  },
+  "firstName": "lea",
+  "position": "CEO"
+},{
+  "_id": {
+    "$oid": "607c4b1f62fba443ac46951d"
+  },
+  "firstName": "sophia",
+  "position": "CEO"
+}]

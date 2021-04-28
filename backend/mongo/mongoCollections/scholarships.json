@@ -1,0 +1,196 @@
+[{
+  "_id": {
+    "$oid": "607c6a4921244792d5a226b8"
+  },
+  "responsible": {
+    "$oid": "607c4ade21244792d5a226b4"
+  },
+  "link": "https://www.sbb-stipendien.de/weiterbildungsstipendium",
+  "semester": 0,
+  "courses": [
+    {
+      "$oid": "607c8d6262fba443ac46951e"
+    }
+  ],
+  "country": {
+    "$oid": "607c6d4c21244792d5a226be"
+  },
+  "city": {
+    "$oid": "607c4951c59a9135d08e7b69"
+  },
+  "state": {
+    "$oid": "607c4936c59a9135d08e7b59"
+  },
+  "institution": {
+    "$oid": "607c85e7a8219e642f1657fd"
+  },
+  "referenceRequiered": false,
+  "referenceAllowed": true,
+  "ageRestriction": 10,
+  "collegeGraduation": null,
+  "jobTrainingGraduation": null,
+  "uniGraduation": null,
+  "sideJobAllowed": true,
+  "currentJobHours": 20,
+  "neuesFeld" : "",
+  "commitments": [
+    {
+      "$oid": "607c4a4cc59a9135d08e7c41"
+    },
+    {
+      "$oid": "607c4a4cc59a9135d08e7c43"
+    }
+  ],
+  "graduations": [
+    {
+      "$oid": "607c48f1c59a9135d08e7b57"
+    },
+    {
+      "$oid": "607c48f1c59a9135d08e7b51"
+    },
+    {
+      "$oid": "607c48f1c59a9135d08e7b55"
+    },
+    {
+      "$oid": "607c48f1c59a9135d08e7b56"
+    },
+    {
+      "$oid": "607c48f1c59a9135d08e7b54"
+    }
+  ],
+  "occupations": [
+    {
+      "$oid": "607c48dec59a9135d08e7b4c"
+    }
+  ],
+  "religions": {
+    "$oid": "607c4a3dc59a9135d08e7c3c"
+  },
+  "specialJobExperiences": null,
+  "supportDetails": [
+    {
+      "$oid": "607c4984c59a9135d08e7c25"
+    }
+  ],
+  "supportTypes": [
+    {
+      "$oid": "607c496fc59a9135d08e7c1d"
+    }
+  ],
+  "provider": {
+    "$oid": "607c4b6d21244792d5a226b6"
+  },
+  "referenceDetails": [
+    {
+      "$oid": "607c49dfc59a9135d08e7c2c"
+    },
+    {
+      "$oid": "607c49dfc59a9135d08e7c2d"
+    }
+  ],
+  "nationalities": {
+    "$oid": "607c49ffc59a9135d08e7c31"
+  },
+  "specialRequirements": [
+    {
+      "$oid": "607c8adf757c409b0ca192af"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "607c8e6a62fba443ac46951f"
+  },
+  "responsible": {
+    "$oid": "607c4ade21244792d5a226b4"
+  },
+  "link": "https://www.sbb-stipendien.de/weiterbildungsstipendium",
+  "semester": 0,
+  "courses": [
+    {
+      "$oid": "607c8d6262fba443ac46951e"
+    }
+  ],
+  "country": {
+    "$oid": "607c6d4c21244792d5a226be"
+  },
+  "city": {
+    "$oid": "607c4951c59a9135d08e7b69"
+  },
+  "state": {
+    "$oid": "607c4936c59a9135d08e7b59"
+  },
+  "institution": {
+    "$oid": "607c85e7a8219e642f1657fd"
+  },
+  "referenceRequiered": false,
+  "referenceAllowed": true,
+  "ageRestriction": 10,
+  "collegeGraduation": null,
+  "jobTrainingGraduation": null,
+  "uniGraduation": null,
+  "sideJobAllowed": true,
+  "currentJobHours": 20,
+  "commitments": [
+    {
+      "$oid": "607c4a4cc59a9135d08e7c41"
+    },
+    {
+      "$oid": "607c4a4cc59a9135d08e7c43"
+    }
+  ],
+  "graduations": [
+    {
+      "$oid": "607c48f1c59a9135d08e7b57"
+    },
+    {
+      "$oid": "607c48f1c59a9135d08e7b51"
+    },
+    {
+      "$oid": "607c48f1c59a9135d08e7b55"
+    },
+    {
+      "$oid": "607c48f1c59a9135d08e7b56"
+    },
+    {
+      "$oid": "607c48f1c59a9135d08e7b54"
+    }
+  ],
+  "occupations": [
+    {
+      "$oid": "607c48dec59a9135d08e7b4c"
+    }
+  ],
+  "religions": {
+    "$oid": "607c4a3dc59a9135d08e7c3c"
+  },
+  "specialJobExperiences": null,
+  "supportDetails": [
+    {
+      "$oid": "607c4984c59a9135d08e7c25"
+    }
+  ],
+  "supportTypes": [
+    {
+      "$oid": "607c496fc59a9135d08e7c1d"
+    }
+  ],
+  "provider": {
+    "$oid": "607c4b6d21244792d5a226b6"
+  },
+  "referenceDetails": [
+    {
+      "$oid": "607c49dfc59a9135d08e7c2c"
+    },
+    {
+      "$oid": "607c49dfc59a9135d08e7c2d"
+    }
+  ],
+  "nationalities": {
+    "$oid": "607c49ffc59a9135d08e7c31"
+  },
+  "specialRequirements": [
+    {
+      "$oid": "607c8adf757c409b0ca192af"
+    }
+  ]
+}]

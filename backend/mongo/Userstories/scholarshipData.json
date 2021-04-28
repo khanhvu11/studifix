@@ -1,0 +1,33 @@
+[
+    {
+        "responsible": "Alex",
+        "poviderName": "Weiterbildungsstipendium",
+        "link" : "https://www.sbb-stipendien.de/weiterbildungsstipendium",
+        "occupation" : ["Studium","Promotion","Berufstätig"],
+        "semester": 0,
+        "graduation": ["Master", "Bachelor"],
+        "courses": ["Medizin", "Recht"],
+        "country": "Germany",
+        "city": "Munich",
+        "state": "Bayern",
+        "institution": "Institution2000",
+        "supportType" : ["Finanziell", "Sach- & Dienstleistung (zweckgebunden)"],
+        "supportDetail" : ["Sach- und Reisekosten"],
+        "referenceRequiered": false,
+        "referenceAllowed": true,
+        "referenceDetail": ["Lehrer", "Professor"],
+        "ageRestriction": 10,
+        "nationality": "german",
+        "nationalityDetail": null,
+        "specialRequirement": [null],
+        "religion": "catholic",
+        "collegeGraduation" : null,
+        "jobTrainingGraduation" : null,
+        "uniGraduation" : null,
+        "specialJobExperience" : null,
+        "sideJobAllowed" : true,
+        "currentJobHours" : 20,
+        "commitments": ["Sozial", "Gesselschaftlich"]   
+    }     
+]
+
