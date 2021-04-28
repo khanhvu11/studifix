@@ -1,7 +1,6 @@
-import occupation from '../../models/scholarship/components/occupation';
 import Scholarship from '../../models/scholarship/scholarship';
 import SelectionData from '../../models/selectionData';
-const { ObjectId } = require('mongodb');
+import { scholarshipFilterqueryGenerator } from '../../helpers/dataBase';
 
 const getSelectionDataFromDB = (): Promise<any> => {
     return new Promise(async (resolve, reject) => {
@@ -28,32 +27,9 @@ const getSelectionDataFromDB = (): Promise<any> => {
     });
 };
 
-const refactorIDs = (idList: string[]): any[] => {
-    let tempArray: any = [];
-    idList.map((_id) => {
-        console.log(_id);
-        tempArray.push(ObjectId(String(_id)));
-    });
-
-    return tempArray;
-};
-
 const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any> => {
     return new Promise(async (resolve, reject) => {
-        const { commitment, occupation, semester } = userInput.selectionData;
-
-        const commitmentQuery: string[] = refactorIDs(commitment);
-        const occupationQuery: string[] = refactorIDs(occupation);
-
-        const filter: any = {
-            $and: [
-                { $or: [{ commitments: { $in: commitmentQuery } }, { commitments: [] }] },
-                { $or: [{ occupations: { $in: occupationQuery } }, { occupations: [] }] },
-                { $or: [{ semester }, { semester: null }] },
-                { $or: [{ commitments: { $in: commitmentQuery } }, { commitments: [] }] },
-                { $or: [{ commitments: { $in: commitmentQuery } }, { commitments: [] }] }
-            ]
-        };
+        const filter = scholarshipFilterqueryGenerator(userInput.selectionData);
 
         Scholarship.find(filter, { _id: 1 })
             .exec()
