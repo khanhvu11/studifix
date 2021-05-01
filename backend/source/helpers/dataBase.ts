@@ -14,11 +14,22 @@ const refactorIDs = (idList: string[]): any[] => {
 export const scholarshipFilterqueryGenerator = (idLists: IUserInputList): any => {
     let tempArray = [];
 
-    const { commitment, occupation, semester } = idLists;
+    //todo: run through joi
+    const { commitment, occupation, semester, graduation, support, country, course, state, city, religion } = idLists;
 
-    commitment.length > 0 ? tempArray.push({ $or: [{ commitments: { $in: refactorIDs(commitment) } }, { commitments: [] }] }) : null;
-    occupation.length > 0 ? tempArray.push({ $or: [{ commitments: { $in: refactorIDs(occupation) } }, { occupation: [] }] }) : null;
-    semester ? tempArray.push({ $or: [{ semester: semester }, { semester: null }] }) : null;
+    console.log(commitment, occupation, semester, graduation, support, country, course, state, city, religion);
+
+    commitment ? tempArray.push({ $or: [{ commitment: { $in: refactorIDs(commitment) } }, { commitment: [] }] }) : null;
+    occupation ? tempArray.push({ $or: [{ occupation: { $in: refactorIDs(occupation) } }, { occupation: [] }] }) : null;
+    graduation ? tempArray.push({ $or: [{ graduation: { $in: refactorIDs(graduation) } }, { graduation: [] }] }) : null;
+    support ? tempArray.push({ $or: [{ support: { $in: refactorIDs(support) } }, { support: [] }] }) : null;
+    course ? tempArray.push({ $or: [{ course: { $in: refactorIDs(course) } }, { course: [] }] }) : null;
+
+    country ? tempArray.push({ $or: [{ country }, { country: null }] }) : null;
+    state ? tempArray.push({ $or: [{ state }, { state: null }] }) : null;
+    city ? tempArray.push({ $or: [{ city }, { city: null }] }) : null;
+    semester ? tempArray.push({ $or: [{ semester }, { semester: null }] }) : null;
+    religion ? tempArray.push({ $or: [{ religion }, { religion: null }] }) : null;
 
     if (tempArray.length === 0) {
         return {};

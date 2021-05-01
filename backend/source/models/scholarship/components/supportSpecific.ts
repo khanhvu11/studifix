@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-const SupportSpecificsSchema: Schema = new Schema({
+const SupportSpecificSchema: Schema = new Schema({
     _id: Schema.Types.ObjectId,
     title: {
         DE: { type: String, required: true },
@@ -14,4 +14,4 @@ const SupportSpecificsSchema: Schema = new Schema({
     }
 });
 
-export default mongoose.model('supportSpecifics', SupportSpecificsSchema, 'supportSpecifics');
+export default mongoose.model('supportSpecifics', SupportSpecificSchema, 'supportSpecifics');

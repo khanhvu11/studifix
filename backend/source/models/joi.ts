@@ -34,4 +34,22 @@ const joiLangParams = Joi.object({
     lang: Joi.string().valid('DE', 'EN', 'FR')
 });
 
-export default { joiLogin, joiRegister, joiLangParams };
+const joiFilterParams = Joi.object({
+    selectionData: {
+        //todo: check för hexadecimal numbers 12 or 24
+        commitment: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        occupation: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        graduation: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        course: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        support: [Joi.array().items(Joi.string().min(24).max(24)), null],
+
+        country: [Joi.string().min(24).max(24), null],
+        semester: [Joi.number().min(1).max(20), null],
+        city: [Joi.string().min(24).max(24), null],
+        state: [Joi.string().min(24).max(24), null],
+        nationality: [Joi.string().min(24).max(24), null],
+        religion: [Joi.string().min(24).max(24), null]
+    }
+});
+
+export default { joiLogin, joiRegister, joiLangParams, joiFilterParams };

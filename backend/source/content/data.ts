@@ -1,5 +1,6 @@
 import { Response, Request } from 'express';
 import dbData from '../controllers/database/data';
+import joi from '../models/joi';
 
 const resolveSelectionData = async (req: Request, res: Response) => {
     try {
@@ -17,7 +18,11 @@ const resolveSelectionData = async (req: Request, res: Response) => {
 
 const filterScholarships = async (req: Request, res: Response) => {
     try {
-        await dbData.filterScholarshipsByUserInput(req.body).then((scholarships) => {
+        const data = await joi.joiFilterParams.validateAsync(req.body);
+
+        console.log(data);
+
+        await dbData.filterScholarshipsByUserInput(data).then((scholarships) => {
             res.status(200).json({
                 scholarships
             });
