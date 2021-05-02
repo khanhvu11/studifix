@@ -1,27 +1,30 @@
 {
-  "name": "api",
-  "version": "1.0.0",
-  "description": "",
-  "main": "source/server.ts",
-  "scripts": {
-    "build": "rm -rf build/ && prettier --write source/ && tsc",
-    "dev": "nodemon source/server.ts"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "hash.js": "^1.1.7",
-    "joi": "^17.4.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.12.3"
-  },
-  "devDependencies": {
-    "@types/body-parser": "^1.19.0",
-    "@types/dotenv": "^8.2.0",
-    "@types/express": "^4.17.11",
-    "@types/mongoose": "^5.10.4"
-  }
+    "name": "api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "source/server.ts",
+    "scripts": {
+        "build": "tsc -p .",
+        "dev": "nodemon -L",
+        "start": "NODE_PATH=./build/server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "hash.js": "^1.1.7",
+        "joi": "^17.4.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.12.3",
+        "nodemon": "^2.0.7",
+        "ts-node": "^9.1.1"
+    },
+    "devDependencies": {
+        "@types/body-parser": "^1.19.0",
+        "@types/dotenv": "^8.2.0",
+        "@types/express": "^4.17.11",
+        "@types/mongoose": "^5.10.4"
+    }
 }
