@@ -42,7 +42,7 @@
 }
 
 .choice {
-  border-radius: 3rem;
+  border-radius: 1.5rem;
   box-shadow: 1px 1px 20px 1px #dfe6f1;
   background-color: #f7f7f7;
   min-height: 100px;
@@ -72,7 +72,7 @@
 }
 
 .chosen {
-  background-color: #77abfa;
+  background-color: #1170fe;
 }
 
 .chosen p {
@@ -85,10 +85,15 @@ button.sub1 {
 
 .sub-active {
   position: relative;
+  height: 100px;
+  background-color: #1170fe;
+  color: #ffffff;
   top: 50%;
   left: 20%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  border-radius: 2rem;
+  border: none;
 }
 
 @media (min-width: 1030px) {

@@ -38,7 +38,7 @@ nav li.focus {
 
 h1 {
   font-size: 3rem;
-  font-weight: 900;
+  font-weight: bold;
 }
 
 .footer {
@@ -79,7 +79,7 @@ button {
 
 .support span {
   position: relative;
-  font-weight: bold;
+  font-weight: 900;
 }
 
 .support p {
@@ -124,6 +124,10 @@ button {
     top: 40%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+  }
+
+  .submit {
+    margin-top: 3rem;
   }
 
   .footer {

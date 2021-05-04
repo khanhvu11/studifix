@@ -24,7 +24,7 @@ export default function NavBar({ func , lang, obj} ){
                     var item = obj[key]
                     return (<li key={id} className={label===item.title[lang]?"focus":""}><label htmlFor={item.title[lang]} onClick={() => onClickHandler(item.title[lang])}>{item.title[lang]}</label></li>)})}
 
-                <li className={label==="submit"?"focus":""}><label onClick={() => onClickHandler("submit")}>Submit</label></li>
+                <li className={(label==="submit"?"focus":"") + " submit"}><label onClick={() => onClickHandler("submit")}>Submit</label></li>
             </ul>
             <div className="footer">
                 <div className="support"><p><span>Support</span><br/>Wir sind für dich da!</p></div>

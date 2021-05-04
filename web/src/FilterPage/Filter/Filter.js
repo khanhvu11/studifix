@@ -22,7 +22,8 @@ function Filter({func, cls, lang, obj}) {
         return(<Options func={getALlResult} key={id} cls={cls} lang={lang} obj={item}/>)}
       )}
       </div>
-      <button type='submit' className={(("submit"===cls)? 'sub-active': ' sub1') + " btn btn-primary btn-lg"}>Submit</button>
+      {/* " btn btn-primary btn-lg" */}
+      <button type='submit' className={(("submit"===cls)? 'sub-active': ' sub1')}>Submit</button>
     </div>
   )
 }
