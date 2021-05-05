@@ -6,9 +6,9 @@
 
 nav ul {
   list-style: none;
-  /* display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   padding: 0;
   /* display: grid;
   grid-template-columns: repeat(4, 200px);
@@ -19,6 +19,7 @@ nav ul {
 nav li {
   font-size: 1.3em;
   font-weight: 700;
+  margin: auto 1.3rem;
 }
 
 nav li:hover {

@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import OptionButton from './OptionButton'
 
-export default function MultipleChoice({func, cls, lang, obj}) {
+export default function MultipleChoice({func, _key, cls, lang, obj}) {
     const [optionList, setOptionList]=useState([])
     /* const [category, setCategory] = useState([])
 
@@ -26,10 +26,8 @@ export default function MultipleChoice({func, cls, lang, obj}) {
         }
         setOptionList(newList)    
         /* getCategory(obj.title[lang], newList)   */  
-        func(obj.title[lang], newList)
+        func(_key, newList)
     }
-
-    console.log(optionList)
 
     return (
         <>

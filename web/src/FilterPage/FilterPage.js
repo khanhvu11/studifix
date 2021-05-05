@@ -26,11 +26,10 @@ export default function FilterPage() {
         setClN(cn)
     }
 
-    console.log(clN)
+    /* console.log(clN) */
 
     return (
         <form className='outerContainer'>
-            {listCat && console.log(Object.keys(listCat))}
             {listCat && <NavBar func={labelClick} lang={language} obj={listCat}/>}
             {listCat && <Filter cls ={clN} lang={language} obj={listCat}/>}
             <div className="footer footer-sm">
