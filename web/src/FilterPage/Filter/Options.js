@@ -32,6 +32,8 @@ export default function MultipleChoice({func, cls, lang, obj}) {
     console.log(optionList)
 
     return (
+        <>
+        {obj.title && obj.mandatory && obj.description &&
         <div className={(obj.title[lang]===cls)? 'mplChoice active': 'mplChoice'}>
             <label className="label-sml" htmlFor={obj.title[lang]}>{obj.title[lang]} {/*
                 obj.mandatory ? "*": ""
@@ -45,5 +47,7 @@ export default function MultipleChoice({func, cls, lang, obj}) {
                 {obj.values && obj.values.map((value,id) => <OptionButton key={id} buttonFunc={getOption} buttonLang={lang} value={value} />)}
             </div>
         </div>
+}
+        </>
     )
 }

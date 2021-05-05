@@ -6,13 +6,18 @@
 
 nav ul {
   list-style: none;
-  display: flex;
+  /* display: flex;
   justify-content: space-around;
+  flex-wrap: wrap; */
   padding: 0;
+  /* display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 30px;
+  align-self: center; */
 }
 
 nav li {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 700;
 }
 
@@ -101,7 +106,7 @@ button {
     position: absolute;
     top: 0rem;
     min-height: 500px;
-    /* min-width: 300px; */
+    min-width: 350px;
     height: 100%;
     width: 20%;
     justify-content: center;
@@ -119,7 +124,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
+    margin: 2rem auto;
     position: absolute;
     top: 40%;
     -ms-transform: translateY(-50%);
