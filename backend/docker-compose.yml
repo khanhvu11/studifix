@@ -18,12 +18,13 @@ services:
 
     mongo:
         container_name: mongodb
-        image: mongo:latest
+        build:
+            context: ./mongo
+            dockerfile: Dockerfile
         environment:
             MONGO_INITDB_ROOT_USERNAME: root
             MONGO_INITDB_ROOT_PASSWORD: password
-        volumes:
-             - ./mongo-volume:/data/db
         ports:
             - 27017:27017
         command: [--auth]
+# mongoexport -u root -p password --authenticationDatabase admin --db studifix -c cities --out /data/export/newdbexport.json
