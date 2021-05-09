@@ -5,14 +5,14 @@ import './Filter.css'
 import Options from './Options'
 import Dropdown from './Dropdown'
 
-function Filter({func, cls, lang, obj}) {
+function Filter({cls, lang, obj}) {
   const [result, setResult] = useState({})
 
-  var getALlResult = (id, optionList)=> {
+  var getALlResult = (key, optionList)=> {
     if(optionList.length > 0){
-      result[id] = optionList
+      result[key] = optionList
     }else{
-      result[id] = null
+      result[key] = null
     }
         setResult(result)
     }
@@ -20,22 +20,34 @@ function Filter({func, cls, lang, obj}) {
     console.log(result)
 
   var sendFilter = () => {
-    Object.keys(obj).forEach(key => {
+    /* Object.keys(obj).forEach(key => {
       if(!Object.keys(result).includes(key)){
         result[key] = null
         setResult(result)
       }
-    })
-    console.log(result)
+    }) */
+    console.log(JSON.stringify(result))
 
-    fetch('http://localhost:4000/filter/scholarships', {
+    fetch('http://localhost:4000/data/filter/scholarships', {
       method: "POST",
-      body: JSON.stringify(result),
-      headers: {"Content-type": "application/json; charset=UTF-8"}
+      body: JSON.stringify({"selectionData":result}),
+      headers: {"Content-type": "application/json"}
     })
-    .then(response => response.json()) 
-    .then(json => console.log(json));
-    /* .catch(err => console.log(err)); */
+    .then(async response => {
+      const isJson = response.headers.get('content-type')?.includes('application/json');
+      const data = isJson && await response.json();
+      console.log(data)
+
+      // check for error response
+      if (!response.ok) {
+          // get error message from body or default to response status
+          const error = (data && data.message) || response.status;
+          return Promise.reject(error);
+      }
+      /* response.json() */
+    }) 
+    .then(json => console.log(json))
+    .catch(error => console.error('There was an error!', error));
   }
 
   return (
