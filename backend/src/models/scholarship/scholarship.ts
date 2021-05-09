@@ -7,6 +7,7 @@ import employee from './components/employee';
 import graduation from './components/graduation';
 import institution from './components/institution';
 import nationality from './components/nationality';
+import nationalityDetail from './components/nationalityDetail';
 import occupation from './components/occupation';
 import provider from './components/provider';
 import referenceDetail from './components/reference';
@@ -26,9 +27,9 @@ const ScholarshipSchema: Schema = new Schema({
     graduation: [{ type: Schema.Types.ObjectId, ref: graduation }],
     course: [{ type: Schema.Types.ObjectId, ref: course }],
     country: [{ type: Schema.Types.ObjectId, ref: country }],
-    city: { type: Schema.Types.ObjectId, ref: city },
-    state: { type: Schema.Types.ObjectId, ref: state },
-    institution: { type: Schema.Types.ObjectId, ref: institution },
+    city: [{ type: Schema.Types.ObjectId, ref: city }],
+    state: [{ type: Schema.Types.ObjectId, ref: state }],
+    institution: [{ type: Schema.Types.ObjectId, ref: institution }],
     support: [{ type: Schema.Types.ObjectId, ref: support }],
     supportSpecific: [{ type: Schema.Types.ObjectId, ref: supportSpecific }],
     referenceRequiered: { type: Boolean, required: true },
@@ -36,9 +37,11 @@ const ScholarshipSchema: Schema = new Schema({
     referenceDetail: [{ type: Schema.Types.ObjectId, ref: referenceDetail }],
     ageRestriction: { type: Number, required: true },
     nationality: [{ type: Schema.Types.ObjectId, ref: nationality }],
+    nationalityDetail: [{ type: Schema.Types.ObjectId, ref: nationalityDetail }],
     requirement: [{ type: Schema.Types.ObjectId, ref: requirement }],
     religion: [{ type: Schema.Types.ObjectId, ref: religion }],
     collegeGraduation: { type: Number, required: true },
+    collegeGraduationState: [{ type: Schema.Types.ObjectId, ref: state }],
     jobTrainingGraduation: { type: Number, required: true },
     uniGraduation: { type: Number, required: true },
     specialJobExperience: { type: Number, required: true },

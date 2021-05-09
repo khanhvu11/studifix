@@ -32,8 +32,8 @@ const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         const filter = scholarshipFilterqueryGenerator(userInput.selectionData);
 
-        Scholarship.find(filter, { _id: 1 })
-            .populate('institution', { _id: 1 })
+        Scholarship.find(filter, {})
+            .populate('institution')
             .populate('occupation')
             .populate('graduation')
             .populate('course')
@@ -41,6 +41,8 @@ const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any> => {
             .populate('city')
             .populate('state')
             .populate('nationality')
+            .populate('nationalityDetail')
+            .populate('collegeGraduationState')
             .populate('religion')
             .populate('commitment')
             .populate('support')
