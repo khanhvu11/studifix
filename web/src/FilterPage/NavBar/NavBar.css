@@ -1,0 +1,158 @@
+.filter-nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+
+nav li {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+nav li:hover {
+  color: #1170fe;
+}
+
+nav li.focus {
+  color: #1170fe;
+}
+
+.logo {
+  margin-top: 2rem;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 0;
+  padding: 10px;
+}
+
+.logo span {
+  color: #1170fe;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.footer {
+  display: none;
+}
+
+.footer-sm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  position: relative;
+  bottom: 2rem;
+  margin-top: 3rem;
+}
+
+button {
+  width: 60%;
+  margin: 0 auto 4rem auto;
+}
+
+.support {
+  position: sticky;
+  padding: 1rem;
+  border: lightgray solid;
+  border-radius: 7rem;
+  background-color: white;
+  margin: 0 auto 1rem auto;
+  width: 60%;
+  height: auto;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.support:hover {
+  box-shadow: 0 1px 20px 1px rgba(0, 0, 0, 0.2);
+}
+
+.support span {
+  position: relative;
+  font-weight: 900;
+}
+
+.support p {
+  margin: 0;
+}
+
+.icon-area {
+  width: 15%;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #1170fe;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (min-width: 1030px) {
+  .filter-nav {
+    position: absolute;
+    top: 0rem;
+    min-height: 500px;
+    /* min-width: 300px; */
+    height: 100%;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5rem 0 0 5rem;
+  }
+
+  .logo {
+    margin-top: 0;
+    position: absolute;
+    top: 1.5rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    position: absolute;
+    top: 40%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .submit {
+    margin-top: 3rem;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 2rem;
+  }
+
+  .footer-sm {
+    display: none;
+  }
+
+  .support {
+    width: 80%;
+    min-width: 100px;
+  }
+
+  .icon-area {
+    width: 60%;
+    margin: auto auto 0 auto;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+  }
+}
