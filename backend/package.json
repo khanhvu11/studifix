@@ -19,7 +19,12 @@
         "jsonwebtoken": "^8.5.1",
         "mongoose": "^5.12.3",
         "nodemon": "^2.0.7",
+<<<<<<< HEAD
         "ts-node": "^9.1.1"
+=======
+        "ts-node": "^9.1.1",
+        "typescript": "^4.2.4"
+>>>>>>> b80f8f1640ac4a8717a644a285f0f44c21143960
     },
     "devDependencies": {
         "@types/body-parser": "^1.19.0",

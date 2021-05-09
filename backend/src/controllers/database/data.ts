@@ -32,8 +32,13 @@ const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         const filter = scholarshipFilterqueryGenerator(userInput.selectionData);
 
+<<<<<<< HEAD:backend/src/controllers/database/data.ts
         Scholarship.find(filter, { _id: 1 })
             .populate('institution', { _id: 1 })
+=======
+        Scholarship.find(filter, {})
+            .populate('institution')
+>>>>>>> b80f8f1640ac4a8717a644a285f0f44c21143960:backend/source/controllers/database/data.ts
             .populate('occupation')
             .populate('graduation')
             .populate('course')
@@ -41,6 +46,11 @@ const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any> => {
             .populate('city')
             .populate('state')
             .populate('nationality')
+<<<<<<< HEAD:backend/src/controllers/database/data.ts
+=======
+            .populate('nationalityDetail')
+            .populate('collegeGraduationState')
+>>>>>>> b80f8f1640ac4a8717a644a285f0f44c21143960:backend/source/controllers/database/data.ts
             .populate('religion')
             .populate('commitment')
             .populate('support')
