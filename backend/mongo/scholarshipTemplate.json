@@ -1,0 +1,150 @@
+{
+    "_id": {
+      "$oid": "607c94bb9f39dd8102edc5b1"
+    },
+  
+  
+    "responsible": {
+      "$oid": "607c4ade21244792d5a226b4"
+    },
+  
+  
+    "provider": {
+      "$oid": "607c4b6d21244792d5a226b6"
+    },
+  
+  
+    "link": "https://www.sbb-stipendien.de/aufstiegsstipendium",
+  
+  
+    "occupation": [ 
+      {
+        "$oid": "607c48dec59a9135d08e7b4c"
+      }, 
+      {
+        "$oid": "607c48dec59a9135d08e7b4d"
+      }
+  ],
+  
+  
+    "semester": 2,
+  
+  
+    "graduation": [
+      {
+        "$oid": "607c48f1c59a9135d08e7b51"
+      },
+      {
+        "$oid": "607c48f1c59a9135d08e7b54"
+      }
+      ,
+      {
+        "$oid": "607c48f1c59a9135d08e7b55"
+      }
+      ,
+      {
+        "$oid": "607c48f1c59a9135d08e7b56"
+      }
+    ],
+    
+  
+    "course": null,
+  
+  
+    "country": null,
+    "state": null,
+    "city": null,
+  
+  
+    "institution": 
+    {
+      "$oid": "607c85e7a8219e642f1657fd"
+    },
+  
+    
+    "support": [
+      {
+        "$oid": "607c94bb9f39dd8102edc5b0"
+      },
+      {
+        "$oid": "607c94bb9f39dd8102edc5b1"
+      },
+      {
+        "$oid": "607c94bb9f39dd8102edc5b2"
+      }
+    ],
+  
+    "supportSpecific": [
+      {
+        "$oid": "6097c6ca3b22204d5045fde0"
+      }
+    ],
+    
+  
+    "referenceRequiered": false,
+  
+    "referenceAllowed": true,
+  
+  
+    "age": 0,
+  
+  
+    "referenceDetail": [
+      {
+        "$oid": "607c49dfc59a9135d08e7c2b"
+      }
+    ],
+  
+  
+    "nationality": [
+      {
+        "$oid": "607c49ffc59a9135d08e7c31"
+      }
+    ],
+  
+    "nationalityDetail": [
+      {
+        "$oid": "6097c7a998b0328d3c5fab7b"
+      }
+    ],
+  
+    "requirement": [
+      {
+        "$oid": "6097c7a998b0328d3c5fab7b"
+      }
+    ],
+  
+    "religion": null,
+  
+  
+  
+    "collegeGraduation": null,
+  
+  
+  
+    "collegeGraduationState": null,
+  
+  
+  
+    "jobTrainingGraduation": 1.9,
+  
+  
+  
+    "uniGraduation": null,
+  
+  
+  
+    "specialJobExperience": 2,
+  
+  
+  
+    "sideJobAllowed": true,
+  
+  
+  
+    "currentJobHours": 15,
+  
+  
+  
+    "commitment": null
+  }
