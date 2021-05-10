@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {useHistory} from 'react-router-dom'
 
 //import TextArea from './TextArea'
 import './Filter.css'
@@ -7,6 +8,7 @@ import Dropdown from './Dropdown'
 
 function Filter({cls, lang, obj}) {
   const [result, setResult] = useState({})
+  const history = useHistory();
 
   var getALlResult = (key, optionList)=> {
     if(optionList.length > 0){
@@ -36,7 +38,6 @@ function Filter({cls, lang, obj}) {
     .then(async response => {
       const isJson = response.headers.get('content-type')?.includes('application/json');
       const data = isJson && await response.json();
-      console.log(data)
 
       // check for error response
       if (!response.ok) {
@@ -44,9 +45,13 @@ function Filter({cls, lang, obj}) {
           const error = (data && data.message) || response.status;
           return Promise.reject(error);
       }
+      history.push({
+        pathname: "/scholarshipsPage",
+        state: data
+      })
       /* response.json() */
     }) 
-    .then(json => console.log(json))
+    /* .then(json => setScholarships(json)) */
     .catch(error => console.error('There was an error!', error));
   }
 
