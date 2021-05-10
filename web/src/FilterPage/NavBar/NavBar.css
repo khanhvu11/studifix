@@ -106,7 +106,7 @@ button {
   .filter-nav {
     position: absolute;
     top: 0rem;
-    min-height: 500px;
+    min-height: 900px;
     min-width: 350px;
     height: 100%;
     width: 20%;
@@ -127,9 +127,9 @@ button {
     align-items: center;
     margin: 2rem auto;
     position: absolute;
-    top: 40%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    top: 8rem;
+    /* -ms-transform: translateY(-50%);
+    transform: translateY(-50%); */
   }
 
   .submit {

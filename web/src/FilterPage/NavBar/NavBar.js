@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,9 +6,14 @@ import { faCogs, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 import './NavBar.css'
 
-export default function NavBar({ func , lang, obj} ){
+export default function NavBar({ cls, func , lang, obj} ){
 
     const [label, setLabel] = useState('')
+
+    useEffect(()=>{
+        setLabel(cls)
+    },[cls])
+
     const onClickHandler = (cn) => {
         func(cn)
         setLabel(cn)

@@ -16,21 +16,23 @@ export default function FilterPage() {
         /* http://localhost:4000/data/selectiondata */
         fetch('http://localhost:4000/data/selectiondata')
         .then(response => response.json())
-        .then(items => setListCat(items.selectionData))
+        .then(items => {
+            setListCat(items.selectionData)
+            var labels = items.selectionData && Object.keys(items.selectionData).map(key => items.selectionData[key].title?items.selectionData[key].title[language]:null)
+            setClN(labels[0]) 
+        })
 
-    }, [])
-
-    //console.log(listCat.city)
+    },[])
 
     var labelClick = (cn) => {
         setClN(cn)
     }
 
-    /* console.log(clN) */
+    console.log(clN)
 
     return (
         <form className='outerContainer'>
-            {listCat && <NavBar func={labelClick} lang={language} obj={listCat}/>}
+            {listCat && <NavBar cls ={clN} func={labelClick} lang={language} obj={listCat}/>}
             {listCat && <Filter cls ={clN} lang={language} obj={listCat}/>}
             <div className="footer footer-sm">
                 {/* <button type='submit' className="btn btn-primary btn-lg">Submit</button> */}
