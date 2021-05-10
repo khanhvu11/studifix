@@ -24,6 +24,7 @@ header {
   border: #eff2f7 solid;
   border-radius: 3rem;
   background-color: #eff2f7;
+  padding: 2rem;
 }
 @media (orientation: landscape) and (min-width: 1300px) {
   .scholarships {
