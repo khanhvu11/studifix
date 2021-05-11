@@ -11,9 +11,9 @@ services:
             - ./nodemon.json:/home/node/app/nodemon.json
         container_name: ts-backend
         expose:
-            - '4000'
+            - '80'
         ports:
-            - '4000:4000'
+            - '80:4000'
         command: npm run dev
 
     mongo:
