@@ -45,6 +45,7 @@ const joiFilterParams = Joi.object({
         state: [Joi.array().items(Joi.string().min(24).max(24)), null],
         nationality: [Joi.array().items(Joi.string().min(24).max(24)), null],
         religion: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        requirement: [Joi.array().items(Joi.string().min(24).max(24)), null],
 
         semester: [Joi.number().min(1).max(20), null]
     }
