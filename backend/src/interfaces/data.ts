@@ -7,7 +7,7 @@ export interface IUserInputList {
     semester: number;
     city: string[];
     state: string[];
-    nationality: string;
-    religion: string;
+    nationality: string[];
+    religion: string[];
     support: string[];
 }
