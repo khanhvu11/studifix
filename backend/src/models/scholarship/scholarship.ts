@@ -37,10 +37,7 @@ const ScholarshipSchema: Schema = new Schema({
     referenceDetail: [{ type: Schema.Types.ObjectId, ref: referenceDetail }],
     ageRestriction: { type: Number, required: true },
     nationality: [{ type: Schema.Types.ObjectId, ref: nationality }],
-<<<<<<< HEAD:backend/src/models/scholarship/scholarship.ts
-=======
     nationalityDetail: [{ type: Schema.Types.ObjectId, ref: nationalityDetail }],
->>>>>>> b80f8f1640ac4a8717a644a285f0f44c21143960:backend/source/models/scholarship/scholarship.ts
     requirement: [{ type: Schema.Types.ObjectId, ref: requirement }],
     religion: [{ type: Schema.Types.ObjectId, ref: religion }],
     collegeGraduation: { type: Number, required: true },
@@ -50,6 +47,7 @@ const ScholarshipSchema: Schema = new Schema({
     specialJobExperience: { type: Number, required: true },
     sideJobAllowed: { type: Boolean, required: true },
     currentJobHours: { type: Number, required: true },
+    imgURL: { type: String, required: true },
     commitment: [{ type: Schema.Types.ObjectId, ref: commitment }]
 });
 

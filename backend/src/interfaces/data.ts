@@ -3,10 +3,10 @@ export interface IUserInputList {
     occupation: string[];
     graduation: string[];
     course: string[];
-    country: string;
+    country: string[];
     semester: number;
-    city: string;
-    state: string;
+    city: string[];
+    state: string[];
     nationality: string;
     religion: string;
     support: string[];

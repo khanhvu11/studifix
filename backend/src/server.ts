@@ -6,12 +6,25 @@ import config from './config/config';
 import userRoutes from './routes/user';
 import dataRoutes from './routes/data';
 import mongoose from 'mongoose';
+import cors from 'cors';
 
 const LOCATION = 'Server';
 const router = express();
 
 /** CONNECT TO DB */
 console.log(config.mongo.url);
+
+const options: cors.CorsOptions = {
+    allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token'],
+    credentials: true,
+    methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+    origin: 'http://localhost:3000',
+    preflightContinue: false
+};
+
+router.use(cors(options));
+
+// router.options('*', cors(options));
 
 mongoose
     .connect(config.mongo.url, config.mongo.options)
