@@ -1,7 +1,7 @@
 import React from 'react'
 import './scholarship.css'
 
-export default function Scnolarship({scholarship}) {
+export default function Scholarship({scholarship}) {
     console.log(scholarship.graduation.map(val=>val.title.DE))
     return (
         <div className='scholarship-outer'>
@@ -15,11 +15,11 @@ export default function Scnolarship({scholarship}) {
             </div>
             <div className='scholarship__right-section'>
                 <h2>So passt dieses Stipendium zu dir:</h2>
-                {scholarship && Object.keys(scholarship).map(key => {
+                {scholarship && Object.keys(scholarship).map((key,id) => {
                     return( (Array.isArray(scholarship[key]))?
-                    <ul>
+                    <ul key={id}>
                         <li><h3>{key}</h3></li>
-                        {scholarship[key] && scholarship[key].map(val=><p>{val.title.DE}</p>)}
+                        {scholarship[key] && scholarship[key].map((val,key)=><p key={key}>{val.title.DE}</p>)}
                     </ul>:null)
                 })}
             </div>

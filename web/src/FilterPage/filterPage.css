@@ -6,7 +6,6 @@ body {
 
 .outerContainer {
   min-height: 500px;
-  overflow: scroll;
   max-width: auto;
   margin: 0 auto;
   height: 100vh;
