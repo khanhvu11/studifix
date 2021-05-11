@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    expose:
+      - '5555'
+    ports:
+      - '5555:3000'
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+      - ./backend/src:/home/node/app/src
+      - ./backend/nodemon.json:/home/node/app/nodemon.json
+    expose:
+      - '4000'
+    ports:
+      - '4000:4000'
+    command: npm run dev
+  mongo:
+    container_name: mongodb
+    build:
+      context: ./backend/mongo
+      dockerfile: Dockerfile
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - 27017:27017
+    command: [--auth]
