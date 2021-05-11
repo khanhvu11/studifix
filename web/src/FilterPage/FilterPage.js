@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Filter from './Filter/Filter';
-import NavBar from './NavBar/NavBar'
+import NavBar from './NavBar/NavBar';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCogs, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCogs, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default function FilterPage() {
     const language = 'DE'

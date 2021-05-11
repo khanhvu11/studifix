@@ -8,7 +8,7 @@ export default function Scholarship({scholarship}) {
             <h1>Name des Stipendiums</h1>
             <div className='scholarship-inner'>
                 <div className='scholarship__left-section'>
-                <img src="" alt="" />
+                <img src={scholarship.imgURL} alt="" />
                 <button type='button' className='bewerb'>Bewerb dich jetzt</button>
                 <button type='button' className='tipps'>Bewerbungstipps</button>
                 <h3>Erfahren mehr</h3>
