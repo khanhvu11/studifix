@@ -17,7 +17,7 @@ services:
       - ./backend/src:/home/node/app/src
       - ./backend/nodemon.json:/home/node/app/nodemon.json
     command: npm run dev
-
+  #mongo
   mongo:
     container_name: mongodb
     build:
