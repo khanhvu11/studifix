@@ -6,6 +6,7 @@ import course from './components/course';
 import employee from './components/employee';
 import graduation from './components/graduation';
 import institution from './components/institution';
+import localization from './components/localization';
 import nationality from './components/nationality';
 import nationalityDetail from './components/nationalityDetail';
 import occupation from './components/occupation';
@@ -21,10 +22,17 @@ const ScholarshipSchema: Schema = new Schema({
     _id: Schema.Types.ObjectId,
     responsible: { type: Schema.Types.ObjectId, ref: employee },
     provider: { type: Schema.Types.ObjectId, ref: provider },
-    link: { type: String, required: true },
+    link: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: String, required: true }
+    },
     occupation: [{ type: Schema.Types.ObjectId, ref: occupation }],
     semester: { type: Number, required: true },
-    graduation: [{ type: Schema.Types.ObjectId, ref: graduation }],
+    graduation: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: graduation }]
+    },
+
     course: [{ type: Schema.Types.ObjectId, ref: course }],
     country: [{ type: Schema.Types.ObjectId, ref: country }],
     city: [{ type: Schema.Types.ObjectId, ref: city }],

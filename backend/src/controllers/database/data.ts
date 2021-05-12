@@ -4,7 +4,7 @@ import { scholarshipFilterqueryGenerator } from '../../helpers/dataBase';
 
 const getSelectionDataFromDB = (): Promise<any> => {
     return new Promise(async (resolve, reject) => {
-        const filter: any = { dataSetType: 'user' };
+        let filter: any = { dataSetType: 'user' };
 
         SelectionData.findOne(filter, {})
             .populate('occupation.values')
@@ -30,12 +30,14 @@ const getSelectionDataFromDB = (): Promise<any> => {
 
 const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any> => {
     return new Promise(async (resolve, reject) => {
-        const filter = scholarshipFilterqueryGenerator(userInput.selectionData);
+        let filter = scholarshipFilterqueryGenerator(userInput.selectionData);
+        filter = { _id: '60897fb394e4f33434126ba1' };
 
         Scholarship.find(filter, {})
             .populate('institution')
             .populate('occupation')
-            .populate('graduation')
+            .populate('graduation.value')
+            .populate('graduation.localization', { _id: 0 })
             .populate('course')
             .populate('country')
             .populate('city')
@@ -51,8 +53,11 @@ const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any> => {
             .populate('referenceDetail')
             .populate('responsible', { position: 0 })
             .populate('provider')
+            .populate('link.localization', { _id: 0 })
             .exec()
             .then((result) => {
+                console.log(result);
+
                 resolve(result);
             })
             .catch((error) => reject(error));
