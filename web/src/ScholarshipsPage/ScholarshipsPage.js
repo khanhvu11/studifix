@@ -8,16 +8,27 @@ export default function ScholarshipsPage(props) {
     const {state} = props.location
     console.log(state)
     return (
-        <div>
-            <header>
-                <h1>Studifix</h1>
+        <div className="scholarshipsPage">
+            <div className="header">
+                <h1><span>Studi</span>fix</h1>
                 <Navbar/>
-            </header>
-            <section>
-                <Slider/>
+            </div>
+            <div className="section">
+                <Slider nr={state.scholarships.length}/>
                 <Scholarships scholarships = {state.scholarships}/>
-            </section>
-            <footer></footer>
+            </div>
+            <div className="footer">
+              {/*   <div className="buttons">
+                    <button>Zurück zur Stipendiensuche</button>
+                    <button>Zurück zur Startseite</button>
+                </div>
+                <div>
+                    <div>
+                        <h1>Hast du Fragen oder Anregungen?<br></br>Dann schreib uns gerne</h1>
+                        <button>Nachricht senden</button>
+                    </div>
+                </div> */}
+            </div>
         </div>
     )
 }
