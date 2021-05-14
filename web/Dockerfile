@@ -10,12 +10,11 @@ RUN npm install
 
 COPY . ./
 
-ENV REACT_APP_NOT_SECRET_CODE=abcdef
+ENV REACT_APP_API_URL_PREFIX=http://studifix.mi.hdm-stuttgart.de
 
 CMD ["npm", "start"]    
 
 From base as production
-
 
 
 RUN npm run build

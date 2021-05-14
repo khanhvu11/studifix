@@ -7,6 +7,7 @@ import Options from './Options';
 import Dropdown from './Dropdown';
 
 function Filter({ cls, lang, obj }) {
+  const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
   const [result, setResult] = useState({});
   const history = useHistory();
 
@@ -31,7 +32,7 @@ function Filter({ cls, lang, obj }) {
     console.log(JSON.stringify(result));
 
     // fetch('http://studifix.mi.hdm-stuttgart.de/api/data/filter/scholarships', {
-    fetch('http://localhost/api/data/filter/scholarships', {
+    fetch(URL + '/api/data/filter/scholarships', {
       method: 'POST',
       body: JSON.stringify({ selectionData: result }),
       headers: { 'Content-type': 'application/json' },

@@ -7,17 +7,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCogs, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default function FilterPage() {
+  const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
   const language = 'DE';
   const [clN, setClN] = useState('');
   const [listCat, setListCat] = useState({});
 
-  console.log(process.env);
-  console.log(process.env.API_URL);
+  console.log(URL);
 
   useEffect(() => {
     /* https://studifix-mock-api-default-rtdb.europe-west1.firebasedatabase.app/.json */
     /* http://localhost:4000/data/selectiondata */
-    fetch('http://localhost/api/data/selectiondata')
+    fetch(URL + '/api/data/selectiondata')
       //fetch('http://studifix.mi.hdm-stuttgart.de/api/data/selectiondata')
       .then((response) => response.json())
       .then((items) => {
