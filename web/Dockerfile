@@ -10,7 +10,7 @@ RUN npm install
 
 COPY . ./
 
-ENV API_URL_PREFIX=http://studifix.mi.hdm-stuttgart.de/
+ENV REACT_APP_NOT_SECRET_CODE=abcdef
 
 CMD ["npm", "start"]    
 
