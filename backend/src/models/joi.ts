@@ -43,10 +43,11 @@ const joiFilterParams = Joi.object({
         course: [Joi.array().items(Joi.string().min(24).max(24)), null],
         support: [Joi.array().items(Joi.string().min(24).max(24)), null],
         state: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        nationality: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        religion: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        requirement: [Joi.array().items(Joi.string().min(24).max(24)), null],
 
-        semester: [Joi.number().min(1).max(20), null],
-        nationality: [Joi.string().min(24).max(24), null],
-        religion: [Joi.string().min(24).max(24), null]
+        semester: [Joi.number().min(1).max(20), null]
     }
 });
 

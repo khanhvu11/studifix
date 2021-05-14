@@ -2,18 +2,22 @@ version: '3.7'
 
 services:
   web:
+    container_name: web
     build:
       context: ./web
       dockerfile: Dockerfile
+
     expose:
-      - '5555'
+      - '80'
     ports:
-      - '5555:3000'
+      - '80:3000'
   api:
+    container_name: api
     build:
       context: ./backend
       dockerfile: Dockerfile
       target: base
+
     volumes:
       - ./backend/src:/home/node/app/src
       - ./backend/nodemon.json:/home/node/app/nodemon.json
@@ -33,3 +37,8 @@ services:
     ports:
       - 27017:27017
     command: [--auth]
+  proxy:
+    container_name: proxy
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile

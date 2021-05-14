@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"67d09567fe384e589ef42a72047ff1a0","collectionName":"courses"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"5e386d681d52434bac5bdbefcf6fc2e4","collectionName":"courses"}
