@@ -11,6 +11,8 @@ export default function FilterPage() {
   const [clN, setClN] = useState('');
   const [listCat, setListCat] = useState({});
 
+  console.log(process.env);
+
   useEffect(() => {
     /* https://studifix-mock-api-default-rtdb.europe-west1.firebasedatabase.app/.json */
     /* http://localhost:4000/data/selectiondata */

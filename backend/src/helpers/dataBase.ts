@@ -33,3 +33,23 @@ export const scholarshipFilterqueryGenerator = (idLists: IUserInputList): any =>
     }
     return { $and: tempArray };
 };
+
+export const populationValuesGenerator = (attributes: string[]): string => {
+    let tempArr: string[] = [];
+
+    attributes.map((attr) => {
+        tempArr.push(attr + '.value');
+    });
+
+    return tempArr.join(' ');
+};
+
+export const populationLocalizationsGenerator = (attributes: string[]): string => {
+    let tempArr: string[] = [];
+
+    attributes.map((attr) => {
+        tempArr.push(attr + '.localization');
+    });
+
+    return tempArr.join(' ');
+};

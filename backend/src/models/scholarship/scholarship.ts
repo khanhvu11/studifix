@@ -20,43 +20,155 @@ import supportSpecific from './components/supportSpecific';
 
 const ScholarshipSchema: Schema = new Schema({
     _id: Schema.Types.ObjectId,
-    responsible: { type: Schema.Types.ObjectId, ref: employee },
-    provider: { type: Schema.Types.ObjectId, ref: provider },
+
+    responsible: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: Schema.Types.ObjectId, ref: employee }
+    },
+
+    provider: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: Schema.Types.ObjectId, ref: provider }
+    },
+
     link: {
         localization: { type: Schema.Types.ObjectId, ref: localization },
         value: { type: String, required: true }
     },
-    occupation: [{ type: Schema.Types.ObjectId, ref: occupation }],
-    semester: { type: Number, required: true },
+
+    occupation: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: occupation }]
+    },
+
+    semester: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: Number, required: true }
+    },
+
     graduation: {
         localization: { type: Schema.Types.ObjectId, ref: localization },
         value: [{ type: Schema.Types.ObjectId, ref: graduation }]
     },
 
-    course: [{ type: Schema.Types.ObjectId, ref: course }],
-    country: [{ type: Schema.Types.ObjectId, ref: country }],
-    city: [{ type: Schema.Types.ObjectId, ref: city }],
-    state: [{ type: Schema.Types.ObjectId, ref: state }],
-    institution: [{ type: Schema.Types.ObjectId, ref: institution }],
-    support: [{ type: Schema.Types.ObjectId, ref: support }],
-    supportSpecific: [{ type: Schema.Types.ObjectId, ref: supportSpecific }],
-    referenceRequiered: { type: Boolean, required: true },
-    referenceAllowed: { type: Boolean, required: true },
-    referenceDetail: [{ type: Schema.Types.ObjectId, ref: referenceDetail }],
-    ageRestriction: { type: Number, required: true },
-    nationality: [{ type: Schema.Types.ObjectId, ref: nationality }],
-    nationalityDetail: [{ type: Schema.Types.ObjectId, ref: nationalityDetail }],
-    requirement: [{ type: Schema.Types.ObjectId, ref: requirement }],
-    religion: [{ type: Schema.Types.ObjectId, ref: religion }],
-    collegeGraduation: { type: Number, required: true },
-    collegeGraduationState: [{ type: Schema.Types.ObjectId, ref: state }],
-    jobTrainingGraduation: { type: Number, required: true },
-    uniGraduation: { type: Number, required: true },
-    specialJobExperience: { type: Number, required: true },
-    sideJobAllowed: { type: Boolean, required: true },
-    currentJobHours: { type: Number, required: true },
-    imgURL: { type: String, required: true },
-    commitment: [{ type: Schema.Types.ObjectId, ref: commitment }]
+    course: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: course }]
+    },
+    country: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: country }]
+    },
+
+    city: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: city }]
+    },
+
+    state: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: state }]
+    },
+
+    institution: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: institution }]
+    },
+
+    support: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: support }]
+    },
+
+    supportSpecific: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: supportSpecific }]
+    },
+
+    referenceRequiered: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: Boolean, required: true }
+    },
+
+    referenceAllowed: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: Boolean, required: true }
+    },
+
+    referenceDetail: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: referenceDetail }]
+    },
+
+    age: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: Number, required: true }
+    },
+
+    nationality: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: nationality }]
+    },
+
+    nationalityDetail: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: nationalityDetail }]
+    },
+
+    requirement: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: requirement }]
+    },
+
+    religion: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: religion }]
+    },
+
+    collegeGraduation: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: Number, required: true }
+    },
+
+    collegeGraduationState: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: state }]
+    },
+
+    jobTrainingGraduation: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: Number, required: true }
+    },
+
+    uniGraduation: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: Number, required: true }
+    },
+
+    specialJobExperience: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: Number, required: true }
+    },
+
+    sideJobAllowed: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: Boolean, required: true }
+    },
+
+    currentJobHours: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: Number, required: true }
+    },
+
+    imgURL: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: String, required: true }
+    },
+
+    commitment: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: [{ type: Schema.Types.ObjectId, ref: commitment }]
+    }
 });
 
 export default mongoose.model('scholarships', ScholarshipSchema);

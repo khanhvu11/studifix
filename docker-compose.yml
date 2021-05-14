@@ -6,6 +6,7 @@ services:
     build:
       context: ./web
       dockerfile: Dockerfile
+      target: base
 
   api:
     container_name: api
