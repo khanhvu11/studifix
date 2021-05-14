@@ -1,16 +1,27 @@
 .slider-outer {
-  position: absolute;
-  top: 100px;
+  position: relative;
   height: 500px;
   width: 100%;
   display: flex;
-  background-color: #478df7;
+  background-color: #a5c7fa;
+  padding: 2rem 0;
 }
 
 .slider__left-section {
   width: 50%;
   padding: 2rem;
   color: whitesmoke;
+}
+
+.slider__left-section h2{
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+.slider__left-section p{
+  color: black;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .slider__left-section button {
@@ -26,8 +37,22 @@
   margin: 0;
 }
 
+.slider-outer img{
+  position: absolute;
+  right: 0%;
+  height: 400px;
+}
+
 @media (orientation: landscape) and (min-width: 1300px) {
   .slider__left-section {
     padding-left: 5%;
+    width: 40%;
+  }
+
+  .slider-outer img{
+    position: absolute;
+    right: 10%;
+    transform: translateY(-10%);
+    height: 450px;
   }
 }

@@ -1,16 +1,17 @@
 import React from 'react'
+import searchImg from './students.svg'
 
 import './slider.css'
 
-export default function Slider() {
+export default function Slider({nr}) {
     return (
         <div className="slider-outer">
             <div className='slider__left-section'>
-                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, voluptas fugit.</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur repellat necessitatibus harum reprehenderit eveniet ducimus nulla incidunt libero culpa tempore.</p>
+                <h2>Auf Basis von deinen angegebenen Daten haben wir {nr} Ergebnisse für dich</h2>
+                <p>Schau sieh dir jetzt und bewirb dich direkt auf deinen Favoriten. Schau dir dazu auch gerne noch unsere Bewerbungstipps an.</p>
                 <button>Zu den Tipps</button>
             </div>
-            <img src="../../public/search.png" alt="search" />
+            <img src={searchImg} alt="search" />
         </div>
     )
 }

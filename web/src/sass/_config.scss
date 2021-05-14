@@ -1,0 +1,18 @@
+$primary-color: #1170fe;
+$HG-blau-grau: #eff2f7;
+$HG-grau: #f7f7f7;
+$mittelgrau: #e8e9ea;
+$dunkelgrau: #484848;
+
+$signalrot: #ff0000;
+$signalgelb:#ffeb00;
+$signalgrün: #5cea3a;
+$schatten: #0b439d;
+
+@mixin quadratButtons($schattenColor){
+    border-radius: 1.5rem;
+    box-shadow: 1px 1px 20px 1px $schattenColor;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+}
