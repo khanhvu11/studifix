@@ -31,7 +31,7 @@ export default function FilterPage() {
           );
         setClN(labels[0]);
       });
-  }, []);
+  }, [URL]);
 
   var labelClick = (cn) => {
     setClN(cn);

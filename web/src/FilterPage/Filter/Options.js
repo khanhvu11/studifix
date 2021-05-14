@@ -31,7 +31,11 @@ export default function MultipleChoice({func, _key, cls, lang, obj}) {
                 setRemovedOption(newList[0])
                 newList.splice(0, 1)
             }
+            if(isChosen){
+                setRemovedOption('')
+            }
         }
+
 
         setOptionList(newList)    
         /* getCategory(obj.title[lang], newList)   */  
@@ -42,7 +46,7 @@ export default function MultipleChoice({func, _key, cls, lang, obj}) {
 
     return (
         <>
-        {obj.title && obj.mandatory && obj.description &&
+        {obj.title && obj.description &&
         <div className={(obj.title[lang]===cls)? 'mplChoice active': 'mplChoice'}>
             <label className="label-sml" htmlFor={obj.title[lang]}>{obj.title[lang]} {/*
                 obj.mandatory ? "*": ""
