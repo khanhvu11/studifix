@@ -10,6 +10,7 @@
 .scholarship-outer h1 {
   color: #1170fe;
   padding: 1rem 0;
+  font-size: 2.5rem;
 }
 
 .scholarship-inner {
@@ -17,21 +18,21 @@
   display: flex;
   /*   flex-direction: column;
   align-items: center; */
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 2rem;
   width: 100%;
 }
 
 .scholarship__left-section {
-  position: static;
-  width: 40%;
+/*   position: static; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 50%;
 }
 
 .scholarship__left-section img {
-  height: 300px;
+  height: auto;
   width: 100%;
   background-color: white;
 }
@@ -69,6 +70,7 @@
 .scholarship__right-section {
   position: static;
   padding: 0 1.5rem;
+  width: 50%;
 }
 
 .scholarship__right-section h2 {
@@ -78,11 +80,17 @@
 
 .scholarship__right-section p {
   font-weight: lighter;
+  font-size: 1.2rem;
 }
 
 @media (orientation: landscape) and (min-width: 1300px) {
   .scholarship-outer {
     width: 100%;
+  }
+
+  
+  .scholarship__left-section{
+    width:40%;
   }
 
   .scholarship__left-section img {

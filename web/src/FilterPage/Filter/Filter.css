@@ -50,11 +50,11 @@ option {
   justify-content: center;
   align-items: center;
   margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  position: relative;
+ /*  top: 50%;
+  left: 50%; */
+  /* -ms-transform: translate(-50%, -50%); */
+  /* transform: translate(-50%, -50%); */
 }
 
 .button-grid {
@@ -112,12 +112,17 @@ button.sub1 {
   height: 100px;
   background-color: #1170fe;
   color: #ffffff;
-  top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* top: 50%;
   left: 20%;
   -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  transform: translateY(-50%); */
   border-radius: 2rem;
   border: none;
+  margin-top: 4rem;
 }
 
 @media (min-width: 1030px) {
@@ -131,6 +136,22 @@ button.sub1 {
     /*     margin: 3rem 0 3rem 20%;
     margin-left: min(300px); */
   }
+
+  .active {
+    top: 50%;
+    left: 50%; 
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .sub-active {
+    top: 50%;
+    left: 30%; 
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin-top: 0;
+  }
+
   .label-sml {
     display: none;
   }

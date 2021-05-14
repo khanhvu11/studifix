@@ -15,11 +15,11 @@ export default function Scholarship({scholarship}) {
             </div>
             <div className='scholarship__right-section'>
                 <h2>So passt dieses Stipendium zu dir:</h2>
-                {scholarship && Object.keys(scholarship).map((key,id) => 
+                {scholarship && Object.keys(scholarship).map((key,id) => scholarship[key].localization?
                     <ul key={id}>
                         <li><h3>{scholarship[key].localization.title.DE}</h3></li>
-                        {(Array.isArray(scholarship[key])) && scholarship[key].value.map((val,key)=><p key={key}>{val.title.DE}</p>)}
-                    </ul>)
+                        {(Array.isArray(scholarship[key].value))?scholarship[key].value.map((val,key)=><p key={key}>{val.title.DE}</p>):<p>{typeof scholarship[key].value !=='object'?scholarship[key].value:null }</p>}
+                    </ul>:null)
                 }
             </div>
             </div>

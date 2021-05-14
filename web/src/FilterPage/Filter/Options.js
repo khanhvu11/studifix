@@ -48,7 +48,7 @@ export default function MultipleChoice({func, _key, cls, lang, obj}) {
                 obj.mandatory ? "*": ""
             */}</label> 
             {
-                obj.mandatory ? "*": ""
+                !obj.mandatory ? "*": ""
 
             }
             <p>{obj.description[lang]}</p>
