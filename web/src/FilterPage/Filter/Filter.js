@@ -30,8 +30,8 @@ function Filter({ cls, lang, obj }) {
     }) */
     console.log(JSON.stringify(result));
 
-    // fetch('http://studifix.mi.hdm-stuttgart.de/api/data/filter/scholarships', {
-    fetch('http://localhost/api/data/filter/scholarships', {
+    fetch('http://studifix.mi.hdm-stuttgart.de/api/data/filter/scholarships', {
+      // fetch('http://localhost/api/data/filter/scholarships', {
       method: 'POST',
       body: JSON.stringify({ selectionData: result }),
       headers: { 'Content-type': 'application/json' },

@@ -16,8 +16,8 @@ export default function FilterPage() {
   useEffect(() => {
     /* https://studifix-mock-api-default-rtdb.europe-west1.firebasedatabase.app/.json */
     /* http://localhost:4000/data/selectiondata */
-    fetch('http://localhost/api/data/selectiondata')
-      //fetch('http://studifix.mi.hdm-stuttgart.de/api/data/selectiondata')
+    // fetch('http://localhost/api/data/selectiondata')
+    fetch('http://studifix.mi.hdm-stuttgart.de/api/data/selectiondata')
       .then((response) => response.json())
       .then((items) => {
         setListCat(items.selectionData);
