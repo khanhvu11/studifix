@@ -5,7 +5,7 @@ export default function Scholarship({scholarship}) {
     console.log(scholarship.graduation.map(val=>val.title.DE))
     return (
         <div className='scholarship-outer'>
-            <h1>{scholarship.provider.name}</h1>
+            <h1>{scholarship.provider.value.name}</h1>
             <div className='scholarship-inner'>
                 <div className='scholarship__left-section'>
                 <img src={scholarship.imgURL} alt="" />
@@ -18,8 +18,8 @@ export default function Scholarship({scholarship}) {
                 {scholarship && Object.keys(scholarship).map((key,id) => {
                     return( (Array.isArray(scholarship[key]))?
                     <ul key={id}>
-                        <li><h3>{key}</h3></li>
-                        {scholarship[key] && scholarship[key].map((val,key)=><p key={key}>{val.title.DE}</p>)}
+                        <li><h3>{scholarship[key].localization.title.DE}</h3></li>
+                        {scholarship[key].value && scholarship[key].value.map((val,key)=>(Array.isArray(val))?<p key={key}>{val.title.DE}</p>:<p>{val}</p>)}
                     </ul>:null)
                 })}
             </div>
