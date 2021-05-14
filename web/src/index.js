@@ -10,7 +10,7 @@ import './FilterPage/filterPage.css'
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route path="/filterPage" component={FilterPage}/>
+      <Route path="/" exact component={FilterPage}/>
       <Route path="/scholarshipsPage" component={ScholarshipsPage}/>
     </Switch>
   </Router>,

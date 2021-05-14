@@ -5,7 +5,7 @@ export default function Scholarship({scholarship}) {
     console.log(scholarship.graduation.map(val=>val.title.DE))
     return (
         <div className='scholarship-outer'>
-            <h1>Name des Stipendiums</h1>
+            <h1>{scholarship.provider.name}</h1>
             <div className='scholarship-inner'>
                 <div className='scholarship__left-section'>
                 <img src={scholarship.imgURL} alt="" />

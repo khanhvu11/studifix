@@ -1,12 +1,15 @@
 .scholarship-outer {
   width: 100%;
-  margin: 5rem auto;
+  margin: auto;
+  padding: 1rem 0;
   min-width: 800px;
+  border-bottom: #ffffff solid;
+  border-width: 0.7rem;
 }
 
 .scholarship-outer h1 {
   color: #1170fe;
-  margin-left: 2%;
+  padding: 1rem 0;
 }
 
 .scholarship-inner {
@@ -14,6 +17,7 @@
   display: flex;
   /*   flex-direction: column;
   align-items: center; */
+  justify-content: space-around;
   margin-top: 2rem;
   width: 100%;
 }
@@ -28,7 +32,7 @@
 
 .scholarship__left-section img {
   height: 300px;
-  width: 300px;
+  width: 100%;
   background-color: white;
 }
 
@@ -64,7 +68,7 @@
 
 .scholarship__right-section {
   position: static;
-  width: 60%;
+  padding: 0 1.5rem;
 }
 
 .scholarship__right-section h2 {
@@ -82,8 +86,7 @@
   }
 
   .scholarship__left-section img {
-    height: 50%;
-    width: 80%;
+    height: auto;
     background-color: white;
   }
 }
