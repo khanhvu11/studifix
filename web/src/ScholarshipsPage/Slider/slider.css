@@ -1,7 +1,7 @@
 .slider-outer {
-  position: relative;
+ /*  position: relative; */
   height: 500px;
-  width: 100%;
+  width: auto;
   display: flex;
   background-color: #a5c7fa;
   padding: 2rem 0;
@@ -38,9 +38,9 @@
 }
 
 .slider-outer img{
-  position: absolute;
+
   right: 0%;
-  height: 400px;
+  width: 50%;
 }
 
 @media (orientation: landscape) and (min-width: 1300px) {

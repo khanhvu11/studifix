@@ -1,0 +1,238 @@
+{
+    "_id": {
+        "$oid": "60897fb394e4f33434126ba2"
+    },
+    "link": {
+        "value": "https://www.elitenetzwerk.bayern.de/start/foerderangebote/max-weber-programm/aus-dem-studium-zum-stipendium",
+        "localization": {
+            "$oid": "609bb695109a4fd0eda08676"
+        }
+    },
+    "semester": {
+        "value": 3,
+        "localization": {
+            "$oid": "609bb7015f5e4e0a2cf8b620"
+        }
+    },
+    "referenceRequiered": {
+        "value": false,
+        "localization": {
+            "$oid": "609bb7195f5e4e0a2cf8b621"
+        }
+    },
+    "referenceAllowed": {
+        "value": true,
+        "localization": {
+            "$oid": "609bb7265f5e4e0a2cf8b622"
+        }
+    },
+    "age": {
+        "value": null,
+        "localization": {
+            "$oid": "609bb73a5f5e4e0a2cf8b623"
+        }
+    },
+    "collegeGraduation": {
+        "value": null,
+        "localization": {
+            "$oid": "609bb75f5f5e4e0a2cf8b624"
+        }
+    },
+    "collegeGraduationState": {
+        "value": null,
+        "localization": {
+            "$oid": "609bb76e5f5e4e0a2cf8b625"
+        }
+    },
+    "jobTrainingGraduation": {
+        "value": null,
+        "localization": {
+            "$oid": "609e3de4e62d9b044804c717"
+        }
+    },
+    "uniGraduation": {
+        "value": null,
+        "localization": {
+            "$oid": "609e3e04e62d9b044804c718"
+        }
+    },
+    "sideJobAllowed": {
+        "value": false,
+        "localization": {
+            "$oid": "609e3e27e62d9b044804c719"
+        }
+    },
+    "currentJobHours": {
+        "value": null,
+        "localization": {
+            "$oid": "609e3e7fe62d9b044804c71a"
+        }
+    },
+    "specialJobExperience": {
+        "value": null,
+        "localization": {
+            "$oid": "609e3ea6e62d9b044804c71b"
+        }
+    },
+    "course": {
+        "value": null,
+        "localization": {
+            "$oid": "609e3eb2e62d9b044804c71c"
+        }
+    },
+    "country": {
+        "value": null,
+        "localization": {
+            "$oid": "609e3f25e62d9b044804c71e"
+        }
+    },
+    "city": {
+        "value": null,
+        "localization": {
+            "$oid": "609e3f25e62d9b044804c71e"
+        }
+    },
+    "state": {
+        "value": [
+            {
+                "$oid": "607c4936c59a9135d08e7b5a"
+            }
+        ],
+        "localization": {
+            "$oid": "609e3f30e62d9b044804c71f"
+        }
+    },
+    "institution": {
+        "value": null,
+        "localization": {
+            "$oid": "609e3f4ae62d9b044804c720"
+        }
+    },
+    "graduation": {
+        "value": [
+            {
+                "$oid": "607c48f1c59a9135d08e7b51"
+            },
+            {
+                "$oid": "607c48f1c59a9135d08e7b54"
+            },
+            {
+                "$oid": "607c48f1c59a9135d08e7b55"
+            },
+            {
+                "$oid": "607c48f1c59a9135d08e7b56"
+            },
+            {
+                "$oid": "607c48f1c59a9135d08e7b52"
+            }
+        ],
+        "localization": {
+            "$oid": "609e3f62e62d9b044804c721"
+        }
+    },
+    "occupation": {
+        "value": [
+            {
+                "$oid": "607c48dec59a9135d08e7b4d"
+            }
+        ],
+        "localization": {
+            "$oid": "609e3fefe62d9b044804c722"
+        }
+    },
+    "religion": {
+        "value": null,
+        "localization": {
+            "$oid": "609e3ffee62d9b044804c723"
+        }
+    },
+    "supportSpecific": {
+        "value": [
+            {
+                "$oid": "607c974e63f8eb560ea0dd90"
+            },
+            {
+                "$oid": "607c974e63f8eb560ea0dd91"
+            },
+            {
+                "$oid": "6097c6ca3b22204d5045fde0"
+            }
+        ],
+        "localization": {
+            "$oid": "609e4018e62d9b044804c724"
+        }
+    },
+    "support": {
+        "value": [
+            {
+                "$oid": "607c94bb9f39dd8102edc5b0"
+            },
+            {
+                "$oid": "607c94bb9f39dd8102edc5b1"
+            },
+            {
+                "$oid": "607c94bb9f39dd8102edc5b2"
+            }
+        ],
+        "localization": {
+            "$oid": "609e402ce62d9b044804c725"
+        }
+    },
+    "provider": {
+        "value": {
+            "$oid": "6097c49f3b22204d5045fdde"
+        },
+        "localization": {
+            "$oid": "609e403de62d9b044804c726"
+        }
+    },
+    "referenceDetail": {
+        "value": [
+            {
+                "$oid": "607c49dfc59a9135d08e7c2d"
+            }
+        ],
+        "localization": {
+            "$oid": "609e406ce62d9b044804c727"
+        }
+    },
+    "nationality": {
+        "value": [
+            {
+                "$oid": "607c49ffc59a9135d08e7c31"
+            }
+        ],
+        "localization": {
+            "$oid": "609e4082e62d9b044804c728"
+        }
+    },
+    "nationalityDetail": {
+        "value": [
+            {
+                "$oid": "6097d5f0f14e485b0cf4ae30"
+            }
+        ],
+        "localization": {
+            "$oid": "609e4096e62d9b044804c729"
+        }
+    },
+    "requirement": {
+        "value": [
+            {
+                "$oid": "607c94ef9f39dd8102edc5c4"
+            }
+        ],
+        "localization": {
+            "$oid": "609e40b4e62d9b044804c72a"
+        }
+    },
+    "commitment": {
+        "value": null,
+        "localization": {
+            "$oid": "609e40c2e62d9b044804c72b"
+        }
+    },
+    "imgURL": {
+        "value": "https://firebasestorage.googleapis.com/v0/b/studifix-mock-api.appspot.com/o/was-ist-remote-work-definition-slider.jpg?alt=media&token=f471134c-9727-4408-a1a4-35d860c3ebf9"
+    }
+}

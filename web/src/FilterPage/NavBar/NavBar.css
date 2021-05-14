@@ -104,7 +104,7 @@ button {
 
 @media (min-width: 1030px) {
   .filter-nav {
-    position: absolute;
+    position: relative;
     top: 0rem;
     min-height: 900px;
     min-width: 350px;
