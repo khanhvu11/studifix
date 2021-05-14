@@ -47,10 +47,10 @@ export default function MultipleChoice({func, _key, cls, lang, obj}) {
             <label className="label-sml" htmlFor={obj.title[lang]}>{obj.title[lang]} {/*
                 obj.mandatory ? "*": ""
             */}</label> 
-            {
+            {/* {
                 !obj.mandatory ? "*": ""
 
-            }
+            } */}
             <p>{obj.description[lang]}</p>
             <div className="button-grid">
                 {obj.values && obj.values.map((value,id) => <OptionButton active={removedOption===value._id?false:true} key={id} buttonFunc={getOption} buttonLang={lang} value={value} />)}

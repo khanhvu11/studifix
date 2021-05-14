@@ -1,6 +1,6 @@
 .scholarship-outer {
   width: 100%;
-  margin: auto;
+  margin: auto 2rem;
   padding: 1rem 0;
   min-width: 800px;
   border-bottom: #ffffff solid;
@@ -39,6 +39,7 @@
 
 .scholarship__left-section h3 {
   color: #1170fe;
+  font-weight: bold;
 }
 
 .scholarship__left-section button {
@@ -78,9 +79,13 @@
   font-weight: 1000;
 }
 
+.scholarship__right-section h3 {
+  font-weight: 600;
+}
+
 .scholarship__right-section p {
   font-weight: lighter;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 @media (orientation: landscape) and (min-width: 1300px) {
