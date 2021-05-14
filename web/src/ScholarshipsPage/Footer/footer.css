@@ -1,0 +1,71 @@
+.scholarshipsFooter{
+    position: absolute;
+    width: 100%;
+    margin: 1rem auto;
+  }
+  
+  .scholarshipsFooter .buttons{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .scholarshipsFooter .buttons .findingScholarships{
+    position: relative;
+    height: 80px;
+    width: 40%;
+    background-color: #1170fe;
+    color: #ffffff;
+    border-radius: 2rem;
+    border: none;
+    margin: 0 2rem;
+  }
+
+  .scholarshipsFooter .buttons .startSite{
+    position: relative;
+    height: 80px;
+    width: 30%;
+    color: #1170fe;
+    background-color: #ffffff;
+    border-radius: 2rem;
+    border: none;
+    margin: 0 2rem;
+    box-shadow: 0 1px 20px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .scholarshipsFooter .buttons h4{
+      font-weight: bold;
+  }
+
+  .scholarshipsFooter .message{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 4rem;
+      background-color: #5b9af8;
+  }
+
+  .scholarshipsFooter .message .questions{
+      width: 60%;
+      color:white;
+      padding-top: 4rem;
+      padding-left: 2rem;
+  }
+
+  .scholarshipsFooter .message .sendingMess{
+    position: relative;
+    height: 50px;
+    width: 50%;
+    color: #1170fe;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    border: none;
+    margin-top: 2rem;
+  }
+
+  .scholarshipsFooter .message img{
+      height: 400px;
+      width: auto;
+      padding: 1rem;
+  }

@@ -32,7 +32,6 @@ body {
 }
 
 .section{
-  position: inherit;
   top: 100px;
   height: 100%;
 }
@@ -49,14 +48,6 @@ body {
   transform: translateY(-2%);
 }
 
-.footer{
-  position: relative;
-  bottom: 0;
-}
-
-.footer .buttons{
-  display: flex;
-}
 @media (orientation: landscape) and (min-width: 1300px) {
   .scholarships {
     width: 90%;
