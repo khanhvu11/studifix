@@ -26,7 +26,7 @@ export default function NavBar({ cls, func , lang, obj} ){
             <div className='logo'><h1><span>Studi</span>fix</h1></div>
             <ul>
                 {Object.keys(obj).map((key, id) => {
-                    if(key !=="city" && key !=="country"){ return (obj[key].title && <li key={id} className={label===obj[key].title[lang]?"focus":""}><label htmlFor={obj[key].title[lang]} onClick={() => onClickHandler(obj[key].title[lang])}>{obj[key].title[lang]}</label></li>)}})}
+                    if(key !=="city" && key !=="country"){ return (obj[key].title && <li key={id} className={label===obj[key].title[lang]?"focus":""}><label htmlFor={obj[key].title[lang]} onClick={() => onClickHandler(obj[key].title[lang])}>{obj[key].title[lang]}</label>{obj[key].mandatory ? " *": ""}</li>)}})}
 
                 <li className={(label==="submit"?"focus":"") + " submit"}><label onClick={() => onClickHandler("submit")}>Submit</label></li>
             </ul>

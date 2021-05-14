@@ -1,6 +1,6 @@
 .scholarship-outer {
   width: 100%;
-  margin: auto;
+  margin: auto 2rem;
   padding: 1rem 0;
   min-width: 800px;
   border-bottom: #ffffff solid;
@@ -10,6 +10,7 @@
 .scholarship-outer h1 {
   color: #1170fe;
   padding: 1rem 0;
+  font-size: 2.5rem;
 }
 
 .scholarship-inner {
@@ -17,27 +18,28 @@
   display: flex;
   /*   flex-direction: column;
   align-items: center; */
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 2rem;
   width: 100%;
 }
 
 .scholarship__left-section {
-  position: static;
-  width: 40%;
+/*   position: static; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 50%;
 }
 
 .scholarship__left-section img {
-  height: 300px;
+  height: auto;
   width: 100%;
   background-color: white;
 }
 
 .scholarship__left-section h3 {
   color: #1170fe;
+  font-weight: bold;
 }
 
 .scholarship__left-section button {
@@ -69,6 +71,7 @@
 .scholarship__right-section {
   position: static;
   padding: 0 1.5rem;
+  width: 50%;
 }
 
 .scholarship__right-section h2 {
@@ -76,13 +79,23 @@
   font-weight: 1000;
 }
 
+.scholarship__right-section h3 {
+  font-weight: 600;
+}
+
 .scholarship__right-section p {
   font-weight: lighter;
+  font-size: 1.5rem;
 }
 
 @media (orientation: landscape) and (min-width: 1300px) {
   .scholarship-outer {
     width: 100%;
+  }
+
+  
+  .scholarship__left-section{
+    width:40%;
   }
 
   .scholarship__left-section img {

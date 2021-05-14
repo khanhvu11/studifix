@@ -37,6 +37,7 @@ mongoose
 
 router.use((req, res, next) => {
     logging.info(LOCATION, `METHOD - [${req.method}], URL - [${req.url}], IP - [${req.socket.remoteAddress}]`);
+    console.log(req.url);
 
     res.on('finish', () => {
         logging.info(LOCATION, `METHOD - [${req.method}], URL - [${req.url}], STATUS - [${res.statusCode}]`);
@@ -59,8 +60,8 @@ router.use((req, res, next) => {
 });
 
 /** ROUTES */
-router.use('/users', userRoutes);
-router.use('/data', dataRoutes);
+router.use('/api/users', userRoutes);
+router.use('/api/data', dataRoutes);
 
 /** ERRORS */
 router.use((req, res, next) => {

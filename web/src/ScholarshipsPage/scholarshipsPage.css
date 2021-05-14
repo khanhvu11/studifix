@@ -1,12 +1,16 @@
 body {
+  overflow: scroll;
   padding: 0;
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
   height: 100%;
+  width:100%;
+  min-width: 900px;
 }
 
 .scholarshipsPage{
   height: auto;
+  width: 100%;
 }
 
 .header {
@@ -34,6 +38,7 @@ body {
 .section{
   top: 100px;
   height: 100%;
+  width: auto;
 }
 
 .scholarships {
@@ -45,7 +50,7 @@ body {
   background-color: #eff2f7;
   padding: 2rem;
   position: relative;
-  transform: translateY(-2%);
+  transform: translateY(-0.5%);
 }
 
 @media (orientation: landscape) and (min-width: 1300px) {
