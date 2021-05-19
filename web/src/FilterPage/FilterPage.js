@@ -4,14 +4,14 @@ import Filter from './Filter/Filter';
 import NavBar from './NavBar/NavBar';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCogs, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCogs, faSignOutAlt, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function FilterPage() {
   const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
   const language = 'DE';
   const [clN, setClN] = useState('');
   const [listCat, setListCat] = useState({});
-
+  const [labels, setLabels] = useState([])
   console.log(URL);
 
   useEffect(() => {
@@ -30,6 +30,7 @@ export default function FilterPage() {
               : null
           );
         setClN(labels[0]);
+        setLabels(labels)
       });
   }, [URL]);
 
@@ -44,7 +45,7 @@ export default function FilterPage() {
       {listCat && (
         <NavBar cls={clN} func={labelClick} lang={language} obj={listCat} />
       )}
-      {listCat && <Filter cls={clN} lang={language} obj={listCat} />}
+      {listCat && <Filter cls={clN} labels={labels} func={labelClick} lang={language} obj={listCat} />}
       <div className="footer footer-sm">
         {/* <button type='submit' className="btn btn-primary btn-lg">Submit</button> */}
         <div className="support">
