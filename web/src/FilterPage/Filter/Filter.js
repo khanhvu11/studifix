@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import {faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 //import TextArea from './TextArea'
 import './Filter.css';
@@ -94,7 +94,7 @@ function Filter({cls, labels, func, lang, obj }) {
             />
           );
         })}
-        <div type='button' className={(cls!=='submit')?'nextCateBtn':'hideNext'} onClick={()=>getNextkey(cls)}><FontAwesomeIcon icon={faArrowAltCircleRight}/></div>
+        <button type='button' className={(cls!=='submit')?'nextCateBtn':'hideNext'} onClick={()=>getNextkey(cls)}><FontAwesomeIcon icon={faArrowRight}/></button>
       </div>
       {/* " btn btn-primary btn-lg" */}
       <button

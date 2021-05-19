@@ -8,8 +8,17 @@
   display: none;
 }
 
-.options {
+/* .options {
   display: contents;
+} */
+
+.options{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin:3rem 0;
 }
 
 .dropdown {
@@ -124,16 +133,17 @@ button.sub1 {
 
 .nextCateBtn{
   position: relative;
-  /* left:45%; */
-  background-color: none;
-  width: 20%;
-  height: 30%;
+  background-color: #1170fe;
+  width: 80px;
+  height: 80px;
   border: none;
   text-align: center;
-  color: #1170fe;
+  color: white;
   font-size: 3rem;
   margin: 3rem auto;
   padding: 0;
+  border-radius: 50%;
+  box-shadow: 1px 1px 20px 1px #dfe6f1;
 }
 
 .hideNext{
@@ -172,18 +182,12 @@ button.sub1 {
   }
 
   .options{
-    position: relative;
     top:50%;
     transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    margin:auto 0;
   }
 
   .nextCateBtn{
-    position: relative;
+    left: 0%;
   }
 
   /* .options {
