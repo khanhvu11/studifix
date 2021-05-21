@@ -11,18 +11,18 @@ services:
   api:
     container_name: api
     build:
-      context: ./backend
+      context: ./api
       dockerfile: Dockerfile
       target: base
     volumes:
-      - ./backend/src:/home/node/app/src
-      - ./backend/nodemon.json:/home/node/app/nodemon.json
+      - ./api/src:/home/node/app/src
+      - ./api/nodemon.json:/home/node/app/nodemon.json
     command: npm run dev
   #mongo
   mongo:
     container_name: mongodb
     build:
-      context: ./backend/mongo
+      context: ./mongo
       dockerfile: Dockerfile
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
