@@ -1,10 +1,10 @@
 import { Response, Request } from 'express';
-import dbData from '../controllers/database/data';
-import joi from '../models/joi';
+import {getSelectionDataFromDB, filterScholarshipsByUserInput, getScholarshipByID} from '../controllers/database/data';
+import {joiFilterParams, joiScholarshipID} from '../models/joi';
 
 const resolveSelectionData = async (req: Request, res: Response) => {
     try {
-        await dbData.getSelectionDataFromDB().then((selectionData) => {
+        await getSelectionDataFromDB().then((selectionData) => {
             res.status(200).json({
                 selectionData
             });
@@ -18,11 +18,11 @@ const resolveSelectionData = async (req: Request, res: Response) => {
 
 const filterScholarships = async (req: Request, res: Response) => {
     try {
-        const data = await joi.joiFilterParams.validateAsync(req.body);
+        const data = await joiFilterParams.validateAsync(req.body);
 
         console.log(data);
 
-        await dbData.filterScholarshipsByUserInput(data).then((scholarships) => {
+        await filterScholarshipsByUserInput(data).then((scholarships) => {
             res.status(200).json({
                 scholarships
             });
@@ -34,4 +34,21 @@ const filterScholarships = async (req: Request, res: Response) => {
     }
 };
 
-export default { resolveSelectionData, filterScholarships };
+const getSingleScholarshipByID = async (req: Request, res: Response) => {
+    try {
+        
+        const _id: string = await joiScholarshipID.validateAsync(req.params);
+
+        await getScholarshipByID(_id).then((scholarships) => {
+            res.status(200).json({
+                scholarships
+            });
+        });
+    } catch (error) {
+        res.status(400).json({
+            message: error.message
+        });
+    }
+};
+
+export default { resolveSelectionData, filterScholarships, getSingleScholarshipByID };

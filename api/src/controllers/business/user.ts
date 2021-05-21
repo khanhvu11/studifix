@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
-import joi from '../../models/joi';
+import {joiLogin, joiRegister} from '../../models/joi';
 import dbUser from '../database/user';
 import hash from '../../helpers/hash';
 import tokens from '../../helpers/tokens';
 
 const getToken = async (req: Request, res: Response) => {
     try {
-        const data = await joi.joiLogin.validateAsync(req.body);
+        const data = await joiLogin.validateAsync(req.body);
 
         const givenPasswordHashed: string = await hash.hash(data.password);
 
@@ -35,7 +35,7 @@ const addUser = async (req: Request, res: Response) => {
     try {
         /** Validate User Input and create User Object*/
         //TODO: remove value from password error
-        const data = await joi.joiRegister.validateAsync(req.body);
+        const data = await joiRegister.validateAsync(req.body);
 
         /** Hash password and delete duplicate after validating password */
         data.password = hash.hash(data.password);
