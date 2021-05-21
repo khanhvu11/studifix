@@ -168,6 +168,54 @@ const ScholarshipSchema: Schema = new Schema({
     commitment: {
         localization: { type: Schema.Types.ObjectId, ref: localization },
         value: [{ type: Schema.Types.ObjectId, ref: commitment }]
+    },
+
+    advancement: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: {
+            title:{
+                DE: { type: String, required: true },
+                EN: { type: String, required: true },
+                FR: { type: String, required: true }
+            },
+            description:{
+                DE: { type: String, required: true },
+                EN: { type: String, required: true },
+                FR: { type: String, required: true }
+            } 
+        }
+    },
+
+    advancementDetail: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: {
+            title:{
+                DE: { type: String, required: true },
+                EN: { type: String, required: true },
+                FR: { type: String, required: true }
+            },
+            description:{
+                DE: { type: String, required: true },
+                EN: { type: String, required: true },
+                FR: { type: String, required: true }
+            } 
+        }
+    },
+
+    advancementTime: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: {
+            title:{
+                DE: { type: String, required: true },
+                EN: { type: String, required: true },
+                FR: { type: String, required: true }
+            },
+            description:{
+                DE: { type: String, required: true },
+                EN: { type: String, required: true },
+                FR: { type: String, required: true }
+            } 
+        }
     }
 });
 
