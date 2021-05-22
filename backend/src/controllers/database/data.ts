@@ -81,7 +81,10 @@ const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any> => {
             'nationalityDetail',
             'requirement',
             'commitment',
-            'imgURL'
+            'imgURL',
+            'advancement',
+            'advancementDetail',
+            'advancementTime',
         ];
 
         let filter = scholarshipFilterqueryGenerator(userInput.selectionData);
