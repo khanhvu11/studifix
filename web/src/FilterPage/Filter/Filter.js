@@ -102,7 +102,7 @@ function Filter({cls, labels, func, lang, obj }) {
         className={'submit' === cls ? 'sub-active' : ' sub1'}
         onClick={sendFilter}
       >
-        Submit
+        Weiter
       </button>
     </div>
   );

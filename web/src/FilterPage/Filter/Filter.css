@@ -17,8 +17,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   margin:3rem 0;
+  height: 100%;
 }
 
 .dropdown {
@@ -149,7 +150,7 @@ button.sub1 {
 .hideNext{
   display: none;
 }
-@media (min-width: 1030px) {
+@media (min-width: 1120px) {
   .filter {
     position: absolute;
     width: auto;

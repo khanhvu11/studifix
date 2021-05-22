@@ -6,8 +6,9 @@ body {
 }
 
 .outerContainer {
+  position: relative;
+  width: 100%;
   min-height: 500px;
-  max-width: auto;
   margin: 0 auto;
   height: 100%;
   background-color: #eff2f7;
@@ -16,7 +17,7 @@ body {
 }
 
 
-@media (min-width: 1030px) {
+@media (min-width: 1120px) {
   .outerContainer {
     display: flex;
     flex-direction: row;

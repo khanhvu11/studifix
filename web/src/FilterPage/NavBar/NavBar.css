@@ -102,7 +102,7 @@ button {
   justify-content: space-around;
 }
 
-@media (min-width: 1030px) {
+@media (min-width: 1120px) {
   .filter-nav {
     position: relative;
     top: 0rem;
