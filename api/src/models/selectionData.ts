@@ -6,12 +6,14 @@ import course from './scholarship/components/course';
 import employee from './scholarship/components/employee';
 import graduation from './scholarship/components/graduation';
 import nationality from './scholarship/components/nationality';
+import nationalityDetail from './scholarship/components/nationalityDetail';
 import occupation from './scholarship/components/occupation';
 import reference from './scholarship/components/reference';
 import religion from './scholarship/components/religion';
 import requirement from './scholarship/components/requirements';
 import state from './scholarship/components/state';
 import support from './scholarship/components/support';
+import supportSpecific from './scholarship/components/supportSpecific';
 
 const SelectionDataSchema: Schema = new Schema({
     _id: Schema.Types.ObjectId,
@@ -198,6 +200,38 @@ const SelectionDataSchema: Schema = new Schema({
     },
     support: {
         values: [{ type: Schema.Types.ObjectId, ref: support }],
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
+    },
+
+    supportSpecific: {
+        values: [{ type: Schema.Types.ObjectId, ref: supportSpecific }],
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
+    },
+
+    nationalityDetail: {
+        values: [{ type: Schema.Types.ObjectId, ref: nationalityDetail }],
         title: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },

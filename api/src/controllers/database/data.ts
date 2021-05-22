@@ -7,17 +7,19 @@ export const getSelectionDataFromDB = (): Promise<any> => {
         let filter: any = { dataSetType: 'user' };
 
         SelectionData.findOne(filter, {})
-            .populate('occupation.values')
-            .populate('graduation.values')
-            .populate('course.values')
-            .populate('country.values')
             .populate('city.values')
-            .populate('state.values')
-            .populate('nationality.values')
-            .populate('religion.values')
             .populate('commitment.values')
-            .populate('support.values')
+            .populate('country.values')
+            .populate('course.values')
+            .populate('graduation.values')
+            .populate('nationality.values')
+            .populate('nationalityDetail.values')
+            .populate('occupation.values')
+            .populate('religion.values')
             .populate('requirement.values')
+            .populate('state.values')
+            .populate('support.values')
+            .populate('supportSpecific.values')
             .exec()
             .then((values) => {
                 console.log(values);
@@ -83,7 +85,7 @@ export const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any>
             'imgURL',
             'advancement',
             'advancementDetail',
-            'advancementTime',
+            'advancementTime'
         ];
 
         let filter = scholarshipFilterqueryGenerator(userInput.selectionData);
@@ -157,16 +159,15 @@ export const getScholarshipByID = (_id: string): Promise<any> => {
             'imgURL',
             'advancement',
             'advancementDetail',
-            'advancementTime',
+            'advancementTime'
         ];
 
         let populationValues = populationValuesGenerator(values);
         let populationLocalizations = populationLocalizationsGenerator(localizations);
 
-
         console.log(_id);
 
-        Scholarship.find({_id})
+        Scholarship.find({ _id })
             .populate(populationValues)
             .populate(populationLocalizations, { _id: 0, label: 0 })
 
