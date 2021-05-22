@@ -83,7 +83,7 @@ export const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any>
             'imgURL',
             'advancement',
             'advancementDetail',
-            'advancementTime',
+            'advancementTime'
         ];
 
         let filter = scholarshipFilterqueryGenerator(userInput.selectionData);
@@ -157,16 +157,15 @@ export const getScholarshipByID = (_id: string): Promise<any> => {
             'imgURL',
             'advancement',
             'advancementDetail',
-            'advancementTime',
+            'advancementTime'
         ];
 
         let populationValues = populationValuesGenerator(values);
         let populationLocalizations = populationLocalizationsGenerator(localizations);
 
-
         console.log(_id);
 
-        Scholarship.find({_id})
+        Scholarship.find({ _id })
             .populate(populationValues)
             .populate(populationLocalizations, { _id: 0, label: 0 })
 
