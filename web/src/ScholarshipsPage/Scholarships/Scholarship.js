@@ -1,21 +1,11 @@
 import React from 'react'
+import ScholarshipModal from './ScholarshipModal'
+
 import './scholarship.css'
 
 export default function Scholarship({scholarship}) {
     /* console.log(scholarship.graduation.map(val=>val.title.DE)) */
-
-    var iterateArray = (value) => {
-        return value.map((val,id) => <p key={id}>{val.title.DE}</p>)
-    }
-
-    var notArrayValue = (category) => {
-        switch(category.value){
-            case null: return <p>Keine Beschränkung</p>
-            case true: return <p>Ja</p>
-            case false: return <p>Nein</p>
-            default: return <p>{category.value}</p>
-        }
-    }
+    const [modalShow, setModalShow] = React.useState(false);
 
     return (
         <div className='scholarship-outer'>
@@ -25,16 +15,20 @@ export default function Scholarship({scholarship}) {
                 <img src={scholarship.imgURL.value} alt="" />
                 <button type='button' className='bewerb'>Bewerb dich jetzt</button>
                 <button type='button' className='tipps'>Bewerbungstipps</button>
-                <h3>Erfahren mehr</h3>
+                <h3 type='button' onClick={() => setModalShow(true)}>Erfahren mehr</h3>
             </div>
             <div className='scholarship__right-section'>
                 <h2>So passt dieses Stipendium zu dir:</h2>
-                {scholarship && Object.keys(scholarship).map((key,id) => scholarship[key].localization?
-                    <ul key={id}>
-                        <li><h3>{scholarship[key].localization.title.DE}</h3></li>
-                        {(Array.isArray(scholarship[key].value))? iterateArray(scholarship[key].value):(typeof scholarship[key].value !=='object' ||  scholarship[key].value === null)? notArrayValue(scholarship[key]):<p>{scholarship[key].value.name}</p> }
-                    </ul>:null)
-                }
+                <ul>
+                    <li><h3>{scholarship.advancement.localization.title.DE}</h3></li>
+                    <p>{scholarship.advancement.value.title.DE}</p>
+
+                    <li><h3>{scholarship.advancementDetail.localization.title.DE}</h3></li>
+                    <p>{scholarship.advancementDetail.value.title.DE}</p>
+        
+                    <li><h3>{scholarship.advancementTime.localization.title.DE}</h3></li>
+                    <p>{scholarship.advancementTime.value.title.DE}</p>
+                </ul>
                 {/* <ul>
                     //provider
                     <li><h3>{scholarship.provider.localization.title.DE}</h3></li>
@@ -70,6 +64,11 @@ export default function Scholarship({scholarship}) {
 
             </div>
             </div>
+            <ScholarshipModal
+                scholarship = {scholarship}
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
         </div>
     )
 }

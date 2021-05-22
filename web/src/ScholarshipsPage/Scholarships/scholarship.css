@@ -88,6 +88,10 @@
   font-size: 1.5rem;
 }
 
+.modal-header .close{
+  width: 5%;
+}
+
 @media (orientation: landscape) and (min-width: 1300px) {
   .scholarship-outer {
     width: 100%;
