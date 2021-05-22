@@ -171,11 +171,12 @@ button.sub1 {
   }
 
   .sub-active {
+    position: absolute;
     top: 50%;
-    left: 30%; 
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    left: 20%;
+    transform: translateY(-50%);
     margin-top: 0;
+    
   }
 
   .label-sml {
