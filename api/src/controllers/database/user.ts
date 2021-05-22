@@ -71,7 +71,7 @@ const getUserDataByID = (_id: string): Promise<any> => {
             .populate(pQuery)
             .exec()
             .then((results) => {
-                console.log(results?.scholarships);
+                // console.log(results?.scholarships);
                 resolve(results);
             })
             .catch((error) => {

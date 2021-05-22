@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-const joiRegister = Joi.object({
+export const joiRegister = Joi.object({
     firstName: Joi.string().alphanum().min(3).max(30).required(true),
     lastName: Joi.string().alphanum().min(3).max(30).required(true),
     dob: Joi.date().less('now').required(true),
@@ -25,18 +25,14 @@ const joiRegister = Joi.object({
     }
 });
 
-const joiLogin = Joi.object({
+export const joiLogin = Joi.object({
     email: Joi.string().required(true),
     password: Joi.string().required(true)
 });
 
-const joiLangParams = Joi.object({
-    lang: Joi.string().valid('DE', 'EN', 'FR')
-});
-
-const joiFilterParams = Joi.object({
+export const joiFilterParams = Joi.object({
     selectionData: {
-        //todo: check för hexadecimal numbers 12 or 24
+        //todo: check for hexadecimal numbers 12 or 24
         commitment: [Joi.array().items(Joi.string().min(24).max(24)), null],
         occupation: [Joi.array().items(Joi.string().min(24).max(24)), null],
         graduation: [Joi.array().items(Joi.string().min(24).max(24)), null],
@@ -51,4 +47,7 @@ const joiFilterParams = Joi.object({
     }
 });
 
-export default { joiLogin, joiRegister, joiLangParams, joiFilterParams };
+export const joiScholarshipID = Joi.object({
+        _id: Joi.string().min(24).max(24)
+});
+
