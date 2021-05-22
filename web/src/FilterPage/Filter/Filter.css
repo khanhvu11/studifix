@@ -1,18 +1,25 @@
 .filter {
   margin: auto;
   width: 100%;
+  height: auto;
 }
-
-/* .options {
-  display: none;
-} */
 
 .label-sml {
   display: none;
 }
 
-.options {
+/* .options {
   display: contents;
+} */
+
+.options{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin:3rem 0;
+  height: 100%;
 }
 
 .dropdown {
@@ -125,9 +132,27 @@ button.sub1 {
   margin-top: 4rem;
 }
 
-@media (min-width: 1030px) {
+.nextCateBtn{
+  position: relative;
+  background-color: #1170fe;
+  width: 80px;
+  height: 80px;
+  border: none;
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  margin: 3rem auto;
+  padding: 0;
+  border-radius: 50%;
+  box-shadow: 1px 1px 20px 1px #dfe6f1;
+}
+
+.hideNext{
+  display: none;
+}
+@media (min-width: 1120px) {
   .filter {
-    position: fixed;
+    position: absolute;
     width: auto;
     height: 100%;
     top: 0px;
@@ -138,10 +163,11 @@ button.sub1 {
   }
 
   .active {
-    top: 50%;
+    position: relative;
+/*     top: 50%;
     left: 50%; 
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
   }
 
   .sub-active {
@@ -154,6 +180,15 @@ button.sub1 {
 
   .label-sml {
     display: none;
+  }
+
+  .options{
+    top:50%;
+    transform: translateY(-50%);
+  }
+
+  .nextCateBtn{
+    left: 0%;
   }
 
   /* .options {
