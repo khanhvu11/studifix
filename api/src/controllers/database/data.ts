@@ -7,17 +7,19 @@ export const getSelectionDataFromDB = (): Promise<any> => {
         let filter: any = { dataSetType: 'user' };
 
         SelectionData.findOne(filter, {})
-            .populate('occupation.values')
-            .populate('graduation.values')
-            .populate('course.values')
-            .populate('country.values')
             .populate('city.values')
-            .populate('state.values')
-            .populate('nationality.values')
-            .populate('religion.values')
             .populate('commitment.values')
-            .populate('support.values')
+            .populate('country.values')
+            .populate('course.values')
+            .populate('graduation.values')
+            .populate('nationality.values')
+            .populate('nationalityDetail.values')
+            .populate('occupation.values')
+            .populate('religion.values')
             .populate('requirement.values')
+            .populate('state.values')
+            .populate('support.values')
+            .populate('supportSpecific.values')
             .exec()
             .then((values) => {
                 console.log(values);
