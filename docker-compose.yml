@@ -7,7 +7,6 @@ services:
       context: ./web
       dockerfile: Dockerfile
       target: base
-
   api:
     container_name: api
     build:
@@ -18,7 +17,6 @@ services:
       - ./api/src:/home/node/app/src
       - ./api/nodemon.json:/home/node/app/nodemon.json
     command: npm run dev
-  #mongo
   mongo:
     container_name: mongodb
     build:
@@ -30,7 +28,6 @@ services:
     ports:
       - 27017:27017
     command: [--auth]
-
   proxy:
     container_name: proxy
     build:

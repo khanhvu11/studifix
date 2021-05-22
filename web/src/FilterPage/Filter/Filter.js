@@ -1,25 +1,26 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 //import TextArea from './TextArea'
 import './Filter.css';
 import Options from './Options';
 import Dropdown from './Dropdown';
 
-function Filter({cls, labels, func, lang, obj }) {
-  const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
+function Filter({ cls, labels, func, lang, obj }) {
+  const URL = process.env.REACT_APP_API_URL_PREFIX;
   const [result, setResult] = useState({});
   const history = useHistory();
 
-  var getNextkey = (currentKey) =>{
-    var existKeys = labels.filter(key => (key !== null && key !=="Stadt" && key !=="Land")?key:null)
-    existKeys.push('submit')
-    var ind = existKeys.indexOf(currentKey)
-    func(existKeys[ind +1])
-
-  }
+  var getNextkey = (currentKey) => {
+    var existKeys = labels.filter((key) =>
+      key !== null && key !== 'Stadt' && key !== 'Land' ? key : null
+    );
+    existKeys.push('submit');
+    var ind = existKeys.indexOf(currentKey);
+    func(existKeys[ind + 1]);
+  };
 
   var getALlResult = (key, optionList) => {
     if (optionList.length > 0) {
@@ -94,7 +95,13 @@ function Filter({cls, labels, func, lang, obj }) {
             />
           );
         })}
-        <button type='button' className={(cls!=='submit')?'nextCateBtn':'hideNext'} onClick={()=>getNextkey(cls)}><FontAwesomeIcon icon={faArrowRight}/></button>
+        <button
+          type="button"
+          className={cls !== 'submit' ? 'nextCateBtn' : 'hideNext'}
+          onClick={() => getNextkey(cls)}
+        >
+          <FontAwesomeIcon icon={faArrowRight} />
+        </button>
       </div>
       {/* " btn btn-primary btn-lg" */}
       <button
