@@ -11,4 +11,6 @@ export interface IUserInputList {
     religion: string[];
     support: string[];
     requirement: string[];
+    nationalityDetail: string[];
+    supportSpecific: string[];
 }
