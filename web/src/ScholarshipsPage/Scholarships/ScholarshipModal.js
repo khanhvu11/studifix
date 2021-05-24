@@ -1,6 +1,7 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import {Link} from 'react-router-dom'
 
 export default function ScholarshipModal({scholarship, show, onHide}) {
 
@@ -38,12 +39,13 @@ export default function ScholarshipModal({scholarship, show, onHide}) {
         {scholarship && Object.keys(scholarship).map((key,id) => scholarship[key].localization?
             <ul key={id}>
                 <li><h3>{scholarship[key].localization.title.DE}</h3></li>
-                {(Array.isArray(scholarship[key].value))? iterateArray(scholarship[key].value):(typeof scholarship[key].value !=='object' ||  scholarship[key].value === null)? notArrayValue(scholarship[key], key):(scholarship[key].value.title && <p>{scholarship[key].value.title.DE}</p>)||<p>{scholarship[key].value.name}</p> }
+                {(Array.isArray(scholarship[key].value))? iterateArray(scholarship[key].value):(typeof scholarship[key].value !=='object' ||  scholarship[key].value === null)? notArrayValue(scholarship[key], key):(scholarship[key].value.title && <p>{scholarship[key].value.title.DE}</p>)||<p>{scholarship[key].value.name}</p>}
             </ul>:null)
         }
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={onHide}>Close</Button>
+          <Button variant='secondary' onClick={onHide}>Close</Button>
+          <Button variant='primary'><Link to='/application'>Bewerb dich jetzt</Link></Button>
         </Modal.Footer>
       </Modal>
     )

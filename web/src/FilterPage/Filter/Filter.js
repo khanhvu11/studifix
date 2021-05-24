@@ -10,7 +10,7 @@ import Dropdown from './Dropdown';
 
 function Filter({ cls, labels, func, lang, obj }) {
   /* const URL = process.env.REACT_APP_API_URL_PREFIX; */
-  const URL = 'http://studifix.mi.hdm-stuttgart.de';
+  const URL = /* 'http://studifix.mi.hdm-stuttgart.de' */ 'http://localhost';
   const [result, setResult] = useState({});
   const history = useHistory();
 

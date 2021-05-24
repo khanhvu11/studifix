@@ -11,7 +11,7 @@ import {
 
 export default function FilterPage() {
   /* const URL = process.env.REACT_APP_API_URL_PREFIX; */
-  const URL = 'http://studifix.mi.hdm-stuttgart.de';
+  const URL = /* 'http://studifix.mi.hdm-stuttgart.de' */ 'http://localhost';
   const language = 'DE';
   const [clN, setClN] = useState('');
   const [listCat, setListCat] = useState({});

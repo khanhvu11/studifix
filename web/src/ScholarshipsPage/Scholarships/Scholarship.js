@@ -1,5 +1,6 @@
 import React from 'react'
 import ScholarshipModal from './ScholarshipModal'
+import {Link} from 'react-router-dom'
 
 import './scholarship.css'
 
@@ -13,7 +14,7 @@ export default function Scholarship({scholarship}) {
             <div className='scholarship-inner'>
                 <div className='scholarship__left-section'>
                 <img src={scholarship.imgURL.value} alt="" />
-                <button type='button' className='bewerb'>Bewerb dich jetzt</button>
+                <button type='button' className='bewerb'><Link to='/application'>Bewerb dich jetzt</Link></button>
                 <button type='button' className='tipps'>Bewerbungstipps</button>
                 <h3 type='button' onClick={() => setModalShow(true)}>Erfahren mehr</h3>
             </div>

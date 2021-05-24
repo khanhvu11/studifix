@@ -1,7 +1,7 @@
 .scholarship-outer {
   width: 100%;
-  margin: auto 2rem;
-  padding: 1rem 0;
+  /* margin: auto 2rem; */
+  padding: 2rem;
   min-width: 800px;
   border-bottom: #ffffff solid;
   border-width: 0.7rem;
@@ -61,6 +61,11 @@
   margin-bottom: none;
 }
 
+.scholarship__left-section .bewerb a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .scholarship__left-section .tipps {
   color: #1170fe;
   background-color: white;
@@ -90,6 +95,20 @@
 
 .modal-header .close{
   width: 5%;
+}
+
+.modal-footer button:first-child{
+  width: 10%;
+}
+
+.modal-footer button{
+  width: 30%;
+  height: 3rem;
+}
+
+.modal-footer a{
+  text-decoration: none;
+  color: #ffffff;
 }
 
 @media (orientation: landscape) and (min-width: 1300px) {
