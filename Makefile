@@ -7,7 +7,7 @@ down:
 up-prod:
 	docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build -d
 
-reload-local:
+reload-dev:
 	make down
 	make up
 
