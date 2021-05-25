@@ -8,6 +8,18 @@ import './scholarshipsPage.css'
 export default function ScholarshipsPage(props) {
     const {state} = props.location
     console.log(state)
+    if(!state){
+        return(<div className="scholarshipsPage">
+                <div className="header">
+                    <h1><span>Studi</span>fix</h1>
+                    <Navbar/>
+                </div>
+                <div className="section">
+                    <Slider nr={0}/>
+                </div>
+                <Footer/>
+            </div>)
+    }
     return (
         <div className="scholarshipsPage">
             <div className="header">
