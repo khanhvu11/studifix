@@ -9,8 +9,7 @@ import Options from './Options';
 import Dropdown from './Dropdown';
 
 function Filter({ cls, labels, func, lang, obj }) {
-  /* const URL = process.env.REACT_APP_API_URL_PREFIX; */
-  const URL = /* 'http://studifix.mi.hdm-stuttgart.de' */ 'http://localhost';
+  const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
   const [result, setResult] = useState({});
   const history = useHistory();
 
@@ -110,7 +109,7 @@ function Filter({ cls, labels, func, lang, obj }) {
         className={'submit' === cls ? 'sub-active' : ' sub1'}
         onClick={sendFilter}
       >
-        Weiter
+        Weiter zu den passenden Angeboten
       </button>
     </div>
   );

@@ -45,7 +45,7 @@ export default function ScholarshipModal({scholarship, show, onHide}) {
         </Modal.Body>
         <Modal.Footer>
           <Button variant='secondary' onClick={onHide}>Close</Button>
-          <Button variant='primary'><Link to={{pathname:'/application', state:scholarship}}>Bewerb dich jetzt</Link></Button>
+          <Button variant='primary'><Link to={{pathname:'/applying', state:scholarship}}>Bewerb dich jetzt</Link></Button>
         </Modal.Footer>
       </Modal>
     )

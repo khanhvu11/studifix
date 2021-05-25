@@ -10,8 +10,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 export default function FilterPage() {
-  /* const URL = process.env.REACT_APP_API_URL_PREFIX; */
-  const URL = /* 'http://studifix.mi.hdm-stuttgart.de' */ 'http://localhost';
+  const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
+
   const language = 'DE';
   const [clN, setClN] = useState('');
   const [listCat, setListCat] = useState({});
