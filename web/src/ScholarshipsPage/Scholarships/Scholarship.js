@@ -1,38 +1,54 @@
 import React from 'react';
 import ScholarshipModal from './ScholarshipModal';
 import { Link } from 'react-router-dom';
+import { GiMoneyStack } from 'react-icons/gi';
+import { MdTimer } from 'react-icons/md';
 
 import './scholarship.css';
 
 export default function Scholarship({ scholarship }) {
   /* console.log(scholarship.graduation.map(val=>val.title.DE)) */
   const [modalShow, setModalShow] = React.useState(false);
-  console.log(scholarship.advancement.value);
+  console.log(scholarship);
 
   return (
     <>
-      <div className="card">
+      <div className="card" onClick={() => setModalShow(true)}>
         <div className="imgContainer">
           <img className="picture" src={scholarship.imgURL.value} />
         </div>
 
         <div className="textContainer">
-          <div className="text_upper">
-            {scholarship.advancement.value.title.DE}
-          </div>
+          <div className="text_upper">{scholarship.name}</div>
+
           <div className="text_lower">
-            {scholarship.advancementTime.value.title.DE}
+            <div className="text_left">
+              <div className="icon">
+                <GiMoneyStack size="30px" />
+              </div>
+              <div className="description">
+                {scholarship.advancement.value.title.DE}
+              </div>
+            </div>
+            <div className="text_right">
+              <div className="icon">
+                <MdTimer size="30px" />
+              </div>
+              <div className="description">
+                {scholarship.advancementTime.value.title.DE}
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* <div className="scholarship-outer">
-          <ScholarshipModal
-            scholarship={scholarship}
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-          />
-        </div> */}
+      <div className="scholarship-outer">
+        <ScholarshipModal
+          scholarship={scholarship}
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+        />
+      </div>
     </>
   );
 }

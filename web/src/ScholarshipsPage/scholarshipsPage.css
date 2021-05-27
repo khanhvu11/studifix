@@ -47,13 +47,13 @@ body {
 }
 
 .scholarships {
+  margin-top: 4vh;
   display: flex;
   justify-content: center;
-  flex-flow: column;
-  padding: 0 8vw;
+  padding: 0 5vw;
   flex-flow: row;
-  border: black solid;
   width: 100%;
+  flex-wrap: wrap;
 }
 /* 
 @media (orientation: landscape) and (min-width: 1300px) {

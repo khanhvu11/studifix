@@ -26,6 +26,8 @@ const ScholarshipSchema: Schema = new Schema({
         value: { type: Schema.Types.ObjectId, ref: employee }
     },
 
+    name: { type: String, required: true },
+
     provider: {
         localization: { type: Schema.Types.ObjectId, ref: localization },
         value: { type: Schema.Types.ObjectId, ref: provider }
@@ -173,48 +175,48 @@ const ScholarshipSchema: Schema = new Schema({
     advancement: {
         localization: { type: Schema.Types.ObjectId, ref: localization },
         value: {
-            title:{
+            title: {
                 DE: { type: String, required: true },
                 EN: { type: String, required: true },
                 FR: { type: String, required: true }
             },
-            description:{
+            description: {
                 DE: { type: String, required: true },
                 EN: { type: String, required: true },
                 FR: { type: String, required: true }
-            } 
+            }
         }
     },
 
     advancementDetail: {
         localization: { type: Schema.Types.ObjectId, ref: localization },
         value: {
-            title:{
+            title: {
                 DE: { type: String, required: true },
                 EN: { type: String, required: true },
                 FR: { type: String, required: true }
             },
-            description:{
+            description: {
                 DE: { type: String, required: true },
                 EN: { type: String, required: true },
                 FR: { type: String, required: true }
-            } 
+            }
         }
     },
 
     advancementTime: {
         localization: { type: Schema.Types.ObjectId, ref: localization },
         value: {
-            title:{
+            title: {
                 DE: { type: String, required: true },
                 EN: { type: String, required: true },
                 FR: { type: String, required: true }
             },
-            description:{
+            description: {
                 DE: { type: String, required: true },
                 EN: { type: String, required: true },
                 FR: { type: String, required: true }
-            } 
+            }
         }
     }
 });
