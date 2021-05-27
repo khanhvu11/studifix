@@ -13,28 +13,33 @@ export default function Scholarship({ scholarship }) {
 
   return (
     <>
-      <div className="card" onClick={() => setModalShow(true)}>
-        <div className="imgContainer">
-          <img className="picture" src={scholarship.imgURL.value} />
+      <div className="scholarship__card" onClick={() => setModalShow(true)}>
+        <div className="scholarship__card__imgContainer">
+          <img
+            className="scholarship__card__picture"
+            src={scholarship.imgURL.value}
+          />
         </div>
 
-        <div className="textContainer">
-          <div className="text_upper">{scholarship.name}</div>
+        <div className="scholarship__card__textContainer">
+          <div className="scholarship__card__text_upper">
+            {scholarship.name}
+          </div>
 
-          <div className="text_lower">
-            <div className="text_left">
-              <div className="icon">
+          <div className="scholarship__card__text_lower">
+            <div className="scholarship__card__text_left">
+              <div className="scholarship__card__icon">
                 <GiMoneyStack size="30px" />
               </div>
-              <div className="description">
+              <div className="scholarship__card__description">
                 {scholarship.advancement.value.title.DE}
               </div>
             </div>
-            <div className="text_right">
-              <div className="icon">
+            <div className="scholarship__card__text_right">
+              <div className="scholarship__card__icon">
                 <MdTimer size="30px" />
               </div>
-              <div className="description">
+              <div className="scholarship__card__description">
                 {scholarship.advancementTime.value.title.DE}
               </div>
             </div>
