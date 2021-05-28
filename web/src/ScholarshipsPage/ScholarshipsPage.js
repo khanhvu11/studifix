@@ -7,8 +7,8 @@ import Footer from './Footer/Footer'
 import './scholarshipsPage.css'
 export default function ScholarshipsPage(props) {
     const {state} = props.location
-    console.log(state)
-    if(!state){
+    console.log('user selection',state.selection)
+    if(!state.scholarships){
         return(<div className="scholarshipsPage">
                 <div className="header">
                     <h1><span>Studi</span>fix</h1>
@@ -27,8 +27,8 @@ export default function ScholarshipsPage(props) {
                 <Navbar/>
             </div>
             <div className="section">
-                <Slider nr={state.scholarships.length}/>
-                <Scholarships scholarships = {state.scholarships}/>
+                <Slider nr={state.scholarships.scholarships.length}/>
+                <Scholarships scholarships = {state.scholarships.scholarships} usr_selection = {state.selection}/>
             </div>
             <Footer/>
         </div>
