@@ -1,15 +1,16 @@
 import React from 'react';
 import ScholarshipModal from './ScholarshipModal';
-import { Link } from 'react-router-dom';
+/* import { Link } from 'react-router-dom'; */
 import { GiMoneyStack } from 'react-icons/gi';
 import { MdTimer } from 'react-icons/md';
 
 import './scholarship.css';
 
-export default function Scholarship({ scholarship }) {
+export default function Scholarship({ scholarship, usr_selection }) {
   /* console.log(scholarship.graduation.map(val=>val.title.DE)) */
   const [modalShow, setModalShow] = React.useState(false);
   console.log(scholarship);
+  console.log(usr_selection);
 
   return (
     <>
@@ -18,6 +19,7 @@ export default function Scholarship({ scholarship }) {
           <img
             className="scholarship__card__picture"
             src={scholarship.imgURL.value}
+            alt='card'
           />
         </div>
 
@@ -50,6 +52,7 @@ export default function Scholarship({ scholarship }) {
       <div className="scholarship-outer">
         <ScholarshipModal
           scholarship={scholarship}
+          usr_selection = {usr_selection}
           show={modalShow}
           onHide={() => setModalShow(false)}
         />

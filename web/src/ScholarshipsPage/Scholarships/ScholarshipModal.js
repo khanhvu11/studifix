@@ -3,7 +3,8 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import {Link} from 'react-router-dom'
 
-export default function ScholarshipModal({scholarship, show, onHide}) {
+export default function ScholarshipModal({scholarship, usr_selection, show, onHide}) {
+  console.log(usr_selection)
 
     var iterateArray = (value) => {
         return value.map((val,id) => <p key={id}>{val.title.DE}</p>)
@@ -45,7 +46,7 @@ export default function ScholarshipModal({scholarship, show, onHide}) {
         </Modal.Body>
         <Modal.Footer>
           <Button variant='secondary' onClick={onHide}>Close</Button>
-          <Button variant='primary'><Link to={{pathname:'/applying', state:scholarship}}>Bewerb dich jetzt</Link></Button>
+          <Button variant='primary'><Link to={{pathname:'/applying', state:{scholarship, usr_selection}}}>Bewerb dich jetzt</Link></Button>
         </Modal.Footer>
       </Modal>
     )

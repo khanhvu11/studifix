@@ -62,7 +62,8 @@ function Filter({ cls, labels, func, lang, obj }) {
         }
         history.push({
           pathname: '/scholarshipsPage',
-          state: data,
+          state: {scholarships : data, 
+            selection : result},
         });
         /* response.json() */
       })
