@@ -8,6 +8,39 @@
     padding: 3rem;
 }
 
-.drdn{
-    padding: 0.5rem;
+.user-selected{
+    border: #1170fe solid;
+    padding: 2rem;
+    margin: 1rem auto;
+}
+
+.user-selected h1{
+    text-align: center;
+}
+
+
+/* .notOptional{
+    border: #1170fe solid;
+    border-radius: 3rem;
+    padding: 2rem;
+    margin: 1rem auto;
+}
+
+.notOptional h1{
+    text-align: center;
+}
+
+.optional{
+    border: #1170fe solid;
+    border-radius: 3rem;
+    padding: 2rem;
+    margin: 1rem auto;
+}
+
+.optional h1{
+    text-align: center;
+} */
+
+.row p{
+    margin-bottom: 0;
 }
