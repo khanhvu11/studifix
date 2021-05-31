@@ -40,6 +40,9 @@
 .optional h1{
     text-align: center;
 } */
+.row{
+    align-items: center;
+}
 
 .row p{
     margin-bottom: 0;

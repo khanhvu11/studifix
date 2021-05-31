@@ -18,7 +18,7 @@ export default function Checkbox({scholarship_cat, _key}) {
             <div className="col-sm-10">
             <div className="form-check">
                 <input className="form-check-input" type="checkbox" id="gridCheck1"/>
-                <label className="form-check-label" for="gridCheck1">
+                <label className="form-check-label" htmlFor="gridCheck1">
                     {(typeof scholarship_cat.value !== 'boolean')?scholarship_cat.value:(scholarship_cat.value===true)?'ja':'nein'}
                 </label>
             </div>

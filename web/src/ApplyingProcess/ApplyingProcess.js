@@ -1,5 +1,6 @@
 import React,  { useState, useEffect } from 'react'
 import { useLocation } from 'react-router'
+import {Link} from 'react-router-dom'
 
 import Navbar from '../ScholarshipsPage/Navbar/Navbar'
 import Footer from '../ScholarshipsPage/Footer/Footer'
@@ -117,17 +118,17 @@ export default function ApplyingProcess(props) {
             </div>
             <div className='applying-dropdown'>
 
-                <div className='user-selected' >
+                {Object.keys(userSelection).length > 0 && <div className='user-selected' >
                     <h1>Was Sie gewählt haben</h1>
                     <UserSelection usr_selection={userSelection}/>
-                </div>
+                </div>}
 
                 <form className='user-selected' >
                     <h1>Was Sie noch ausfüllen müssen</h1>
                     {Object.keys(scholarshipRemaining).map(key => categorySorting(scholarshipRemaining[key], key))}
-                    <div class="form-group row">
-                        <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Senden</button>
+                    <div className="form-group row">
+                        <div className="col-sm-4" style={{margin:'1rem 0'}}>
+                        <button type="button" className="btn btn-primary" ><Link to={'/'} style={{color:'white', textDecoration:'none'}}>Senden</Link></button>
                         </div>
                     </div>
                 </form>

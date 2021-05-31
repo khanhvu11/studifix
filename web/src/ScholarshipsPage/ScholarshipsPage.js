@@ -7,8 +7,7 @@ import Footer from './Footer/Footer'
 import './scholarshipsPage.css'
 export default function ScholarshipsPage(props) {
     const {state} = props.location
-    console.log('user selection',state.selection)
-    if(!state.scholarships){
+    if(!state){
         return(<div className="scholarshipsPage">
                 <div className="header">
                     <h1><span>Studi</span>fix</h1>

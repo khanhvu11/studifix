@@ -11,9 +11,9 @@ export default function Dropdown({scholarship_cat, _key, multiselect}) {
     return (
         /* Object.keys(scholarship).map((key,id) => (scholarship_cat.localization && Array.isArray(scholarship_cat.value)  && scholarship_cat.value.length>1)?*/
         <div className='drdn form-group row'>
-            <label class="col-sm-2 col-form-label" htmlFor={scholarship_cat.localization.title[lang]}>{scholarship_cat.localization.title[lang]}</label> 
+            <label className="col-sm-2 col-form-label" htmlFor={scholarship_cat.localization.title[lang]}>{scholarship_cat.localization.title[lang]}</label> 
             <p>{scholarship_cat.localization.description[lang]}</p>
-            <div  class="col-sm-10">
+            <div  className="col-sm-10">
             <select className="form-control" name={scholarship_cat.localization.title[lang]} id={scholarship_cat.localization.title[lang]} multiple={multiselect}>
                 {iterateArray(scholarship_cat.value)}
             </select>
