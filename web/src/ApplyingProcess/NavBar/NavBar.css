@@ -5,7 +5,6 @@
 }
 
 nav ul {
-  overflow: auto;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -21,7 +20,6 @@ nav li {
   font-size: 1.3em;
   font-weight: 700;
   margin: auto 1.3rem;
-  text-align: center;
 }
 
 nav li:hover {
@@ -124,17 +122,14 @@ button {
   }
 
   nav ul {
-    max-height: 600px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     margin: 2rem auto;
     position: absolute;
     top: 8rem;
     /* -ms-transform: translateY(-50%);
     transform: translateY(-50%); */
-  }
-
-  nav ul li{
-    display: block;
   }
 
   .submit {
