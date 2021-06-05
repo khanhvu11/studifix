@@ -9,7 +9,7 @@ import Options from './Options';
 import Dropdown from './Dropdown';
 
 
-function Filter({ cls, labels, func, lang, obj, selectionData }) {
+function Filter({ cls, labels, func, lang, obj, selectionData, userSelection }) {
   const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
   const [result, setResult] = useState({});
   const history = useHistory();
@@ -38,7 +38,8 @@ function Filter({ cls, labels, func, lang, obj, selectionData }) {
   var toReview = () => {
     history.push({
       pathname: '/review',
-      state: {scholarship : result},
+      state: {scholarship : result,
+      userSelection: userSelection},
     });
   }
 

@@ -9,6 +9,9 @@ export default function Review() {
     const location = useLocation()
 
     const scholarship = location.state.scholarship
+    const userSelection = location.state.userSelection
+
+    console.log(userSelection)
     return (
         <div>
             <div className="header">
@@ -16,6 +19,12 @@ export default function Review() {
                 <Navbar/>
             </div>
             <div className='review'>
+            {userSelection && Object.keys(userSelection).map(key =>{
+                return <div>
+                <h3>{key}</h3>
+                {userSelection[key].values && userSelection[key].values.map(value => <p>{value.title.DE}</p> )}
+                </div>
+            })}
             {Object.keys(scholarship).map(key =>{
                 return <div>
                 <h3>{key}</h3>

@@ -153,6 +153,7 @@ export default function ApplyingProcess(props) {
             lang={language}
             obj={scholarshipRemaining}
             selectionData = {selectionData}
+            userSelection = {userSelection}
           />
         )}
         <div className="footer footer-sm">
