@@ -66,7 +66,7 @@ export default function MultipleChoice({func, _key, cls, lang, obj, selectionDat
                     {selectionData[_key].values && selectionData[_key].values.map((value,id) => <OptionButton active={removedOption===value._id?false:true} key={id} buttonFunc={getOption} buttonLang={lang} value={value} />)}
                 </div>):(
                     <div className="button-grid">
-                        <TextInput scholarship_cat={obj} _key={_key} />
+                        <TextInput scholarship_cat={obj} _key={_key}  buttonFunc={getOption} buttonLang={lang} />
                     </div>))
             }
         </div>

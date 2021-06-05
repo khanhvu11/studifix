@@ -13,10 +13,11 @@ function Filter({ cls, labels, func, lang, obj, selectionData }) {
   const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
   const [result, setResult] = useState({});
   const history = useHistory();
+  const removedKeyList = ['provider', 'link', 'advancement', 'advancementDetail', 'advancementTime', 'city', 'country']
 
   var getNextkey = (currentKey) => {
     var existKeys = labels.filter((key) =>
-      key !== null && key !== 'Stadt' && key !== 'Land' ? key : null
+      key !== null && !removedKeyList.includes(key) ? key : null
     );
     existKeys.push('submit');
     var ind = existKeys.indexOf(currentKey);
@@ -35,7 +36,10 @@ function Filter({ cls, labels, func, lang, obj, selectionData }) {
   console.log(result);
 
   var toReview = () => {
-   
+    history.push({
+      pathname: '/review',
+      state: {scholarship : result},
+    });
   }
 
   return (
@@ -44,7 +48,7 @@ function Filter({ cls, labels, func, lang, obj, selectionData }) {
         {Object.keys(obj).map((key, id) => {
           var item = obj[key];
           return (
-            <Options
+            (!removedKeyList.includes(key))?<Options
               func={getALlResult}
               key={id}
               _key={key}
@@ -52,7 +56,7 @@ function Filter({ cls, labels, func, lang, obj, selectionData }) {
               lang={lang}
               obj={item}
               selectionData = {selectionData}
-            />
+            />:null
           )
         })}
         <button

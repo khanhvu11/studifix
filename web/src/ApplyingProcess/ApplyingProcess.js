@@ -33,6 +33,8 @@ export default function ApplyingProcess(props) {
     const [clN, setClN] = useState('');
     const [labels, setLabels] = useState([]);
 
+    const removedKeyList = ['provider', 'link', 'advancement', 'advancementDetail', 'advancementTime', 'city', 'country']
+
     const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
 
     useEffect(()=>{
@@ -84,7 +86,9 @@ export default function ApplyingProcess(props) {
 
             setScholarshipRemaining(scholarship)
 
-            var labels = scholarship && Object.keys(scholarship).map((key) => scholarship[key].localization? scholarship[key].localization.title[language]: null);
+            var labels = []
+            scholarship && Object.keys(scholarship).map((key) => scholarship[key].localization && !removedKeyList.includes(key)? labels.push(scholarship[key].localization.title[language]): null);
+            console.log(labels)
             setClN(labels[0]);
             setLabels(labels);
         });

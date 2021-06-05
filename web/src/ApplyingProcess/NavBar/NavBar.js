@@ -9,6 +9,8 @@ import './NavBar.css'
 export default function NavBar({ cls, func , lang, obj} ){
 
     const [label, setLabel] = useState('')
+    const removedKeyList = ['provider', 'link', 'advancement', 'advancementDetail', 'advancementTime','city', 'country']
+
 
     useEffect(()=>{
         setLabel(cls)
@@ -28,7 +30,7 @@ export default function NavBar({ cls, func , lang, obj} ){
             <div className='logo'><h1><span>Studi</span>fix</h1></div>
             <ul>
                 {Object.keys(obj).map((key, id) => 
-                    ((key !=="city" && key !=="country"))?(obj[key].localization && <li key={id} className={label===obj[key].localization.title[lang]?"focus":""}><label htmlFor={obj[key].localization.title[lang]} onClick={() => onClickHandler(obj[key].localization.title[lang])}>{obj[key].localization.title[lang]}</label>{obj[key].mandatory ? " *": ""}</li>):null)}
+                    (!removedKeyList.includes(key))?(obj[key].localization && <li key={id} className={label===obj[key].localization.title[lang]?"focus":""}><label htmlFor={obj[key].localization.title[lang]} onClick={() => onClickHandler(obj[key].localization.title[lang])}>{obj[key].localization.title[lang]}</label>{obj[key].mandatory ? " *": ""}</li>):null)}
 
                 {/* <li className={(label==="submit"?"focus":"") + " submit"}><label onClick={() => onClickHandler("submit")}>Submit</label></li> */}
             </ul>

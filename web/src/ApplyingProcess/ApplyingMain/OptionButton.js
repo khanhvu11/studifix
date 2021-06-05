@@ -11,7 +11,7 @@ export default function OptionButton({active, buttonFunc, buttonLang, value}) {
 
     function select(){
         setIsChosen(!isChosen)  
-        buttonFunc(isChosen, value._id) 
+        buttonFunc(isChosen, value.title[buttonLang]) 
     }
 
     return (
