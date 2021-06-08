@@ -12,5 +12,4 @@ export interface IUserInputList {
     support: string[];
     requirement: string[];
     nationalityDetail: string[];
-    supportSpecific: string[];
 }

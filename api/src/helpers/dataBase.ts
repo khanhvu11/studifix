@@ -14,7 +14,7 @@ const refactorIDs = (idList: string[]): any[] => {
 export const scholarshipFilterqueryGenerator = (idLists: IUserInputList): any => {
     let tempArray = [];
 
-    const { commitment, occupation, requirement, semester, graduation, nationality, support, course, state, religion, supportSpecific, nationalityDetail } = idLists;
+    const { commitment, occupation, requirement, semester, graduation, nationality, support, course, state, religion, nationalityDetail } = idLists;
 
     commitment ? tempArray.push({ $or: [{ 'commitment.value': { $in: refactorIDs(commitment) } }, { 'commitment.value': null }] }) : null;
     occupation ? tempArray.push({ $or: [{ 'occupation.value': { $in: refactorIDs(occupation) } }, { 'occupation.value': null }] }) : null;
@@ -25,7 +25,6 @@ export const scholarshipFilterqueryGenerator = (idLists: IUserInputList): any =>
     religion ? tempArray.push({ $or: [{ 'religion.value': { $in: refactorIDs(religion) } }, { 'religion.value': null }] }) : null;
     nationality ? tempArray.push({ $or: [{ 'nationality.value': { $in: refactorIDs(nationality) } }, { 'nationality.value': null }] }) : null;
     requirement ? tempArray.push({ $or: [{ 'requirement.value': { $in: refactorIDs(requirement) } }, { 'requirement.value': null }] }) : null;
-    supportSpecific ? tempArray.push({ $or: [{ 'supportSpecific.value': { $in: refactorIDs(supportSpecific) } }, { 'supportSpecific.value': null }] }) : null;
     nationalityDetail ? tempArray.push({ $or: [{ 'nationalityDetail.value': { $in: refactorIDs(nationalityDetail) } }, { 'nationalityDetail.value': null }] }) : null;
 
     semester ? tempArray.push({ $or: [{ 'semester.value': semester }, { 'semester.value': null }] }) : null;

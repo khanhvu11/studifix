@@ -19,7 +19,6 @@ export const getSelectionDataFromDB = (): Promise<any> => {
             .populate('requirement.values')
             .populate('state.values')
             .populate('support.values')
-            .populate('supportSpecific.values')
             .exec()
             .then((values) => {
                 console.log(values);
@@ -47,7 +46,6 @@ export const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any>
             'commitment',
             'support',
             'requirement',
-            'supportSpecific',
             'referenceDetail',
             'responsible',
             'provider'
@@ -74,7 +72,6 @@ export const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any>
             'graduation',
             'occupation',
             'religion',
-            'supportSpecific',
             'support',
             'provider',
             'referenceDetail',
@@ -121,7 +118,6 @@ export const getScholarshipByID = (_id: string): Promise<any> => {
             'commitment',
             'support',
             'requirement',
-            'supportSpecific',
             'referenceDetail',
             'responsible',
             'provider'
@@ -148,7 +144,6 @@ export const getScholarshipByID = (_id: string): Promise<any> => {
             'graduation',
             'occupation',
             'religion',
-            'supportSpecific',
             'support',
             'provider',
             'referenceDetail',

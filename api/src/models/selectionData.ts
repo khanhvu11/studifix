@@ -13,7 +13,6 @@ import religion from './scholarship/components/religion';
 import requirement from './scholarship/components/requirements';
 import state from './scholarship/components/state';
 import support from './scholarship/components/support';
-import supportSpecific from './scholarship/components/supportSpecific';
 
 const SelectionDataSchema: Schema = new Schema({
     _id: Schema.Types.ObjectId,
@@ -61,7 +60,8 @@ const SelectionDataSchema: Schema = new Schema({
             FR: { type: String, required: true }
         },
         mandatory: { type: Boolean },
-        multiselect: { type: Boolean }
+        multiselect: { type: Boolean },
+        dependence : { type: String, required: true }
     },
     course: {
         values: [{ type: Schema.Types.ObjectId, ref: course }],
@@ -76,7 +76,8 @@ const SelectionDataSchema: Schema = new Schema({
             FR: { type: String, required: true }
         },
         mandatory: { type: Boolean },
-        multiselect: { type: Boolean }
+        multiselect: { type: Boolean },
+        dependence : { type: String, required: true }
     },
     country: {
         values: [{ type: Schema.Types.ObjectId, ref: country }],
@@ -200,22 +201,6 @@ const SelectionDataSchema: Schema = new Schema({
     },
     support: {
         values: [{ type: Schema.Types.ObjectId, ref: support }],
-        title: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        description: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        mandatory: { type: Boolean },
-        multiselect: { type: Boolean }
-    },
-
-    supportSpecific: {
-        values: [{ type: Schema.Types.ObjectId, ref: supportSpecific }],
         title: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },
