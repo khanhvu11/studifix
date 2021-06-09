@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function TextInput({scholarship_cat, _key, buttonFunc}) {
 
-    const [textValue, setTextValue] = useState('')
 
     var handleChange = (event) => {
         buttonFunc(false, event.target.value)
     }
-
-    console.log(textValue)
 
     return (
         <div className="form-group row">

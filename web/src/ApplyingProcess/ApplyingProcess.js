@@ -4,9 +4,8 @@ import { useLocation } from 'react-router'
 import Navbar from '../ScholarshipsPage/Navbar/Navbar'
 import Footer from '../ScholarshipsPage/Footer/Footer'
 import Dropdown from './Dropdown'
-import UserSelection from './UserSelection'
 import TextInput from './TextInput'
-import ListType from './ListType'
+import ListType from '../Review/ListType'
 import CheckBox from './Checkbox'
 
 import Filter from './ApplyingMain/ApplyingMain';
@@ -24,21 +23,23 @@ import './Applying.css'
 export default function ApplyingProcess(props) {
     const location = useLocation()
     const [selectionData, setSelectionData] = useState({})
+    const [scholarship, setScholarship] = useState({})
     const [userSelection, setUserSelection] = useState({})
-    const scholarship = location.state.scholarship
-    const usr_selection= location.state.usr_selection
     const [scholarshipRemaining, setScholarshipRemaining] = useState({})
 
     const language = 'DE';
     const [clN, setClN] = useState('');
     const [labels, setLabels] = useState([]);
 
-    const removedKeyList = ['provider', 'link', 'advancement', 'advancementDetail', 'advancementTime', 'city', 'country']
-
     const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
 
     useEffect(()=>{
-        
+        const scholarship = location.state.scholarship
+        const usr_selection= location.state.usr_selection
+
+        setScholarship(scholarship)
+
+        const removedKeyList = ['provider', 'link', 'advancement', 'advancementDetail', 'advancementTime', 'city', 'country', 'referenceAllowed', 'referenceRequiered', 'age']
         //get selectiondata
         
         fetch(URL + '/api/data/selectiondata')
@@ -69,11 +70,12 @@ export default function ApplyingProcess(props) {
 
             setUserSelection(selObj)
             //delete scholarship's categories which already exist in user's selection data
+            var remain = {...scholarship}
             Object.keys(selObj).forEach(selKey => {
-                Object.keys(scholarship).forEach(scholarKey => {
+                Object.keys(remain).forEach(scholarKey => {
                     if(scholarKey === selKey){
 
-                        delete scholarship[selKey]
+                        delete remain[selKey]
                        /*  var elementIndex = selObj[selKey].values.map(name => 
                             scholarship[scholarKey].value && scholarship[scholarKey].value.findIndex(val => val.title.DE === name)
                         ) */
@@ -84,19 +86,31 @@ export default function ApplyingProcess(props) {
                 })
             })
 
-            setScholarshipRemaining(scholarship)
+            setScholarshipRemaining(remain)
 
-            var labels = []
-            scholarship && Object.keys(scholarship).map((key) => scholarship[key].localization && !removedKeyList.includes(key)? labels.push(scholarship[key].localization.title[language]): null);
+            var mandatoryLabels = []
+            var optionalLabels = []
+            scholarship && Object.keys(scholarship).forEach((key) => {
+                if(scholarship[key].localization && !removedKeyList.includes(key)){
+                    if(scholarship[key].value !== null){
+                        mandatoryLabels.push(scholarship[key].localization.title[language])
+                    }else{
+                        optionalLabels.push(scholarship[key].localization.title[language])
+                    }
+                }
+            });
+            var labels = ['mandatory', ...mandatoryLabels, 'optional', ...optionalLabels,'Name', 'Geburtsdatum', 'Wohnort']
+            console.log(mandatoryLabels)
+            console.log(optionalLabels)
             console.log(labels)
             setClN(labels[0]);
             setLabels(labels);
         });
 
-    }, [usr_selection, scholarship, scholarshipRemaining, URL])
+    }, [URL, location])
 
     console.log(userSelection)
-     console.log(scholarship)
+    console.log(scholarship)
     console.log(scholarshipRemaining)
 
     //assigning type of values to type of components
@@ -143,7 +157,7 @@ export default function ApplyingProcess(props) {
        
         <form className="outerContainer">
         {scholarshipRemaining && (
-          <NavBar cls={clN} func={labelClick} lang={language} obj={scholarshipRemaining} />
+          <NavBar cls={clN} func={labelClick} lang={language} obj={labels} />
         )}
         {scholarshipRemaining && (
           <Filter
@@ -154,6 +168,7 @@ export default function ApplyingProcess(props) {
             obj={scholarshipRemaining}
             selectionData = {selectionData}
             userSelection = {userSelection}
+            scholarship = {scholarship}
           />
         )}
         <div className="footer footer-sm">

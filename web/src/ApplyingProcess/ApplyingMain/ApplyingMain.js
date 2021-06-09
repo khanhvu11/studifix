@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import personalInfo from '../personalInfo'
 
 //import TextArea from './TextArea'
 import './Filter.css';
 import Options from './Options';
-import Dropdown from './Dropdown';
+/* import Dropdown from './Dropdown'; */
 
 
-function Filter({ cls, labels, func, lang, obj, selectionData, userSelection }) {
-  const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
+function Filter({ cls, labels, func, lang, obj, selectionData, userSelection, scholarship }) {
+  /* const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost'; */
   const [result, setResult] = useState({});
   const history = useHistory();
   const removedKeyList = ['provider', 'link', 'advancement', 'advancementDetail', 'advancementTime', 'city', 'country']
@@ -38,8 +39,11 @@ function Filter({ cls, labels, func, lang, obj, selectionData, userSelection }) 
   var toReview = () => {
     history.push({
       pathname: '/review',
-      state: {scholarship : result,
-      userSelection: userSelection},
+      state: {
+        scholarship : scholarship,
+        completedForm: result,
+        userSelection: userSelection
+      },
     });
   }
 
@@ -59,6 +63,20 @@ function Filter({ cls, labels, func, lang, obj, selectionData, userSelection }) 
               selectionData = {selectionData}
             />:null
           )
+        })}
+        {
+          Object.keys(personalInfo).map((key, id) => {
+            var item = personalInfo[key];
+            return (
+              <Options
+                func={getALlResult}
+                key={id}
+                _key={key}
+                cls={cls}
+                lang={lang}
+                obj={item}
+                selectionData = {selectionData}
+              />)
         })}
         <button
           type="button"
