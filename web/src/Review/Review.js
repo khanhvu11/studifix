@@ -4,33 +4,54 @@ import { useLocation } from 'react-router'
 
 import Navbar from '../ScholarshipsPage/Navbar/Navbar'
 import ListType from './ListType'
+import personalInfo from '../ApplyingProcess/personalInfo'
 import './review.css'
 
 export default function Review() {
 
     const location = useLocation()
     const [sentScholarship, setSentScholarship] = useState({})
-
+    
     useEffect(() => {
         const scholarship = location.state.scholarship
         const completedForm = location.state.completedForm
         const userSelection = location.state.userSelection
+        const infoKey = ['provider', 'link', 'advancement', 'advancementDetail', 'advancementTime'/* , 'city', 'country', 'referenceAllowed', 'referenceRequiered', 'age', 'support' */]
 
         console.log(userSelection)
         console.log(completedForm)
 
         Object.keys(scholarship).forEach(key =>{
-            Object.keys(completedForm).forEach(cfKey =>{
-                if(cfKey === key){
-                    scholarship[key].value = completedForm[cfKey]
-                }
-            })
 
-            Object.keys(userSelection).forEach(usKey =>{
-                if(usKey === key){
-                    scholarship[key].value = userSelection[usKey].values
-                }
-            })
+            if(scholarship[key].localization){
+
+                if(!infoKey.includes(key)){
+
+                    scholarship[key].value = ''
+                } 
+                
+                Object.keys(completedForm).forEach(cfKey =>{
+
+                    if(Object.keys(personalInfo).includes(cfKey)){
+                        personalInfo[cfKey].value = completedForm[cfKey]
+                        scholarship[cfKey] = personalInfo[cfKey]
+                    }
+
+                    if(cfKey === key){
+                        scholarship[key].value = completedForm[cfKey]
+                    }/* else{
+                        scholarship[key].value = ''
+                    } */
+                })
+
+                Object.keys(userSelection).forEach(usKey =>{
+                    if(usKey === key){
+                        scholarship[key].value = userSelection[usKey].values
+                    }/* else{
+                        scholarship[key].value = ''
+                    } */
+                })
+        }
 
         })
 

@@ -39,7 +39,7 @@ export default function ApplyingProcess(props) {
 
         setScholarship(scholarship)
 
-        const removedKeyList = ['provider', 'link', 'advancement', 'advancementDetail', 'advancementTime', 'city', 'country', 'referenceAllowed', 'referenceRequiered', 'age']
+        const removedKeyList = ['provider', 'link', 'support', 'advancement', 'advancementDetail', 'advancementTime', 'city', 'country', 'referenceAllowed', 'referenceRequiered', 'age']
         //get selectiondata
         
         fetch(URL + '/api/data/selectiondata')
@@ -91,7 +91,7 @@ export default function ApplyingProcess(props) {
             var mandatoryLabels = []
             var optionalLabels = []
             scholarship && Object.keys(scholarship).forEach((key) => {
-                if(scholarship[key].localization && !removedKeyList.includes(key)){
+                if(scholarship[key].localization && !removedKeyList.includes(key) && !Object.keys(usr_selection).includes(key)){
                     if(scholarship[key].value !== null){
                         mandatoryLabels.push(scholarship[key].localization.title[language])
                     }else{
@@ -100,6 +100,7 @@ export default function ApplyingProcess(props) {
                 }
             });
             var labels = ['mandatory', ...mandatoryLabels, 'optional', ...optionalLabels,'Name', 'Geburtsdatum', 'Wohnort']
+
             console.log(mandatoryLabels)
             console.log(optionalLabels)
             console.log(labels)

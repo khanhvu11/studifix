@@ -13,9 +13,9 @@ export default function ListType({scholarship_cat, _key}) {
           return <a href={category.value}>{category.value}</a>
         }else{
           switch(category.value){
-              case null: return <p>Keine Beschränkung</p>
-              case true: return <p>Ja</p>
-              case false: return <p>Nein</p>
+              case null: return <p></p>
+              case true: return <p></p>
+              case false: return <p></p>
               default: return <p>{category.value}</p>
           }
         }
