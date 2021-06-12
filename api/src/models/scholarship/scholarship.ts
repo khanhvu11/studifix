@@ -16,7 +16,6 @@ import religion from './components/religion';
 import requirement from './components/requirements';
 import state from './components/state';
 import support from './components/support';
-import supportSpecific from './components/supportSpecific';
 
 const ScholarshipSchema: Schema = new Schema({
     _id: Schema.Types.ObjectId,
@@ -80,11 +79,6 @@ const ScholarshipSchema: Schema = new Schema({
     support: {
         localization: { type: Schema.Types.ObjectId, ref: localization },
         value: [{ type: Schema.Types.ObjectId, ref: support }]
-    },
-
-    supportSpecific: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: supportSpecific }]
     },
 
     referenceRequiered: {

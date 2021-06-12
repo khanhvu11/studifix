@@ -63,7 +63,6 @@ const getUserDataByID = (_id: string): Promise<any> => {
             'courses',
             'requirements',
             'supports',
-            'supportSpecifics'
         ];
         var pQuery = [{ path: 'scholarships.scholarship', populate }];
 

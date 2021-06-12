@@ -13,7 +13,6 @@ export default interface IScholarship extends Document {
     state: string;
     institution: string;
     support: string[];
-    supportSpecific: string[];
     referenceRequiered: boolean;
     referenceAllowed: boolean;
     referenceDetail: string[];

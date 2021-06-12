@@ -1,4 +1,5 @@
 import mongoose, { Schema } from 'mongoose';
+import occupation from './occupation';
 
 const CourseSchema: Schema = new Schema({
     _id: Schema.Types.ObjectId,
@@ -11,7 +12,8 @@ const CourseSchema: Schema = new Schema({
         DE: { type: String, required: true },
         EN: { type: String, required: true },
         FR: { type: String, required: true }
-    }
+    },
+    dependentOn: [{ type: Schema.Types.ObjectId, ref: occupation }]
 });
 
 export default mongoose.model('courses', CourseSchema);
