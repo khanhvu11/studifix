@@ -8,12 +8,10 @@ up-prod:
 	docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build -d
 
 reload-dev:
-	make backup
 	make down
 	make up
 
 reload-prod:
-	make backup
 	make down
 	make up-prod
 
