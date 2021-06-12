@@ -103,7 +103,7 @@ export default function ApplyingProcess(props) {
             });
 
             var perInfo = Object.keys(personalInfo).map(key => personalInfo[key].localization.title[language])
-            var labels = ['mandatory', ...mandatoryLabels, 'optional', ...optionalLabels, ...perInfo]
+            var labels = ['mandatory', ...mandatoryLabels, 'optional', ...optionalLabels, 'perInfo', ...perInfo]
 
             console.log(mandatoryLabels)
             console.log(optionalLabels)
