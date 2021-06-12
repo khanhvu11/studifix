@@ -1,16 +1,26 @@
 import React, {useEffect} from 'react'
 import { useState } from 'react'
 import { useLocation } from 'react-router'
+import { useHistory } from 'react-router-dom';
+
 
 import Navbar from '../ScholarshipsPage/Navbar/Navbar'
 import ListType from './ListType'
 import personalInfo from '../ApplyingProcess/personalInfo'
+import sendingMess from '../ScholarshipsPage/Footer/sendingMess.svg'
+
 import './review.css'
 
 export default function Review() {
 
     const location = useLocation()
     const [sentScholarship, setSentScholarship] = useState({})
+
+    const history = useHistory();
+    const backtoFilter = () => {
+        history.push('/');
+    }
+
     
     useEffect(() => {
         const scholarship = location.state.scholarship
@@ -68,6 +78,7 @@ export default function Review() {
                 <Navbar/>
             </div>
             <div className='review'>
+            <h2>Überprüfen Sie Ihre Informationen</h2>
             {/* {userSelection && Object.keys(userSelection).map(key =>{
                 return <div>
                 <h3>{key}</h3>
@@ -79,6 +90,18 @@ export default function Review() {
                     <ListType scholarship_cat={sentScholarship[key]} _key={key}/>
                 </div>
             })}
+            </div>
+            <div className="scholarshipsFooter">
+                <div className="buttons">
+                        <button type='button' className="findingScholarships" onClick={backtoFilter}><h4>Bewerbung schicken</h4></button>
+                </div>
+                <div className="message">
+                    <div className="questions">
+                        <h1>Hast du Fragen oder Anregungen?<br></br>Dann schreib uns gerne</h1>
+                        <button type='button' className="sendingMess">Nachricht senden</button>
+                    </div>
+                    <img src={sendingMess} alt="sendingMess" />
+                </div>
             </div>
         </div>
     )

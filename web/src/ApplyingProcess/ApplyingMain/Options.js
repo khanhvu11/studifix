@@ -27,7 +27,7 @@ export default function MultipleChoice({func, _key, cls, lang, obj, selectionDat
             newList.splice(index, 1)
         }
 
-        if(!obj.multiselect){
+        if(obj.multiselect !== null && !obj.multiselect/*  && _key !== 'adresse' */){
             if(newList.length>1){
                 setRemovedOption(newList[0])
                 newList.splice(0, 1)
@@ -66,7 +66,13 @@ export default function MultipleChoice({func, _key, cls, lang, obj, selectionDat
                     {selectionData[_key].values && selectionData[_key].values.map((value,id) => <OptionButton active={removedOption===value._id?false:true} key={id} buttonFunc={getOption} buttonLang={lang} value={value} />)}
                 </div>):(
                     <div className="button-grid">
-                        <TextInput scholarship_cat={obj} _key={_key}  buttonFunc={getOption} buttonLang={lang} />
+                        {
+                            (_key === 'adresse')?(
+                                Object.keys(obj.value).map(key => 
+                                    <TextInput scholarship_cat={obj.value[key]} _key={key}  buttonFunc={getOption} buttonLang={lang} />
+                                )
+                            ):<TextInput scholarship_cat={obj} _key={_key}  buttonFunc={getOption} buttonLang={lang} />
+                        }
                     </div>))
             }
         </div>

@@ -11,6 +11,8 @@ import CheckBox from './Checkbox'
 import Filter from './ApplyingMain/ApplyingMain';
 import NavBar from './NavBar/NavBar';
 
+import personalInfo from './personalInfo'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCogs,
@@ -99,7 +101,9 @@ export default function ApplyingProcess(props) {
                     }
                 }
             });
-            var labels = ['mandatory', ...mandatoryLabels, 'optional', ...optionalLabels,'Name', 'Geburtsdatum', 'Wohnort']
+
+            var perInfo = Object.keys(personalInfo).map(key => personalInfo[key].localization.title[language])
+            var labels = ['mandatory', ...mandatoryLabels, 'optional', ...optionalLabels, ...perInfo]
 
             console.log(mandatoryLabels)
             console.log(optionalLabels)
