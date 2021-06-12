@@ -28,6 +28,8 @@ export default function NavBar({ cls, func , lang, obj} ){
                         return <h2 style={{color:'#1170fe'}}>Pflichtfelder</h2>
                     }else if(_label === 'optional'){
                         return <h2 style={{color:'#1170fe'}}>Optionale Felder</h2>
+                    }else if(_label === 'perInfo'){
+                        return <h2 style={{color:'#1170fe'}}>Persönliche Angaben</h2>
                     }else{
                         return <li key={id} className={label===_label?"focus":""}><label htmlFor={_label} onClick={() => onClickHandler(_label)}>{_label}</label></li>
                     }
