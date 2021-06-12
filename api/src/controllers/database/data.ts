@@ -6,7 +6,7 @@ export const getSelectionDataFromDB = (): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         let filter: any = { dataSetType: 'user' };
 
-        SelectionData.findOne(filter, {})
+        SelectionData.findOne(filter, { dataSetType: 0 })
             .populate('city.values')
             .populate('commitment.values')
             .populate('country.values')
