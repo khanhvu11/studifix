@@ -13,11 +13,14 @@ export default function FilterPage() {
   const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
 
   const language = 'DE';
+  //the current label is shown in NavBar
   const [clN, setClN] = useState('');
+  //selectionData from backend will be saved in listCat
   const [listCat, setListCat] = useState({});
+  //list of all labels
   const [labels, setLabels] = useState([]);
   console.log(URL);
-
+  // get selectionData from Backend
   useEffect(() => {
     /* https://studifix-mock-api-default-rtdb.europe-west1.firebasedatabase.app/.json */
     /* http://localhost:4000/data/selectiondata */
@@ -26,6 +29,7 @@ export default function FilterPage() {
       .then((response) => response.json())
       .then((items) => {
         setListCat(items.selectionData);
+        //get list of labels from selectionData
         var labels =
           items.selectionData &&
           Object.keys(items.selectionData).map((key) =>
@@ -33,11 +37,13 @@ export default function FilterPage() {
               ? items.selectionData[key].title[language]
               : null
           );
+        //set first label shown when website appears
         setClN(labels[0]);
         setLabels(labels);
       });
   }, [URL]);
 
+  //get current label when user click it
   var labelClick = (cn) => {
     setClN(cn);
   };

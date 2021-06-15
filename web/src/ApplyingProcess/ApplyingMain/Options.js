@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import OptionButton from './OptionButton'
 import TextInput from '../TextInput'
+import personalInfo from '../personalInfo'
 
 export default function MultipleChoice({func, _key, cls, lang, obj, selectionData}) {
     const [optionList, setOptionList]=useState([])
@@ -27,7 +28,7 @@ export default function MultipleChoice({func, _key, cls, lang, obj, selectionDat
             newList.splice(index, 1)
         }
 
-        if(obj.multiselect !== null && !obj.multiselect/*  && _key !== 'adresse' */){
+        if((obj.multiselect && !obj.multiselect) || Object.keys(personalInfo).includes(_key) || (obj.localization && !(Array.isArray(obj.value)))){
             if(newList.length>1){
                 setRemovedOption(newList[0])
                 newList.splice(0, 1)
@@ -66,13 +67,14 @@ export default function MultipleChoice({func, _key, cls, lang, obj, selectionDat
                     {selectionData[_key].values && selectionData[_key].values.map((value,id) => <OptionButton active={removedOption===value._id?false:true} key={id} buttonFunc={getOption} buttonLang={lang} value={value} />)}
                 </div>):(
                     <div className="button-grid">
-                        {
-                            (_key === 'adresse')?(
+                        
+                            {/* (_key === 'adresse')?(
                                 Object.keys(obj.value).map(key => 
                                     <TextInput scholarship_cat={obj.value[key]} _key={key}  buttonFunc={getOption} buttonLang={lang} />
                                 )
-                            ):<TextInput scholarship_cat={obj} _key={_key}  buttonFunc={getOption} buttonLang={lang} />
-                        }
+                            ): */}
+
+                            <TextInput scholarship_cat={obj} _key={_key}  buttonFunc={getOption} buttonLang={lang} />
                     </div>))
             }
         </div>

@@ -4,15 +4,20 @@ import { useState, useEffect } from 'react';
 
 export default function TextInput({scholarship_cat, _key, buttonFunc}) {
 
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState(null)
     var handleChange = (event) => {
         setValue( event.target.value)
-        buttonFunc(false, event.target.value)
+        /* buttonFunc(false, value) */
     }
 
-    /* useEffect(() => {
-        return () => buttonFunc(false, value)
-    },[]) */
+    useEffect(() => {
+        const delayDebounceFn = setTimeout(() => {
+            buttonFunc(false, value)
+          }, 3000)
+      
+        return () => clearTimeout(delayDebounceFn)
+        /* return () => buttonFunc(false, value) */
+    },[value])
 
     return (
         <div className="form-group row">

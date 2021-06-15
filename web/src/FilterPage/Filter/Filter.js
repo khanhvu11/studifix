@@ -10,18 +10,24 @@ import Dropdown from './Dropdown';
 
 function Filter({ cls, labels, func, lang, obj }) {
   const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
+
+  // result: what user chose in filter process
   const [result, setResult] = useState({});
   const history = useHistory();
 
+  // function for showing next category
   var getNextkey = (currentKey) => {
+    // get array of labels
     var existKeys = labels.filter((key) =>
       key !== null && key !== 'Stadt' && key !== 'Land' ? key : null
     );
     existKeys.push('submit');
     var ind = existKeys.indexOf(currentKey);
+    // send next label to be shown to patent component (filterPage)
     func(existKeys[ind + 1]);
   };
 
+  // get chosen options from child components
   var getALlResult = (key, optionList) => {
     if (optionList.length > 0) {
       result[key] = optionList;
@@ -33,13 +39,9 @@ function Filter({ cls, labels, func, lang, obj }) {
 
   console.log(result);
 
+  // send result to backend to receive the suitable scholarships
   var sendFilter = () => {
-    /* Object.keys(obj).forEach(key => {
-      if(!Object.keys(result).includes(key)){
-        result[key] = null
-        setResult(result)
-      }
-    }) */
+   
     console.log(JSON.stringify(result));
 
     // fetch('http://studifix.mi.hdm-stuttgart.de/api/data/filter/scholarships', {

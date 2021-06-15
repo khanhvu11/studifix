@@ -45,7 +45,8 @@ const personalInfo = {
     FR:""
     }
   },
-  value: {
+  value: null
+  /* {
     'street':{
       localization:{
         description:{
@@ -94,8 +95,7 @@ const personalInfo = {
     },
     value: null
     }
-
-  }
+  } */
   },
   'email':{
     localization:{

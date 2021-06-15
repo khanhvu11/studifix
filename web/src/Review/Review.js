@@ -37,7 +37,7 @@ export default function Review() {
 
                 if(!infoKey.includes(key)){
 
-                    scholarship[key].value = ''
+                    scholarship[key].value = null
                 } 
                 
                 Object.keys(completedForm).forEach(cfKey =>{

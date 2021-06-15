@@ -8,25 +8,27 @@ import './NavBar.css'
 
 export default function NavBar({ cls, func , lang, obj} ){
 
+    //labels of every selection field are nav-items.
     const [label, setLabel] = useState('')
 
     useEffect(()=>{
         setLabel(cls)
     },[cls])
 
+    // send the chosen labels to the parent component which is Filter Page
+    // and set new label to this component
     const onClickHandler = (cn) => {
         func(cn)
         setLabel(cn)
     }
 
-    //navbar-expand-lg navbar-light bg-light
-    /* {Object.keys(obj).map((key, id) => {
-        if(key !=="city" && key !=="country"){ return (obj[key].title && <li key={id} className={label===obj[key].title[lang]?"focus":""}><label htmlFor={obj[key].title[lang]} onClick={() => onClickHandler(obj[key].title[lang])}>{obj[key].title[lang]}</label>{obj[key].mandatory ? " *": ""}</li>)}})} */
-
     return (
         <nav className="filter-nav">
             <div className='logo'><h1><span>Studi</span>fix</h1></div>
             <ul>
+                {/*
+                    reading selectionData and print out the label
+                */}
                 {Object.keys(obj).map((key, id) => 
                     (key !=="city" && key !=="country")?(obj[key].title && <li key={id} className={label===obj[key].title[lang]?"focus":""}><label htmlFor={obj[key].title[lang]} onClick={() => onClickHandler(obj[key].title[lang])}>{obj[key].title[lang]}</label>{obj[key].mandatory ? " *": ""}</li>):null)}
 

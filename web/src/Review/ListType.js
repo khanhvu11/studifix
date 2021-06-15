@@ -5,7 +5,7 @@ export default function ListType({scholarship_cat, _key}) {
     const lang = 'DE'
 
     var iterateArray = (value) => {
-        return value.map((val,id) => val.title ?<p key={id} >{val.title[lang]}</p>:<p key={id} >{val}</p>)
+        return value.map((val,id) => (val !== null && val.title) ?<p key={id} >{val.title[lang]}</p>:<p key={id} >{val}</p>)
     }
 
     var notArrayValue = (category, key) => {
