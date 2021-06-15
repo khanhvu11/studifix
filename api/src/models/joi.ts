@@ -52,3 +52,22 @@ export const joiFilterParams = Joi.object({
 export const joiScholarshipID = Joi.object({
     _id: Joi.string().min(24).max(24)
 });
+
+export const joiApplycationInput = Joi.object({
+    selectionData: {
+        //todo: check for hexadecimal numbers 12 or 24
+        commitment: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        occupation: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        graduation: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        course: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        support: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        state: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        nationality: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        religion: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        requirement: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        nationalityDetail: [Joi.array().items(Joi.string().min(24).max(24)), null],
+
+        semester: [Joi.number().min(1).max(20), null],
+        age: [Joi.number().min(1).max(99), null]
+    }
+});
