@@ -19,6 +19,7 @@ export const getSelectionDataFromDB = (): Promise<any> => {
             .populate('requirement.values')
             .populate('state.values')
             .populate('support.values')
+            .populate('reference.values')
             .exec()
             .then((values) => {
                 console.log(values);

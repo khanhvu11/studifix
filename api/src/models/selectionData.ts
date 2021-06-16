@@ -7,6 +7,7 @@ import graduation from './scholarship/components/graduation';
 import nationality from './scholarship/components/nationality';
 import nationalityDetail from './scholarship/components/nationalityDetail';
 import occupation from './scholarship/components/occupation';
+import reference from './scholarship/components/reference';
 import religion from './scholarship/components/religion';
 import requirement from './scholarship/components/requirements';
 import state from './scholarship/components/state';
@@ -27,6 +28,11 @@ const SelectionDataSchema: Schema = new Schema({
             EN: { type: String, required: true },
             FR: { type: String, required: true }
         },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
         mandatory: { type: Boolean },
         multiselect: { type: Boolean }
     },
@@ -42,9 +48,34 @@ const SelectionDataSchema: Schema = new Schema({
             EN: { type: String, required: true },
             FR: { type: String, required: true }
         },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
         mandatory: { type: Boolean },
         multiselect: { type: Boolean },
         dependence: { type: String, required: true }
+    },
+    reference: {
+        values: [{ type: Schema.Types.ObjectId, ref: reference }],
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
     },
     course: {
         values: [{ type: Schema.Types.ObjectId, ref: course }],
@@ -54,6 +85,11 @@ const SelectionDataSchema: Schema = new Schema({
             FR: { type: String, required: true }
         },
         description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },
             FR: { type: String, required: true }
@@ -74,6 +110,11 @@ const SelectionDataSchema: Schema = new Schema({
             EN: { type: String, required: true },
             FR: { type: String, required: true }
         },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
         mandatory: { type: Boolean },
         multiselect: { type: Boolean }
     },
@@ -85,6 +126,11 @@ const SelectionDataSchema: Schema = new Schema({
             FR: { type: String, required: true }
         },
         description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },
             FR: { type: String, required: true }
@@ -104,6 +150,11 @@ const SelectionDataSchema: Schema = new Schema({
             EN: { type: String, required: true },
             FR: { type: String, required: true }
         },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
         mandatory: { type: Boolean },
         multiselect: { type: Boolean }
     },
@@ -115,6 +166,11 @@ const SelectionDataSchema: Schema = new Schema({
             FR: { type: String, required: true }
         },
         description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },
             FR: { type: String, required: true }
@@ -134,6 +190,11 @@ const SelectionDataSchema: Schema = new Schema({
             EN: { type: String, required: true },
             FR: { type: String, required: true }
         },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
         mandatory: { type: Boolean },
         multiselect: { type: Boolean }
     },
@@ -145,6 +206,11 @@ const SelectionDataSchema: Schema = new Schema({
             FR: { type: String, required: true }
         },
         description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },
             FR: { type: String, required: true }
@@ -164,6 +230,11 @@ const SelectionDataSchema: Schema = new Schema({
             EN: { type: String, required: true },
             FR: { type: String, required: true }
         },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
         mandatory: { type: Boolean },
         multiselect: { type: Boolean }
     },
@@ -175,6 +246,11 @@ const SelectionDataSchema: Schema = new Schema({
             FR: { type: String, required: true }
         },
         description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },
             FR: { type: String, required: true }
@@ -191,6 +267,11 @@ const SelectionDataSchema: Schema = new Schema({
             FR: { type: String, required: true }
         },
         description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },
             FR: { type: String, required: true }

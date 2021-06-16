@@ -43,9 +43,14 @@ export const joiFilterParams = Joi.object({
         religion: [Joi.array().items(Joi.string().min(24).max(24)), null],
         requirement: [Joi.array().items(Joi.string().min(24).max(24)), null],
         nationalityDetail: [Joi.array().items(Joi.string().min(24).max(24)), null],
-
-        semester: [Joi.number().min(1).max(20), null],
-        age: [Joi.number().min(1).max(99), null]
+        supportYet: [Joi.boolean()],
+        workExperience: [Joi.number().min(1).max(50), null],
+        workHours: [Joi.number().min(1).max(40), null],
+        gradeCollege: [Joi.number().min(1).max(5), null],
+        gradeJob: [Joi.number().min(1).max(5), null],
+        gradeUni: [Joi.number().min(1).max(5), null],
+        semester: [Joi.number().min(1).max(20)],
+        age: [Joi.number().min(1).max(99)]
     }
 });
 
