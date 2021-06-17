@@ -27,7 +27,7 @@
 }
 
 .select {
-  height: 3rem;
+  height: 4rem;
   font-size: 1.3rem;
   width: 80%;
   padding: 0.375rem 0.75rem;
@@ -156,6 +156,21 @@ button.sub1 {
 .hideNext{
   display: none;
 }
+
+.tooltip{
+  width: 30%;
+  margin-bottom: 1rem;
+}
+
+.tooltip .tooltip-inner {
+  background-color: white;
+  max-width: none;
+  white-space: normal;
+  font-size: 1rem;
+  color:#1975fe;
+  text-align: justify;
+}
+
 @media (min-width: 1120px) {
   .filter {
     position: absolute;

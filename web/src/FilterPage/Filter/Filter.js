@@ -22,7 +22,7 @@ function Filter({ cls, labels, func, lang, obj }) {
   var getNextkey = (currentKey) => {
     // get array of labels
     var existKeys = labels.filter((key) =>
-      key !== null /* && key !== 'Stadt' */ && key !== 'Land' ? key : null
+      key !== null && key !== 'Stadt' && key !== 'Land' ? key : null
     );
     existKeys.push('submit');
     var ind = existKeys.indexOf(currentKey);
@@ -112,6 +112,7 @@ function Filter({ cls, labels, func, lang, obj }) {
               cls={cls}
               lang={lang}
               obj={item}
+              result = {result}
             />
             ) : (
               <Dropdown

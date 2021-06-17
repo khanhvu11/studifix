@@ -11,7 +11,7 @@ import {
 
 import OptionButton from './OptionButton'
 
-export default function MultipleChoice({func, _key, cls, lang, obj}) {
+export default function MultipleChoice({func, _key, cls, lang, obj, result}) {
     // get list of options corresponding to their category (_key)
     const [optionList, setOptionList]=useState([])
     // option that user don't want to choose anymore
@@ -63,11 +63,11 @@ export default function MultipleChoice({func, _key, cls, lang, obj}) {
             } */}
             <h2>{obj.description[lang]+' '} 
                 <OverlayTrigger
-                    key={obj.descriptionDetail[lang]}
+                    key={'top'}
                     placement={'top'}
                     overlay={
-                        <Tooltip id={`tooltip-${'top'}`}>
-                            {obj.descriptionDetail[lang]}
+                        <Tooltip id={'tooltip-top'}>
+                            <strong>{obj.descriptionDetail[lang]}</strong>
                         </Tooltip>
                     }
                     >
@@ -76,7 +76,18 @@ export default function MultipleChoice({func, _key, cls, lang, obj}) {
             </h2>
             <div className="button-grid">
                 { //pass values for buttons. Every button is an option
-                    obj.values && obj.values.map((value,id) => <OptionButton active={removedOption===value._id?false:true} key={id} buttonFunc={getOption} buttonLang={lang} value={value} />)}
+                    obj.values && obj.values.map((value,id) => {
+                        if(result[obj.dependence]){
+                            var a = result[obj.dependence]
+                            console.log(a)
+                            console.log(value.dependentOn)
+                            if(value.dependentOn !== null && value.dependentOn.includes(a[0])){
+                                return <OptionButton active={removedOption===value._id?false:true} key={id} buttonFunc={getOption} buttonLang={lang} value={value}/>
+                            }
+                        }else {
+                            return <OptionButton active={removedOption===value._id?false:true} key={id} buttonFunc={getOption} buttonLang={lang} value={value}/>
+                        }
+                    })}
             </div>
         </div>
 }

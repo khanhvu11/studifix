@@ -30,7 +30,7 @@ export default function NavBar({ cls, func , lang, obj} ){
                     reading selectionData and print out the label
                 */}
                 {Object.keys(obj).map((key, id) => 
-                    (/*key !=="city" &&*/ key !=="country")?(obj[key].title && <li key={id} className={label===obj[key].title[lang]?"focus":""}><label htmlFor={obj[key].title[lang]} onClick={() => onClickHandler(obj[key].title[lang])}>{obj[key].title[lang]}</label>{obj[key].mandatory ? " *": ""}</li>):null)}
+                    (key !=="city" && key !=="country")?(obj[key].title && <li key={id} className={label===obj[key].title[lang]?"focus":""}><label htmlFor={obj[key].title[lang]} onClick={() => onClickHandler(obj[key].title[lang])}>{obj[key].title[lang]}</label>{obj[key].mandatory ? " *": ""}</li>):null)}
 
                 {/* <li className={(label==="submit"?"focus":"") + " submit"}><label onClick={() => onClickHandler("submit")}>Submit</label></li> */}
             </ul>
