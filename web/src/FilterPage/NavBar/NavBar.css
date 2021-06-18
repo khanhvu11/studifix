@@ -112,8 +112,8 @@ button {
     min-width: 350px;
     height: 100%;
     width: 20%;
-    justify-content: center;
-    align-items: center;
+ /*    justify-content: center;
+    align-items: center; */
     border-radius: 5rem 0 0 5rem;
   }
 
@@ -123,10 +123,11 @@ button {
     top: 1.5rem;
   }
 
-  nav ul {
+  .filter-nav ul {
     max-height: 600px;
-    align-items: center;
-    margin: 2rem auto;
+    align-items: flex-end;
+    /* margin: 2rem auto; */
+    margin: 0;
     position: absolute;
     top: 8rem;
     /* -ms-transform: translateY(-50%);
@@ -135,6 +136,10 @@ button {
 
   nav ul li{
     display: block;
+  }
+
+  .filter-nav ul li{
+    align-items: flex-end;
   }
 
   .submit {
