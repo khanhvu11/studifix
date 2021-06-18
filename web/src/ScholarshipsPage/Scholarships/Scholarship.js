@@ -3,18 +3,30 @@ import ScholarshipModal from './ScholarshipModal';
 /* import { Link } from 'react-router-dom'; */
 import { GiMoneyStack } from 'react-icons/gi';
 import { MdTimer } from 'react-icons/md';
+import { useHistory } from 'react-router-dom';
 
 import './scholarship.css';
 
 export default function Scholarship({ scholarship, usr_selection }) {
   /* console.log(scholarship.graduation.map(val=>val.title.DE)) */
+  const history = useHistory();
   const [modalShow, setModalShow] = React.useState(false);
   console.log(scholarship);
   console.log(usr_selection);
 
+  const toApplyingPage = () =>{
+    history.push({
+      pathname: '//applying',
+      state:{scholarship, usr_selection},
+    });
+  
+  }
+
+  /* () => setModalShow(true) */
+
   return (
     <>
-      <div className="scholarship__card" onClick={() => setModalShow(true)}>
+      <div className="scholarship__card" onClick={toApplyingPage}>
         <div className="scholarship__card__imgContainer">
           <img
             className="scholarship__card__picture"
