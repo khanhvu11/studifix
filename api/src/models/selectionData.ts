@@ -198,7 +198,7 @@ const SelectionDataSchema: Schema = new Schema({
         mandatory: { type: Boolean },
         multiselect: { type: Boolean }
     },
-    collegeGraduation: {
+    collegeGrade: {
         values: { type: String, required: true },
         title: {
             DE: { type: String, required: true },
@@ -218,7 +218,7 @@ const SelectionDataSchema: Schema = new Schema({
         mandatory: { type: Boolean },
         multiselect: { type: Boolean }
     },
-    jobGraduation: {
+    jobGrade: {
         values: { type: String, required: true },
         title: {
             DE: { type: String, required: true },
@@ -238,7 +238,7 @@ const SelectionDataSchema: Schema = new Schema({
         mandatory: { type: Boolean },
         multiselect: { type: Boolean }
     },
-    uniGraduation: {
+    uniGrade: {
         values: { type: String, required: true },
         title: {
             DE: { type: String, required: true },
