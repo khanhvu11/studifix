@@ -9,24 +9,34 @@ import {
     faQuestionCircle
   } from '@fortawesome/free-solid-svg-icons';
 
-export default function Dropdown({func, _key, cls, lang, obj}) {
-    /* const lang = lang
- */
-    var select = (e) => {
-        var option = [e.target.value]
-        func(_key, option)
+import { useState, useEffect } from 'react';
+
+export default function YesNo({func, _key, cls, lang, obj}) {
+
+    const [isYes, setIsYes] = useState(true)
+
+    useEffect(() => {
+        if(isYes){
+            func(_key, true) 
+        }else{
+            func(_key, false)
+        }
+    }, [isYes])
+
+    //to set isYes to true or false
+    function select(){
+        setIsYes(!isYes)
     }
 
     return (
-        <>
-        {obj.title && obj.description &&
-        <div className={(obj.title[lang]===cls)? 'dropdown active form-group': 'form-group dropdown'}>
+        <div className={(obj.title[lang]===cls)? 'mplChoice active': 'mplChoice'}>
             <label className="label-sml" htmlFor={obj.title[lang]}>{obj.title[lang]} {/*
                 obj.mandatory ? "*": ""
             */}</label> 
-            {
-                obj.mandatory ? "*": ""
-            }
+            {/* {
+                !obj.mandatory ? "*": ""
+
+            } */}
             <h2>{obj.description[lang]+' '} 
                 <OverlayTrigger
                     key={obj.descriptionDetail[lang]}
@@ -40,11 +50,14 @@ export default function Dropdown({func, _key, cls, lang, obj}) {
                     <FontAwesomeIcon style={{color:'#1170fe'}} icon={faQuestionCircle} />
                 </OverlayTrigger>
             </h2>
-            <select className="select" name={obj.title[lang]} id={obj.title[lang]} onChange={select}>
-                {obj.values && obj.values.map(value => <option value={value._id} key={value._id}>{value.title[lang]}</option>)}
-            </select>
+            <div className="button-grid">
+                <button type="button"  className={(isYes? "chosen ":"" )+ "choice"} onClick={select}>
+                    <p>Ja</p>
+                </button>
+                <button type="button"  className={(!isYes? "chosen ":"" )+ "choice"} onClick={select}>
+                    <p>Nein</p>
+                </button>
+            </div>
         </div>
-}
-        </>
     )
 }
