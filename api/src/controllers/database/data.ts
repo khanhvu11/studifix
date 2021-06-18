@@ -1,12 +1,13 @@
 import Scholarship from '../../models/scholarship/scholarship';
-import SelectionData from '../../models/selectionData';
+import FilterDataSchema from '../../models/filterData';
+import ApplicationDataSchema from '../../models/applicationData';
 import { scholarshipFilterqueryGenerator, populationLocalizationsGenerator, populationValuesGenerator } from '../../helpers/dataBase';
 
-export const getSelectionDataFromDB = (): Promise<any> => {
+export const getFilterDataFromDB = (): Promise<any> => {
     return new Promise(async (resolve, reject) => {
-        let filter: any = { dataSetType: 'user' };
+        let filter: any = {};
 
-        SelectionData.findOne(filter, { dataSetType: 0 })
+        FilterDataSchema.findOne(filter, { city: 0, country: 0 })
             .populate('city.values')
             .populate('commitment.values')
             .populate('country.values')
@@ -21,10 +22,21 @@ export const getSelectionDataFromDB = (): Promise<any> => {
             .populate('support.values')
             .populate('reference.values')
             .exec()
-            .then((values) => {
-                console.log(values);
+            .then((result) => {
+                resolve(result);
+            })
+            .catch((error) => reject(error));
+    });
+};
 
-                resolve(values);
+export const getApplicationDataFromDB = (): Promise<any> => {
+    return new Promise(async (resolve, reject) => {
+        let filter: any = {};
+
+        ApplicationDataSchema.findOne(filter)
+            .exec()
+            .then((result) => {
+                resolve(result);
             })
             .catch((error) => reject(error));
     });
