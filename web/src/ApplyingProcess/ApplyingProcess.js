@@ -52,11 +52,11 @@ export default function ApplyingProcess(props) {
             //find out which categories user selected
             usr_selection && Object.keys(usr_selection).forEach(key => {
                 // find indexes of values of each category
-                var cat_indexes = usr_selection[key].map(_id => 
+                var cat_indexes = Array.isArray(usr_selection[key]) && usr_selection[key].map(_id => 
                     items.selectionData[key].values && items.selectionData[key].values.findIndex(val => val._id === _id)
                 )
                 // from the index find the value with their name
-                var values = cat_indexes.map(ind => 
+                var values = Array.isArray(cat_indexes) && cat_indexes.map(ind => 
                 items.selectionData[key].values && items.selectionData[key].values[ind]
                 )
                 //create new selection object, which contains categories that user selected

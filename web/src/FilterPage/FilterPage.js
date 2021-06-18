@@ -15,26 +15,26 @@ export default function FilterPage() {
   const language = 'DE';
   //the current label is shown in NavBar
   const [clN, setClN] = useState('');
-  //selectionData from backend will be saved in listCat
+  //filterData from backend will be saved in listCat
   const [listCat, setListCat] = useState({});
   //list of all labels
   const [labels, setLabels] = useState([]);
   console.log(URL);
-  // get selectionData from Backend
+  // get filterData from Backend
   useEffect(() => {
     /* https://studifix-mock-api-default-rtdb.europe-west1.firebasedatabase.app/.json */
-    /* http://localhost:4000/data/selectiondata */
-    fetch(URL + '/api/data/selectiondata')
-      //fetch('http://studifix.mi.hdm-stuttgart.de/api/data/selectiondata')
+    /* http://localhost:4000/data/filterdata */
+    fetch(URL + '/api/data/filterdata')
+      //fetch('http://studifix.mi.hdm-stuttgart.de/api/data/filterdata')
       .then((response) => response.json())
       .then((items) => {
-        setListCat(items.selectionData);
-        //get list of labels from selectionData
+        setListCat(items.filterData);
+        //get list of labels from filterData
         var labels =
-          items.selectionData &&
-          Object.keys(items.selectionData).map((key) =>
-            items.selectionData[key].title
-              ? items.selectionData[key].title[language]
+          items.filterData &&
+          Object.keys(items.filterData).map((key) =>
+            items.filterData[key].title
+              ? items.filterData[key].title[language]
               : null
           );
         //set first label shown when website appears

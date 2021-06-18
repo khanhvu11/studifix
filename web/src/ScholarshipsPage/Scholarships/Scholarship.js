@@ -16,7 +16,7 @@ export default function Scholarship({ scholarship, usr_selection }) {
 
   const toApplyingPage = () =>{
     history.push({
-      pathname: '//applying',
+      pathname: '/applying',
       state:{scholarship, usr_selection},
     });
   
