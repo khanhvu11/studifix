@@ -13,7 +13,7 @@ import requirement from './scholarship/components/requirements';
 import state from './scholarship/components/state';
 import support from './scholarship/components/support';
 
-const SelectionDataSchema: Schema = new Schema({
+const FilterDataSchema: Schema = new Schema({
     _id: Schema.Types.ObjectId,
     dataSetType: { type: String },
     age: {
@@ -441,4 +441,4 @@ const SelectionDataSchema: Schema = new Schema({
     }
 });
 
-export default mongoose.model('selection', SelectionDataSchema, 'selection');
+export default mongoose.model('filterData', FilterDataSchema, 'filterData');

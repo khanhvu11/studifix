@@ -1,13 +1,13 @@
 import { Response, Request } from 'express';
-import { getSelectionDataFromDB, filterScholarshipsByUserInput, getScholarshipByID } from '../controllers/database/data';
+import { getFilterDataFromDB, filterScholarshipsByUserInput, getScholarshipByID, getApplicationDataFromDB } from '../controllers/database/data';
 import { joiApplycationInput, joiFilterParams, joiScholarshipID } from '../models/joi';
 import { compareUserInputAndScholarshipData } from '../helpers/data';
 
-const resolveSelectionData = async (req: Request, res: Response) => {
+export const resolveFilterData = async (req: Request, res: Response) => {
     try {
-        await getSelectionDataFromDB().then((selectionData) => {
+        await getFilterDataFromDB().then((filterData) => {
             res.status(200).json({
-                selectionData
+                filterData
             });
         });
     } catch (error) {
@@ -17,7 +17,21 @@ const resolveSelectionData = async (req: Request, res: Response) => {
     }
 };
 
-const filterScholarships = async (req: Request, res: Response) => {
+export const resolveApplicationData = async (req: Request, res: Response) => {
+    try {
+        await getApplicationDataFromDB().then((applicationData) => {
+            res.status(200).json({
+                applicationData
+            });
+        });
+    } catch (error) {
+        res.status(400).json({
+            message: error.message
+        });
+    }
+};
+
+export const filterScholarships = async (req: Request, res: Response) => {
     try {
         const data = await joiFilterParams.validateAsync(req.body);
 
@@ -35,7 +49,7 @@ const filterScholarships = async (req: Request, res: Response) => {
     }
 };
 
-const getSingleScholarshipByID = async (req: Request, res: Response) => {
+export const getSingleScholarshipByID = async (req: Request, res: Response) => {
     try {
         const _id: string = await joiScholarshipID.validateAsync(req.params);
 
@@ -51,7 +65,7 @@ const getSingleScholarshipByID = async (req: Request, res: Response) => {
     }
 };
 
-const checkForValidApplication = async (req: Request, res: Response) => {
+export const checkForValidApplication = async (req: Request, res: Response) => {
     try {
         const userinput: string = await joiApplycationInput.validateAsync(req.body);
         const _id: string = await joiScholarshipID.validateAsync(req.params);
@@ -67,5 +81,3 @@ const checkForValidApplication = async (req: Request, res: Response) => {
         });
     }
 };
-
-export default { resolveSelectionData, filterScholarships, getSingleScholarshipByID, checkForValidApplication };
