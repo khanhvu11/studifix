@@ -14,6 +14,8 @@ const refactorIDs = (idList: string[]): any[] => {
 export const scholarshipFilterqueryGenerator = (idLists: IUserInputList): any => {
     let tempArray = [];
 
+    console.log(idLists);
+
     const {
         commitment,
         occupation,
@@ -48,14 +50,34 @@ export const scholarshipFilterqueryGenerator = (idLists: IUserInputList): any =>
     reference ? tempArray.push({ $or: [{ 'reference.value': { $in: refactorIDs(reference) } }, { 'reference.value': null }] }) : null;
     nationalityDetail ? tempArray.push({ $or: [{ 'nationalityDetail.value': { $in: refactorIDs(nationalityDetail) } }, { 'nationalityDetail.value': null }] }) : null;
 
-    semester ? tempArray.push({ $or: [{ 'semester.value': semester }, { 'semester.value': null }] }) : null;
-    age ? tempArray.push({ $or: [{ 'age.value': age }, { 'age.value': null }] }) : null;
     workExperience ? tempArray.push({ $or: [{ 'workExperience.value': workExperience }, { 'workExperience.value': null }] }) : null;
     sidejobHours ? tempArray.push({ $or: [{ 'sidejobHours.value': sidejobHours }, { 'sidejobHours.value': null }] }) : null;
     collageGrade ? tempArray.push({ $or: [{ 'collageGrade.value': collageGrade }, { 'collageGrade.value': null }] }) : null;
     jobGrade ? tempArray.push({ $or: [{ 'jobGrade.value': jobGrade }, { 'jobGrade.value': null }] }) : null;
     uniGrade ? tempArray.push({ $or: [{ 'uniGrade.value': uniGrade }, { 'uniGrade.value': null }] }) : null;
     supportYet ? tempArray.push({ 'supportYet.value': supportYet }) : null;
+
+    semester
+        ? tempArray.push({
+              $or: [
+                  { $and: [{ 'semesterMin.value': { $lt: semester } }, { 'semesterMax.value': { $gt: semester } }] },
+                  { $and: [{ 'semesterMin.value': null }, { 'semesterMax.value': null }] },
+                  { $and: [{ 'semesterMin.value': { $lt: semester } }, { 'semesterMax.value': null }] },
+                  { $and: [{ 'semesterMin.value': null }, { 'semesterMax.value': { $gt: semester } }] }
+              ]
+          })
+        : null;
+
+    age
+        ? tempArray.push({
+              $or: [
+                  { $and: [{ 'ageMin.value': { $lt: age } }, { 'ageMax.value': { $gt: age } }] },
+                  { $and: [{ 'ageMin.value': null }, { 'ageMax.value': null }] },
+                  { $and: [{ 'ageMin.value': { $lt: age } }, { 'ageMax.value': null }] },
+                  { $and: [{ 'ageMin.value': null }, { 'ageMax.value': { $gt: age } }] }
+              ]
+          })
+        : null;
 
     if (tempArray.length === 0) {
         return {};

@@ -66,7 +66,8 @@ export const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any>
 
         const localizations = [
             'link',
-            'semester',
+            'semesterMin',
+            'semesterMax',
             'referenceRequiered',
             'referenceAllowed',
             'age',
@@ -98,7 +99,7 @@ export const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any>
             'advancementTime'
         ];
 
-        let filter = scholarshipFilterqueryGenerator(userInput.selectionData);
+        let filter = scholarshipFilterqueryGenerator(userInput.filterData);
         let populationValues = populationValuesGenerator(values);
         let populationLocalizations = populationLocalizationsGenerator(localizations);
 
