@@ -23,100 +23,26 @@ import {
 import './Applying.css'
 
 export default function ApplyingProcess(props) {
-    const location = useLocation()
-    const [selectionData, setSelectionData] = useState({})
-    const [scholarship, setScholarship] = useState({})
-    const [userSelection, setUserSelection] = useState({})
-    const [scholarshipRemaining, setScholarshipRemaining] = useState({})
+    const [applicationData, setApplicationData] = useState({})
 
     const language = 'DE';
-    const [clN, setClN] = useState('');
-    const [labels, setLabels] = useState([]);
+    const [groupName, setGroupName] = useState('');
+    const groupNameList = ['Name', 'Geburtsdatum', 'Adresse', 'Kontaktdaten', 'Gender', 'Familienstand']
 
     const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
 
     useEffect(()=>{
-        const scholarship = location.state.scholarship
-        const usr_selection= location.state.usr_selection
 
-        setScholarship(scholarship)
-
-        const removedKeyList = ['provider', 'link', 'support', 'advancement', 'advancementDetail', 'advancementTime', 'city', 'country', 'referenceAllowed', 'referenceRequiered', 'age']
-        //get selectiondata
-        
-        fetch(URL + '/api/data/selectiondata')
+        //get selectiondata      
+        fetch(URL + '/api/data/applicationdata')
         .then((response) => response.json())
         .then((items) => {
-            var selObj = {}
-            setSelectionData(items.selectionData);
-            //find out which categories user selected
-            usr_selection && Object.keys(usr_selection).forEach(key => {
-                // find indexes of values of each category
-                var cat_indexes = Array.isArray(usr_selection[key]) && usr_selection[key].map(_id => 
-                    items.selectionData[key].values && items.selectionData[key].values.findIndex(val => val._id === _id)
-                )
-                // from the index find the value with their name
-                var values = Array.isArray(cat_indexes) && cat_indexes.map(ind => 
-                items.selectionData[key].values && items.selectionData[key].values[ind]
-                )
-                //create new selection object, which contains categories that user selected
-                selObj[key] = {
-                    values : values,
-                    title : items.selectionData[key].title,
-                    description : items.selectionData[key].description,
-                    mandatory : items.selectionData[key].mandatory,
-                    multiselect : items.selectionData[key].multiselect,
-                }
-
-            })
-
-            setUserSelection(selObj)
-            //delete scholarship's categories which already exist in user's selection data
-            var remain = {...scholarship}
-            Object.keys(selObj).forEach(selKey => {
-                Object.keys(remain).forEach(scholarKey => {
-                    if(scholarKey === selKey){
-
-                        delete remain[selKey]
-                       /*  var elementIndex = selObj[selKey].values.map(name => 
-                            scholarship[scholarKey].value && scholarship[scholarKey].value.findIndex(val => val.title.DE === name)
-                        ) */
-
-                        /* elementIndex.map(ind => scholarship[scholarKey].value !== null && scholarship[scholarKey].value.splice(ind, 1)) */
-
-                    }
-                })
-            })
-
-            setScholarshipRemaining(remain)
-
-            var mandatoryLabels = []
-            var optionalLabels = []
-            scholarship && Object.keys(scholarship).forEach((key) => {
-                if(scholarship[key].localization && !removedKeyList.includes(key) && !Object.keys(usr_selection).includes(key)){
-                    if(scholarship[key].value !== null){
-                        mandatoryLabels.push(scholarship[key].localization.title[language])
-                    }else{
-                        optionalLabels.push(scholarship[key].localization.title[language])
-                    }
-                }
-            });
-
-            var perInfo = Object.keys(personalInfo).map(key => personalInfo[key].localization.title[language])
-            var labels = ['mandatory', ...mandatoryLabels, 'optional', ...optionalLabels, 'perInfo', ...perInfo]
-
-            console.log(mandatoryLabels)
-            console.log(optionalLabels)
-            console.log(labels)
-            setClN(labels[0]);
-            setLabels(labels);
+            setApplicationData(items.applicationData);
         });
 
-    }, [URL, location])
+    }, [URL])
 
-    console.log(userSelection)
-    console.log(scholarship)
-    console.log(scholarshipRemaining)
+    console.log(applicationData)
 
     //assigning type of values to type of components
     var categorySorting = (category, key) =>{
