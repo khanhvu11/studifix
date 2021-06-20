@@ -1,4 +1,9 @@
 import mongoose, { Schema } from 'mongoose';
+import city from './scholarship/components/city';
+import country from './scholarship/components/country';
+import familyStatus from './scholarship/components/familyStatus';
+import gender from './scholarship/components/gender';
+import salutation from './scholarship/components/salutation';
 
 const ApplicationDataSchema: Schema = new Schema({
     _id: Schema.Types.ObjectId,
@@ -18,7 +23,8 @@ const ApplicationDataSchema: Schema = new Schema({
             DE: { type: String, required: true },
             EN: { type: String, required: true },
             FR: { type: String, required: true }
-        }
+        },
+        values: [{ type: Schema.Types.ObjectId, ref: salutation }]
     },
     firstName: {
         title: {
@@ -86,7 +92,8 @@ const ApplicationDataSchema: Schema = new Schema({
             DE: { type: String, required: true },
             EN: { type: String, required: true },
             FR: { type: String, required: true }
-        }
+        },
+        values: [{ type: Schema.Types.ObjectId, ref: city }]
     },
     countryOfBirth: {
         title: {
@@ -103,9 +110,10 @@ const ApplicationDataSchema: Schema = new Schema({
             DE: { type: String, required: true },
             EN: { type: String, required: true },
             FR: { type: String, required: true }
-        }
+        },
+        values: [{ type: Schema.Types.ObjectId, ref: country }]
     },
-    ender: {
+    gender: {
         title: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },
@@ -120,7 +128,8 @@ const ApplicationDataSchema: Schema = new Schema({
             DE: { type: String, required: true },
             EN: { type: String, required: true },
             FR: { type: String, required: true }
-        }
+        },
+        values: [{ type: Schema.Types.ObjectId, ref: gender }]
     },
     famiyStatus: {
         title: {
@@ -137,7 +146,8 @@ const ApplicationDataSchema: Schema = new Schema({
             DE: { type: String, required: true },
             EN: { type: String, required: true },
             FR: { type: String, required: true }
-        }
+        },
+        values: [{ type: Schema.Types.ObjectId, ref: familyStatus }]
     },
     country: {
         title: {
@@ -154,7 +164,8 @@ const ApplicationDataSchema: Schema = new Schema({
             DE: { type: String, required: true },
             EN: { type: String, required: true },
             FR: { type: String, required: true }
-        }
+        },
+        values: [{ type: Schema.Types.ObjectId, ref: country }]
     },
     city: {
         title: {
@@ -171,7 +182,8 @@ const ApplicationDataSchema: Schema = new Schema({
             DE: { type: String, required: true },
             EN: { type: String, required: true },
             FR: { type: String, required: true }
-        }
+        },
+        values: [{ type: Schema.Types.ObjectId, ref: city }]
     },
     street: {
         title: {
