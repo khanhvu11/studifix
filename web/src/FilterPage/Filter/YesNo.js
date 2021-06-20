@@ -13,7 +13,7 @@ import { useState, useEffect } from 'react';
 
 export default function YesNo({func, _key, cls, lang, obj}) {
 
-    const [isYes, setIsYes] = useState(true)
+    const [isYes, setIsYes] = useState(false)
 
     useEffect(() => {
         if(isYes){

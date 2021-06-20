@@ -48,7 +48,7 @@ export default function MultipleChoice({func, _key, cls, lang, obj, selectionDat
     
     return (
         <>
-        {obj.localization &&
+        {obj.localization && obj.value !== null &&
         <div className={(obj.localization.title[lang]===cls)? 'mplChoice active': 'mplChoice'}>
             <label className="label-sml" htmlFor={obj.localization.title[lang]}>{obj.localization.title[lang]} {/*
                 obj.mandatory ? "*": ""
@@ -58,7 +58,7 @@ export default function MultipleChoice({func, _key, cls, lang, obj, selectionDat
 
             } */}
             <h2>{obj.localization.description[lang]}</h2>
-            {(Array.isArray(obj.value))? (
+            {(obj.value && (Array.isArray(obj.value)))? (
                 <div className="button-grid">
                     {obj.value && obj.value.map((value,id) => <OptionButton active={removedOption===value._id?false:true} key={id} buttonFunc={getOption} buttonLang={lang} value={value} />)}
                 </div>
