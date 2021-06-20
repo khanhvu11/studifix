@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-const LocalizationSchema: Schema = new Schema({
+const SalutationSchema: Schema = new Schema({
     _id: Schema.Types.ObjectId,
     title: {
         DE: { type: String, required: true },
@@ -11,8 +11,7 @@ const LocalizationSchema: Schema = new Schema({
         DE: { type: String, required: true },
         EN: { type: String, required: true },
         FR: { type: String, required: true }
-    },
-    label: { type: String, required: true }
+    }
 });
 
-export default mongoose.model('localizations', LocalizationSchema, 'localizations');
+export default mongoose.model('salutations', SalutationSchema);

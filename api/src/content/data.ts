@@ -1,7 +1,14 @@
 import { Response, Request } from 'express';
-import { getFilterDataFromDB, filterScholarshipsByUserInput, getScholarshipByID, getApplicationDataFromDB } from '../controllers/database/data';
-import { joiApplycationInput, joiFilterParams, joiScholarshipID } from '../models/joi';
-import { compareUserInputAndScholarshipData } from '../helpers/data';
+import {
+    getFilterDataFromDB,
+    filterScholarshipsByUserInput,
+    getScholarshipByID,
+    getApplicationDataFromDB,
+    addNewApplication,
+    getApplicationByID,
+    getLocalizations
+} from '../controllers/database/data';
+import { joiApplicationInput, joiFilterParams, joiScholarshipID } from '../models/joi';
 
 export const resolveFilterData = async (req: Request, res: Response) => {
     try {
@@ -65,13 +72,21 @@ export const getSingleScholarshipByID = async (req: Request, res: Response) => {
 
 export const checkForValidApplication = async (req: Request, res: Response) => {
     try {
-        const userinput: string = await joiApplycationInput.validateAsync(req.body);
+        const userInput = req.body.applicationData;
+        const applicationData: any = await joiApplicationInput.validateAsync(userInput);
         const _id: string = await joiScholarshipID.validateAsync(req.params);
 
-        const scholarship = await getScholarshipByID(_id);
+        const locals = await getLocalizations();
 
-        await compareUserInputAndScholarshipData(userinput, scholarship)
-            .then((data) => res.status(200).json({ data }))
+        const applicationID = await addNewApplication(_id, applicationData);
+
+        await getApplicationByID(applicationID)
+            .then((data) => {
+                res.status(200).json({
+                    data,
+                    locals
+                });
+            })
             .catch((e) => res.status(400).json({ e }));
     } catch (error) {
         res.status(400).json({
