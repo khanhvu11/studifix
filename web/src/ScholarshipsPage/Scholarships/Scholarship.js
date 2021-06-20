@@ -10,7 +10,7 @@ import './scholarship.css';
 export default function Scholarship({ scholarship, usr_selection }) {
   /* console.log(scholarship.graduation.map(val=>val.title.DE)) */
   const history = useHistory();
-  const [modalShow, setModalShow] = React.useState(false);
+  /* const [modalShow, setModalShow] = React.useState(false); */
   console.log(scholarship);
   console.log(usr_selection);
 
@@ -61,14 +61,14 @@ export default function Scholarship({ scholarship, usr_selection }) {
         </div>
       </div>
 
-      <div className="scholarship-outer">
+      {/* <div className="scholarship-outer">
         <ScholarshipModal
           scholarship={scholarship}
           usr_selection = {usr_selection}
           show={modalShow}
           onHide={() => setModalShow(false)}
         />
-      </div>
+      </div> */}
     </>
   );
 }

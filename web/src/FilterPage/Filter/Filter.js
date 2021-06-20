@@ -54,7 +54,7 @@ function Filter({ cls, labels, func, lang, obj }) {
     // fetch('http://studifix.mi.hdm-stuttgart.de/api/data/filter/scholarships', {
     fetch(URL + '/api/data/filter/scholarships', {
       method: 'POST',
-      body: JSON.stringify({ selectionData: result }),
+      body: JSON.stringify({ filterData: result }),
       headers: { 'Content-type': 'application/json' },
     })
       .then(async (response) => {
