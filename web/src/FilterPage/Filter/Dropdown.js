@@ -40,7 +40,7 @@ export default function Dropdown({func, _key, cls, lang, obj}) {
                     <FontAwesomeIcon style={{color:'#1170fe'}} icon={faQuestionCircle} />
                 </OverlayTrigger>
             </h2>
-            <select className="select" name={obj.title[lang]} id={obj.title[lang]} onChange={select}>
+            <select className="select insideElement" name={obj.title[lang]} id={obj.title[lang]} onChange={select}>
                 {obj.values && obj.values.map(value => <option value={value._id} key={value._id}>{value.title[lang]}</option>)}
             </select>
         </div>

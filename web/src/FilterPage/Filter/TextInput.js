@@ -56,7 +56,7 @@ export default function TextInput({func, _key, cls, lang, obj}) {
                 </OverlayTrigger>
             </h2>
             <div className="col-sm-10">
-                <input type="text" className="form-control" id={_key} placeholder={obj.title[lang]} onChange={handleChange}/>
+                <input type="text" className="form-control insideElement" id={_key} placeholder={obj.title[lang]} onChange={handleChange}/>
             </div>
         </div>
         }

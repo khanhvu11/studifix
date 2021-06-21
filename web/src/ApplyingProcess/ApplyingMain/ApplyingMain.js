@@ -12,7 +12,7 @@ import groupObject from './groupData';
 
 
 function Filter(props) {
-  /* const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost'; */
+  const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
   const [result, setResult] = useState({});
   const history = useHistory();
   const removedKeyList = ['provider', 'link', 'advancement', 'advancementDetail', 'advancementTime', 'city', 'country']
@@ -37,14 +37,32 @@ function Filter(props) {
   console.log(result)
 
   var toReview = () => {
-    history.push({
-      pathname: '/review',
-      state: {
-       /*  scholarship : scholarship,
-        completedForm: result,
-        userSelection: userSelection */
-      },
-    });
+
+    fetch(URL + `/api/data/apply/${props.scholarshipId}`, {
+      method: 'POST',
+      body: JSON.stringify({ applyingData: result}),
+      headers: { 'Content-type': 'application/json' },
+    })
+      .then(async (response) => {
+        const isJson = response.headers
+          .get('content-type')
+          ?.includes('application/json');
+        const data = isJson && (await response.json());
+
+        // check for error response
+        if (!response.ok) {
+          // get error message from body or default to response status
+          const error = (data && data.message) || response.status;
+          return Promise.reject(error);
+        }
+        history.push({
+          pathname: '/scholarshipsPage',
+          state: {scholarships : data},
+        });
+        /* response.json() */
+      })
+      /* .then(json => setScholarships(json)) */
+      .catch((error) => console.error('There was an error!', error));
   }
 
   return (

@@ -23,6 +23,8 @@ import {
 import './Applying.css'
 
 export default function ApplyingProcess(props) {
+    const {state} = props.location
+    console.log(state.scholarship)
     const [applicationData, setApplicationData] = useState({})
 
     const language = 'DE';
@@ -99,6 +101,7 @@ export default function ApplyingProcess(props) {
                 lang={language}
                 data={applicationData}
                 groupNameList={groupNameList} 
+                scholarshipId = {state.scholarship._id}
             />
             }
             <div className="footer footer-sm">

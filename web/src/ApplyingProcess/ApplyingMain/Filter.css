@@ -98,11 +98,15 @@ option {
   font-weight: 600;
 }
 
+select{
+  opacity: 0.7;
+}
+
 .insideElement::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   font-size: 1.1rem;
   color: #1975fe;
   font-weight: 600;
-  opacity: 1; /* Firefox */
+  opacity: 0.5; /* Firefox */
 }
 
 .insideElement:-ms-input-placeholder { /* Internet Explorer 10-11 */
