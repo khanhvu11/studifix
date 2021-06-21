@@ -1,22 +1,13 @@
 import React, {useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import OptionButton from './OptionButton'
-import TextInput from '../TextInput'
-import personalInfo from '../personalInfo'
+import Dropdown from '../InputComponents/Dropdown';
+import TextInput from '../InputComponents/TextInput'
 
-export default function MultipleChoice({func, _key, cls, lang, obj, selectionData}) {
-    const [optionList, setOptionList]=useState([])
-    const [removedOption, setRemovedOption] = useState('')
-    /* const [category, setCategory] = useState([])
+export default function InputGroup( {memberList, groupName, currentGrN, setGroupName, lang, data, getValue}) {
+  
 
-    function getCategory(id, optionList){
-        var arr = [...category]
-        arr[id] = optionList
-        setCategory(arr)
-    } */
-
-    var getOption = (isChosen, option) => {
+   /*  var getInputValue = (member, option) => {
         var newList = [...optionList]
         if(!isChosen){
             if(!newList.includes(option)){
@@ -40,29 +31,31 @@ export default function MultipleChoice({func, _key, cls, lang, obj, selectionDat
 
 
         setOptionList(newList)    
-        /* getCategory(obj.title[lang], newList)   */  
+        /* getCategory(obj.title[lang], newList)   
         func(_key, newList)
-    }
+    } */
 
-    console.log(removedOption)
+    /* console.log(removedOption) */
     
     return (
         <>
-        {obj.localization && obj.value !== null &&
-        <div className={(obj.localization.title[lang]===cls)? 'mplChoice active': 'mplChoice'}>
-            <label className="label-sml" htmlFor={obj.localization.title[lang]}>{obj.localization.title[lang]} {/*
-                obj.mandatory ? "*": ""
-            */}</label> 
-            {/* {
-                !obj.mandatory ? "*": ""
-
-            } */}
-            <h2>{obj.localization.description[lang]}</h2>
-            {(obj.value && (Array.isArray(obj.value)))? (
-                <div className="button-grid">
-                    {obj.value && obj.value.map((value,id) => <OptionButton active={removedOption===value._id?false:true} key={id} buttonFunc={getOption} buttonLang={lang} value={value} />)}
+        {data &&
+        <div className={(currentGrN===groupName)? 'mplChoice active': 'mplChoice'}>
+            {/* {(data.values && (Array.isArray(data.values)))? ( */}
+                <div className="inputGroup">
+                    {memberList && memberList.map((member,id) => {
+                        if(data[member]){
+                            if(Array.isArray(data[member].values)){
+                            return <Dropdown key={id} getValue={getValue} lang={lang} obj={data[member]} _key={member} />
+                        }else{
+                            return <TextInput obj={data[member]} _key={member}  getValue={getValue} lang={lang} />
+                        }
+                        }
+                    }
+                    )}
                 </div>
-            ):((Object.keys(selectionData).includes(_key))?(
+                 {/* <TextInput scholarship_cat={data[member]} _key={member}  buttonFunc={getValue} lang={lang} /> */}
+           {/*  ):((Object.keys(selectionData).includes(_key))?(
                 <div className="button-grid">
                     {selectionData[_key].values && selectionData[_key].values.map((value,id) => <OptionButton active={removedOption===value._id?false:true} key={id} buttonFunc={getOption} buttonLang={lang} value={value} />)}
                 </div>):(
@@ -72,11 +65,11 @@ export default function MultipleChoice({func, _key, cls, lang, obj, selectionDat
                                 Object.keys(obj.value).map(key => 
                                     <TextInput scholarship_cat={obj.value[key]} _key={key}  buttonFunc={getOption} buttonLang={lang} />
                                 )
-                            ): */}
+                            ): 
 
                             <TextInput scholarship_cat={obj} _key={_key}  buttonFunc={getOption} buttonLang={lang} />
-                    </div>))
-            }
+                    </div>)) */}
+            
         </div>
 }
         </>

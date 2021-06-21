@@ -6,33 +6,25 @@ import { faCogs, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 import './NavBar.css'
 
-export default function NavBar({ cls, func , lang, obj} ){
+export default function NavBar(props){
 
-    const [label, setLabel] = useState('')
+    const [groupName, setGroupName] = useState('')
 
-    useEffect(()=>{
-        setLabel(cls)
+  /*   useEffect(()=>{
+        setGroupName(cls)
     },[cls])
-
-    const onClickHandler = (cn) => {
-        func(cn)
-        setLabel(cn)
+ */
+    const onClickHandler = (grN) => {
+        props.setGroupName(grN)
+        setGroupName(grN)
     }
 
     return (
         <nav className="filter-nav">
             <div className='logo'><h1><span>Studi</span>fix</h1></div>
             <ul>
-                {obj.map((_label, id) =>{
-                    if(_label === 'mandatory'){
-                        return <h2 style={{color:'#1170fe'}}>Pflichtfelder</h2>
-                    }else if(_label === 'optional'){
-                        return <h2 style={{color:'#1170fe'}}>Optionale Felder</h2>
-                    }else if(_label === 'perInfo'){
-                        return <h2 style={{color:'#1170fe'}}>Persönliche Angaben</h2>
-                    }else{
-                        return <li key={id} className={label===_label?"focus":""}><label htmlFor={_label} onClick={() => onClickHandler(_label)}>{_label}</label></li>
-                    }
+                {props.groupNameList && props.groupNameList.map((_groupName, id) =>{
+                    return <li key={id} className={props.groupName===_groupName?"focus":""}><label onClick={() => onClickHandler(_groupName)}>{_groupName}</label></li>
                 })}
                
             </ul>

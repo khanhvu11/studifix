@@ -1,12 +1,12 @@
 import React,  { useState, useEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import Navbar from '../ScholarshipsPage/Navbar/Navbar'
+/* import Navbar from '../ScholarshipsPage/Navbar/Navbar'
 import Footer from '../ScholarshipsPage/Footer/Footer'
 import Dropdown from './Dropdown'
 import TextInput from './TextInput'
 import ListType from '../Review/ListType'
-import CheckBox from './Checkbox'
+import CheckBox from './Checkbox' */
 
 import Filter from './ApplyingMain/ApplyingMain';
 import NavBar from './NavBar/NavBar';
@@ -26,7 +26,7 @@ export default function ApplyingProcess(props) {
     const [applicationData, setApplicationData] = useState({})
 
     const language = 'DE';
-    const [groupName, setGroupName] = useState('');
+    const [groupName, setGroupName] = useState('Name');
     const groupNameList = ['Name', 'Geburtsdatum', 'Adresse', 'Kontaktdaten', 'Gender', 'Familienstand']
 
     const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
@@ -45,7 +45,7 @@ export default function ApplyingProcess(props) {
     console.log(applicationData)
 
     //assigning type of values to type of components
-    var categorySorting = (category, key) =>{
+    /* var categorySorting = (category, key) =>{
         if(category.localization){
             if(category.value == null){
                 return <TextInput scholarship_cat={category} _key={key} />
@@ -63,9 +63,9 @@ export default function ApplyingProcess(props) {
             }
 
         }
-    }
+    } */
 
-
+/* 
     if(!scholarship){
         return(
             <div className='applying'>
@@ -76,46 +76,45 @@ export default function ApplyingProcess(props) {
             <Footer/>
         </div>
         )
-    }
+    } */
 
-    var labelClick = (cn) => {
-        setClN(cn);
+    var _setGroupName = (groupName) => {
+        setGroupName(groupName);
       };
     
-      console.log(clN);
+      console.log(groupName);
 
     return (
        
         <form className="outerContainer">
-        {scholarshipRemaining && (
-          <NavBar cls={clN} func={labelClick} lang={language} obj={labels} />
-        )}
-        {scholarshipRemaining && (
-          <Filter
-            cls={clN}
-            labels={labels}
-            func={labelClick}
-            lang={language}
-            obj={scholarshipRemaining}
-            selectionData = {selectionData}
-            userSelection = {userSelection}
-            scholarship = {scholarship}
-          />
-        )}
-        <div className="footer footer-sm">
-          {/* <button type='submit' className="btn btn-primary btn-lg">Submit</button> */}
-          <div className="support">
-            <p>
-              <span>Support</span>
-              <br />
-              Wir sind für dich da!
-            </p>
-          </div>
-          <div className="icon-area">
-            <FontAwesomeIcon icon={faCogs} />
-            <FontAwesomeIcon icon={faSignOutAlt} />
-          </div>
-        </div>
+            <NavBar 
+                groupName={groupName} 
+                setGroupName={_setGroupName} 
+                lang={language} 
+                groupNameList={groupNameList} 
+                />
+            {applicationData && <Filter
+                groupName={groupName}
+                setGroupName={_setGroupName}
+                lang={language}
+                data={applicationData}
+                groupNameList={groupNameList} 
+            />
+            }
+            <div className="footer footer-sm">
+            {/* <button type='submit' className="btn btn-primary btn-lg">Submit</button> */}
+            <div className="support">
+                <p>
+                <span>Support</span>
+                <br />
+                Wir sind für dich da!
+                </p>
+            </div>
+            <div className="icon-area">
+                <FontAwesomeIcon icon={faCogs} />
+                <FontAwesomeIcon icon={faSignOutAlt} />
+            </div>
+            </div>
       </form>
     )
 }
