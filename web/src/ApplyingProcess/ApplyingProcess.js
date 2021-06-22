@@ -1,5 +1,5 @@
 import React,  { useState, useEffect } from 'react'
-import { useLocation } from 'react-router'
+import { useLocation, useHistory } from 'react-router'
 
 /* import Navbar from '../ScholarshipsPage/Navbar/Navbar'
 import Footer from '../ScholarshipsPage/Footer/Footer'
@@ -10,6 +10,9 @@ import CheckBox from './Checkbox' */
 
 import Filter from './ApplyingMain/ApplyingMain';
 import NavBar from './NavBar/NavBar';
+
+import Navbar from '../ScholarshipsPage/Navbar/Navbar'
+import Footer from '../ScholarshipsPage/Footer/Footer'
 
 import personalInfo from './personalInfo'
 
@@ -23,8 +26,9 @@ import {
 import './Applying.css'
 
 export default function ApplyingProcess(props) {
+    const history = useHistory();
     const {state} = props.location
-    console.log(state.scholarship)
+    
     const [applicationData, setApplicationData] = useState({})
 
     const language = 'DE';
@@ -67,18 +71,23 @@ export default function ApplyingProcess(props) {
         }
     } */
 
-/* 
-    if(!scholarship){
-        return(
+
+    if(typeof state === 'undefined'){
+        history.push({
+            pathname: '/'
+          });
+        return null
+       /*  return(
             <div className='applying'>
             <div className="header">
                     <h1><span>Studi</span>fix</h1>
                     <Navbar/>
             </div>
+            <div>Please go back to filter process and select your scholarship</div>
             <Footer/>
         </div>
-        )
-    } */
+        ) */
+    }
 
     var _setGroupName = (groupName) => {
         setGroupName(groupName);
