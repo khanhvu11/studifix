@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -7,9 +7,12 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import './Filter.css';
 import Options from './Options';
 import Dropdown from './Dropdown';
+import TextInput from './TextInput';
+import YesNo from './YesNo';
 
 function Filter({ cls, labels, func, lang, obj }) {
   const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
+  const varTypeList = ['integer', 'double']
 
   // result: what user chose in filter process
   const [result, setResult] = useState({});
@@ -29,10 +32,14 @@ function Filter({ cls, labels, func, lang, obj }) {
 
   // get chosen options from child components
   var getALlResult = (key, optionList) => {
-    if (optionList.length > 0) {
+    if(Array.isArray(optionList)){
+      if (optionList.length > 0) {
+        result[key] = optionList;
+      } else {
+        result[key] = null;
+      }
+    }else{
       result[key] = optionList;
-    } else {
-      result[key] = null;
     }
     setResult(result);
   };
@@ -47,7 +54,7 @@ function Filter({ cls, labels, func, lang, obj }) {
     // fetch('http://studifix.mi.hdm-stuttgart.de/api/data/filter/scholarships', {
     fetch(URL + '/api/data/filter/scholarships', {
       method: 'POST',
-      body: JSON.stringify({ selectionData: result }),
+      body: JSON.stringify({ filterData: result }),
       headers: { 'Content-type': 'application/json' },
     })
       .then(async (response) => {
@@ -78,7 +85,26 @@ function Filter({ cls, labels, func, lang, obj }) {
       <div className="options">
         {Object.keys(obj).map((key, id) => {
           var item = obj[key];
-          return key !== 'city' ? (
+          if(varTypeList.includes(item.values)){
+            return <TextInput 
+                    func={getALlResult}
+                    key={id}
+                    _key={key}
+                    cls={cls}
+                    lang={lang}
+                    obj={item}
+                    />
+          }else if(item.values==='boolean'){
+            return <YesNo 
+                    func={getALlResult}
+                    key={id}
+                    _key={key}
+                    cls={cls}
+                    lang={lang}
+                    obj={item}
+                    />
+          }else{
+            return key !== 'city' ? (
             <Options
               func={getALlResult}
               key={id}
@@ -86,17 +112,19 @@ function Filter({ cls, labels, func, lang, obj }) {
               cls={cls}
               lang={lang}
               obj={item}
+              result = {result}
             />
-          ) : (
-            <Dropdown
-              func={getALlResult}
-              key={id}
-              _key={key}
-              cls={cls}
-              lang={lang}
-              obj={item}
-            />
-          );
+            ) : (
+              <Dropdown
+                func={getALlResult}
+                key={id}
+                _key={key}
+                cls={cls}
+                lang={lang}
+                obj={item}
+              />
+            );
+          }
         })}
         <button
           type="button"

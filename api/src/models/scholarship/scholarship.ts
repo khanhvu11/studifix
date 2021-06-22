@@ -42,7 +42,12 @@ const ScholarshipSchema: Schema = new Schema({
         value: [{ type: Schema.Types.ObjectId, ref: occupation }]
     },
 
-    semester: {
+    semesterMin: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: Number, required: true }
+    },
+
+    semesterMax: {
         localization: { type: Schema.Types.ObjectId, ref: localization },
         value: { type: Number, required: true }
     },
@@ -96,7 +101,12 @@ const ScholarshipSchema: Schema = new Schema({
         value: [{ type: Schema.Types.ObjectId, ref: referenceDetail }]
     },
 
-    age: {
+    ageMin: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: Number, required: true }
+    },
+
+    ageMax: {
         localization: { type: Schema.Types.ObjectId, ref: localization },
         value: { type: Number, required: true }
     },

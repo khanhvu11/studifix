@@ -11,7 +11,8 @@ const LocalizationSchema: Schema = new Schema({
         DE: { type: String, required: true },
         EN: { type: String, required: true },
         FR: { type: String, required: true }
-    }
+    },
+    label: { type: String, required: true }
 });
 
 export default mongoose.model('localizations', LocalizationSchema, 'localizations');

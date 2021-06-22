@@ -1,5 +1,3 @@
-import selectionData from 'models/selectionData';
-
 export const compareUserInputAndScholarshipData = (userinput: any, scholarship: any): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         console.log('userinput', userinput);
@@ -25,7 +23,6 @@ export const compareUserInputAndScholarshipData = (userinput: any, scholarship: 
         };
 
         console.log(JSON.stringify(k1) === JSON.stringify(k2));
-
         // resolve(true);
     });
 };

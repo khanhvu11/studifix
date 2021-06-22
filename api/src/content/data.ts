@@ -1,13 +1,20 @@
 import { Response, Request } from 'express';
-import { getSelectionDataFromDB, filterScholarshipsByUserInput, getScholarshipByID } from '../controllers/database/data';
-import { joiApplycationInput, joiFilterParams, joiScholarshipID } from '../models/joi';
-import { compareUserInputAndScholarshipData } from '../helpers/data';
+import {
+    getFilterDataFromDB,
+    filterScholarshipsByUserInput,
+    getScholarshipByID,
+    getApplicationDataFromDB,
+    addNewApplication,
+    getApplicationByID,
+    getLocalizations
+} from '../controllers/database/data';
+import { joiApplicationInput, joiFilterParams, joiScholarshipID } from '../models/joi';
 
-const resolveSelectionData = async (req: Request, res: Response) => {
+export const resolveFilterData = async (req: Request, res: Response) => {
     try {
-        await getSelectionDataFromDB().then((selectionData) => {
+        await getFilterDataFromDB().then((filterData) => {
             res.status(200).json({
-                selectionData
+                filterData
             });
         });
     } catch (error) {
@@ -17,11 +24,23 @@ const resolveSelectionData = async (req: Request, res: Response) => {
     }
 };
 
-const filterScholarships = async (req: Request, res: Response) => {
+export const resolveApplicationData = async (req: Request, res: Response) => {
+    try {
+        await getApplicationDataFromDB().then((applicationData) => {
+            res.status(200).json({
+                applicationData
+            });
+        });
+    } catch (error) {
+        res.status(400).json({
+            message: error.message
+        });
+    }
+};
+
+export const filterScholarships = async (req: Request, res: Response) => {
     try {
         const data = await joiFilterParams.validateAsync(req.body);
-
-        console.log(data);
 
         await filterScholarshipsByUserInput(data).then((scholarships) => {
             res.status(200).json({
@@ -35,7 +54,7 @@ const filterScholarships = async (req: Request, res: Response) => {
     }
 };
 
-const getSingleScholarshipByID = async (req: Request, res: Response) => {
+export const getSingleScholarshipByID = async (req: Request, res: Response) => {
     try {
         const _id: string = await joiScholarshipID.validateAsync(req.params);
 
@@ -51,15 +70,23 @@ const getSingleScholarshipByID = async (req: Request, res: Response) => {
     }
 };
 
-const checkForValidApplication = async (req: Request, res: Response) => {
+export const checkForValidApplication = async (req: Request, res: Response) => {
     try {
-        const userinput: string = await joiApplycationInput.validateAsync(req.body);
+        const userInput = req.body;
+        const applicationData: any = await joiApplicationInput.validateAsync(userInput);
+
         const _id: string = await joiScholarshipID.validateAsync(req.params);
 
-        const scholarship = await getScholarshipByID(_id);
+        const applicationID: string = await addNewApplication(_id, applicationData);
 
-        await compareUserInputAndScholarshipData(userinput, scholarship)
-            .then((data) => res.status(200).json({ data }))
+        const locals = await getLocalizations();
+        getApplicationByID(applicationID)
+            .then((data) => {
+                res.status(200).json({
+                    data,
+                    locals
+                });
+            })
             .catch((e) => res.status(400).json({ e }));
     } catch (error) {
         res.status(400).json({
@@ -67,5 +94,3 @@ const checkForValidApplication = async (req: Request, res: Response) => {
         });
     }
 };
-
-export default { resolveSelectionData, filterScholarships, getSingleScholarshipByID, checkForValidApplication };

@@ -2,86 +2,94 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import personalInfo from '../personalInfo'
+import personalInfo from '../personalInfo';
 
 //import TextArea from './TextArea'
 import './Filter.css';
-import Options from './Options';
+import InputGroup from './InputGroup';
+import groupObject from './groupData';
+import Error from '../InputComponents/Error';
 /* import Dropdown from './Dropdown'; */
 
-
-function Filter({ cls, labels, func, lang, obj, selectionData, userSelection, scholarship }) {
-  /* const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost'; */
+function Filter(props) {
+  const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
   const [result, setResult] = useState({});
   const history = useHistory();
-  const removedKeyList = ['provider', 'link', 'advancement', 'advancementDetail', 'advancementTime', 'city', 'country']
+  const [error, setError] = useState('');
 
   var getNextkey = (currentKey) => {
-    var existKeys = labels.filter((key) =>
+    var existKeys = [...props.groupNameList, 'submit'];
+    /* labels.filter((key) =>
       key !== null && !removedKeyList.includes(key) ? key : null
-    );
-    existKeys.push('submit');
+    ); */
+    /*  existKeys.push('submit'); */
     var ind = existKeys.indexOf(currentKey);
-    func(existKeys[ind + 1]);
+    props.setGroupName(existKeys[ind + 1]);
   };
 
-  var getALlResult = (key, optionList) => {
-    if (optionList.length > 0) {
-      result[key] = optionList;
-    } else {
-      result[key] = null;
-    }
+  var getALlResult = (key, value) => {
+    result[key] = value;
+
     setResult(result);
   };
 
   console.log(result);
 
   var toReview = () => {
-    history.push({
-      pathname: '/review',
-      state: {
-        scholarship : scholarship,
-        completedForm: result,
-        userSelection: userSelection
-      },
-    });
-  }
+    fetch(URL + `/api/data/apply/${props.scholarshipId}`, {
+      method: 'POST',
+      body: JSON.stringify(result),
+      headers: { 'Content-type': 'application/json' },
+    })
+      .then(async (response) => {
+        const isJson = response.headers
+          .get('content-type')
+          ?.includes('application/json');
+        const data = isJson && (await response.json());
+
+        // check for error response
+        if (!response.ok) {
+          // get error message from body or default to response status
+          const error = (data && data.message) || response.status;
+          return Promise.reject(error);
+        }
+        history.push({
+          pathname: '/',
+          state: { scholarships: data },
+        });
+        /* response.json() */
+      })
+      /* .then(json => setScholarships(json)) */
+      .catch((error) => {
+        setError(error);
+        console.error('There was an error!', error);
+      });
+  };
 
   return (
     <div className="filter">
+      {error ? <Error error={error} /> : null}
       <div className="options">
-        {Object.keys(obj).map((key, id) => {
-          var item = obj[key];
+        {Object.keys(groupObject).map((groupName, id) => {
+          var memberList = groupObject[groupName];
           return (
-            (!removedKeyList.includes(key))?<Options
-              func={getALlResult}
-              key={id}
-              _key={key}
-              cls={cls}
-              lang={lang}
-              obj={item}
-              selectionData = {selectionData}
-            />:null
-          )
-        })}
-        {
-          Object.keys(personalInfo).map((key, id) => {
-            var item = personalInfo[key];
-            return (
-              <Options
-                func={getALlResult}
-                key={id}
-                _key={key}
-                cls={cls}
-                lang={lang}
-                obj={item}
-                selectionData = {selectionData}
-              />)
+            props.data && (
+              <InputGroup
+                memberList={memberList}
+                groupName={groupName}
+                currentGrN={props.groupName}
+                setGroupName={props._setGroupName}
+                lang={props.lang}
+                data={props.data}
+                getValue={getALlResult}
+              />
+            )
+          );
         })}
         <button
           type="button"
-          className={cls !== 'submit' ? 'nextCateBtn' : 'hideNext'}
-          onClick={() => getNextkey(cls)}
+          className={props.groupName !== 'submit' ? 'nextCateBtn' : 'hideNext'}
+          onClick={() => getNextkey(props.groupName)}
         >
           <FontAwesomeIcon icon={faArrowRight} />
         </button>
@@ -89,10 +97,10 @@ function Filter({ cls, labels, func, lang, obj, selectionData, userSelection, sc
       {/* " btn btn-primary btn-lg" */}
       <button
         type="button"
-        className={'submit' === cls ? 'sub-active' : ' sub1'}
+        className={'submit' === props.groupName ? 'sub-active' : ' sub1'}
         onClick={toReview}
       >
-        Überprüfen
+        Bewerbung schicken
       </button>
     </div>
   );

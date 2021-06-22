@@ -1,12 +1,17 @@
-import Scholarship from '../../models/scholarship/scholarship';
-import SelectionData from '../../models/selectionData';
-import { scholarshipFilterqueryGenerator, populationLocalizationsGenerator, populationValuesGenerator } from '../../helpers/dataBase';
+import ScholarshipSchema from '../../models/scholarship/scholarship';
+import FilterDataSchema from '../../models/filterData';
+import ApplicationDataSchema from '../../models/applicationData';
+import ApplicationSchema from '../../models/application';
+import LocalizationSchema from '../../models/scholarship/components/localization';
 
-export const getSelectionDataFromDB = (): Promise<any> => {
+import { scholarshipFilterqueryGenerator } from '../../helpers/dataBase';
+import { populateScholarhshipLocals, populateScholarhshipValues } from '../../helpers/population';
+
+export const getFilterDataFromDB = (): Promise<any> => {
     return new Promise(async (resolve, reject) => {
-        let filter: any = { dataSetType: 'user' };
+        let filter: any = {};
 
-        SelectionData.findOne(filter, { dataSetType: 0 })
+        FilterDataSchema.findOne(filter, { city: 0, country: 0 })
             .populate('city.values')
             .populate('commitment.values')
             .populate('country.values')
@@ -21,10 +26,28 @@ export const getSelectionDataFromDB = (): Promise<any> => {
             .populate('support.values')
             .populate('reference.values')
             .exec()
-            .then((values) => {
-                console.log(values);
+            .then((result) => {
+                resolve(result);
+            })
+            .catch((error) => reject(error));
+    });
+};
 
-                resolve(values);
+export const getApplicationDataFromDB = (): Promise<any> => {
+    return new Promise(async (resolve, reject) => {
+        let filter: any = {};
+
+        ApplicationDataSchema.findOne(filter, {})
+            .populate('city.values')
+            .populate('country.values')
+            .populate('placeOfBirth.values')
+            .populate('countryOfBirth.values')
+            .populate('salutation.values')
+            .populate('gender.values')
+            .populate('familyStatus.values')
+            .exec()
+            .then((result) => {
+                resolve(result);
             })
             .catch((error) => reject(error));
     });
@@ -32,67 +55,11 @@ export const getSelectionDataFromDB = (): Promise<any> => {
 
 export const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any> => {
     return new Promise(async (resolve, reject) => {
-        const values = [
-            'institution',
-            'occupation',
-            'graduation',
-            'course',
-            'country',
-            'city',
-            'state',
-            'collegeGraduationState',
-            'nationality',
-            'nationalityDetail',
-            'religion',
-            'commitment',
-            'support',
-            'requirement',
-            'referenceDetail',
-            'responsible',
-            'provider'
-        ];
+        let filter = scholarshipFilterqueryGenerator(userInput.filterData);
 
-        const localizations = [
-            'link',
-            'semester',
-            'referenceRequiered',
-            'referenceAllowed',
-            'age',
-            'collegeGraduation',
-            'collegeGraduationState',
-            'jobTrainingGraduation',
-            'uniGraduation',
-            'sideJobAllowed',
-            'currentJobHours',
-            'specialJobExperience',
-            'course',
-            'country',
-            'city',
-            'state',
-            'institution',
-            'graduation',
-            'occupation',
-            'religion',
-            'support',
-            'provider',
-            'referenceDetail',
-            'nationality',
-            'nationalityDetail',
-            'requirement',
-            'commitment',
-            'imgURL',
-            'advancement',
-            'advancementDetail',
-            'advancementTime'
-        ];
-
-        let filter = scholarshipFilterqueryGenerator(userInput.selectionData);
-        let populationValues = populationValuesGenerator(values);
-        let populationLocalizations = populationLocalizationsGenerator(localizations);
-
-        Scholarship.find(filter, {})
-            .populate(populationValues)
-            .populate(populationLocalizations, { _id: 0, label: 0 })
+        ScholarshipSchema.find(filter, {})
+            .populate(populateScholarhshipValues())
+            .populate(populateScholarhshipLocals(), { _id: 0, label: 0 })
 
             .exec()
             .then((result) => {
@@ -104,67 +71,61 @@ export const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any>
 
 export const getScholarshipByID = (_id: string): Promise<any> => {
     return new Promise(async (resolve, reject) => {
-        const values = [
-            'institution',
-            'occupation',
-            'graduation',
-            'course',
-            'country',
-            'city',
-            'state',
-            'collegeGraduationState',
-            'nationality',
-            'nationalityDetail',
-            'religion',
-            'commitment',
-            'support',
-            'requirement',
-            'referenceDetail',
-            'responsible',
-            'provider'
-        ];
+        ScholarshipSchema.findOne({ _id })
+            .populate(populateScholarhshipValues())
+            .populate(populateScholarhshipLocals(), { _id: 0, label: 0 })
 
-        const localizations = [
-            'link',
-            'semester',
-            'referenceRequiered',
-            'referenceAllowed',
-            'age',
-            'collegeGraduation',
-            'collegeGraduationState',
-            'jobTrainingGraduation',
-            'uniGraduation',
-            'sideJobAllowed',
-            'currentJobHours',
-            'specialJobExperience',
-            'course',
-            'country',
-            'city',
-            'state',
-            'institution',
-            'graduation',
-            'occupation',
-            'religion',
-            'support',
-            'provider',
-            'referenceDetail',
-            'nationality',
-            'nationalityDetail',
-            'requirement',
-            'commitment',
-            'imgURL',
-            'advancement',
-            'advancementDetail',
-            'advancementTime'
-        ];
+            .exec()
+            .then((result) => {
+                resolve(result);
+            })
+            .catch((error) => reject(error));
+    });
+};
 
-        let populationValues = populationValuesGenerator(values);
-        let populationLocalizations = populationLocalizationsGenerator(localizations);
+export const getLocalizations = (): Promise<any> => {
+    return new Promise(async (resolve, reject) => {
+        LocalizationSchema.find({}, { _id: 0 })
+            .exec()
+            .then((result) => {
+                const tempObj: any = {};
+                result.map((local: any) => {
+                    tempObj[local.label] = local;
+                });
+                resolve(tempObj);
+            })
+            .catch((error) => reject(error));
+    });
+};
 
-        Scholarship.findOne({ _id })
-            .populate(populationValues)
-            .populate(populationLocalizations, { _id: 0, label: 0 })
+export const addNewApplication = (scholarshipID: string, applicationData: any): Promise<any> => {
+    return new Promise(async (resolve, reject) => {
+        applicationData.scholarship = scholarshipID;
 
+        ApplicationSchema.create(applicationData)
+            .then((result: any) => {
+                resolve(result._id);
+            })
+            .catch((error) => reject(error));
+    });
+};
+
+export const getApplicationByID = (_id: string): Promise<any> => {
+    return new Promise(async (resolve, reject) => {
+        ApplicationSchema.findOne({ _id }, { updatedAt: 0, __v: 0, _id: 0 })
+            .populate({
+                path: 'scholarship',
+                populate: {
+                    path: populateScholarhshipValues()
+                }
+            })
+            .populate('city')
+            .populate('country')
+            .populate('placeOfBirth')
+            .populate('countryOfBirth')
+            .populate('salutation')
+            .populate('gender')
+            .populate('familyStatus')
             .exec()
             .then((result) => {
                 resolve(result);

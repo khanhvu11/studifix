@@ -1,11 +1,12 @@
 import express from 'express';
-import dataContent from '../content/data';
+import { resolveFilterData, resolveApplicationData, filterScholarships, getSingleScholarshipByID, checkForValidApplication } from '../content/data';
 
 const router = express.Router();
 
-router.get('/selectiondata', dataContent.resolveSelectionData);
-router.post('/filter/scholarships', dataContent.filterScholarships);
-router.get('/filter/scholarships/:_id', dataContent.getSingleScholarshipByID);
-router.post('/apply/:_id', dataContent.checkForValidApplication);
+router.get('/filterdata', resolveFilterData);
+router.get('/applicationdata', resolveApplicationData);
+router.get('/filter/scholarships/:_id', getSingleScholarshipByID);
+router.post('/filter/scholarships', filterScholarships);
+router.post('/apply/:_id', checkForValidApplication);
 
 export = router;

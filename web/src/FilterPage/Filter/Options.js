@@ -1,9 +1,17 @@
 import React, {useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faQuestionCircle, faSolarPanel
+  } from '@fortawesome/free-solid-svg-icons';
+
 import OptionButton from './OptionButton'
 
-export default function MultipleChoice({func, _key, cls, lang, obj}) {
+export default function MultipleChoice({func, _key, cls, lang, obj, result}) {
     // get list of options corresponding to their category (_key)
     const [optionList, setOptionList]=useState([])
     // option that user don't want to choose anymore
@@ -53,10 +61,33 @@ export default function MultipleChoice({func, _key, cls, lang, obj}) {
                 !obj.mandatory ? "*": ""
 
             } */}
-            <h2>{obj.description[lang]}</h2>
+            <h2>{obj.description[lang]+' '} 
+                <OverlayTrigger
+                    key={'top'}
+                    placement={'top'}
+                    overlay={
+                        <Tooltip id={'tooltip-top'}>
+                            <strong>{obj.descriptionDetail[lang]}</strong>
+                        </Tooltip>
+                    }
+                    >
+                    <FontAwesomeIcon style={{color:'#1170fe'}} icon={faQuestionCircle} />
+                </OverlayTrigger>
+            </h2>
             <div className="button-grid">
                 { //pass values for buttons. Every button is an option
-                    obj.values && obj.values.map((value,id) => <OptionButton active={removedOption===value._id?false:true} key={id} buttonFunc={getOption} buttonLang={lang} value={value} />)}
+                    obj.values && obj.values.map((value,id) => {
+                        if(result[obj.dependence]){
+                            var a = result[obj.dependence]
+                            console.log(a)
+                            console.log(value.dependentOn)
+                            if(value.dependentOn !== null && value.dependentOn.includes(a[0])){
+                                return <OptionButton active={removedOption===value._id?false:true} key={id} buttonFunc={getOption} buttonLang={lang} value={value}/>
+                            }
+                        }else {
+                            return <OptionButton active={removedOption===value._id?false:true} key={id} buttonFunc={getOption} buttonLang={lang} value={value}/>
+                        }
+                    })}
             </div>
         </div>
 }

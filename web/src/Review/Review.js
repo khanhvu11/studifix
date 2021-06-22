@@ -24,6 +24,7 @@ export default function Review() {
     
     useEffect(() => {
         const scholarship = location.state.scholarship
+        console.log(scholarship)
         const completedForm = location.state.completedForm
         const userSelection = location.state.userSelection
         const infoKey = ['provider', 'link', 'advancement', 'advancementDetail', 'advancementTime'/* , 'city', 'country', 'referenceAllowed', 'referenceRequiered', 'age', 'support' */]

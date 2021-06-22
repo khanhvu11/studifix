@@ -31,7 +31,7 @@ export const joiLogin = Joi.object({
 });
 
 export const joiFilterParams = Joi.object({
-    selectionData: {
+    filterData: {
         //todo: check for hexadecimal numbers 12 or 24
         commitment: [Joi.array().items(Joi.string().min(24).max(24)), null],
         occupation: [Joi.array().items(Joi.string().min(24).max(24)), null],
@@ -39,18 +39,21 @@ export const joiFilterParams = Joi.object({
         course: [Joi.array().items(Joi.string().min(24).max(24)), null],
         support: [Joi.array().items(Joi.string().min(24).max(24)), null],
         state: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        // country: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        // city: [Joi.array().items(Joi.string().min(24).max(24)), null],
         nationality: [Joi.array().items(Joi.string().min(24).max(24)), null],
         religion: [Joi.array().items(Joi.string().min(24).max(24)), null],
         requirement: [Joi.array().items(Joi.string().min(24).max(24)), null],
+        reference: [Joi.array().items(Joi.string().min(24).max(24)), null],
         nationalityDetail: [Joi.array().items(Joi.string().min(24).max(24)), null],
-        supportYet: [Joi.boolean()],
+        supportYet: Joi.boolean(),
         workExperience: [Joi.number().min(1).max(50), null],
-        workHours: [Joi.number().min(1).max(40), null],
-        gradeCollege: [Joi.number().min(1).max(5), null],
-        gradeJob: [Joi.number().min(1).max(5), null],
-        gradeUni: [Joi.number().min(1).max(5), null],
-        semester: [Joi.number().min(1).max(20)],
-        age: [Joi.number().min(1).max(99)]
+        sidejobHours: [Joi.number().min(1).max(40), null],
+        collegeGrade: [Joi.number().min(1).max(5), null],
+        jobGrade: [Joi.number().min(1).max(5), null],
+        uniGrade: [Joi.number().min(1).max(5), null],
+        semester: [Joi.number().min(0).max(30), null],
+        age: [Joi.number().min(1).max(99), null]
     }
 });
 
@@ -58,21 +61,22 @@ export const joiScholarshipID = Joi.object({
     _id: Joi.string().min(24).max(24)
 });
 
-export const joiApplycationInput = Joi.object({
-    selectionData: {
-        //todo: check for hexadecimal numbers 12 or 24
-        commitment: [Joi.array().items(Joi.string().min(24).max(24)), null],
-        occupation: [Joi.array().items(Joi.string().min(24).max(24)), null],
-        graduation: [Joi.array().items(Joi.string().min(24).max(24)), null],
-        course: [Joi.array().items(Joi.string().min(24).max(24)), null],
-        support: [Joi.array().items(Joi.string().min(24).max(24)), null],
-        state: [Joi.array().items(Joi.string().min(24).max(24)), null],
-        nationality: [Joi.array().items(Joi.string().min(24).max(24)), null],
-        religion: [Joi.array().items(Joi.string().min(24).max(24)), null],
-        requirement: [Joi.array().items(Joi.string().min(24).max(24)), null],
-        nationalityDetail: [Joi.array().items(Joi.string().min(24).max(24)), null],
-
-        semester: [Joi.number().min(1).max(20), null],
-        age: [Joi.number().min(1).max(99), null]
-    }
+export const joiApplicationInput = Joi.object({
+    salutation: Joi.string().min(24).max(24).required(true),
+    firstName: Joi.string().min(3).max(30).required(true),
+    lastName: Joi.string().min(3).max(30).required(true),
+    gender: Joi.string().min(24).max(24).required(true),
+    dateOfBirth: Joi.date().less('now').required(true),
+    placeOfBirth: Joi.string().min(24).max(24).required(true),
+    countryOfBirth: Joi.string().min(24).max(24).required(true),
+    country: Joi.string().min(24).max(24).required(true),
+    city: Joi.string().min(24).max(24).required(true),
+    street: Joi.string().max(40).required(true),
+    number: Joi.number().min(1).max(999).required(true),
+    ZIP: Joi.number().min(10000).max(99999).required(true),
+    mobile: Joi.string().min(12).max(15).regex(/^\d+$/),
+    email: Joi.string()
+        .email({ tlds: { allow: ['com', 'net', 'de'] } })
+        .required(true),
+    familyStatus: Joi.string().min(24).max(24).required(true)
 });
