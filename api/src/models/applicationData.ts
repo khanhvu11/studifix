@@ -131,7 +131,7 @@ const ApplicationDataSchema: Schema = new Schema({
         },
         values: [{ type: Schema.Types.ObjectId, ref: gender }]
     },
-    famiyStatus: {
+    familyStatus: {
         title: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },

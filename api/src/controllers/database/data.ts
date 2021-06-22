@@ -90,7 +90,6 @@ export const getLocalizations = (): Promise<any> => {
             .then((result) => {
                 const tempObj: any = {};
                 result.map((local: any) => {
-                    console.log(local.label);
                     tempObj[local.label] = local;
                 });
                 resolve(tempObj);
@@ -113,8 +112,6 @@ export const addNewApplication = (scholarshipID: string, applicationData: any): 
 
 export const getApplicationByID = (_id: string): Promise<any> => {
     return new Promise(async (resolve, reject) => {
-        console.log(populateScholarhshipLocals());
-
         ApplicationSchema.findOne({ _id }, { updatedAt: 0, __v: 0, _id: 0 })
             .populate({
                 path: 'scholarship',
