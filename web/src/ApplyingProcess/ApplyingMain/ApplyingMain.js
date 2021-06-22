@@ -8,6 +8,7 @@ import personalInfo from '../personalInfo'
 import './Filter.css';
 import InputGroup from './InputGroup';
 import groupObject from './groupData';
+import Error from '../InputComponents/Error';
 /* import Dropdown from './Dropdown'; */
 
 
@@ -15,7 +16,8 @@ function Filter(props) {
   const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
   const [result, setResult] = useState({});
   const history = useHistory();
-  const removedKeyList = ['provider', 'link', 'advancement', 'advancementDetail', 'advancementTime', 'city', 'country']
+  const [error, setError] = useState('')
+
 
   var getNextkey = (currentKey) => {
     var existKeys = [...props.groupNameList, 'submit']
@@ -40,7 +42,7 @@ function Filter(props) {
 
     fetch(URL + `/api/data/apply/${props.scholarshipId}`, {
       method: 'POST',
-      body: JSON.stringify({ applyingData: result}),
+      body: JSON.stringify(result),
       headers: { 'Content-type': 'application/json' },
     })
       .then(async (response) => {
@@ -56,17 +58,21 @@ function Filter(props) {
           return Promise.reject(error);
         }
         history.push({
-          pathname: '/scholarshipsPage',
+          pathname: '/review',
           state: {scholarships : data},
         });
         /* response.json() */
       })
       /* .then(json => setScholarships(json)) */
-      .catch((error) => console.error('There was an error!', error));
+      .catch((error) => {
+        setError(error)
+        console.error('There was an error!', error)
+    });
   }
 
   return (
     <div className="filter">
+      {(error)? <Error error = {error}/>:null}
       <div className="options">
         {Object.keys(groupObject).map((groupName, id) => {
           var memberList = groupObject[groupName];

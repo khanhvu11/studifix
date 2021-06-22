@@ -28,7 +28,7 @@ export default function TextInput({obj, _key, getValue, lang}) {
             ):( */}
             <div className="">
                 {/* <label className="col-sm-2 col-form-label" htmlFor={obj.title[lang]}>{obj.title[lang]}</label>  */}
-                <input type="text" className="form-control insideElement" id={_key} placeholder={obj && obj.title[lang]} onChange={handleChange}/>
+                <input type="text" className="form-control insideElement" id={_key} placeholder={obj && obj.title[lang]} onChange={handleChange} required/>
             </div>
         </div>
         )

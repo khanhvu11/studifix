@@ -17,7 +17,7 @@ export default function Dropdown({getValue, lang, obj, _key}) {
                 <option value="none" selected disabled hidden>
                     {obj.title[lang] + ' - Bitte wählen Sie'}
                 </option>
-                {obj.values.map((val,id) => <option value={val._id} key={val._id} >{val.title[lang]}</option>)}
+                {obj.values.map((val,id) => <option value={val._id} key={val._id}>{val.title[lang]}</option>)}
             </select>
             </div>
         </div>

@@ -70,6 +70,26 @@ option {
   margin-bottom: 3rem;
 }
 
+.error{
+  border-radius: 1.5rem;
+  box-shadow: 1px 1px 20px 1px #dfe6f1;
+  background-color: #f7f7f7;
+  width: 50%;
+  border: none;
+  margin: 4px 2px;
+  padding: 1rem auto;
+  /*   padding: 15px 32px; */
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: red;
+  font-weight: 600;
+}
+
+.error p{
+  margin: 1rem auto ;
+}
+
 .inputGroup {
   width: 70%;
   display: flex;
