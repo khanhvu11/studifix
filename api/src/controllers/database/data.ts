@@ -1,8 +1,8 @@
 import ScholarshipSchema from '../../models/scholarship/scholarship';
-import FilterDataSchema from '../../models/filterData';
-import ApplicationDataSchema from '../../models/applicationData';
-import ApplicationSchema from '../../models/application';
-import LocalizationSchema from '../../models/scholarship/components/localization';
+import FilterDataSchema from '../../models/filter/filterData';
+import ApplicationDataSchema from '../../models/application/applicationData';
+import ApplicationSchema from '../../models/application/application';
+import LocalizationSchema from '../../models/components/localization';
 
 import { scholarshipFilterqueryGenerator } from '../../helpers/dataBase';
 import { populateScholarhshipLocals, populateScholarhshipValues } from '../../helpers/population';

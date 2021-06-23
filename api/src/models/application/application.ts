@@ -1,10 +1,10 @@
 import mongoose, { Schema } from 'mongoose';
-import city from './scholarship/components/city';
-import country from './scholarship/components/country';
-import familyStatus from './scholarship/components/familyStatus';
-import gender from './scholarship/components/gender';
-import salutation from './scholarship/components/salutation';
-import scholarship from './scholarship/scholarship';
+import city from '../components/city';
+import country from '../components/country';
+import familyStatus from '../components/familyStatus';
+import gender from '../components/gender';
+import salutation from '../components/salutation';
+import scholarship from '../scholarship/scholarship';
 
 const ApplicationSchema: Schema = new Schema(
     {

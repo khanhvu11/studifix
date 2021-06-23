@@ -1,14 +1,23 @@
 import mongoose, { Schema } from 'mongoose';
-import city from './scholarship/components/city';
-import country from './scholarship/components/country';
-import familyStatus from './scholarship/components/familyStatus';
-import gender from './scholarship/components/gender';
-import salutation from './scholarship/components/salutation';
+import city from '../components/city';
+import commitment from '../components/commitment';
+import country from '../components/country';
+import course from '../components/course';
+import graduation from '../components/graduation';
+import nationality from '../components/nationality';
+import nationalityDetail from '../components/nationalityDetail';
+import occupation from '../components/occupation';
+import reference from '../components/reference';
+import religion from '../components/religion';
+import requirement from '../components/requirements';
+import state from '../components/state';
+import support from '../components/support';
 
-const ApplicationDataSchema: Schema = new Schema({
+const FilterDataSchema: Schema = new Schema({
     _id: Schema.Types.ObjectId,
     dataSetType: { type: String },
-    salutation: {
+    age: {
+        values: { type: String, required: true },
         title: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },
@@ -24,60 +33,11 @@ const ApplicationDataSchema: Schema = new Schema({
             EN: { type: String, required: true },
             FR: { type: String, required: true }
         },
-        values: [{ type: Schema.Types.ObjectId, ref: salutation }]
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
     },
-    firstName: {
-        title: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        description: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        descriptionDetail: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        }
-    },
-    lastName: {
-        title: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        description: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        descriptionDetail: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        }
-    },
-    dateOfBirth: {
-        title: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        description: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        descriptionDetail: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        }
-    },
-    placeOfBirth: {
+    nationality: {
+        values: [{ type: Schema.Types.ObjectId, ref: nationality }],
         title: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },
@@ -93,9 +53,11 @@ const ApplicationDataSchema: Schema = new Schema({
             EN: { type: String, required: true },
             FR: { type: String, required: true }
         },
-        values: [{ type: Schema.Types.ObjectId, ref: city }]
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
     },
-    countryOfBirth: {
+    nationalityDetail: {
+        values: [{ type: Schema.Types.ObjectId, ref: nationalityDetail }],
         title: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },
@@ -111,9 +73,11 @@ const ApplicationDataSchema: Schema = new Schema({
             EN: { type: String, required: true },
             FR: { type: String, required: true }
         },
-        values: [{ type: Schema.Types.ObjectId, ref: country }]
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
     },
-    gender: {
+    religion: {
+        values: [{ type: Schema.Types.ObjectId, ref: religion }],
         title: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },
@@ -129,9 +93,11 @@ const ApplicationDataSchema: Schema = new Schema({
             EN: { type: String, required: true },
             FR: { type: String, required: true }
         },
-        values: [{ type: Schema.Types.ObjectId, ref: gender }]
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
     },
-    familyStatus: {
+    requirement: {
+        values: [{ type: Schema.Types.ObjectId, ref: requirement }],
         title: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },
@@ -147,9 +113,274 @@ const ApplicationDataSchema: Schema = new Schema({
             EN: { type: String, required: true },
             FR: { type: String, required: true }
         },
-        values: [{ type: Schema.Types.ObjectId, ref: familyStatus }]
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
     },
+    occupation: {
+        values: [{ type: Schema.Types.ObjectId, ref: occupation }],
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
+    },
+    graduation: {
+        values: [{ type: Schema.Types.ObjectId, ref: graduation }],
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean },
+        dependence: { type: String, required: true }
+    },
+    course: {
+        values: [{ type: Schema.Types.ObjectId, ref: course }],
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean },
+        dependence: { type: String, required: true }
+    },
+    semester: {
+        values: { type: String, required: true },
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
+    },
+    collegeGrade: {
+        values: { type: String, required: true },
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
+    },
+    jobGrade: {
+        values: { type: String, required: true },
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
+    },
+    uniGrade: {
+        values: { type: String, required: true },
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
+    },
+    workExperience: {
+        values: { type: String, required: true },
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
+    },
+    sidejobHours: {
+        values: { type: String, required: true },
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
+    },
+    commitment: {
+        values: [{ type: Schema.Types.ObjectId, ref: commitment }],
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
+    },
+    support: {
+        values: [{ type: Schema.Types.ObjectId, ref: support }],
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
+    },
+    supportYet: {
+        values: { type: String, required: true },
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
+    },
+    reference: {
+        values: [{ type: Schema.Types.ObjectId, ref: reference }],
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
+    },
+
     country: {
+        values: [{ type: Schema.Types.ObjectId, ref: country }],
         title: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },
@@ -165,9 +396,31 @@ const ApplicationDataSchema: Schema = new Schema({
             EN: { type: String, required: true },
             FR: { type: String, required: true }
         },
-        values: [{ type: Schema.Types.ObjectId, ref: country }]
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
+    },
+    state: {
+        values: [{ type: Schema.Types.ObjectId, ref: state }],
+        title: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        description: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        descriptionDetail: {
+            DE: { type: String, required: true },
+            EN: { type: String, required: true },
+            FR: { type: String, required: true }
+        },
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
     },
     city: {
+        values: [{ type: Schema.Types.ObjectId, ref: city }],
         title: {
             DE: { type: String, required: true },
             EN: { type: String, required: true },
@@ -183,93 +436,9 @@ const ApplicationDataSchema: Schema = new Schema({
             EN: { type: String, required: true },
             FR: { type: String, required: true }
         },
-        values: [{ type: Schema.Types.ObjectId, ref: city }]
-    },
-    street: {
-        title: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        description: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        descriptionDetail: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        }
-    },
-    number: {
-        title: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        description: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        descriptionDetail: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        }
-    },
-    ZIP: {
-        title: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        description: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        descriptionDetail: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        }
-    },
-    mail: {
-        title: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        description: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        descriptionDetail: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        }
-    },
-    mobile: {
-        title: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        description: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        descriptionDetail: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        }
+        mandatory: { type: Boolean },
+        multiselect: { type: Boolean }
     }
 });
 
-export default mongoose.model('applicationData', ApplicationDataSchema, 'applicationData');
+export default mongoose.model('filterData', FilterDataSchema, 'filterData');

@@ -1,4 +1,4 @@
-import User from '../../models/user';
+import User from '../../models/user/user';
 import user from '../../interfaces/user';
 
 const checkEmailAlreadyInUse = (email: string): Promise<Boolean> => {
@@ -62,7 +62,7 @@ const getUserDataByID = (_id: string): Promise<any> => {
             'referenceDetails',
             'courses',
             'requirements',
-            'supports',
+            'supports'
         ];
         var pQuery = [{ path: 'scholarships.scholarship', populate }];
 

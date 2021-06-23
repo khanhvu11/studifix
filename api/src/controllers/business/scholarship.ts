@@ -1,14 +1,8 @@
 import { Response, Request } from 'express';
-import {
-    getFilterDataFromDB,
-    filterScholarshipsByUserInput,
-    getScholarshipByID,
-    getApplicationDataFromDB,
-    addNewApplication,
-    getApplicationByID,
-    getLocalizations
-} from '../controllers/database/data';
-import { joiApplicationInput, joiFilterParams, joiScholarshipID } from '../models/joi';
+import { getFilterDataFromDB, filterScholarshipsByUserInput, getScholarshipByID, getApplicationDataFromDB, addNewApplication, getApplicationByID, getLocalizations } from '../database/data';
+import { joiApplicationInput } from '../../models/joi/application';
+import { joiFilterParams } from '../../models/joi/filter';
+import { joiScholarshipID } from '../../models/joi/scholarshipID';
 
 export const resolveFilterData = async (req: Request, res: Response) => {
     try {
