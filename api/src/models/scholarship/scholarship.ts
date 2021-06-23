@@ -1,21 +1,21 @@
 import mongoose, { Schema } from 'mongoose';
-import city from './components/city';
-import commitment from './components/commitment';
-import country from './components/country';
-import course from './components/course';
-import employee from './components/employee';
-import graduation from './components/graduation';
-import institution from './components/institution';
-import localization from './components/localization';
-import nationality from './components/nationality';
-import nationalityDetail from './components/nationalityDetail';
-import occupation from './components/occupation';
-import provider from './components/provider';
-import referenceDetail from './components/reference';
-import religion from './components/religion';
-import requirement from './components/requirements';
-import state from './components/state';
-import support from './components/support';
+import city from '../components/city';
+import commitment from '../components/commitment';
+import country from '../components/country';
+import course from '../components/course';
+import employee from '../components/employee';
+import graduation from '../components/graduation';
+import institution from '../components/institution';
+import localization from '../components/localization';
+import nationality from '../components/nationality';
+import nationalityDetail from '../components/nationalityDetail';
+import occupation from '../components/occupation';
+import provider from '../components/provider';
+import referenceDetail from '../components/reference';
+import religion from '../components/religion';
+import requirement from '../components/requirements';
+import state from '../components/state';
+import support from '../components/support';
 
 const ScholarshipSchema: Schema = new Schema({
     _id: Schema.Types.ObjectId,

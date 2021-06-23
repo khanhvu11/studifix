@@ -1,5 +1,5 @@
 import express from 'express';
-import { resolveFilterData, resolveApplicationData, filterScholarships, getSingleScholarshipByID, checkForValidApplication } from '../content/data';
+import { resolveFilterData, resolveApplicationData, filterScholarships, getSingleScholarshipByID, checkForValidApplication } from '../controllers/business/scholarship';
 
 const router = express.Router();
 

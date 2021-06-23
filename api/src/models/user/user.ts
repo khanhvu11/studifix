@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
-import IUser from '../interfaces/user';
-import scholarships from './scholarship/scholarship';
+import IUser from '../../interfaces/user';
+import scholarships from '../scholarship/scholarship';
 
 const UserSchema: Schema = new Schema(
     {

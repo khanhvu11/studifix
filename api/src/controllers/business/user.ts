@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
-import {joiLogin, joiRegister} from '../../models/joi';
+import { joiLogin } from '../../models/joi/login';
+import { joiRegister } from '../../models/joi/register';
 import dbUser from '../database/user';
 import hash from '../../helpers/hash';
 import tokens from '../../helpers/tokens';
