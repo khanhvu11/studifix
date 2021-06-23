@@ -64,17 +64,16 @@ export const getSingleScholarshipByID = async (req: Request, res: Response) => {
     }
 };
 
-export const checkForValidApplication = async (req: Request, res: Response) => {
+export const createNewApplication = async (req: Request, res: Response) => {
     try {
-        const userInput = req.body;
-        const applicationData: any = await joiApplicationInput.validateAsync(userInput);
+        // validation of application data
+        const application: any = await joiApplicationInput.validateAsync(req.body);
 
-        const _id: string = await joiScholarshipID.validateAsync(req.params);
-
-        const applicationID: string = await addNewApplication(_id, applicationData);
-
+        // get all localizations from DB
         const locals = await getLocalizations();
-        getApplicationByID(applicationID)
+
+        // create validized application
+        await addNewApplication(application)
             .then((data) => {
                 res.status(200).json({
                     data,

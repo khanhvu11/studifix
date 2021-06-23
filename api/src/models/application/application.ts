@@ -8,9 +8,9 @@ import scholarship from '../scholarship/scholarship';
 
 const ApplicationSchema: Schema = new Schema(
     {
-        scholarship: { type: Schema.Types.ObjectId, ref: scholarship },
+        scholarship: { type: Schema.Types.ObjectId, ref: scholarship, required: true },
 
-        salutation: { type: Schema.Types.ObjectId, ref: salutation },
+        salutation: { type: Schema.Types.ObjectId, ref: salutation, required: true },
 
         firstName: { type: String, required: true },
 
@@ -18,17 +18,17 @@ const ApplicationSchema: Schema = new Schema(
 
         dateOfBirth: { type: Date, required: true },
 
-        placeOfBirth: { type: Schema.Types.ObjectId, ref: city },
+        placeOfBirth: { type: Schema.Types.ObjectId, ref: city, required: true },
 
-        countryOfBirth: { type: Schema.Types.ObjectId, ref: country },
+        countryOfBirth: { type: Schema.Types.ObjectId, ref: country, required: true },
 
-        gender: { type: Schema.Types.ObjectId, ref: gender },
+        gender: { type: Schema.Types.ObjectId, ref: gender, required: true },
 
-        familyStatus: { type: Schema.Types.ObjectId, ref: familyStatus },
+        familyStatus: { type: Schema.Types.ObjectId, ref: familyStatus, required: true },
 
-        country: { type: Schema.Types.ObjectId, ref: country },
+        country: { type: Schema.Types.ObjectId, ref: country, required: true },
 
-        city: { type: Schema.Types.ObjectId, ref: city },
+        city: { type: Schema.Types.ObjectId, ref: city, required: true },
 
         street: { type: String, required: true },
 
