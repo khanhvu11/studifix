@@ -1,11 +1,11 @@
 import { Request, Response } from 'express';
 import { joiLogin } from '../../models/joi/login';
-import { joiRegister } from '../../models/joi/register';
 import dbUser from '../database/user';
 import hash from '../../helpers/hash';
 import tokens from '../../helpers/tokens';
+import IUser from 'interfaces/user';
 
-const getToken = async (req: Request, res: Response) => {
+export const getToken = async (req: Request, res: Response) => {
     try {
         const data = await joiLogin.validateAsync(req.body);
 
@@ -32,39 +32,54 @@ const getToken = async (req: Request, res: Response) => {
     }
 };
 
-const addUser = async (req: Request, res: Response) => {
-    try {
-        /** Validate User Input and create User Object*/
-        //TODO: remove value from password error
-        const data = await joiRegister.validateAsync(req.body);
+// const addUser = async (req: Request, res: Response) => {
+//     try {
+//         /** Validate User Input and create User Object*/
+//         //TODO: remove value from password error
+//         const data = await joiRegister.validateAsync(req.body);
 
-        /** Hash password and delete duplicate after validating password */
-        data.password = hash.hash(data.password);
-        delete data['repeatPassword'];
+//         /** Hash password and delete duplicate after validating password */
+//         data.password = hash.hash(data.password);
+//         delete data['repeatPassword'];
 
+//         /** Check if email is in use */
+//         const mailInUse = await dbUser.checkEmailAlreadyInUse(data.email);
+//         if (mailInUse) {
+//             return res.status(409).json({
+//                 message: 'Email already in Use'
+//             });
+//         }
+//         /** Add User to DB */
+//         const result = await dbUser.addUserToDB(data);
+
+//         /** If fullfilled generate JWT with userID. Encrypt with hashed user password */
+//         await tokens.signToken(result._id).then((result) =>
+//             res.status(200).json({
+//                 message: 'User successfully added to DB.',
+//                 jwt: result
+//             })
+//         );
+//     } catch (error) {
+//         /** Catch all errors for default */
+//         return res.status(500).json({
+//             message: error.message
+//         });
+//     }
+// };
+
+export const addUser = (userData: IUser): Promise<any> => {
+    return new Promise(async (resolve, reject) => {
         /** Check if email is in use */
-        const mailInUse = await dbUser.checkEmailAlreadyInUse(data.email);
+        const mailInUse = await dbUser.checkEmailAlreadyInUse(userData.email);
         if (mailInUse) {
-            return res.status(409).json({
-                message: 'Email already in Use'
-            });
+            reject('Email already in Use');
         }
-        /** Add User to DB */
-        const result = await dbUser.addUserToDB(data);
 
-        /** If fullfilled generate JWT with userID. Encrypt with hashed user password */
-        await tokens.signToken(result._id).then((result) =>
-            res.status(200).json({
-                message: 'User successfully added to DB.',
-                jwt: result
+        await dbUser
+            .addUserToDB(userData)
+            .then((userID) => {
+                resolve(userID);
             })
-        );
-    } catch (error) {
-        /** Catch all errors for default */
-        return res.status(500).json({
-            message: error.message
-        });
-    }
+            .catch((e) => reject(e));
+    });
 };
-
-export default { getToken, addUser };

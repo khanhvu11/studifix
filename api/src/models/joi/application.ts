@@ -24,8 +24,8 @@ export const joiApplicationInput = Joi.object({
     filterData: {
         age: Joi.number().min(1).max(99).required(true),
         semester: Joi.number().min(1).max(30).required(true),
-        workExperience: Joi.number().min(0).max(40).required(true),
-        sidejobHours: Joi.number().min(0).max(40).required(true),
+        workExperience: [Joi.number().min(0).max(40).required(true), null],
+        sidejobHours: [Joi.number().min(0).max(40).required(true), null],
         collegeGrade: [Joi.number().min(1).max(6), null],
         jobGrade: [Joi.number().min(1).max(6), null],
         uniGrade: [Joi.number().min(1).max(6), null],

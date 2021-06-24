@@ -1,19 +1,21 @@
 import { Document } from 'mongoose';
-import IScholarship from './scholarship';
 
 export default interface IUser extends Document {
-    lastName: string;
+    salutation: string;
     firstName: string;
-    dob: Date;
-    email: string;
-    education: IEducation;
-    password: string;
-    address: string;
-    zipCode: number;
-    city: string;
+    lastName: string;
+    gender: string;
+    dateOfBirth: Date;
+    placeOfBirth: string;
+    countryOfBirth: string;
     country: string;
-    phone: string;
-    scholarships: IScholarship[];
+    city: string;
+    street: string;
+    number: number;
+    ZIP: number;
+    mobile: string;
+    email: string;
+    familyStatus: string;
 }
 
 interface IEducation {

@@ -10,84 +10,55 @@ import requirement from '../components/requirement';
 import state from '../components/state';
 import support from '../components/support';
 import mongoose, { Schema } from 'mongoose';
-import city from '../components/city';
-import country from '../components/country';
-import familyStatus from '../components/familyStatus';
-import gender from '../components/gender';
-import salutation from '../components/salutation';
 import scholarship from '../scholarship/scholarship';
+import user from '../user/user';
+import provider from '../components/provider';
 
 const ApplicationSchema: Schema = new Schema(
     {
         scholarship: { type: Schema.Types.ObjectId, ref: scholarship, required: true },
 
-        salutation: { type: Schema.Types.ObjectId, ref: salutation, required: true },
+        user: { type: Schema.Types.ObjectId, ref: user, required: true },
 
-        firstName: { type: String, required: true },
+        provider: { type: Schema.Types.ObjectId, ref: provider, required: true },
 
-        lastName: { type: String, required: true },
+        filterData: {
+            semester: { type: Number, required: true },
 
-        dateOfBirth: { type: Date, required: true },
+            workExperience: { type: Number, required: false },
 
-        placeOfBirth: { type: Schema.Types.ObjectId, ref: city, required: true },
+            sidejobHours: { type: Number, required: false },
 
-        countryOfBirth: { type: Schema.Types.ObjectId, ref: country, required: true },
+            collegeGrade: { type: Number, required: false },
 
-        gender: { type: Schema.Types.ObjectId, ref: gender, required: true },
+            jobGrade: { type: Number, required: false },
 
-        familyStatus: { type: Schema.Types.ObjectId, ref: familyStatus, required: true },
+            uniGrade: { type: Number, required: false },
 
-        country: { type: Schema.Types.ObjectId, ref: country, required: true },
+            nationality: [{ type: Schema.Types.ObjectId, ref: nationality, required: true }],
 
-        city: { type: Schema.Types.ObjectId, ref: city, required: true },
+            nationalityDetail: [{ type: Schema.Types.ObjectId, ref: nationalityDetail, required: true }],
 
-        street: { type: String, required: true },
+            religion: [{ type: Schema.Types.ObjectId, ref: religion, required: true }],
 
-        number: { type: String, required: true },
+            requirement: [{ type: Schema.Types.ObjectId, ref: requirement, required: true }],
 
-        ZIP: { type: Number, required: true },
+            occupation: [{ type: Schema.Types.ObjectId, ref: occupation, required: true }],
 
-        email: { type: String, required: true },
+            graduation: [{ type: Schema.Types.ObjectId, ref: graduation, required: true }],
 
-        mobile: { type: String, required: true },
+            course: [{ type: Schema.Types.ObjectId, ref: course, required: true }],
 
-        age: { type: Number, required: true },
+            commitment: [{ type: Schema.Types.ObjectId, ref: commitment, required: true }],
 
-        semester: { type: Number, required: true },
+            support: [{ type: Schema.Types.ObjectId, ref: support, required: true }],
 
-        workExperience: { type: Number, required: true },
+            reference: [{ type: Schema.Types.ObjectId, ref: reference, required: true }],
 
-        sidejobHours: { type: Number, required: true },
+            state: [{ type: Schema.Types.ObjectId, ref: state, required: true }],
 
-        collegeGrade: { type: Number, required: false },
-
-        jobGrade: { type: Number, required: false },
-
-        uniGrade: { type: Number, required: false },
-
-        nationality: [{ type: Schema.Types.ObjectId, ref: nationality, required: true }],
-
-        nationalityDetail: [{ type: Schema.Types.ObjectId, ref: nationalityDetail, required: true }],
-
-        religion: [{ type: Schema.Types.ObjectId, ref: religion, required: true }],
-
-        requirement: [{ type: Schema.Types.ObjectId, ref: requirement, required: true }],
-
-        occupation: [{ type: Schema.Types.ObjectId, ref: occupation, required: true }],
-
-        graduation: [{ type: Schema.Types.ObjectId, ref: graduation, required: true }],
-
-        course: [{ type: Schema.Types.ObjectId, ref: course, required: true }],
-
-        commitment: [{ type: Schema.Types.ObjectId, ref: commitment, required: true }],
-
-        support: [{ type: Schema.Types.ObjectId, ref: support, required: true }],
-
-        reference: [{ type: Schema.Types.ObjectId, ref: reference, required: true }],
-
-        state: [{ type: Schema.Types.ObjectId, ref: state, required: true }],
-
-        supportYet: { type: Boolean, required: true }
+            supportYet: { type: Boolean, required: true }
+        }
     },
     { timestamps: {} }
 );

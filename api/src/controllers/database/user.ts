@@ -1,9 +1,9 @@
-import User from '../../models/user/user';
 import user from '../../interfaces/user';
+import UserSchema from '../../models/user/user';
 
 const checkEmailAlreadyInUse = (email: string): Promise<Boolean> => {
     return new Promise(async (resolve, reject) => {
-        User.findOne({ email })
+        UserSchema.findOne({ email })
             .exec()
             .then((results) => {
                 if (results) {
@@ -20,11 +20,9 @@ const checkEmailAlreadyInUse = (email: string): Promise<Boolean> => {
 
 const addUserToDB = (userData: user): Promise<any> => {
     return new Promise(async (resolve, reject) => {
-        const user = new User(userData);
-
-        user.save()
+        UserSchema.create(userData)
             .then((result) => {
-                resolve(result);
+                resolve(result._id);
             })
             .catch((error) => {
                 reject(error);
@@ -34,7 +32,7 @@ const addUserToDB = (userData: user): Promise<any> => {
 
 const getUserDataByMail = (email: string): Promise<any> => {
     return new Promise(async (resolve, reject) => {
-        User.findOne({ email })
+        UserSchema.findOne({ email })
             .exec()
             .then((results) => {
                 resolve(results);
@@ -66,7 +64,7 @@ const getUserDataByID = (_id: string): Promise<any> => {
         ];
         var pQuery = [{ path: 'scholarships.scholarship', populate }];
 
-        User.findOne({ _id })
+        UserSchema.findOne({ _id })
             .populate(pQuery)
             .exec()
             .then((results) => {

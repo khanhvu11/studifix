@@ -1,5 +1,7 @@
+import IUser from './user';
+
 export interface IApplicationReq {
-    scholarship: string[];
+    scholarship: string;
     filterData: {};
-    applicationData: {};
+    applicationData: IUser;
 }
