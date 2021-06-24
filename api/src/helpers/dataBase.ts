@@ -4,7 +4,6 @@ const { ObjectId } = require('mongodb');
 const refactorIDs = (idList: string[]): any[] => {
     let tempArray: any = [];
     idList.map((_id) => {
-        console.log(_id);
         tempArray.push(ObjectId(String(_id)));
     });
 
