@@ -4,7 +4,6 @@ const { ObjectId } = require('mongodb');
 const refactorIDs = (idList: string[]): any[] => {
     let tempArray: any = [];
     idList.map((_id) => {
-        console.log(_id);
         tempArray.push(ObjectId(String(_id)));
     });
 
@@ -50,11 +49,13 @@ export const scholarshipFilterqueryGenerator = (idLists: IFilterData): any => {
     reference ? tempArray.push({ $or: [{ 'reference.value': { $in: refactorIDs(reference) } }, { 'reference.value': null }] }) : null;
     nationalityDetail ? tempArray.push({ $or: [{ 'nationalityDetail.value': { $in: refactorIDs(nationalityDetail) } }, { 'nationalityDetail.value': null }] }) : null;
 
-    workExperience ? tempArray.push({ $or: [{ 'workExperience.value': workExperience }, { 'workExperience.value': null }] }) : null;
-    sidejobHours ? tempArray.push({ $or: [{ 'sidejobHours.value': sidejobHours }, { 'sidejobHours.value': null }] }) : null;
-    collageGrade ? tempArray.push({ $or: [{ 'collageGrade.value': collageGrade }, { 'collageGrade.value': null }] }) : null;
-    jobGrade ? tempArray.push({ $or: [{ 'jobGrade.value': jobGrade }, { 'jobGrade.value': null }] }) : null;
-    uniGrade ? tempArray.push({ $or: [{ 'uniGrade.value': uniGrade }, { 'uniGrade.value': null }] }) : null;
+    workExperience ? tempArray.push({ $or: [{ 'workExperience.value': { $lte: workExperience } }, { 'workExperience.value': null }] }) : null;
+    sidejobHours ? tempArray.push({ $or: [{ 'sidejobHours.value': { $gte: sidejobHours } }, { 'sidejobHours.value': null }] }) : null;
+
+    collageGrade ? tempArray.push({ $or: [{ 'collageGrade.value': { $gte: collageGrade } }, { 'collageGrade.value': null }] }) : null;
+    jobGrade ? tempArray.push({ $or: [{ 'jobGrade.value': { $gte: jobGrade } }, { 'jobGrade.value': null }] }) : null;
+    uniGrade ? tempArray.push({ $or: [{ 'uniGrade.value': { $gte: uniGrade } }, { 'uniGrade.value': null }] }) : null;
+
     supportYet ? tempArray.push({ 'supportYet.value': supportYet }) : null;
 
     semester

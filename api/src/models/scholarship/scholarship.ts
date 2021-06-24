@@ -86,6 +86,11 @@ const ScholarshipSchema: Schema = new Schema({
         value: [{ type: Schema.Types.ObjectId, ref: support }]
     },
 
+    supportYet: {
+        localization: { type: Schema.Types.ObjectId, ref: localization },
+        value: { type: Boolean, required: true }
+    },
+
     referenceRequiered: {
         localization: { type: Schema.Types.ObjectId, ref: localization },
         value: { type: Boolean, required: true }
