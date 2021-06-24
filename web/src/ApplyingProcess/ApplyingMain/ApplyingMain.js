@@ -57,10 +57,10 @@ function Filter(props) {
           const error = (data && data.message) || response.status;
           return Promise.reject(error);
         }
-        // history.push({
-        //   pathname: '/',
-        //   state: { scholarships: data },
-        // });
+        history.push({
+          pathname: '/',
+          state: { scholarships: data },
+        });
         /* response.json() */
       })
       /* .then(json => setScholarships(json)) */
