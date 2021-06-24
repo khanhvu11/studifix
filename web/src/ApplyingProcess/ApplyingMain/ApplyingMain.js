@@ -39,9 +39,10 @@ function Filter(props) {
     fetch(URL + '/api/data/application', {
       method: 'POST',
       body: JSON.stringify({
-        scholarship : props.scholarshipId,
+        scholarship: props.scholarshipId,
         filterData: props.user_selection,
-        applicationData: result}),
+        applicationData: result,
+      }),
       headers: { 'Content-type': 'application/json' },
     })
       .then(async (response) => {
@@ -56,10 +57,10 @@ function Filter(props) {
           const error = (data && data.message) || response.status;
           return Promise.reject(error);
         }
-        history.push({
-          pathname: '/',
-          state: { scholarships: data },
-        });
+        // history.push({
+        //   pathname: '/',
+        //   state: { scholarships: data },
+        // });
         /* response.json() */
       })
       /* .then(json => setScholarships(json)) */

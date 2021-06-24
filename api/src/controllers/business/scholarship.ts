@@ -3,10 +3,14 @@ import { getFilterDataFromDB, filterScholarshipsByUserInput, getScholarshipByID,
 import { joiApplicationInput } from '../../models/joi/application';
 import { joiFilterParams } from '../../models/joi/filter';
 import { joiScholarshipID } from '../../models/joi/scholarshipID';
+import { combineDataForApplication } from '../../helpers/application';
+import { IApplicationReq } from 'interfaces/request';
 
 export const resolveFilterData = async (req: Request, res: Response) => {
     try {
         await getFilterDataFromDB().then((filterData) => {
+            console.log(filterData);
+
             res.status(200).json({
                 filterData
             });
@@ -66,19 +70,18 @@ export const getSingleScholarshipByID = async (req: Request, res: Response) => {
 
 export const createNewApplication = async (req: Request, res: Response) => {
     try {
-        // validation of application data
-        const application: any = await joiApplicationInput.validateAsync(req.body);
+        const reqData: IApplicationReq = req.body;
 
-        // get all localizations from DB
-        const locals = await getLocalizations();
+        // validation of application data
+        const application: any = await joiApplicationInput.validateAsync(reqData);
+
+        // combines filterData, applicationData and scholarshipID to one object
+        const combined = await combineDataForApplication(reqData.scholarship, reqData.applicationData, reqData.filterData);
 
         // create validized application
-        await addNewApplication(application)
+        await addNewApplication(combined)
             .then((data) => {
-                res.status(200).json({
-                    data,
-                    locals
-                });
+                res.sendStatus(200);
             })
             .catch((e) => res.status(400).json({ e }));
     } catch (error) {

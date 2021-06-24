@@ -9,7 +9,7 @@ import nationalityDetail from '../components/nationalityDetail';
 import occupation from '../components/occupation';
 import reference from '../components/reference';
 import religion from '../components/religion';
-import requirement from '../components/requirements';
+import requirement from '../components/requirement';
 import state from '../components/state';
 import support from '../components/support';
 
