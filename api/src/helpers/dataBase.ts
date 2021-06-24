@@ -49,8 +49,8 @@ export const scholarshipFilterqueryGenerator = (idLists: IFilterData): any => {
     reference ? tempArray.push({ $or: [{ 'reference.value': { $in: refactorIDs(reference) } }, { 'reference.value': null }] }) : null;
     nationalityDetail ? tempArray.push({ $or: [{ 'nationalityDetail.value': { $in: refactorIDs(nationalityDetail) } }, { 'nationalityDetail.value': null }] }) : null;
 
-    workExperience ? tempArray.push({ $or: [{ 'workExperience.value': workExperience }, { 'workExperience.value': null }] }) : null;
-    sidejobHours ? tempArray.push({ $or: [{ 'sidejobHours.value': sidejobHours }, { 'sidejobHours.value': null }] }) : null;
+    workExperience ? tempArray.push({ $or: [{ 'workExperience.value': { $lte: workExperience } }, { 'workExperience.value': null }] }) : null;
+    sidejobHours ? tempArray.push({ $or: [{ 'sidejobHours.value': { $gte: sidejobHours } }, { 'sidejobHours.value': null }] }) : null;
 
     collageGrade ? tempArray.push({ $or: [{ 'collageGrade.value': { $gte: collageGrade } }, { 'collageGrade.value': null }] }) : null;
     jobGrade ? tempArray.push({ $or: [{ 'jobGrade.value': { $gte: jobGrade } }, { 'jobGrade.value': null }] }) : null;
