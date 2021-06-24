@@ -82,7 +82,7 @@ export const applyWithoutAccount = async (req: Request, res: Response) => {
         const combined = await combineDataForApplication(application.scholarship, userID, providerID, application.filterData);
 
         // create validized application
-        await addNewApplication(combined).then((data) => {
+        await addNewApplication(combined).then(() => {
             res.sendStatus(200);
         });
     } catch (error) {
