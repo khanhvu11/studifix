@@ -13,7 +13,7 @@ import occupation from '../components/occupation';
 import provider from '../components/provider';
 import referenceDetail from '../components/reference';
 import religion from '../components/religion';
-import requirement from '../components/requirements';
+import requirement from '../components/requirement';
 import state from '../components/state';
 import support from '../components/support';
 

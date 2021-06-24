@@ -1,12 +1,17 @@
 import { Response, Request } from 'express';
-import { getFilterDataFromDB, filterScholarshipsByUserInput, getScholarshipByID, getApplicationDataFromDB, addNewApplication, getApplicationByID, getLocalizations } from '../database/data';
+import { getFilterDataFromDB, filterScholarshipsByUserInput, getScholarshipByID, getApplicationDataFromDB, addNewApplication, getProviderByScholarshipID } from '../database/scholarship';
 import { joiApplicationInput } from '../../models/joi/application';
 import { joiFilterParams } from '../../models/joi/filter';
 import { joiScholarshipID } from '../../models/joi/scholarshipID';
+import { combineDataForApplication } from '../../helpers/application';
+import { IApplicationReq } from 'interfaces/request';
+import { addUser } from './user';
 
 export const resolveFilterData = async (req: Request, res: Response) => {
     try {
         await getFilterDataFromDB().then((filterData) => {
+            console.log(filterData);
+
             res.status(200).json({
                 filterData
             });
@@ -64,24 +69,22 @@ export const getSingleScholarshipByID = async (req: Request, res: Response) => {
     }
 };
 
-export const checkForValidApplication = async (req: Request, res: Response) => {
+export const applyWithoutAccount = async (req: Request, res: Response) => {
     try {
-        const userInput = req.body;
-        const applicationData: any = await joiApplicationInput.validateAsync(userInput);
+        // validation of application data
+        const application: IApplicationReq = await joiApplicationInput.validateAsync(req.body);
 
-        const _id: string = await joiScholarshipID.validateAsync(req.params);
+        const userID = await addUser(application.applicationData);
 
-        const applicationID: string = await addNewApplication(_id, applicationData);
+        const providerID = await getProviderByScholarshipID(application.scholarship);
 
-        const locals = await getLocalizations();
-        getApplicationByID(applicationID)
-            .then((data) => {
-                res.status(200).json({
-                    data,
-                    locals
-                });
-            })
-            .catch((e) => res.status(400).json({ e }));
+        // combines filterData, applicationData and scholarshipID to one object
+        const combined = await combineDataForApplication(application.scholarship, userID, providerID, application.filterData);
+
+        // create validized application
+        await addNewApplication(combined).then(() => {
+            res.sendStatus(200);
+        });
     } catch (error) {
         res.status(400).json({
             message: error.message

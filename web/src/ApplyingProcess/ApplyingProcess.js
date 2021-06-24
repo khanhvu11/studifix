@@ -111,6 +111,7 @@ export default function ApplyingProcess(props) {
                 data={applicationData}
                 groupNameList={groupNameList} 
                 scholarshipId = {state.scholarship._id}
+                user_selection = {state.usr_selection}
             />
             }
             <div className="footer footer-sm">

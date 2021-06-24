@@ -2,7 +2,7 @@ import { Document } from 'mongoose';
 
 export default interface IScholarship extends Document {
     responsible: string;
-    povider: string;
+    provider: string;
     link: string;
     occupation: string[];
     semester: number;

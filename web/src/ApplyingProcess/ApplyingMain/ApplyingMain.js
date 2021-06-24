@@ -8,7 +8,7 @@ import personalInfo from '../personalInfo';
 import './Filter.css';
 import InputGroup from './InputGroup';
 import groupObject from './groupData';
-import Error from '../InputComponents/Error';
+import Error from '../NotificationComponents/Error';
 /* import Dropdown from './Dropdown'; */
 
 function Filter(props) {
@@ -36,9 +36,13 @@ function Filter(props) {
   console.log(result);
 
   var toReview = () => {
-    fetch(URL + `/api/data/apply/${props.scholarshipId}`, {
+    fetch(URL + '/api/data/application', {
       method: 'POST',
-      body: JSON.stringify(result),
+      body: JSON.stringify({
+        scholarship: props.scholarshipId,
+        filterData: props.user_selection,
+        applicationData: result,
+      }),
       headers: { 'Content-type': 'application/json' },
     })
       .then(async (response) => {

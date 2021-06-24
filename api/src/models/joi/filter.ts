@@ -18,10 +18,10 @@ export const joiFilterParams = Joi.object({
         nationalityDetail: [Joi.array().items(Joi.string().min(24).max(24)), null],
         supportYet: Joi.boolean(),
         workExperience: [Joi.number().min(1).max(50), null],
-        sidejobHours: [Joi.number().min(1).max(40), null],
-        collegeGrade: [Joi.number().min(1).max(5), null],
-        jobGrade: [Joi.number().min(1).max(5), null],
-        uniGrade: [Joi.number().min(1).max(5), null],
+        sidejobHours: [Joi.number().min(0).max(40), null],
+        collegeGrade: [Joi.number().min(1).max(6), null],
+        jobGrade: [Joi.number().min(1).max(6), null],
+        uniGrade: [Joi.number().min(1).max(6), null],
         semester: [Joi.number().min(0).max(30), null],
         age: [Joi.number().min(1).max(99), null]
     }

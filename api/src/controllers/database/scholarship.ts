@@ -98,13 +98,21 @@ export const getLocalizations = (): Promise<any> => {
     });
 };
 
-export const addNewApplication = (scholarshipID: string, applicationData: any): Promise<any> => {
+export const addNewApplication = (application: any): Promise<any> => {
     return new Promise(async (resolve, reject) => {
-        applicationData.scholarship = scholarshipID;
+        ApplicationSchema.create(application)
+            .then((result) => {
+                resolve(result);
+            })
+            .catch((error) => reject(error));
+    });
+};
 
-        ApplicationSchema.create(applicationData)
+export const getProviderByScholarshipID = (scholarshipID: any): Promise<any> => {
+    return new Promise(async (resolve, reject) => {
+        ScholarshipSchema.findOne({ _id: scholarshipID }, { provider: 1, _id: 0 })
             .then((result: any) => {
-                resolve(result._id);
+                resolve(result.provider.value);
             })
             .catch((error) => reject(error));
     });

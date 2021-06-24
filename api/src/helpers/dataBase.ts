@@ -1,4 +1,4 @@
-import { IUserInputList } from '../interfaces/data';
+import { IFilterData } from '../interfaces/data';
 const { ObjectId } = require('mongodb');
 
 const refactorIDs = (idList: string[]): any[] => {
@@ -11,7 +11,7 @@ const refactorIDs = (idList: string[]): any[] => {
     return tempArray;
 };
 
-export const scholarshipFilterqueryGenerator = (idLists: IUserInputList): any => {
+export const scholarshipFilterqueryGenerator = (idLists: IFilterData): any => {
     let tempArray = [];
 
     console.log(idLists);

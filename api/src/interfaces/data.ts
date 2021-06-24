@@ -1,4 +1,4 @@
-export interface IUserInputList {
+export interface IFilterData {
     commitment: string[];
     occupation: string[];
     graduation: string[];
@@ -14,7 +14,7 @@ export interface IUserInputList {
     requirement: string[];
     nationalityDetail: string[];
     supportYet: string;
-    age: number;
+    age?: number;
     workExperience: number;
     sidejobHours: number;
     collageGrade: number;
