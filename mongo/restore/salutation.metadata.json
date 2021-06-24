@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"0fd8b9bc2da54886b9c7630be9faeaa2","collectionName":"salutation"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"24ff9ad876de428985184e1f838c0ff3","collectionName":"salutation"}
