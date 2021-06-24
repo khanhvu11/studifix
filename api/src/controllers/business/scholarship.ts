@@ -53,13 +53,13 @@ export const filterScholarships = async (req: Request, res: Response) => {
     }
 };
 
-export const getSingleScholarshipByID = async (req: Request, res: Response) => {
+export const getScholarshipDetails = async (req: Request, res: Response) => {
     try {
         const _id: string = await joiScholarshipID.validateAsync(req.params);
 
-        await getScholarshipByID(_id).then((scholarships) => {
+        await getScholarshipByID(_id).then((scholarship) => {
             res.status(200).json({
-                scholarships
+                scholarship
             });
         });
     } catch (error) {

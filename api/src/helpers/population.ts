@@ -1,6 +1,6 @@
 import { populationLocalizationsGenerator, populationValuesGenerator } from './dataBase';
 
-export const populateScholarhshipValues = (): {} => {
+export const populateScholarshipsValues = (): {} => {
     const values = [
         'institution',
         'occupation',
@@ -24,7 +24,7 @@ export const populateScholarhshipValues = (): {} => {
     return populationValuesGenerator(values);
 };
 
-export const populateScholarhshipLocals = (): {} => {
+export const populateScholarshipsLocals = (): {} => {
     const localizations = [
         'link',
         'semester',
@@ -58,6 +58,18 @@ export const populateScholarhshipLocals = (): {} => {
         'advancementDetail',
         'advancementTime'
     ];
+
+    return populationLocalizationsGenerator(localizations);
+};
+
+export const populateScholarshipDetailValues = (): {} => {
+    const values = ['advancementDetail', 'advancementTime', 'state', 'institution'];
+
+    return populationValuesGenerator(values);
+};
+
+export const populateScholarshipsDetailLocals = (): {} => {
+    const localizations = ['link', 'advancementDetail', 'advancementTime', 'state', 'name', 'institution'];
 
     return populationLocalizationsGenerator(localizations);
 };

@@ -5,7 +5,7 @@ import ApplicationSchema from '../../models/application/application';
 import LocalizationSchema from '../../models/components/localization';
 
 import { scholarshipFilterqueryGenerator } from '../../helpers/dataBase';
-import { populateScholarhshipLocals, populateScholarhshipValues } from '../../helpers/population';
+import { populateScholarshipDetailValues, populateScholarshipsDetailLocals, populateScholarshipsLocals, populateScholarshipsValues } from '../../helpers/population';
 
 export const getFilterDataFromDB = (): Promise<any> => {
     return new Promise(async (resolve, reject) => {
@@ -58,8 +58,8 @@ export const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any>
         let filter = scholarshipFilterqueryGenerator(userInput.filterData);
 
         ScholarshipSchema.find(filter, {})
-            .populate(populateScholarhshipValues())
-            .populate(populateScholarhshipLocals(), { _id: 0, label: 0 })
+            .populate(populateScholarshipsValues())
+            .populate(populateScholarshipsLocals(), { _id: 0, label: 0 })
 
             .exec()
             .then((result) => {
@@ -71,9 +71,9 @@ export const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any>
 
 export const getScholarshipByID = (_id: string): Promise<any> => {
     return new Promise(async (resolve, reject) => {
-        ScholarshipSchema.findOne({ _id })
-            .populate(populateScholarhshipValues())
-            .populate(populateScholarhshipLocals(), { _id: 0, label: 0 })
+        ScholarshipSchema.findOne({ _id }, { _id: 0, name: 1, link: 1, state: 1, advancementDetail: 1, advancementTime: 1, institution: 1, imgURL: 1 })
+            .populate(populateScholarshipDetailValues())
+            .populate(populateScholarshipsDetailLocals())
 
             .exec()
             .then((result) => {
@@ -124,7 +124,7 @@ export const getApplicationByID = (_id: string): Promise<any> => {
             .populate({
                 path: 'scholarship',
                 populate: {
-                    path: populateScholarhshipValues()
+                    path: populateScholarshipsValues()
                 }
             })
             .populate('city')
