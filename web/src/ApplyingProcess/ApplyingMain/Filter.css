@@ -192,10 +192,6 @@ button.sub1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* top: 50%;
-  left: 20%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); */
   border-radius: 2rem;
   border: none;
   margin-top: 4rem;
