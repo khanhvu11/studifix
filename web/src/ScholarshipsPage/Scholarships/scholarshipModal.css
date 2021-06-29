@@ -1,0 +1,19 @@
+.scholarshipModal__body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.scholarshipModal__content{
+    width: 60%;
+}
+
+.scholarshipModal__image{
+    position: relative;
+    width: 35%;
+}
+
+.scholarshipModal__image img{
+    width: 100%;
+}

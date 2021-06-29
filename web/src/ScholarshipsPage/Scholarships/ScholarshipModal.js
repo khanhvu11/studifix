@@ -1,10 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import {Link} from 'react-router-dom'
+import './scholarshipModal.css'
 
 export default function ScholarshipModal({scholarship, usr_selection, show, onHide}) {
-  console.log(usr_selection)
+
+  const [scholarshipModal, setScholarshipModal] = useState({})
+  const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
+
+  useEffect(()=>{
+
+    //get scholarship      
+    fetch(URL + `/api/data/scholarship/${scholarship._id}`)
+    .then((response) => {
+      // check for error response
+      if (!response.ok) {
+        // get error message from body or default to response status
+        const error = (response.json() && response.json().message) || response.status;
+        return Promise.reject(error);
+      }
+
+      return response.json()
+    })
+    .then((items) => {
+      console.log(items)
+      setScholarshipModal(items.scholarship);
+    });
+
+  }, [URL])
+
+  console.log(scholarshipModal)
 
     var iterateArray = (value) => {
         return value.map((val,id) => <p key={id}>{val.title.DE}</p>)
@@ -12,7 +38,7 @@ export default function ScholarshipModal({scholarship, usr_selection, show, onHi
 
     var notArrayValue = (category, key) => {
       if(key ==='link'){
-        return <a href={category.value}>{category.value}</a>
+        return <a href={category.value} target="_blank">{category.value}</a>
       }else{
         switch(category.value){
             case null: return <p>Keine Beschränkung</p>
@@ -24,6 +50,7 @@ export default function ScholarshipModal({scholarship, usr_selection, show, onHi
     }
 
     return (
+      scholarshipModal &&
         <Modal
         show={show}
         onHide={onHide}
@@ -33,16 +60,25 @@ export default function ScholarshipModal({scholarship, usr_selection, show, onHi
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            <h2>{scholarship.provider.value.name}</h2>
+            <h2>{scholarshipModal.name}</h2>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        {scholarship && Object.keys(scholarship).map((key,id) => scholarship[key].localization?
-            <ul key={id}>
-                <li><h3>{scholarship[key].localization.title.DE}</h3></li>
-                {(Array.isArray(scholarship[key].value))? iterateArray(scholarship[key].value):(typeof scholarship[key].value !=='object' ||  scholarship[key].value === null)? notArrayValue(scholarship[key], key):(scholarship[key].value.title && <p>{scholarship[key].value.title.DE}</p>)||<p>{scholarship[key].value.name}</p>}
-            </ul>:null)
-        }
+        <div className ='scholarshipModal__body'>
+          <div className="scholarshipModal__image">
+            {scholarshipModal.imgURL &&<img
+                src={scholarshipModal.imgURL.value}
+              />}
+          </div>
+          <div className="scholarshipModal__content">
+          {scholarshipModal && Object.keys(scholarshipModal).map((key,id) => scholarshipModal[key].localization?
+              <ul key={id}>
+                  <li><h3>{scholarshipModal[key].localization.title.DE}</h3></li>
+                  {(Array.isArray(scholarshipModal[key].value))? iterateArray(scholarshipModal[key].value):(typeof scholarshipModal[key].value !=='object' ||  scholarship[key].value === null)? notArrayValue(scholarship[key], key):(scholarship[key].value.title && <p>{scholarship[key].value.title.DE}</p>)||<p>{scholarship[key].value.name}</p>}
+              </ul>:null)
+          }
+          </div>
+        </div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant='secondary' onClick={onHide}>Close</Button>
