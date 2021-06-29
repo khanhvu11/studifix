@@ -9,6 +9,10 @@
     width: 60%;
 }
 
+.scholarshipModal__content ul {
+    list-style: none;
+}
+
 .scholarshipModal__image{
     position: relative;
     width: 35%;
