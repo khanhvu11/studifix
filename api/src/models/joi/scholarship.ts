@@ -4,14 +4,13 @@ export const joiScholarship = Joi.object({
     //todo: check for hexadecimal numbers 12 or 24
     link: {
         localization: Joi.string().min(24).max(24).required(true),
-        value: Joi.string().min(1).max(50).required(true)
+        value: Joi.string().min(1).required(true)
     },
     imgURL: {
-        value: Joi.string().min(1).max(50).required(true)
+        value: Joi.string().min(1).required(true)
     },
-    name: {
-        value: Joi.string().min(1).max(50).required(true)
-    },
+    name: Joi.string().min(1).max(50).required(true),
+
     semesterMax: {
         localization: Joi.string().min(24).max(24).required(true),
         value: [Joi.number().min(1).max(50).required(true), null]
@@ -81,14 +80,14 @@ export const joiScholarship = Joi.object({
         localization: Joi.string().min(24).max(24).required(true),
         value: {
             title: {
-                DE: [Joi.string().min(24).max(24).required(true), null],
-                EN: [Joi.string().min(24).max(24).required(true), null],
-                FR: [Joi.string().min(24).max(24).required(true), null]
+                DE: [Joi.string().min(5).required(true), null],
+                EN: [Joi.string().min(5).required(true), null],
+                FR: [Joi.string().min(5).required(true), null]
             },
             description: {
-                DE: [Joi.string().min(24).max(24).required(true), null],
-                EN: [Joi.string().min(24).max(24).required(true), null],
-                FR: [Joi.string().min(24).max(24).required(true), null]
+                DE: [Joi.string().min(5).required(true), null],
+                EN: [Joi.string().min(5).required(true), null],
+                FR: [Joi.string().min(5).required(true), null]
             }
         }
     },
@@ -96,14 +95,14 @@ export const joiScholarship = Joi.object({
         localization: Joi.string().min(24).max(24).required(true),
         value: {
             title: {
-                DE: [Joi.string().min(24).max(24).required(true), null],
-                EN: [Joi.string().min(24).max(24).required(true), null],
-                FR: [Joi.string().min(24).max(24).required(true), null]
+                DE: [Joi.string().min(5).required(true), null],
+                EN: [Joi.string().min(5).required(true), null],
+                FR: [Joi.string().min(5).required(true), null]
             },
             description: {
-                DE: [Joi.string().min(24).max(24).required(true), null],
-                EN: [Joi.string().min(24).max(24).required(true), null],
-                FR: [Joi.string().min(24).max(24).required(true), null]
+                DE: [Joi.string().min(5).required(true), null],
+                EN: [Joi.string().min(5).required(true), null],
+                FR: [Joi.string().min(5).required(true), null]
             }
         }
     },
@@ -111,22 +110,24 @@ export const joiScholarship = Joi.object({
         localization: Joi.string().min(24).max(24).required(true),
         value: {
             title: {
-                DE: [Joi.string().min(24).max(24).required(true), null],
-                EN: [Joi.string().min(24).max(24).required(true), null],
-                FR: [Joi.string().min(24).max(24).required(true), null]
+                DE: [Joi.string().min(5).required(true), null],
+                EN: [Joi.string().min(5).required(true), null],
+                FR: [Joi.string().min(5).required(true), null]
             },
             description: {
-                DE: [Joi.string().min(24).max(24).required(true), null],
-                EN: [Joi.string().min(24).max(24).required(true), null],
-                FR: [Joi.string().min(24).max(24).required(true), null]
+                DE: [Joi.string().min(5).required(true), null],
+                EN: [Joi.string().min(5).required(true), null],
+                FR: [Joi.string().min(5).required(true), null]
             }
         }
     },
     commitment: {
-        value: {
-            localization: Joi.string().min(24).max(24).required(true),
-            value: [Joi.array().items(Joi.string().min(24).max(24)).required(true), null]
-        }
+        localization: Joi.string().min(24).max(24).required(true),
+        value: [Joi.array().items(Joi.string().min(24).max(24)).required(true), null]
+    },
+    responsible: {
+        localization: Joi.string().min(24).max(24).required(true),
+        value: Joi.string().min(24).max(24).required(true)
     },
     occupation: {
         localization: Joi.string().min(24).max(24).required(true),

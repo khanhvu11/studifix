@@ -1,5 +1,13 @@
 import { Response, Request } from 'express';
-import { getFilterDataFromDB, filterScholarshipsByUserInput, getScholarshipByID, getApplicationDataFromDB, addNewApplication, getProviderByScholarshipID } from '../database/scholarship';
+import {
+    getFilterDataFromDB,
+    filterScholarshipsByUserInput,
+    getScholarshipByID,
+    getApplicationDataFromDB,
+    addNewApplication,
+    getProviderByScholarshipID,
+    addScholarshipToBD
+} from '../database/scholarship';
 import { joiApplicationInput } from '../../models/joi/application';
 import { joiFilterParams } from '../../models/joi/filter';
 import { joiScholarshipID } from '../../models/joi/scholarshipID';
@@ -76,13 +84,11 @@ export const addNewScholarship = async (req: Request, res: Response) => {
     try {
         const scholarship: string = await joiScholarship.validateAsync(req.body);
 
-        console.log(scholarship);
-
-        // await getScholarshipByID(_id).then((scholarship) => {
-        //     res.status(200).json({
-        //         scholarship
-        //     });
-        // });
+        await addScholarshipToBD(scholarship).then((scholarship) => {
+            res.status(200).json({
+                scholarship
+            });
+        });
     } catch (error) {
         res.status(400).json({
             message: error.message

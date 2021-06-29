@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"b91e339eeb5a425b942dff79cd9fbad5","collectionName":"scholarships"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"f1ffcbaf95b6420aa2da79bb4c050681","collectionName":"scholarships"}
