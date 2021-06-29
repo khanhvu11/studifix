@@ -58,6 +58,9 @@ function Filter(props) {
           const error = (data && data.message) || response.status;
           return Promise.reject(error);
         }
+
+        props.setGroupName('success')
+        
         /* history.push({
           pathname: '/',
           state: { scholarships: data },
@@ -68,7 +71,6 @@ function Filter(props) {
       .catch((error) => {
         setError(error);
         console.error('There was an error!', error);
-        props.setGroupName('success')
       });
   };
 

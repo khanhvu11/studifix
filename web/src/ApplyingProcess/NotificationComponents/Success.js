@@ -16,9 +16,9 @@ export default function Success(props) {
     }
 
     return (
-        <div className={'success' === props.currentGrN ? 'active success': 'mplChoice'}>
+        <div className={'success' === props.currentGrN ? 'active': 'mplChoice'}>
             <div className='icon'><FontAwesomeIcon icon={faClipboardCheck} /></div>
-            <p>Deine Bewerbung wurde erfolgreich geschicht</p>
+            <p className='success'>Deine Bewerbung wurde erfolgreich geschickt</p>
             <button type='button' className="findingScholarships" onClick={backtoFilter}><h4>Zurück zur Stipendiensuche</h4></button>
         </div>
     )
