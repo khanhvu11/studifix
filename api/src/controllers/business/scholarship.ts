@@ -4,8 +4,9 @@ import { joiApplicationInput } from '../../models/joi/application';
 import { joiFilterParams } from '../../models/joi/filter';
 import { joiScholarshipID } from '../../models/joi/scholarshipID';
 import { combineDataForApplication } from '../../helpers/application';
-import { IApplicationReq } from 'interfaces/request';
+import { IApplicationReq } from '../../interfaces/request';
 import { addUser } from './user';
+import { joiScholarship } from '../../models/joi/scholarship';
 
 export const resolveFilterData = async (req: Request, res: Response) => {
     try {
@@ -64,6 +65,24 @@ export const getScholarshipDetails = async (req: Request, res: Response) => {
                 scholarship
             });
         });
+    } catch (error) {
+        res.status(400).json({
+            message: error.message
+        });
+    }
+};
+
+export const addNewScholarship = async (req: Request, res: Response) => {
+    try {
+        const scholarship: string = await joiScholarship.validateAsync(req.body);
+
+        console.log(scholarship);
+
+        // await getScholarshipByID(_id).then((scholarship) => {
+        //     res.status(200).json({
+        //         scholarship
+        //     });
+        // });
     } catch (error) {
         res.status(400).json({
             message: error.message
