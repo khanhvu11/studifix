@@ -41,6 +41,8 @@ export const filterScholarships = async (req: Request, res: Response) => {
     try {
         const data = await joiFilterParams.validateAsync(req.body);
 
+        console.log(data);
+
         await filterScholarshipsByUserInput(data).then((scholarships) => {
             res.status(200).json({
                 scholarships

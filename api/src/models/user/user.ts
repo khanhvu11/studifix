@@ -8,8 +8,6 @@ import IUser from '../../interfaces/user';
 
 const UserSchema: Schema = new Schema(
     {
-        salutation: { type: Schema.Types.ObjectId, ref: salutation, required: true },
-
         firstName: { type: String, required: true },
 
         lastName: { type: String, required: true },

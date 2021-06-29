@@ -8,24 +8,6 @@ import salutation from '../components/salutation';
 const ApplicationDataSchema: Schema = new Schema({
     _id: Schema.Types.ObjectId,
     dataSetType: { type: String },
-    salutation: {
-        title: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        description: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        descriptionDetail: {
-            DE: { type: String, required: true },
-            EN: { type: String, required: true },
-            FR: { type: String, required: true }
-        },
-        values: [{ type: Schema.Types.ObjectId, ref: salutation }]
-    },
     firstName: {
         title: {
             DE: { type: String, required: true },

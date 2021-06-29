@@ -3,7 +3,6 @@ const Joi = require('joi');
 export const joiApplicationInput = Joi.object({
     scholarship: Joi.string().min(24).max(24).required(true),
     applicationData: {
-        salutation: Joi.string().min(24).max(24).required(true),
         firstName: Joi.string().min(3).max(30).required(true),
         lastName: Joi.string().min(3).max(30).required(true),
         gender: Joi.string().min(24).max(24).required(true),
