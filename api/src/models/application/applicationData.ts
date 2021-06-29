@@ -3,7 +3,6 @@ import city from '../components/city';
 import country from '../components/country';
 import familyStatus from '../components/familyStatus';
 import gender from '../components/gender';
-import salutation from '../components/salutation';
 
 const ApplicationDataSchema: Schema = new Schema({
     _id: Schema.Types.ObjectId,
