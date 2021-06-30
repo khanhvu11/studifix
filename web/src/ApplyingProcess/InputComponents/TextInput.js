@@ -1,6 +1,13 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faQuestionCircle
+  } from '@fortawesome/free-solid-svg-icons';
 
 export default function TextInput({obj, _key, getValue, lang}) {
 
@@ -26,6 +33,20 @@ export default function TextInput({obj, _key, getValue, lang}) {
                 </div>
                 )
             ):( */}
+            <h2>{obj.description[lang]+' '} 
+                <OverlayTrigger
+                    key={obj.descriptionDetail[lang]}
+                    placement={'top'}
+                    overlay={
+                        <Tooltip id={`tooltip-${'top'}`}>
+                            <strong>{obj.descriptionDetail[lang]}</strong>.
+                        </Tooltip>
+                    }
+                    >
+                    <FontAwesomeIcon style={{color:'#1170fe'}} icon={faQuestionCircle} />
+                </OverlayTrigger>
+            </h2>
+            <h3>{obj.subline && obj.subline[lang]}</h3>
             <div className="">
                 {/* <label className="col-sm-2 col-form-label" htmlFor={obj.title[lang]}>{obj.title[lang]}</label>  */}
                 <input type="text" className="form-control insideElement" id={_key} placeholder={obj && obj.title[lang]} onChange={handleChange} required/>

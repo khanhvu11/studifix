@@ -38,6 +38,7 @@ export default function ApplyingProcess(props) {
     const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
 
     useEffect(()=>{
+        window.scrollTo(0, 0);
 
         //get selectiondata      
         fetch(URL + '/api/data/applicationdata')
