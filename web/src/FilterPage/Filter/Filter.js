@@ -9,6 +9,7 @@ import Options from './Options';
 import Dropdown from './Dropdown';
 import TextInput from './TextInput';
 import YesNo from './YesNo';
+import Error from '../../ApplyingProcess/NotificationComponents/Error';
 
 function Filter({ cls, labels, func, lang, obj }) {
   const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
@@ -17,6 +18,7 @@ function Filter({ cls, labels, func, lang, obj }) {
   // result: what user chose in filter process
   const [result, setResult] = useState({});
   const history = useHistory();
+  const [error, setError] = useState('');
 
   // function for showing next category
   var getNextkey = (currentKey) => {
@@ -48,40 +50,75 @@ function Filter({ cls, labels, func, lang, obj }) {
 
   // send result to backend to receive the suitable scholarships
   var sendFilter = () => {
-   
+    var error = false
+
+    Object.keys(obj).forEach(key => {
+        if(key !== '_id' && !Object.keys(result).includes(key)){
+          result[key] = null
+          setResult(result)
+        }
+    }) 
+
+    const notCheckList = ['_id', 'collegeGrade', 'jobGrade', 'uniGrade']
+
+    Object.keys(obj).forEach(key => {
+      if(!notCheckList.includes(key) && !Array.isArray(obj[key].values)){
+        /* var comparedValue = ''
+        switch(obj[key].values){
+          case 'integer': comparedValue = 'number'
+          case 'double' : comparedValue =  'number'
+          case 'boolean': comparedValue = 'boolean'
+        } */
+        var value = result[key]
+        console.log(key)
+        console.log(value)
+        if(result[key] === null || isNaN(value)){
+          console.log('error')
+          error = true
+          setError(`${obj[key].title[lang]} muss der Typ ${obj[key].values} sein`)
+        }
+      }
+    }) 
+  
     console.log(JSON.stringify(result));
 
     // fetch('http://studifix.mi.hdm-stuttgart.de/api/data/filter/scholarships', {
-    fetch(URL + '/api/data/filter/scholarships', {
-      method: 'POST',
-      body: JSON.stringify({ filterData: result }),
-      headers: { 'Content-type': 'application/json' },
-    })
-      .then(async (response) => {
-        const isJson = response.headers
-          .get('content-type')
-          ?.includes('application/json');
-        const data = isJson && (await response.json());
+      if(!error){
+        fetch(URL + '/api/data/filter/scholarships', {
+          method: 'POST',
+          body: JSON.stringify({ filterData: result }),
+          headers: { 'Content-type': 'application/json' },
+        })
+          .then(async (response) => {
+            const isJson = response.headers
+              .get('content-type')
+              ?.includes('application/json');
+            const data = isJson && (await response.json());
 
-        // check for error response
-        if (!response.ok) {
-          // get error message from body or default to response status
-          const error = (data && data.message) || response.status;
-          return Promise.reject(error);
-        }
-        history.push({
-          pathname: '/scholarshipsPage',
-          state: {scholarships : data, 
-            selection : result},
-        });
-        /* response.json() */
-      })
-      /* .then(json => setScholarships(json)) */
-      .catch((error) => console.error('There was an error!', error));
+            // check for error response
+            if (!response.ok) {
+              // get error message from body or default to response status
+              const error = (data && data.message) || response.status;
+              return Promise.reject(error);
+            }
+            history.push({
+              pathname: '/scholarshipsPage',
+              state: {scholarships : data, 
+                selection : result},
+            });
+            /* response.json() */
+          })
+          /* .then(json => setScholarships(json)) */
+          .catch((error) => {
+            setError(error);
+            console.error('There was an error!', error)
+          });
+    }
   };
 
   return (
     <div className="filter">
+      {error ? <Error error={error} /> : null}
       <div className="options">
         {Object.keys(obj).map((key, id) => {
           var item = obj[key];

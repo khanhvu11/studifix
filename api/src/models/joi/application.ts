@@ -3,7 +3,6 @@ const Joi = require('joi');
 export const joiApplicationInput = Joi.object({
     scholarship: Joi.string().min(24).max(24).required(true),
     applicationData: {
-        salutation: Joi.string().min(24).max(24).required(true),
         firstName: Joi.string().min(3).max(30).required(true),
         lastName: Joi.string().min(3).max(30).required(true),
         gender: Joi.string().min(24).max(24).required(true),
@@ -22,24 +21,24 @@ export const joiApplicationInput = Joi.object({
         familyStatus: Joi.string().min(24).max(24).required(true)
     },
     filterData: {
-        age: Joi.number().min(1).max(99).required(true),
-        semester: Joi.number().min(1).max(30).required(true),
-        workExperience: [Joi.number().min(0).max(40).required(true), null],
-        sidejobHours: [Joi.number().min(0).max(40).required(true), null],
-        collegeGrade: [Joi.number().min(1).max(6), null],
-        jobGrade: [Joi.number().min(1).max(6), null],
-        uniGrade: [Joi.number().min(1).max(6), null],
-        nationality: Joi.array().items(Joi.string().min(24).max(24)).required(true),
-        nationalityDetail: Joi.array().items(Joi.string().min(24).max(24)).required(true),
-        religion: Joi.array().items(Joi.string().min(24).max(24)).required(true),
-        requirement: Joi.array().items(Joi.string().min(24).max(24)).required(true),
+        commitment: Joi.array().items(Joi.string().min(24).max(24)).required(true),
         occupation: Joi.array().items(Joi.string().min(24).max(24)).required(true),
         graduation: Joi.array().items(Joi.string().min(24).max(24)).required(true),
         course: Joi.array().items(Joi.string().min(24).max(24)).required(true),
-        commitment: Joi.array().items(Joi.string().min(24).max(24)).required(true),
         support: Joi.array().items(Joi.string().min(24).max(24)).required(true),
-        reference: Joi.array().items(Joi.string().min(24).max(24)).required(true),
         state: Joi.array().items(Joi.string().min(24).max(24)).required(true),
-        supportYet: Joi.boolean()
+        nationality: Joi.array().items(Joi.string().min(24).max(24)).required(true),
+        religion: Joi.array().items(Joi.string().min(24).max(24)).required(true),
+        requirement: Joi.array().items(Joi.string().min(24).max(24)).required(true),
+        reference: Joi.array().items(Joi.string().min(24).max(24)).required(true),
+        nationalityDetail: Joi.array().items(Joi.string().min(24).max(24)).required(true),
+        supportYet: Joi.boolean().required(true),
+        workExperience: [Joi.number().min(0).max(50).required(true), null],
+        sidejobHours: [Joi.number().min(0).max(40).required(true), null],
+        collegeGrade: [Joi.number().min(1).max(6).required(true), null],
+        jobGrade: [Joi.number().min(1).max(6).required(true), null],
+        uniGrade: [Joi.number().min(1).max(6).required(true), null],
+        semester: Joi.number().min(1).max(30).required(true),
+        age: Joi.number().min(1).max(99).required(true)
     }
 });

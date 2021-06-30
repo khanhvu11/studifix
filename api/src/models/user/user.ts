@@ -2,14 +2,11 @@ import city from '../components/city';
 import country from '../components/country';
 import familyStatus from '../components/familyStatus';
 import gender from '../components/gender';
-import salutation from '../components/salutation';
 import mongoose, { Schema } from 'mongoose';
 import IUser from '../../interfaces/user';
 
 const UserSchema: Schema = new Schema(
     {
-        salutation: { type: Schema.Types.ObjectId, ref: salutation, required: true },
-
         firstName: { type: String, required: true },
 
         lastName: { type: String, required: true },

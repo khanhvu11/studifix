@@ -9,6 +9,7 @@ import './Filter.css';
 import InputGroup from './InputGroup';
 import groupObject from './groupData';
 import Error from '../NotificationComponents/Error';
+import Success from '../NotificationComponents/Success';
 /* import Dropdown from './Dropdown'; */
 
 function Filter(props) {
@@ -57,10 +58,13 @@ function Filter(props) {
           const error = (data && data.message) || response.status;
           return Promise.reject(error);
         }
-        history.push({
+
+        props.setGroupName('success')
+        
+        /* history.push({
           pathname: '/',
           state: { scholarships: data },
-        });
+        }); */
         /* response.json() */
       })
       /* .then(json => setScholarships(json)) */
@@ -90,9 +94,10 @@ function Filter(props) {
             )
           );
         })}
+        <Success currentGrN ={props.groupName}></Success>
         <button
           type="button"
-          className={props.groupName !== 'submit' ? 'nextCateBtn' : 'hideNext'}
+          className={props.groupName !== 'submit' && props.groupName !== 'success' ? 'nextCateBtn' : 'hideNext'}
           onClick={() => getNextkey(props.groupName)}
         >
           <FontAwesomeIcon icon={faArrowRight} />
