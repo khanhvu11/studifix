@@ -72,7 +72,7 @@ function Filter({ cls, labels, func, lang, obj }) {
         var value = result[key]
         console.log(key)
         console.log(value)
-        if(result[key] === null || isNaN(value)){
+        if(/* result[key] === null || */ isNaN(value)){
           console.log('error')
           error = true
           setError(`${obj[key].title[lang]} muss der Typ ${obj[key].values} sein`)
