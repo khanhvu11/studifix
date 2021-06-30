@@ -31,7 +31,7 @@ export default function Dropdown({getValue, lang, obj, _key}) {
                     <FontAwesomeIcon style={{color:'#1170fe'}} icon={faQuestionCircle} />
                 </OverlayTrigger>
             </h2>
-            <h3>{obj.subline[lang]}</h3>
+            <h3>{obj.subline && obj.subline[lang]}</h3>
             <div  className="">
             <select style={{textAlignLast: 'center'}} className="form-control insideElement" name={obj.title[lang]} id={obj.title[lang]} onChange={select}>
                 <option value="none" selected disabled hidden>

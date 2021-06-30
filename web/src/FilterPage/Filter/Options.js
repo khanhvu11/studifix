@@ -74,7 +74,7 @@ export default function MultipleChoice({func, _key, cls, lang, obj, result}) {
                     <FontAwesomeIcon style={{color:'#1170fe'}} icon={faQuestionCircle} />
                 </OverlayTrigger>
             </h2>
-            <h3>{obj.subline[lang]}</h3>
+            <h3>{obj.subline && obj.subline[lang]}</h3>
             <div className="button-grid">
                 { //pass values for buttons. Every button is an option
                     obj.values && obj.values.map((value,id) => {
