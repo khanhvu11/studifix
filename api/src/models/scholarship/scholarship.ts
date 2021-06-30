@@ -17,217 +17,218 @@ import requirement from '../components/requirement';
 import state from '../components/state';
 import support from '../components/support';
 
-const ScholarshipSchema: Schema = new Schema({
-    _id: Schema.Types.ObjectId,
+const ScholarshipSchema: Schema = new Schema(
+    {
+        responsible: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: Schema.Types.ObjectId, ref: employee, required: true }
+        },
 
-    responsible: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: Schema.Types.ObjectId, ref: employee }
-    },
+        name: { type: String, required: true },
 
-    name: { type: String, required: true },
+        provider: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: Schema.Types.ObjectId, ref: provider, required: true }
+        },
 
-    provider: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: Schema.Types.ObjectId, ref: provider }
-    },
+        link: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: String, required: true }
+        },
 
-    link: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: String, required: true }
-    },
+        occupation: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: [{ type: Schema.Types.ObjectId, ref: occupation }]
+        },
 
-    occupation: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: occupation }]
-    },
+        semesterMin: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: Number, required: false }
+        },
 
-    semesterMin: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: Number, required: true }
-    },
+        semesterMax: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: Number, required: false }
+        },
 
-    semesterMax: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: Number, required: true }
-    },
+        graduation: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: [{ type: Schema.Types.ObjectId, ref: graduation }]
+        },
 
-    graduation: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: graduation }]
-    },
+        course: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: [{ type: Schema.Types.ObjectId, ref: course }]
+        },
+        country: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: [{ type: Schema.Types.ObjectId, ref: country }]
+        },
 
-    course: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: course }]
-    },
-    country: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: country }]
-    },
+        city: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: [{ type: Schema.Types.ObjectId, ref: city }]
+        },
 
-    city: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: city }]
-    },
+        state: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: [{ type: Schema.Types.ObjectId, ref: state }]
+        },
 
-    state: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: state }]
-    },
+        institution: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: [{ type: Schema.Types.ObjectId, ref: institution }]
+        },
 
-    institution: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: institution }]
-    },
+        support: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: [{ type: Schema.Types.ObjectId, ref: support }]
+        },
 
-    support: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: support }]
-    },
+        supportYet: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: Boolean, required: true }
+        },
 
-    supportYet: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: Boolean, required: true }
-    },
+        referenceRequiered: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: Boolean, required: true }
+        },
 
-    referenceRequiered: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: Boolean, required: true }
-    },
+        referenceAllowed: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: Boolean, required: true }
+        },
 
-    referenceAllowed: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: Boolean, required: true }
-    },
+        referenceDetail: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: [{ type: Schema.Types.ObjectId, ref: referenceDetail }]
+        },
 
-    referenceDetail: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: referenceDetail }]
-    },
+        ageMin: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: Number, required: false }
+        },
 
-    ageMin: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: Number, required: true }
-    },
+        ageMax: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: Number, required: false }
+        },
 
-    ageMax: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: Number, required: true }
-    },
+        nationality: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: [{ type: Schema.Types.ObjectId, ref: nationality }]
+        },
 
-    nationality: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: nationality }]
-    },
+        nationalityDetail: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: [{ type: Schema.Types.ObjectId, ref: nationalityDetail }]
+        },
 
-    nationalityDetail: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: nationalityDetail }]
-    },
+        requirement: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: [{ type: Schema.Types.ObjectId, ref: requirement }]
+        },
 
-    requirement: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: requirement }]
-    },
+        religion: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: [{ type: Schema.Types.ObjectId, ref: religion }]
+        },
 
-    religion: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: religion }]
-    },
+        collegeGraduation: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: Number, required: false }
+        },
 
-    collegeGraduation: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: Number, required: true }
-    },
+        collegeGraduationState: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: [{ type: Schema.Types.ObjectId, ref: state }]
+        },
 
-    collegeGraduationState: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: state }]
-    },
+        jobTrainingGraduation: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: Number, required: false }
+        },
 
-    jobTrainingGraduation: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: Number, required: true }
-    },
+        uniGraduation: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: Number, required: false }
+        },
 
-    uniGraduation: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: Number, required: true }
-    },
+        specialJobExperience: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: Number, required: false }
+        },
 
-    specialJobExperience: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: Number, required: true }
-    },
+        sideJobAllowed: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: Boolean, required: true }
+        },
 
-    sideJobAllowed: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: Boolean, required: true }
-    },
+        currentJobHours: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: Number, required: false }
+        },
 
-    currentJobHours: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: Number, required: true }
-    },
+        imgURL: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: { type: String, required: true }
+        },
 
-    imgURL: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: { type: String, required: true }
-    },
+        commitment: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: [{ type: Schema.Types.ObjectId, ref: commitment }]
+        },
 
-    commitment: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: [{ type: Schema.Types.ObjectId, ref: commitment }]
-    },
+        advancement: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: {
+                title: {
+                    DE: { type: String, required: true },
+                    EN: { type: String, required: false },
+                    FR: { type: String, required: false }
+                },
+                description: {
+                    DE: { type: String, required: false },
+                    EN: { type: String, required: false },
+                    FR: { type: String, required: false }
+                }
+            }
+        },
 
-    advancement: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: {
-            title: {
-                DE: { type: String, required: true },
-                EN: { type: String, required: true },
-                FR: { type: String, required: true }
-            },
-            description: {
-                DE: { type: String, required: true },
-                EN: { type: String, required: true },
-                FR: { type: String, required: true }
+        advancementDetail: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: {
+                title: {
+                    DE: { type: String, required: true },
+                    EN: { type: String, required: false },
+                    FR: { type: String, required: false }
+                },
+                description: {
+                    DE: { type: String, required: false },
+                    EN: { type: String, required: false },
+                    FR: { type: String, required: false }
+                }
+            }
+        },
+
+        advancementTime: {
+            localization: { type: Schema.Types.ObjectId, ref: localization },
+            value: {
+                title: {
+                    DE: { type: String, required: true },
+                    EN: { type: String, required: false },
+                    FR: { type: String, required: false }
+                },
+                description: {
+                    DE: { type: String, required: false },
+                    EN: { type: String, required: false },
+                    FR: { type: String, required: false }
+                }
             }
         }
     },
-
-    advancementDetail: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: {
-            title: {
-                DE: { type: String, required: true },
-                EN: { type: String, required: true },
-                FR: { type: String, required: true }
-            },
-            description: {
-                DE: { type: String, required: true },
-                EN: { type: String, required: true },
-                FR: { type: String, required: true }
-            }
-        }
-    },
-
-    advancementTime: {
-        localization: { type: Schema.Types.ObjectId, ref: localization },
-        value: {
-            title: {
-                DE: { type: String, required: true },
-                EN: { type: String, required: true },
-                FR: { type: String, required: true }
-            },
-            description: {
-                DE: { type: String, required: true },
-                EN: { type: String, required: true },
-                FR: { type: String, required: true }
-            }
-        }
-    }
-});
+    { timestamps: {} }
+);
 
 export default mongoose.model('scholarships', ScholarshipSchema);
