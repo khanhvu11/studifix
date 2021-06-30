@@ -37,28 +37,26 @@ export const scholarshipFilterqueryGenerator = (idLists: IFilterData): any => {
         uniGrade
     } = idLists;
 
-    commitment ? tempArray.push({ $or: [{ 'commitment.value': { $in: refactorIDs(commitment) } }, { 'commitment.value': null }] }) : tempArray.push({ 'commitment.value': null });
-    occupation ? tempArray.push({ $or: [{ 'occupation.value': { $in: refactorIDs(occupation) } }, { 'occupation.value': null }] }) : tempArray.push({ 'occupation.value': null });
-    graduation ? tempArray.push({ $or: [{ 'graduation.value': { $in: refactorIDs(graduation) } }, { 'graduation.value': null }] }) : tempArray.push({ 'graduation.value': null });
-    support ? tempArray.push({ $or: [{ 'support.value': { $in: refactorIDs(support) } }, { 'support.value': null }] }) : tempArray.push({ 'support.value': null });
-    course ? tempArray.push({ $or: [{ 'course.value': { $in: refactorIDs(course) } }, { 'course.value': null }] }) : tempArray.push({ 'course.value': null });
-    state ? tempArray.push({ $or: [{ 'state.value': { $in: refactorIDs(state) } }, { 'state.value': null }] }) : tempArray.push({ 'state.value': null });
-    religion ? tempArray.push({ $or: [{ 'religion.value': { $in: refactorIDs(religion) } }, { 'religion.value': null }] }) : tempArray.push({ 'religion.value': null });
-    nationality ? tempArray.push({ $or: [{ 'nationality.value': { $in: refactorIDs(nationality) } }, { 'nationality.value': null }] }) : tempArray.push({ 'nationality.value': null });
-    requirement ? tempArray.push({ $or: [{ 'requirement.value': { $in: refactorIDs(requirement) } }, { 'requirement.value': null }] }) : tempArray.push({ 'requirement.value': null });
-    reference ? tempArray.push({ $or: [{ 'reference.value': { $in: refactorIDs(reference) } }, { 'reference.value': null }] }) : tempArray.push({ 'reference.value': null });
-    nationalityDetail
-        ? tempArray.push({ $or: [{ 'nationalityDetail.value': { $in: refactorIDs(nationalityDetail) } }, { 'nationalityDetail.value': null }] })
-        : tempArray.push({ 'nationalityDetail.value': null });
+    commitment ? tempArray.push({ $or: [{ 'commitment.value': { $in: refactorIDs(commitment) } }, { 'commitment.value': null }] }) : null;
+    occupation ? tempArray.push({ $or: [{ 'occupation.value': { $in: refactorIDs(occupation) } }, { 'occupation.value': null }] }) : null;
+    graduation ? tempArray.push({ $or: [{ 'graduation.value': { $in: refactorIDs(graduation) } }, { 'graduation.value': null }] }) : null;
+    support ? tempArray.push({ $or: [{ 'support.value': { $in: refactorIDs(support) } }, { 'support.value': null }] }) : null;
+    course ? tempArray.push({ $or: [{ 'course.value': { $in: refactorIDs(course) } }, { 'course.value': null }] }) : null;
+    state ? tempArray.push({ $or: [{ 'state.value': { $in: refactorIDs(state) } }, { 'state.value': null }] }) : null;
+    religion ? tempArray.push({ $or: [{ 'religion.value': { $in: refactorIDs(religion) } }, { 'religion.value': null }] }) : null;
+    nationality ? tempArray.push({ $or: [{ 'nationality.value': { $in: refactorIDs(nationality) } }, { 'nationality.value': null }] }) : null;
+    requirement ? tempArray.push({ $or: [{ 'requirement.value': { $in: refactorIDs(requirement) } }, { 'requirement.value': null }] }) : null;
+    reference ? tempArray.push({ $or: [{ 'reference.value': { $in: refactorIDs(reference) } }, { 'reference.value': null }] }) : null;
+    nationalityDetail ? tempArray.push({ $or: [{ 'nationalityDetail.value': { $in: refactorIDs(nationalityDetail) } }, { 'nationalityDetail.value': null }] }) : null;
 
-    workExperience ? tempArray.push({ $or: [{ 'workExperience.value': { $lte: workExperience } }, { 'workExperience.value': null }] }) : tempArray.push({ 'workExperience.value': null });
-    sidejobHours ? tempArray.push({ $or: [{ 'sidejobHours.value': { $gte: sidejobHours } }, { 'sidejobHours.value': null }] }) : tempArray.push({ 'sidejobHours.value': null });
+    workExperience ? tempArray.push({ $or: [{ 'workExperience.value': { $lte: workExperience } }, { 'workExperience.value': null }] }) : null;
+    sidejobHours ? tempArray.push({ $or: [{ 'sidejobHours.value': { $gte: sidejobHours } }, { 'sidejobHours.value': null }] }) : null;
 
-    collageGrade ? tempArray.push({ $or: [{ 'collageGrade.value': { $gte: collageGrade } }, { 'collageGrade.value': null }] }) : tempArray.push({ 'collageGrade.value': null });
-    jobGrade ? tempArray.push({ $or: [{ 'jobGrade.value': { $gte: jobGrade } }, { 'jobGrade.value': null }] }) : tempArray.push({ 'jobGrade.value': null });
-    uniGrade ? tempArray.push({ $or: [{ 'uniGrade.value': { $gte: uniGrade } }, { 'uniGrade.value': null }] }) : tempArray.push({ 'uniGrade.value': null });
+    collageGrade ? tempArray.push({ $or: [{ 'collageGrade.value': { $gte: collageGrade } }, { 'collageGrade.value': null }] }) : null;
+    jobGrade ? tempArray.push({ $or: [{ 'jobGrade.value': { $gte: jobGrade } }, { 'jobGrade.value': null }] }) : null;
+    uniGrade ? tempArray.push({ $or: [{ 'uniGrade.value': { $gte: uniGrade } }, { 'uniGrade.value': null }] }) : null;
 
-    supportYet ? tempArray.push({ 'supportYet.value': supportYet }) : tempArray.push({ 'occupation.value': null });
+    supportYet ? tempArray.push({ 'supportYet.value': supportYet }) : null;
 
     semester
         ? tempArray.push({
