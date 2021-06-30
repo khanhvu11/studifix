@@ -2,6 +2,16 @@ import React, { useEffect, useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import {Link} from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faExternalLinkAlt,
+  faGlobeEurope,
+  faUniversity,
+  faMoneyCheckAlt,
+  faCalendarAlt
+} from '@fortawesome/free-solid-svg-icons';
+
+
 import './scholarshipModal.css'
 
 export default function ScholarshipModal({scholarship, usr_selection, show, onHide}) {
@@ -49,6 +59,17 @@ export default function ScholarshipModal({scholarship, usr_selection, show, onHi
       }
     }
 
+    var addingLogo = (key) => {
+      switch(key){
+        case 'link': return <div className='modalIcon'><FontAwesomeIcon icon={faExternalLinkAlt} /></div>
+        case 'state': return <div className='modalIcon'><FontAwesomeIcon icon={faGlobeEurope} /></div>
+        case 'institution': return <div className='modalIcon'><FontAwesomeIcon icon={faUniversity} /></div>
+        case 'advancementDetail': return <div className='modalIcon'><FontAwesomeIcon icon={faMoneyCheckAlt} /></div>
+        case 'advancementTime': return <div className='modalIcon'><FontAwesomeIcon icon={faCalendarAlt} /></div>
+        default: return null
+      }
+    }
+
     return (
       scholarshipModal &&
         <Modal
@@ -65,15 +86,25 @@ export default function ScholarshipModal({scholarship, usr_selection, show, onHi
         </Modal.Header>
         <Modal.Body>
         <div className ='scholarshipModal__body'>
-          <div className="scholarshipModal__image">
-            {scholarshipModal.imgURL &&<img
-                src={scholarshipModal.imgURL.value}
-              />}
-          </div>
+          <div className="scholarship__left-section">
+           {/*  <div className="scholarshipModal__image"> */}
+              {scholarshipModal.imgURL &&<img
+                  src={scholarshipModal.imgURL.value}
+                />}
+           {/*  </div> */}
+            <button type="button" className="bewerb">
+              <Link to={{pathname:'/applying', state:{scholarship, usr_selection}}}>
+                Bewerb dich jetzt
+              </Link>
+            </button>
+            <button type="button" className="tipps">
+              Bewerbungstipps
+            </button>
+           </div>
           <div className="scholarshipModal__content">
-          {scholarshipModal && Object.keys(scholarshipModal).map((key,id) => scholarshipModal[key].localization?
+            {scholarshipModal && Object.keys(scholarshipModal).map((key,id) => scholarshipModal[key].localization?
               <ul key={id}>
-                  <li><h3>{scholarshipModal[key].localization.title.DE}</h3></li>
+                  <li>{addingLogo(key)}<h3>{scholarshipModal[key].localization.title.DE}</h3></li>
                   {(Array.isArray(scholarshipModal[key].value))? iterateArray(scholarshipModal[key].value):(typeof scholarshipModal[key].value !=='object' ||  scholarship[key].value === null)? notArrayValue(scholarship[key], key):(scholarship[key].value.title && <p>{scholarship[key].value.title.DE}</p>)||<p>{scholarship[key].value.name}</p>}
               </ul>:null)
           }
@@ -82,7 +113,7 @@ export default function ScholarshipModal({scholarship, usr_selection, show, onHi
         </Modal.Body>
         <Modal.Footer>
           <Button variant='secondary' onClick={onHide}>Close</Button>
-          <Button variant='primary'><Link to={{pathname:'/applying', state:{scholarship, usr_selection}}}>Bewerb dich jetzt</Link></Button>
+          {/* <Button variant='primary'><Link to={{pathname:'/applying', state:{scholarship, usr_selection}}}>Bewerb dich jetzt</Link></Button> */}
         </Modal.Footer>
       </Modal>
     )
