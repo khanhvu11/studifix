@@ -68,6 +68,8 @@ function Filter({ cls, labels, func, lang, obj }) {
           case 'boolean': comparedValue = 'boolean'
         } */
         var value = result[key]
+        console.log(key)
+        console.log(value)
         if(result[key] === null || isNaN(value)){
           console.log('error')
           error = true
