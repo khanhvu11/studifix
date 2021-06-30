@@ -6,7 +6,9 @@ import {
   faClipboardCheck
 } from '@fortawesome/free-solid-svg-icons';
 
-export default function Success() {
+import './Success.css';
+
+export default function Success(props) {
 
     const history = useHistory();
     const backtoFilter = () => {
@@ -14,9 +16,9 @@ export default function Success() {
     }
 
     return (
-        <div>
-            <FontAwesomeIcon icon={faClipboardCheck} />
-            <p>Deine Bewerbung wurde erfolgreich geschicht</p>
+        <div className={'success' === props.currentGrN ? 'active': 'mplChoice'}>
+            <div className='icon'><FontAwesomeIcon icon={faClipboardCheck} /></div>
+            <p className='success'>Deine Bewerbung wurde erfolgreich geschickt</p>
             <button type='button' className="findingScholarships" onClick={backtoFilter}><h4>Zurück zur Stipendiensuche</h4></button>
         </div>
     )

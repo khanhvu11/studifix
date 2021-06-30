@@ -33,7 +33,7 @@ export default function ApplyingProcess(props) {
 
     const language = 'DE';
     const [groupName, setGroupName] = useState('Name');
-    const groupNameList = ['Name', 'Geburtsdatum', 'Adresse', 'Kontaktdaten', 'Gender', 'Familienstand']
+    const groupNameList = ['Name', 'Geburtsdatum', 'Adresse', 'Kontaktdaten', 'Familienstand']
 
     const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
 
