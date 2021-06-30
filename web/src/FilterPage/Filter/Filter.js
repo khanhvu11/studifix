@@ -59,8 +59,10 @@ function Filter({ cls, labels, func, lang, obj }) {
         }
     }) 
 
+    const notCheckList = ['_id', 'collegeGrade', 'jobGrade', 'uniGrade']
+
     Object.keys(obj).forEach(key => {
-      if(key !== '_id' && !Array.isArray(obj[key].values)){
+      if(!notCheckList.includes(key) && !Array.isArray(obj[key].values)){
         /* var comparedValue = ''
         switch(obj[key].values){
           case 'integer': comparedValue = 'number'
