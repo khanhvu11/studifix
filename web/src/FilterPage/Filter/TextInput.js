@@ -55,6 +55,7 @@ export default function TextInput({func, _key, cls, lang, obj}) {
                     <FontAwesomeIcon style={{color:'#1170fe'}} icon={faQuestionCircle} />
                 </OverlayTrigger>
             </h2>
+            <h3>{obj.subline[lang]}</h3>
             <div className="col-sm-10">
                 <input type="text" className="form-control insideElement" id={_key} placeholder={obj.title[lang]} onChange={handleChange}/>
             </div>
