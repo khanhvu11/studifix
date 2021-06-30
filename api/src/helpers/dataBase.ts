@@ -84,8 +84,6 @@ export const scholarshipFilterqueryGenerator = (idLists: IFilterData): any => {
         return {};
     }
 
-    console.log('Temporary Array', tempArray);
-
     return { $and: tempArray };
 };
 

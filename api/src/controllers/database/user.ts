@@ -1,15 +1,15 @@
 import user from '../../interfaces/user';
 import UserSchema from '../../models/user/user';
 
-const checkEmailAlreadyInUse = (email: string): Promise<Boolean> => {
+const checkEmailAlreadyInUse = (email: string): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         UserSchema.findOne({ email })
             .exec()
             .then((results) => {
                 if (results) {
-                    resolve(true);
+                    reject(new Error('Email already in use'));
                 } else {
-                    resolve(false);
+                    resolve(results);
                 }
             })
             .catch((error) => {
