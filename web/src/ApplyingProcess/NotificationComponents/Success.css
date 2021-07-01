@@ -15,3 +15,16 @@
     border: none;
     margin-top: 1rem;
 }
+
+.welcome {
+    padding: 2rem 0;
+    width: 800px;
+    background-color: whitesmoke;
+    border-radius: 2rem;
+}
+
+.welcome p{
+    width: 600px;
+    text-align: center;
+    font-weight: bold;
+}

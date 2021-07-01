@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -19,6 +19,10 @@ function Filter({ cls, labels, func, lang, obj }) {
   const [result, setResult] = useState({});
   const history = useHistory();
   const [error, setError] = useState('');
+
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  }, [])
 
   // function for showing next category
   var getNextkey = (currentKey) => {
@@ -118,7 +122,7 @@ function Filter({ cls, labels, func, lang, obj }) {
 
   return (
     <div className="filter">
-      {error ? <Error error={error} /> : null}
+      {error && cls === 'submit' ? <Error error={error} /> : null}
       <div className="options">
         {Object.keys(obj).map((key, id) => {
           var item = obj[key];
