@@ -15,3 +15,13 @@
     border: none;
     margin-top: 1rem;
 }
+
+.welcome {
+    padding-bottom: 1rem;
+}
+
+.welcome p{
+    width: 600px;
+    text-align: center;
+    font-weight: bold;
+}

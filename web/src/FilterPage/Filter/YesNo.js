@@ -50,7 +50,7 @@ export default function YesNo({func, _key, cls, lang, obj}) {
                     <FontAwesomeIcon style={{color:'#1170fe'}} icon={faQuestionCircle} />
                 </OverlayTrigger>
             </h2>
-            <h3>{obj.subline && obj.subline[lang]}</h3>
+            <h5>{obj.subline && obj.subline[lang]}</h5>
             <div className="button-grid">
                 <button type="button"  className={(isYes? "chosen ":"" )+ "choice"} onClick={select}>
                     <p>Ja</p>

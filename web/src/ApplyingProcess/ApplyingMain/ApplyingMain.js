@@ -10,6 +10,7 @@ import InputGroup from './InputGroup';
 import groupObject from './groupData';
 import Error from '../NotificationComponents/Error';
 import Success from '../NotificationComponents/Success';
+import Welcome from '../NotificationComponents/Welcome';
 /* import Dropdown from './Dropdown'; */
 
 function Filter(props) {
@@ -76,8 +77,9 @@ function Filter(props) {
 
   return (
     <div className="filter">
-      {error ? <Error error={error} /> : null}
+      {error && 'submit' === props.groupName ? <Error error={error} /> : null}
       <div className="options">
+        <Welcome currentGrN ={props.groupName}></Welcome>
         {Object.keys(groupObject).map((groupName, id) => {
           var memberList = groupObject[groupName];
           return (
