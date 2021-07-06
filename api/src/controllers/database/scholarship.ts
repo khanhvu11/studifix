@@ -83,6 +83,16 @@ export const getScholarshipByID = (_id: string): Promise<any> => {
     });
 };
 
+export const addScholarshipToBD = (scholarshipData: {}): Promise<any> => {
+    return new Promise(async (resolve, reject) => {
+        ScholarshipSchema.create(scholarshipData)
+            .then((result) => {
+                resolve(result);
+            })
+            .catch((error) => reject(error));
+    });
+};
+
 export const getLocalizations = (): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         LocalizationSchema.find({}, { _id: 0 })

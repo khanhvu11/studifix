@@ -22,6 +22,7 @@ export default function FilterPage() {
   console.log(URL);
   // get filterData from Backend
   useEffect(() => {
+    window.scrollTo(0, 0);
     /* https://studifix-mock-api-default-rtdb.europe-west1.firebasedatabase.app/.json */
     /* http://localhost:4000/data/filterdata */
     fetch(URL + '/api/data/filterdata')

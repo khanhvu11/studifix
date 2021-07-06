@@ -13,8 +13,6 @@ const refactorIDs = (idList: string[]): any[] => {
 export const scholarshipFilterqueryGenerator = (idLists: IFilterData): any => {
     let tempArray = [];
 
-    console.log(idLists);
-
     const {
         commitment,
         occupation,
@@ -83,8 +81,6 @@ export const scholarshipFilterqueryGenerator = (idLists: IFilterData): any => {
     if (tempArray.length === 0) {
         return {};
     }
-
-    console.log('Temporary Array', tempArray);
 
     return { $and: tempArray };
 };

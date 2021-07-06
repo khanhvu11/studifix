@@ -1,7 +1,6 @@
 const groupObject = {
-    'Name': ["salutation", "firstName", "lastName"], 
+    'Name': ["gender", "firstName", "lastName"], 
     'Geburtsdatum': ["dateOfBirth", "placeOfBirth",  "countryOfBirth"], 
-    'Gender': ["gender"],
     'Adresse':[ "street", "number","city","ZIP","country"],
     'Kontaktdaten': [ "mobile", "email"], 
     'Familienstand':["familyStatus"]

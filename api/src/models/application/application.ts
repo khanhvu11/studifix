@@ -37,11 +37,11 @@ const ApplicationSchema: Schema = new Schema(
 
             nationality: [{ type: Schema.Types.ObjectId, ref: nationality, required: true }],
 
-            nationalityDetail: [{ type: Schema.Types.ObjectId, ref: nationalityDetail, required: true }],
+            nationalityDetail: [{ type: Schema.Types.ObjectId, ref: nationalityDetail }],
 
             religion: [{ type: Schema.Types.ObjectId, ref: religion, required: true }],
 
-            requirement: [{ type: Schema.Types.ObjectId, ref: requirement, required: true }],
+            requirement: [{ type: Schema.Types.ObjectId, ref: requirement }],
 
             occupation: [{ type: Schema.Types.ObjectId, ref: occupation, required: true }],
 
@@ -49,13 +49,13 @@ const ApplicationSchema: Schema = new Schema(
 
             course: [{ type: Schema.Types.ObjectId, ref: course, required: true }],
 
-            commitment: [{ type: Schema.Types.ObjectId, ref: commitment, required: true }],
+            commitment: [{ type: Schema.Types.ObjectId, ref: commitment }],
 
-            support: [{ type: Schema.Types.ObjectId, ref: support, required: true }],
+            support: [{ type: Schema.Types.ObjectId, ref: support }],
 
-            reference: [{ type: Schema.Types.ObjectId, ref: reference, required: true }],
+            reference: [{ type: Schema.Types.ObjectId, ref: reference }],
 
-            state: [{ type: Schema.Types.ObjectId, ref: state, required: true }],
+            state: [{ type: Schema.Types.ObjectId, ref: state }],
 
             supportYet: { type: Boolean, required: true }
         }

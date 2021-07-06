@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
@@ -16,6 +16,10 @@ export default function MultipleChoice({func, _key, cls, lang, obj, result}) {
     const [optionList, setOptionList]=useState([])
     // option that user don't want to choose anymore
     const [removedOption, setRemovedOption] = useState('')
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    }, [])
 
     // add option to an array
     var getOption = (isChosen, option) => {
@@ -74,6 +78,7 @@ export default function MultipleChoice({func, _key, cls, lang, obj, result}) {
                     <FontAwesomeIcon style={{color:'#1170fe'}} icon={faQuestionCircle} />
                 </OverlayTrigger>
             </h2>
+            <h5>{obj.subline && obj.subline[lang]}</h5>
             <div className="button-grid">
                 { //pass values for buttons. Every button is an option
                     obj.values && obj.values.map((value,id) => {

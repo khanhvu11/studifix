@@ -32,12 +32,13 @@ export default function ApplyingProcess(props) {
     const [applicationData, setApplicationData] = useState({})
 
     const language = 'DE';
-    const [groupName, setGroupName] = useState('Name');
-    const groupNameList = ['Name', 'Geburtsdatum', 'Adresse', 'Kontaktdaten', 'Gender', 'Familienstand']
+    const [groupName, setGroupName] = useState('');
+    const groupNameList = ['Name', 'Geburtsdatum', 'Adresse', 'Kontaktdaten', 'Familienstand']
 
     const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
 
     useEffect(()=>{
+        window.scrollTo(0, 0);
 
         //get selectiondata      
         fetch(URL + '/api/data/applicationdata')

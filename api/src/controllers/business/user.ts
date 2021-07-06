@@ -70,15 +70,15 @@ export const getToken = async (req: Request, res: Response) => {
 export const addUser = (userData: IUser): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         /** Check if email is in use */
-        const mailInUse = await dbUser.checkEmailAlreadyInUse(userData.email);
-        if (mailInUse) {
-            reject('Email already in Use');
-        }
-
         await dbUser
-            .addUserToDB(userData)
-            .then((userID) => {
-                resolve(userID);
+            .checkEmailAlreadyInUse(userData.email)
+            .then(() => {
+                dbUser
+                    .addUserToDB(userData)
+                    .then((userID) => {
+                        resolve(userID);
+                    })
+                    .catch((e) => reject(e));
             })
             .catch((e) => reject(e));
     });

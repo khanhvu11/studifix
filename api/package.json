@@ -6,7 +6,8 @@
     "scripts": {
         "build": "tsc -p .",
         "dev": "nodemon -L",
-        "start": "NODE_PATH=./build/server.js"
+        "start": "NODE_PATH=./build/server.js",
+        "test": "jest"
     },
     "author": "",
     "license": "ISC",
@@ -16,6 +17,7 @@
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "hash.js": "^1.1.7",
+        "jest": "^27.0.6",
         "joi": "^17.4.0",
         "jsonwebtoken": "^8.5.1",
         "mongoose": "^5.12.3",

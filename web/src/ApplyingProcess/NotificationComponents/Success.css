@@ -1,0 +1,30 @@
+.success{
+    font-size: 30px;
+}
+
+.icon{
+    font-size: 4rem;
+}
+
+.active .findingScholarships{
+    position: relative;
+    height: 100px;
+    background-color: #1170fe;
+    color: #ffffff;
+    border-radius: 2rem;
+    border: none;
+    margin-top: 1rem;
+}
+
+.welcome {
+    padding: 2rem 0;
+    width: 800px;
+    background-color: whitesmoke;
+    border-radius: 2rem;
+}
+
+.welcome p{
+    width: 600px;
+    text-align: center;
+    font-weight: bold;
+}

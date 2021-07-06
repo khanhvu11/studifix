@@ -9,6 +9,8 @@ import './Filter.css';
 import InputGroup from './InputGroup';
 import groupObject from './groupData';
 import Error from '../NotificationComponents/Error';
+import Success from '../NotificationComponents/Success';
+import Welcome from '../NotificationComponents/Welcome';
 /* import Dropdown from './Dropdown'; */
 
 function Filter(props) {
@@ -57,10 +59,13 @@ function Filter(props) {
           const error = (data && data.message) || response.status;
           return Promise.reject(error);
         }
-        history.push({
+
+        props.setGroupName('success')
+        
+        /* history.push({
           pathname: '/',
           state: { scholarships: data },
-        });
+        }); */
         /* response.json() */
       })
       /* .then(json => setScholarships(json)) */
@@ -72,8 +77,9 @@ function Filter(props) {
 
   return (
     <div className="filter">
-      {error ? <Error error={error} /> : null}
+      {error && 'submit' === props.groupName ? <Error error={error} /> : null}
       <div className="options">
+        <Welcome currentGrN ={props.groupName}></Welcome>
         {Object.keys(groupObject).map((groupName, id) => {
           var memberList = groupObject[groupName];
           return (
@@ -90,9 +96,10 @@ function Filter(props) {
             )
           );
         })}
+        <Success currentGrN ={props.groupName}></Success>
         <button
           type="button"
-          className={props.groupName !== 'submit' ? 'nextCateBtn' : 'hideNext'}
+          className={props.groupName !== 'submit' && props.groupName !== 'success' ? 'nextCateBtn' : 'hideNext'}
           onClick={() => getNextkey(props.groupName)}
         >
           <FontAwesomeIcon icon={faArrowRight} />
