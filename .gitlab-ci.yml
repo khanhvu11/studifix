@@ -18,5 +18,7 @@ cache:
     - node_modules/
 
 test_async:
+  tags:
+    - windows-runner
   script:
     - npm test
