@@ -17,7 +17,14 @@ cache:
   paths:
     - node_modules/
 
-test:
+test_async:
   script:
-    - npm test
+    - cd api
+    - npm install
+    - node ./specs/start.js ./specs/async.spec.js
 
+test_db:
+  script:
+    - cd api
+    - npm install
+    - node ./specs/start.js ./specs/db-postgres.spec.js
