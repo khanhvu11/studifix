@@ -18,7 +18,5 @@ stages:
 
 deploy_test:
   stage: deploy
-  tags:
-    - windows-runner
   script:
     - npm test
