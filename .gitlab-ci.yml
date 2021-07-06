@@ -7,4 +7,5 @@ cache:
 tests:
   script:
     - cd api
+    - npm install
     - npm test
