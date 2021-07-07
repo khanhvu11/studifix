@@ -35,7 +35,7 @@ export = router;
  *              properties:
  *                  values:
  *                      type: string
- *                      description: The link itself
+ *                      description: The link
  *                  localization:
  *                      type: object
  *                      description: The links localizations
