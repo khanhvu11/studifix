@@ -1,5 +1,5 @@
 import http from 'http';
-import express from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import bodyParser from 'body-parser';
 import logging from './config/logging';
 import config from './config/config';
@@ -7,6 +7,8 @@ import userRoutes from './routes/user';
 import dataRoutes from './routes/data';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import swaggerUI from 'swagger-ui-express';
+import { specs } from './config/swagger';
 
 const LOCATION = 'Server';
 const router = express();
@@ -35,7 +37,7 @@ mongoose
         logging.error(LOCATION, error.message, error);
     });
 
-router.use((req, res, next) => {
+router.use((req: Request, res: Response, next: NextFunction) => {
     logging.info(LOCATION, `METHOD - [${req.method}], URL - [${req.url}], IP - [${req.socket.remoteAddress}]`);
     console.log(req.url);
 
@@ -46,10 +48,10 @@ router.use((req, res, next) => {
 });
 /** RULES */
 
-router.use(bodyParser.urlencoded({ extended: false }));
-router.use(bodyParser.json());
+// router.use(bodyParser.urlencoded({ extended: false }));
+// router.use(bodyParser.json());
 
-router.use((req, res, next) => {
+router.use((req: Request, res: Response, next: NextFunction) => {
     res.header('Accsess-Control-Allow-Origin', '*');
     res.header('Accsess-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     if (req.method == 'OPTIONS') {
@@ -60,11 +62,12 @@ router.use((req, res, next) => {
 });
 
 /** ROUTES */
+router.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs));
 router.use('/api/users', userRoutes);
 router.use('/api/data', dataRoutes);
 
 /** ERRORS */
-router.use((req, res, next) => {
+router.use((req: Request, res: Response, next: NextFunction) => {
     const error = new Error('not found');
 
     return res.status(404).json({ message: error.message });
