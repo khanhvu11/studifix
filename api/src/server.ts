@@ -1,5 +1,5 @@
 import http from 'http';
-import express, { Request, Response, NextFunction } from 'express';
+import express, { Request, Response, NextFunction, RequestHandler } from 'express';
 import bodyParser from 'body-parser';
 import logging from './config/logging';
 import config from './config/config';
@@ -26,8 +26,6 @@ const options: cors.CorsOptions = {
 
 router.use(cors(options));
 
-// router.options('*', cors(options));
-
 mongoose
     .connect(config.mongo.url, config.mongo.options)
     .then(() => {
@@ -39,17 +37,16 @@ mongoose
 
 router.use((req: Request, res: Response, next: NextFunction) => {
     logging.info(LOCATION, `METHOD - [${req.method}], URL - [${req.url}], IP - [${req.socket.remoteAddress}]`);
-    console.log(req.url);
 
     res.on('finish', () => {
         logging.info(LOCATION, `METHOD - [${req.method}], URL - [${req.url}], STATUS - [${res.statusCode}]`);
     });
     next();
 });
-/** RULES */
 
-// router.use(bodyParser.urlencoded({ extended: false }));
-// router.use(bodyParser.json());
+/** RULES */
+router.use(express.json({ limit: '20mb' }) as RequestHandler);
+router.use(express.urlencoded({ extended: true, limit: '20mb' }) as RequestHandler);
 
 router.use((req: Request, res: Response, next: NextFunction) => {
     res.header('Accsess-Control-Allow-Origin', '*');
@@ -76,3 +73,9 @@ router.use((req: Request, res: Response, next: NextFunction) => {
 /** SERVER */
 const httpServer = http.createServer(router);
 httpServer.listen(config.server.port, () => logging.info(LOCATION, `Server running on ${config.server.hostname}:${config.server.port}`));
+function extended(
+    extended: any,
+    arg1: boolean
+): import('express-serve-static-core').RequestHandler<import('express-serve-static-core').ParamsDictionary, any, any, import('qs').ParsedQs, Record<string, any>> {
+    throw new Error('Function not implemented.');
+}

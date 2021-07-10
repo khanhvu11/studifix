@@ -1,5 +1,6 @@
+import { populationValuesGenerator } from '../helpers/population';
 import { IFilterData } from 'interfaces/data';
-import { populationValuesGenerator, scholarshipFilterqueryGenerator } from '../helpers/dataBase';
+import { refactorIDs, scholarshipFilterqueryGenerator } from '../helpers/dataBase';
 
 test('Generate Population Value String ', () => {
     const testArr = ['attribute1', 'atribute2'];
@@ -31,4 +32,9 @@ test('Generate Scholarship Query ', async () => {
         uniGrade: null
     };
     expect(scholarshipFilterqueryGenerator(testObj)).toStrictEqual({});
+});
+
+test('Test ID refactoring - String -> ObjectID ', () => {
+    const testArr = ['asd', 'asd'];
+    expect(refactorIDs(testArr)).toThrowError(TypeError);
 });
