@@ -1,7 +1,6 @@
 import { populationValuesGenerator } from '../helpers/population';
 import { IFilterData } from 'interfaces/data';
 import { refactorIDs, scholarshipFilterqueryGenerator } from '../helpers/dataBase';
-import { ObjectId as mongoObjectIdType } from 'mongoose';
 const { ObjectId } = require('mongodb');
 
 test('Generate Population Value String ', () => {

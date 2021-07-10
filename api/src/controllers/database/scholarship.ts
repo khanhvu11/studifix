@@ -63,6 +63,8 @@ const populationLocalizations = [
 
 export const getFilterDataFromDB = (): Promise<any> => {
     return new Promise(async (resolve, reject) => {
+        console.log('request');
+
         let filter: any = {};
 
         FilterDataSchema.findOne(filter, { city: 0, country: 0 })

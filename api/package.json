@@ -7,7 +7,7 @@
         "build": "tsc -p .",
         "dev": "nodemon -L",
         "start": "NODE_PATH=./build/server.js",
-        "test": "jest"
+        "test": "jest --detectOpenHandles"
     },
     "author": "",
     "license": "ISC",
