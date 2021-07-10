@@ -1,16 +1,13 @@
 import { IFilterData } from '../interfaces/data';
+import { ObjectId as mongoObjectIdType } from 'mongoose';
 const { ObjectId } = require('mongodb');
 
 export const refactorIDs = (idList: string[]): any[] => {
-    let tempArray: any[] = [];
+    let tempArray: mongoObjectIdType[] = [];
 
-    try {
-        idList.map((_id) => {
-            tempArray.push(ObjectId(String(_id)));
-        });
-    } catch (e) {
-        console.log('ERROR TYPE', typeof e);
-    }
+    idList.map((_id) => {
+        tempArray.push(ObjectId(_id));
+    });
 
     return tempArray;
 };
