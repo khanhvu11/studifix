@@ -8,4 +8,4 @@ test_api:
   script:
     - cd api
     - npm install
-    - npm test
+    - npm test -a
