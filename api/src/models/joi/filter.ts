@@ -26,4 +26,6 @@ export const joiFilterParams = Joi.object({
         // country: [Joi.array().items(Joi.string().min(24).max(24)).required(true), null],
         // city: [Joi.array().items(Joi.string().min(24).max(24)).required(true), null],
     }
-});
+})
+    .required()
+    .min(1);

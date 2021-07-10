@@ -1,10 +1,12 @@
 import { IFilterData } from '../interfaces/data';
+import { ObjectId as mongoObjectIdType } from 'mongoose';
 const { ObjectId } = require('mongodb');
 
-const refactorIDs = (idList: string[]): any[] => {
-    let tempArray: any = [];
+export const refactorIDs = (idList: string[]): any[] => {
+    let tempArray: mongoObjectIdType[] = [];
+
     idList.map((_id) => {
-        tempArray.push(ObjectId(String(_id)));
+        tempArray.push(ObjectId(_id));
     });
 
     return tempArray;
@@ -83,24 +85,4 @@ export const scholarshipFilterqueryGenerator = (idLists: IFilterData): any => {
     }
 
     return { $and: tempArray };
-};
-
-export const populationValuesGenerator = (attributes: string[]): string => {
-    let tempArr: string[] = [];
-
-    attributes.map((attr) => {
-        tempArr.push(attr + '.value');
-    });
-
-    return tempArr.join(' ');
-};
-
-export const populationLocalizationsGenerator = (attributes: string[]): string => {
-    let tempArr: string[] = [];
-
-    attributes.map((attr) => {
-        tempArr.push(attr + '.localization');
-    });
-
-    return tempArr.join(' ');
 };

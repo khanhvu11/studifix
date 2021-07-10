@@ -177,4 +177,6 @@ export const joiScholarship = Joi.object({
         localization: Joi.string().min(24).max(24).required(true),
         value: [Joi.array().items(Joi.string().min(24).max(24)).required(true), null]
     }
-});
+})
+    .required()
+    .min(1);

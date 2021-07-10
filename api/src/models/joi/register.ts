@@ -23,4 +23,6 @@ export const joiRegister = Joi.object({
         IT: Joi.number().min(1).max(4).precision(1),
         science: Joi.number().min(1).max(4).precision(1)
     }
-});
+})
+    .required()
+    .min(1);

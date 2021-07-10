@@ -5,10 +5,66 @@ import ApplicationSchema from '../../models/application/application';
 import LocalizationSchema from '../../models/components/localization';
 
 import { scholarshipFilterqueryGenerator } from '../../helpers/dataBase';
-import { populateScholarshipDetailValues, populateScholarshipsDetailLocals, populateScholarshipsLocals, populateScholarshipsValues } from '../../helpers/population';
+import { populationLocalizationsGenerator, populationValuesGenerator } from '../../helpers/population';
+
+const populationValues = [
+    'institution',
+    'occupation',
+    'graduation',
+    'course',
+    'country',
+    'city',
+    'state',
+    'collegeGraduationState',
+    'nationality',
+    'nationalityDetail',
+    'religion',
+    'commitment',
+    'support',
+    'requirement',
+    'referenceDetail',
+    'responsible',
+    'provider'
+];
+
+const populationLocalizations = [
+    'link',
+    'semester',
+    'referenceRequiered',
+    'referenceAllowed',
+    'age',
+    'collegeGraduation',
+    'collegeGraduationState',
+    'jobTrainingGraduation',
+    'uniGraduation',
+    'sideJobAllowed',
+    'currentJobHours',
+    'specialJobExperience',
+    'course',
+    'country',
+    'city',
+    'state',
+    'institution',
+    'graduation',
+    'occupation',
+    'religion',
+    'support',
+    'provider',
+    'referenceDetail',
+    'nationality',
+    'nationalityDetail',
+    'requirement',
+    'commitment',
+    'imgURL',
+    'advancement',
+    'advancementDetail',
+    'advancementTime'
+];
 
 export const getFilterDataFromDB = (): Promise<any> => {
     return new Promise(async (resolve, reject) => {
+        console.log('request');
+
         let filter: any = {};
 
         FilterDataSchema.findOne(filter, { city: 0, country: 0 })
@@ -58,8 +114,8 @@ export const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any>
         let filter = scholarshipFilterqueryGenerator(userInput.filterData);
 
         ScholarshipSchema.find(filter, {})
-            .populate(populateScholarshipsValues())
-            .populate(populateScholarshipsLocals(), { _id: 0, label: 0 })
+            .populate(populationValuesGenerator(populationValues))
+            .populate(populationLocalizationsGenerator(populationLocalizations), { _id: 0, label: 0 })
 
             .exec()
             .then((result) => {
@@ -72,8 +128,8 @@ export const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any>
 export const getScholarshipByID = (_id: string): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         ScholarshipSchema.findOne({ _id }, { _id: 0, name: 1, link: 1, state: 1, advancementDetail: 1, advancementTime: 1, institution: 1, imgURL: 1 })
-            .populate(populateScholarshipDetailValues())
-            .populate(populateScholarshipsDetailLocals())
+            .populate(populationValuesGenerator(populationValues))
+            .populate(populationLocalizationsGenerator(populationLocalizations))
 
             .exec()
             .then((result) => {
@@ -134,7 +190,7 @@ export const getApplicationByID = (_id: string): Promise<any> => {
             .populate({
                 path: 'scholarship',
                 populate: {
-                    path: populateScholarshipsValues()
+                    path: populationValuesGenerator(populationValues)
                 }
             })
             .populate('city')
