@@ -6,6 +6,7 @@ import userRoutes from './routes/user';
 import dataRoutes from './routes/data';
 import scholarshipRoutes from './routes/scholarship';
 import applicationRoutes from './routes/application';
+import filterRoutes from './routes/filter';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import swaggerUI from 'swagger-ui-express';
@@ -63,8 +64,9 @@ router.use((req: Request, res: Response, next: NextFunction) => {
 router.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs));
 router.use('/api/user', userRoutes);
 router.use('/api/data', dataRoutes);
-router.use('/api/scholarship', scholarshipRoutes);
+router.use('/api/scholarships', scholarshipRoutes);
 router.use('/api/application', applicationRoutes);
+router.use('/api/filter', filterRoutes);
 
 /** ERRORS */
 router.use((req: Request, res: Response, next: NextFunction) => {

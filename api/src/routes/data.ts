@@ -1,12 +1,7 @@
 import express from 'express';
-import { resolveFilterData, resolveApplicationData, filterScholarships, applyWithoutAccount, getScholarshipDetails, addNewScholarship } from '../controllers/business/scholarship';
+import { resolveFilterData, resolveApplicationData} from '../controllers/business/scholarship';
 
 const router = express.Router();
-
-router.get('/filterdata', resolveFilterData);
-router.get('/applicationdata', resolveApplicationData);
-
-export = router;
 
 /**
  * @swagger
@@ -56,26 +51,21 @@ export = router;
  *                                      type: string
  *                                  FR:
  *                                      type: string
- *
- *
- *
- *
- *
  */
 
 /**
  * @swagger
  * tags:
- *   name: Scholarships
- *   description: The Scholarships - API
+ *   name: Data
+ *   description: All routes to get selection data for specific actions and forms in frontend
  */
 
 /**
  * @swagger
- * /data/scholarship/{id}:
+ * /data/filterdata:
  *   get:
- *     summary: Returns a specific scholarship by id
- *     tags: [Scholarships]
+ *     summary: Get all data for filter process
+ *     tags: [Data]
  *     parameters:
  *       - in: path
  *         name: id
@@ -91,3 +81,30 @@ export = router;
  *             schema:
  *                  $ref: '#/components/schemas/Scholarship'
  */
+
+router.get('/filterdata', resolveFilterData);
+
+/**
+ * @swagger
+ * /data/applicationdata:
+ *   get:
+ *     summary: Get all data for application process
+ *     tags: [Data]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: The book id
+ *     responses:
+ *       200:
+ *         description: Specific Scholarship
+ *         content:
+ *           application/json:
+ *             schema:
+ *                  $ref: '#/components/schemas/Scholarship'
+ */
+router.get('/applicationdata', resolveApplicationData);
+
+export = router;

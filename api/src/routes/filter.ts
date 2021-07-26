@@ -1,6 +1,5 @@
-
-import { addNewScholarship, getScholarshipDetails } from '../controllers/business/scholarship';
 import express from 'express';
+import {filterScholarships} from '../controllers/business/scholarship';
 
 const router = express.Router();
 
@@ -57,54 +56,31 @@ const router = express.Router();
 /**
  * @swagger
  * tags:
- *   name: Scholarship
- *   description: Everything that has to do with creating or requesting specific scholarhip
+ *   name: Filter
+ *   description: Filter for specific things
  */
 
 /**
  * @swagger
- * /scholarships/{id}:
- *   get:
- *     summary: Returns a specific scholarship by id
- *     tags: [Scholarship]
- *     parameters:
- *       - in: path
- *         name: id
- *         schema:
- *           type: string
- *         required: true
- *         description: Scholarship ID
- *     responses:
- *       200:
- *         description: Scholarship matching to given ID
- *         content:
- *           application/json:
- *             schema:
- *                  $ref: '#/components/schemas/Scholarship'
- */
-router.get('/:_id', getScholarshipDetails);
-
-/**
- * @swagger
- * /scholarships:
+ * /filter/scholarships:
  *   post:
- *     summary: Create a new scholarship
- *     tags: [Scholarship]
+ *     summary: Returns all scholarships that matches sent filter data
+ *     tags: [Filter]
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: string
  *         required: true
- *         description: Scholarship ID
+ *         description: The book id
  *     responses:
  *       200:
- *         description: Scholarship matching to given ID
+ *         description: Specific Scholarship
  *         content:
  *           application/json:
  *             schema:
  *                  $ref: '#/components/schemas/Scholarship'
  */
-router.post('/new', addNewScholarship);
+ router.post('/scholarship', filterScholarships); // should be [GET], but due to ammount and complexity of data not possible.
 
 export = router;
