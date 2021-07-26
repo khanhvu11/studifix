@@ -4,6 +4,8 @@ import logging from './config/logging';
 import config from './config/config';
 import userRoutes from './routes/user';
 import dataRoutes from './routes/data';
+import scholarshipRoutes from './routes/scholarship';
+import applicationRoutes from './routes/application';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import swaggerUI from 'swagger-ui-express';
@@ -59,8 +61,10 @@ router.use((req: Request, res: Response, next: NextFunction) => {
 
 /** ROUTES */
 router.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs));
-router.use('/api/users', userRoutes);
+router.use('/api/user', userRoutes);
 router.use('/api/data', dataRoutes);
+router.use('/api/scholarship', scholarshipRoutes);
+router.use('/api/application', applicationRoutes);
 
 /** ERRORS */
 router.use((req: Request, res: Response, next: NextFunction) => {
