@@ -1,4 +1,4 @@
-import { IFilterData } from '../interfaces/data';
+import { IFilterData } from '../interfaces/filterData';
 import { ObjectId as mongoObjectIdType } from 'mongoose';
 const { ObjectId } = require('mongodb');
 

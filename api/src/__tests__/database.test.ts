@@ -1,5 +1,5 @@
 import { populationValuesGenerator } from '../helpers/population';
-import { IFilterData } from 'interfaces/data';
+import { IFilterData } from 'interfaces/filterData';
 import { refactorIDs, scholarshipFilterqueryGenerator } from '../helpers/dataBase';
 const { ObjectId } = require('mongodb');
 
