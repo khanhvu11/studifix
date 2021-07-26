@@ -1,4 +1,3 @@
-
 import { addNewScholarship, getScholarshipDetails } from '../controllers/business/scholarship';
 import express from 'express';
 
@@ -105,6 +104,6 @@ router.get('/:_id', getScholarshipDetails);
  *             schema:
  *                  $ref: '#/components/schemas/Scholarship'
  */
-router.post('/new', addNewScholarship);
+router.post('/', addNewScholarship);
 
 export = router;
