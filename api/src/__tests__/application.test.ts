@@ -1,4 +1,3 @@
-import { IFilterData } from 'interfaces/filterData';
 import { combineDataForApplication } from '../helpers/application';
 
 test('Test token generation and decryption (no secret set) ', (done) => {
@@ -32,4 +31,3 @@ test('Test token generation and decryption (no secret set) ', (done) => {
                     done(error);
                 });
         })
-    
