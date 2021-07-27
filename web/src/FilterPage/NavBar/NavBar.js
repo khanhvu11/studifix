@@ -24,7 +24,7 @@ export default function NavBar({ cls, func , lang, obj} ){
 
     return (
         <nav className="filter-nav">
-            <div className='logo'><h1><span>Studi</span>fix</h1></div>
+            <div data-testid='header' className='logo'><h1><span>Studi</span>fix</h1></div>
             <ul>
                 {/*
                     reading selectionData and print out the label

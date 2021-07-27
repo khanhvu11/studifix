@@ -11,6 +11,7 @@ export default function ScholarshipsPage(props) {
         window.scrollTo(0, 0);
     }, [])
     
+    //if props do not contain any scholarship data, there will no scholarship showed
     const {state} = props.location
     if(!state){
         return(<div className="scholarshipsPage">
@@ -24,6 +25,7 @@ export default function ScholarshipsPage(props) {
                 <Footer/>
             </div>)
     }
+    //otherwise render all scholarships that are sent from the backend
     return (
         <div className="scholarshipsPage">
             <div className="header">

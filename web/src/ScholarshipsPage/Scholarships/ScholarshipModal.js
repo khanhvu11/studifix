@@ -41,11 +41,11 @@ export default function ScholarshipModal({scholarship, usr_selection, show, onHi
   }, [URL])
 
   console.log(scholarshipModal)
-
+    // get value of category, which is an array
     var iterateArray = (value) => {
         return value.map((val,id) => <p key={id}>{val.title.DE}</p>)
     }
-
+    // get value of category, which is not an array
     var notArrayValue = (category, key) => {
       if(key ==='link'){
         return <a href={category.value} target="_blank">{category.value}</a>
@@ -58,7 +58,7 @@ export default function ScholarshipModal({scholarship, usr_selection, show, onHi
         }
       }
     }
-
+    // append logo before every text
     var addingLogo = (key) => {
       switch(key){
         case 'link': return <div className='modalIcon'><FontAwesomeIcon icon={faExternalLinkAlt} /></div>
