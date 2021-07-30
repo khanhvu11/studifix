@@ -1,0 +1,71 @@
+openapi: 3.0.0
+info:
+    title: Studifix API
+    description: All Routes according Studifix Backend
+    version: 1.0.0
+servers:
+    - url: http://localhost/api
+      description: Standard Server
+components:
+    schemas:
+        Scholarship:
+            type: object
+            required:
+                - name
+                - link
+            properties:
+                id:
+                    type: string
+                    description: The auto-generated id of scholarship
+                name:
+                    type: string
+                    description: The Scholarships Name
+                link:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                            description: The link
+                        localization:
+                            type: object
+                            description: The links localizations
+                            properties:
+                                id:
+                                    type: string
+                                label:
+                                    type: string
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+paths:
+    /scholarships/{id}:
+        get:
+            summary: Returns a specific scholarship by id
+            tags: [Scholarship]
+            parameters:
+            - in: 'body'
+                name: 'body'
+                description: 'Pet object that needs to be added tostore'
+                required: true
+                responses:
+                200:
+                    description: Scholarship matching to given ID
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Scholarship'

@@ -10,7 +10,11 @@ import filterRoutes from './routes/filter';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import swaggerUI from 'swagger-ui-express';
-import { specs } from './config/swagger';
+import YAML from 'yamljs';
+
+const path = require('path');
+const swagger_path = path.resolve(__dirname, './swagger.yaml');
+const swaggerDocument = YAML.load(swagger_path);
 
 const LOCATION = 'Server';
 const router = express();
@@ -61,7 +65,7 @@ router.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 /** ROUTES */
-router.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs));
+router.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 router.use('/api/user', userRoutes);
 router.use('/api/data', dataRoutes);
 router.use('/api/scholarships', scholarshipRoutes);

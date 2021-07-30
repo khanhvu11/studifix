@@ -1,0 +1,155 @@
+openapi: 3.0.0
+info:
+    description: 'All Routes according Studifix Backend'
+    version: '3.0.0'
+    title: 'Studifix'
+    contact:
+        email: 'lf054@hdm-stuttgart.de'
+    license:
+        name: 'Apache 2.0'
+        url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: '/localhost/'
+basePath: '/api'
+schemes:
+    - 'http'
+
+tags:
+    - name: 'Scholarship'
+      description: 'Everything about scholarships'
+    - name: 'Application'
+      description: 'Everything about Applications'
+    - name: 'User'
+      description: 'Everything about Users'
+    - name: 'Data'
+      description: 'Everything about Data processing'
+    - name: 'Filter'
+      description: 'Everything about Filtering'
+
+components:
+    schemas:
+        Scholarship:
+            type: object
+            required:
+                - name
+                - link
+            properties:
+                id:
+                    type: string
+                    description: The auto-generated id of scholarship
+                name:
+                    type: string
+                    description: The Scholarships Name
+                link:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                            description: The link
+                        localization:
+                            type: object
+                            description: The links localizations
+                            properties:
+                                id:
+                                    type: string
+                                label:
+                                    type: string
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                link:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                            description: The link
+                        localization:
+                            type: object
+                            description: The links localizations
+                            properties:
+                                id:
+                                    type: string
+                                label:
+                                    type: string
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+paths:
+    /scholarships/{id}:
+        get:
+            tags:
+                - 'Scholarship'
+            summary: "Get specific Scholarship from DB by it's ID"
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            parameters:
+                - in: 'path'
+                  name: 'id'
+                  description: 'Scholarship ID'
+                  required: true
+            responses:
+                '200':
+                    description: 'Specific Scholarship'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Scholarship'
+                '405':
+                    description: 'Invalid input'
+    /scholarships:
+        post:
+            tags:
+                - 'Scholarship'
+            summary: 'Add new scholarship to DB'
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            parameters:
+                - in: 'path'
+                  name: 'id'
+                  description: 'Scholarship ID'
+                  required: true
+            responses:
+                '200':
+                    description: 'Scholarship ID'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                        description: 'Scholarship ID'
