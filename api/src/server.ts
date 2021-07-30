@@ -1,12 +1,13 @@
 import http from 'http';
-import express from 'express';
-import bodyParser from 'body-parser';
+import express, { Request, Response, NextFunction, RequestHandler } from 'express';
 import logging from './config/logging';
 import config from './config/config';
 import userRoutes from './routes/user';
 import dataRoutes from './routes/data';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import swaggerUI from 'swagger-ui-express';
+import { specs } from './config/swagger';
 
 const LOCATION = 'Server';
 const router = express();
@@ -24,8 +25,6 @@ const options: cors.CorsOptions = {
 
 router.use(cors(options));
 
-// router.options('*', cors(options));
-
 mongoose
     .connect(config.mongo.url, config.mongo.options)
     .then(() => {
@@ -35,21 +34,20 @@ mongoose
         logging.error(LOCATION, error.message, error);
     });
 
-router.use((req, res, next) => {
+router.use((req: Request, res: Response, next: NextFunction) => {
     logging.info(LOCATION, `METHOD - [${req.method}], URL - [${req.url}], IP - [${req.socket.remoteAddress}]`);
-    console.log(req.url);
 
     res.on('finish', () => {
         logging.info(LOCATION, `METHOD - [${req.method}], URL - [${req.url}], STATUS - [${res.statusCode}]`);
     });
     next();
 });
+
 /** RULES */
+router.use(express.json({ limit: '20mb' }) as RequestHandler);
+router.use(express.urlencoded({ extended: true, limit: '20mb' }) as RequestHandler);
 
-router.use(bodyParser.urlencoded({ extended: false }));
-router.use(bodyParser.json());
-
-router.use((req, res, next) => {
+router.use((req: Request, res: Response, next: NextFunction) => {
     res.header('Accsess-Control-Allow-Origin', '*');
     res.header('Accsess-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     if (req.method == 'OPTIONS') {
@@ -60,11 +58,12 @@ router.use((req, res, next) => {
 });
 
 /** ROUTES */
+router.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs));
 router.use('/api/users', userRoutes);
 router.use('/api/data', dataRoutes);
 
 /** ERRORS */
-router.use((req, res, next) => {
+router.use((req: Request, res: Response, next: NextFunction) => {
     const error = new Error('not found');
 
     return res.status(404).json({ message: error.message });
@@ -73,3 +72,9 @@ router.use((req, res, next) => {
 /** SERVER */
 const httpServer = http.createServer(router);
 httpServer.listen(config.server.port, () => logging.info(LOCATION, `Server running on ${config.server.hostname}:${config.server.port}`));
+function extended(
+    extended: any,
+    arg1: boolean
+): import('express-serve-static-core').RequestHandler<import('express-serve-static-core').ParamsDictionary, any, any, import('qs').ParsedQs, Record<string, any>> {
+    throw new Error('Function not implemented.');
+}

@@ -1,15 +1,15 @@
 import { Request, Response } from 'express';
 import { joiLogin } from '../../models/joi/login';
 import dbUser from '../database/user';
-import hash from '../../helpers/hash';
-import tokens from '../../helpers/tokens';
+import { hash } from '../../helpers/hash';
+import { signToken } from '../../helpers/token';
 import IUser from 'interfaces/user';
 
 export const getToken = async (req: Request, res: Response) => {
     try {
         const data = await joiLogin.validateAsync(req.body);
 
-        const givenPasswordHashed: string = await hash.hash(data.password);
+        const givenPasswordHashed: string = await hash(data.password);
 
         const response = await dbUser.getUserDataByMail(data.email);
 
@@ -19,7 +19,7 @@ export const getToken = async (req: Request, res: Response) => {
             });
         }
 
-        await tokens.signToken(response._id).then((result) =>
+        await signToken(response._id).then((result) =>
             res.status(200).json({
                 message: 'Successfully logged in.',
                 jwt: result

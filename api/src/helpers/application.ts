@@ -1,6 +1,6 @@
-import { IFilterData } from 'interfaces/data';
+import { IFilterData } from 'interfaces/filterData';
 
-export const combineDataForApplication = (scholarship: string, userID: string, providerID: string, filterData: any): Promise<any> => {
+export const combineDataForApplication = (scholarship: string, userID: string, providerID: string, filterData: IFilterData): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         interface ICombined {
             filterData: IFilterData;

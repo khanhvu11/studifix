@@ -10,11 +10,11 @@ import {
 } from '../database/scholarship';
 import { joiApplicationInput } from '../../models/joi/application';
 import { joiFilterParams } from '../../models/joi/filter';
-import { joiScholarshipID } from '../../models/joi/scholarshipID';
 import { combineDataForApplication } from '../../helpers/application';
 import { IApplicationReq } from '../../interfaces/request';
 import { addUser } from './user';
 import { joiScholarship } from '../../models/joi/scholarship';
+const ObjectId = require('mongoose').Types.ObjectId;
 
 export const resolveFilterData = async (req: Request, res: Response) => {
     try {
@@ -64,9 +64,10 @@ export const filterScholarships = async (req: Request, res: Response) => {
 
 export const getScholarshipDetails = async (req: Request, res: Response) => {
     try {
-        const _id: string = await joiScholarshipID.validateAsync(req.params);
-
-        await getScholarshipByID(_id).then((scholarship) => {
+        if (!ObjectId.isValid(req.params._id)) {
+            throw new Error('Not a vaild objectID');
+        }
+        await getScholarshipByID(req.params._id).then((scholarship) => {
             res.status(200).json({
                 scholarship
             });
