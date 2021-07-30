@@ -8,4 +8,10 @@ test_api:
   script:
     - cd api
     - npm install
+    - npm test
+test_web:
+  stage: test
+  script:
+    - cd web
+    - npm install
     - npm test a

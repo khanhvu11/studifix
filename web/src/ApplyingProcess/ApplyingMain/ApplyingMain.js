@@ -13,22 +13,20 @@ import Success from '../NotificationComponents/Success';
 import Welcome from '../NotificationComponents/Welcome';
 /* import Dropdown from './Dropdown'; */
 
-function Filter(props) {
+function ApplyingMain(props) {
   const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
   const [result, setResult] = useState({});
   const history = useHistory();
   const [error, setError] = useState('');
 
+  // to show the next group 
   var getNextkey = (currentKey) => {
     var existKeys = [...props.groupNameList, 'submit'];
-    /* labels.filter((key) =>
-      key !== null && !removedKeyList.includes(key) ? key : null
-    ); */
-    /*  existKeys.push('submit'); */
     var ind = existKeys.indexOf(currentKey);
     props.setGroupName(existKeys[ind + 1]);
   };
 
+  // get inputs of user
   var getALlResult = (key, value) => {
     result[key] = value;
 
@@ -36,7 +34,8 @@ function Filter(props) {
   };
 
   console.log(result);
-
+  
+  // to review page
   var toReview = () => {
     fetch(URL + '/api/data/application', {
       method: 'POST',
@@ -117,4 +116,4 @@ function Filter(props) {
   );
 }
 
-export default Filter;
+export default ApplyingMain;
