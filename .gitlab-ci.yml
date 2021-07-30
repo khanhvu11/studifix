@@ -3,13 +3,15 @@ image: node:latest
 stages:
   - test
 
-cache:
-  paths:
-    - /api/node_modules/
-
 test_api:
   stage: test
   script:
     - cd api
     - npm install
     - npm test
+test_web:
+  stage: test
+  script:
+    - cd web
+    - npm install
+    - npm test a
