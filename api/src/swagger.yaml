@@ -27,6 +27,34 @@ tags:
 
 components:
     schemas:
+        Title:
+            type: object
+            properties:
+                DE:
+                    type: string
+                EN:
+                    type: string
+                FR:
+                    type: string
+        Description:
+            type: object
+            properties:
+                DE:
+                    type: string
+                EN:
+                    type: string
+                FR:
+                    type: string
+        DescriptionDetail:
+            type: object
+            properties:
+                DE:
+                    type: string
+                EN:
+                    type: string
+                FR:
+                    type: string
+
         FilterData:
             type: object
             properties:
@@ -36,32 +64,11 @@ components:
                         values:
                             type: string
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -72,32 +79,11 @@ components:
                         values:
                             type: string
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -108,32 +94,11 @@ components:
                         values:
                             type: string
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -144,32 +109,11 @@ components:
                         values:
                             type: string
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -180,32 +124,11 @@ components:
                         values:
                             type: string
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -216,32 +139,11 @@ components:
                         values:
                             type: string
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -252,32 +154,11 @@ components:
                         values:
                             type: string
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -288,32 +169,11 @@ components:
                         values:
                             type: string
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -329,50 +189,15 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -388,50 +213,15 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -447,50 +237,15 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -506,50 +261,15 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -565,50 +285,15 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -624,50 +309,15 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -685,50 +335,15 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -744,50 +359,15 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -803,50 +383,15 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -862,50 +407,15 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -921,50 +431,15 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -980,50 +455,15 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -1039,50 +479,15 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         mandatory:
                             type: boolean
                         multiselect:
@@ -1097,271 +502,91 @@ components:
                     type: object
                     properties:
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
 
                 lastName:
                     type: object
                     properties:
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
 
                 dateOfBirth:
                     type: object
                     properties:
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
 
                 street:
                     type: object
                     properties:
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
 
                 number:
                     type: object
                     properties:
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
 
                 ZIP:
                     type: object
                     properties:
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
 
                 mail:
                     type: object
                     properties:
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
 
                 mobile:
                     type: object
                     properties:
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
 
                 placeOfBirth:
                     type: object
                     properties:
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         values:
                             type: array
                             items:
@@ -1370,54 +595,19 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                 countryOfBirth:
                     type: object
                     properties:
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         values:
                             type: array
                             items:
@@ -1426,54 +616,19 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                 gender:
                     type: object
                     properties:
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         values:
                             type: array
                             items:
@@ -1482,54 +637,19 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                 familyStatus:
                     type: object
                     properties:
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         values:
                             type: array
                             items:
@@ -1538,54 +658,19 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                 country:
                     type: object
                     properties:
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         values:
                             type: array
                             items:
@@ -1594,54 +679,19 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                 city:
                     type: object
                     properties:
                         title:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Title'
                         description:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/Description'
                         descriptionDetail:
-                            type: object
-                            properties:
-                                DE:
-                                    type: string
-                                EN:
-                                    type: string
-                                FR:
-                                    type: string
+                            $ref: '#/components/schemas/DescriptionDetail'
                         values:
                             type: array
                             items:
@@ -1650,23 +700,9 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
         Scholarship:
             type: object
@@ -1690,23 +726,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
                 occupation:
@@ -1721,45 +743,17 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -1781,23 +775,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -1819,23 +799,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
                 semesterMin:
@@ -1849,23 +815,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
                 semesterMax:
@@ -1879,23 +831,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -1910,23 +848,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -1941,23 +865,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -1972,23 +882,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2003,23 +899,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2034,23 +916,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2065,23 +933,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2096,23 +950,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2127,23 +967,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2158,23 +984,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2189,23 +1001,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2220,23 +1018,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2251,23 +1035,9 @@ components:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2283,23 +1053,9 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
                                     dependentOn:
                                         type: array
                                         items:
@@ -2308,44 +1064,16 @@ components:
                                                 id:
                                                     type: string
                                                 title:
-                                                    type: object
-                                                    properties:
-                                                        DE:
-                                                            type: string
-                                                        EN:
-                                                            type: string
-                                                        FR:
-                                                            type: string
+                                                    $ref: '#/components/schemas/Title'
                                                 description:
-                                                    type: object
-                                                    properties:
-                                                        DE:
-                                                            type: string
-                                                        EN:
-                                                            type: string
-                                                        FR:
-                                                            type: string
+                                                    $ref: '#/components/schemas/Description'
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2361,23 +1089,9 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
                                     dependentOn:
                                         type: array
                                         items:
@@ -2386,45 +1100,17 @@ components:
                                                 id:
                                                     type: string
                                                 title:
-                                                    type: object
-                                                    properties:
-                                                        DE:
-                                                            type: string
-                                                        EN:
-                                                            type: string
-                                                        FR:
-                                                            type: string
+                                                    $ref: '#/components/schemas/Title'
                                                 description:
-                                                    type: object
-                                                    properties:
-                                                        DE:
-                                                            type: string
-                                                        EN:
-                                                            type: string
-                                                        FR:
-                                                            type: string
+                                                    $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2440,45 +1126,17 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2494,45 +1152,17 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2548,45 +1178,17 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2602,45 +1204,17 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2656,45 +1230,17 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2710,45 +1256,17 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2764,45 +1282,17 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
                 nationalityDetail:
@@ -2817,45 +1307,17 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2871,45 +1333,17 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2925,45 +1359,17 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -2979,45 +1385,17 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -3033,45 +1411,17 @@ components:
                                     id:
                                         type: string
                                     title:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Title'
                                     description:
-                                        type: object
-                                        properties:
-                                            DE:
-                                                type: string
-                                            EN:
-                                                type: string
-                                            FR:
-                                                type: string
+                                        $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -3083,45 +1433,17 @@ components:
                             description: populated advancement values
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -3133,45 +1455,17 @@ components:
                             description: populated advancement details values
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 
@@ -3183,45 +1477,17 @@ components:
                             description: populated advancement time values
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
 
                         localization:
                             type: object
                             properties:
                                 title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Title'
                                 description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                    $ref: '#/components/schemas/Description'
                                 label:
                                     type: string
 paths:
@@ -3292,14 +1558,14 @@ paths:
         get:
             tags:
                 - 'Data'
-            summary: 'Get all filterdata for filter process'
+            summary: 'Get all filter data for filter process'
             consumes:
                 - 'application/json'
             produces:
                 - 'application/json'
             responses:
                 '200':
-                    description: 'Filterdata'
+                    description: 'Filter data'
                     content:
                         application/json:
                             schema:
@@ -3308,14 +1574,14 @@ paths:
         get:
             tags:
                 - 'Data'
-            summary: 'Get all filterdata for filter process'
+            summary: 'Get all application data for filter process'
             consumes:
                 - 'application/json'
             produces:
                 - 'application/json'
             responses:
                 '200':
-                    description: 'Filterdata'
+                    description: 'Application data'
                     content:
                         application/json:
                             schema:
