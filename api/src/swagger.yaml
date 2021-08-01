@@ -27,6 +27,1647 @@ tags:
 
 components:
     schemas:
+        FilterData:
+            type: object
+            properties:
+                semester:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                collegeGrade:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                jobGrade:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                uniGrade:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                workExperience:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                sidejobHours:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                supportYet:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                age:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                nationality:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                nationalityDetail:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                religion:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                requirement:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                occupation:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                course:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                        dependence:
+                            type: string
+                commitment:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                support:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                reference:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                country:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                state:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                city:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                graduation:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                        dependence:
+                            type: string
+
+        ApplicationData:
+            type: object
+            properties:
+                firstName:
+                    type: object
+                    properties:
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+
+                lastName:
+                    type: object
+                    properties:
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+
+                dateOfBirth:
+                    type: object
+                    properties:
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+
+                street:
+                    type: object
+                    properties:
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+
+                number:
+                    type: object
+                    properties:
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+
+                ZIP:
+                    type: object
+                    properties:
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+
+                mail:
+                    type: object
+                    properties:
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+
+                mobile:
+                    type: object
+                    properties:
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+
+                placeOfBirth:
+                    type: object
+                    properties:
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                countryOfBirth:
+                    type: object
+                    properties:
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                gender:
+                    type: object
+                    properties:
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                familyStatus:
+                    type: object
+                    properties:
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                country:
+                    type: object
+                    properties:
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                city:
+                    type: object
+                    properties:
+                        title:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        description:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        descriptionDetail:
+                            type: object
+                            properties:
+                                DE:
+                                    type: string
+                                EN:
+                                    type: string
+                                FR:
+                                    type: string
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
         Scholarship:
             type: object
             required:
@@ -66,6 +1707,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
                 occupation:
                     type: object
                     properties:
@@ -117,6 +1760,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 responsible:
                     type: object
@@ -127,24 +1772,10 @@ components:
                             properties:
                                 id:
                                     type: string
-                                title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
-                                description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                firstName:
+                                    type: string
+                                position:
+                                    type: string
 
                         localization:
                             type: object
@@ -167,6 +1798,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 provider:
                     type: object
@@ -177,24 +1810,10 @@ components:
                             properties:
                                 id:
                                     type: string
-                                title:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
-                                description:
-                                    type: object
-                                    properties:
-                                        DE:
-                                            type: string
-                                        EN:
-                                            type: string
-                                        FR:
-                                            type: string
+                                name:
+                                    type: string
+                                link:
+                                    type: string
 
                         localization:
                             type: object
@@ -217,6 +1836,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
                 semesterMin:
                     type: object
                     properties:
@@ -245,6 +1866,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
                 semesterMax:
                     type: object
                     properties:
@@ -273,6 +1896,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 ageMin:
                     type: object
@@ -302,6 +1927,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 ageMax:
                     type: object
@@ -331,6 +1958,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 collegeGraduation:
                     type: object
@@ -360,6 +1989,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 jobTrainingGraduation:
                     type: object
@@ -389,6 +2020,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 uniGraduation:
                     type: object
@@ -418,6 +2051,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 specialJobExperience:
                     type: object
@@ -447,6 +2082,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 sideJobAllowed:
                     type: object
@@ -476,6 +2113,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 currentJobHours:
                     type: object
@@ -505,6 +2144,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 imgURL:
                     type: object
@@ -534,6 +2175,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 supportYet:
                     type: object
@@ -563,6 +2206,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 referenceRequiered:
                     type: object
@@ -592,6 +2237,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 referenceAllowed:
                     type: object
@@ -621,6 +2268,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 graduation:
                     type: object
@@ -651,7 +2300,31 @@ components:
                                                 type: string
                                             FR:
                                                 type: string
-
+                                    dependentOn:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                id:
+                                                    type: string
+                                                title:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
+                                                description:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
                         localization:
                             type: object
                             properties:
@@ -673,6 +2346,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 course:
                     type: object
@@ -703,6 +2378,31 @@ components:
                                                 type: string
                                             FR:
                                                 type: string
+                                    dependentOn:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                id:
+                                                    type: string
+                                                title:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
+                                                description:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
 
                         localization:
                             type: object
@@ -725,6 +2425,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 country:
                     type: object
@@ -777,6 +2479,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 city:
                     type: object
@@ -829,6 +2533,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 state:
                     type: object
@@ -881,6 +2587,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 institution:
                     type: object
@@ -933,6 +2641,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 support:
                     type: object
@@ -985,6 +2695,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 referenceDetail:
                     type: object
@@ -1037,6 +2749,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 nationality:
                     type: object
@@ -1089,6 +2803,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
                 nationalityDetail:
                     type: object
                     properties:
@@ -1140,6 +2856,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 requirement:
                     type: object
@@ -1192,6 +2910,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 religion:
                     type: object
@@ -1244,6 +2964,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 collegeGraduationState:
                     type: object
@@ -1296,6 +3018,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 commitment:
                     type: object
@@ -1348,6 +3072,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 advancement:
                     type: object
@@ -1396,6 +3122,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 advancementDetail:
                     type: object
@@ -1444,6 +3172,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 
                 advancementTime:
                     type: object
@@ -1492,6 +3222,8 @@ components:
                                             type: string
                                         FR:
                                             type: string
+                                label:
+                                    type: string
 paths:
     /scholarships/{id}:
         get:
@@ -1556,3 +3288,35 @@ paths:
                                     id:
                                         type: string
                                         description: 'Scholarship ID'
+    /filterdata:
+        get:
+            tags:
+                - 'Data'
+            summary: 'Get all filterdata for filter process'
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            responses:
+                '200':
+                    description: 'Filterdata'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/FilterData'
+    /applicationdata:
+        get:
+            tags:
+                - 'Data'
+            summary: 'Get all filterdata for filter process'
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            responses:
+                '200':
+                    description: 'Filterdata'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/ApplicationData'
