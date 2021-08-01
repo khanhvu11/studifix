@@ -42,17 +42,12 @@ components:
                 link:
                     type: object
                     properties:
-                        values:
+                        value:
                             type: string
-                            description: The link
+                            description: The Scholarships Link
                         localization:
                             type: object
-                            description: The links localizations
                             properties:
-                                id:
-                                    type: string
-                                label:
-                                    type: string
                                 title:
                                     type: object
                                     properties:
@@ -71,19 +66,66 @@ components:
                                             type: string
                                         FR:
                                             type: string
-                link:
+                occupation:
                     type: object
                     properties:
-                        values:
-                            type: string
-                            description: The link
+                        value:
+                            type: array
+                            description: Populated occupation values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
                         localization:
                             type: object
-                            description: The links localizations
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                responsible:
+                    type: object
+                    properties:
+                        value:
+                            type: object
+                            description: responsible employee value
                             properties:
                                 id:
-                                    type: string
-                                label:
                                     type: string
                                 title:
                                     type: object
@@ -104,6 +146,1352 @@ components:
                                         FR:
                                             type: string
 
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                provider:
+                    type: object
+                    properties:
+                        value:
+                            type: object
+                            description: provider name value
+                            properties:
+                                id:
+                                    type: string
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                semesterMin:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: minimal semester value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                semesterMax:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: maximal semester value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                ageMin:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: minimal age value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                ageMax:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: maximal age value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                collegeGraduation:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: college graduation value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                jobTrainingGraduation:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: job training graduation value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                uniGraduation:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: uni graduation value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                specialJobExperience:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: special job experience value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                sideJobAllowed:
+                    type: object
+                    properties:
+                        value:
+                            type: boolean
+                            description: side job allowed value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                currentJobHours:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: current job hours value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                imgURL:
+                    type: object
+                    properties:
+                        value:
+                            type: string
+                            description: img URL value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                supportYet:
+                    type: object
+                    properties:
+                        value:
+                            type: boolean
+                            description: supported yet value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                referenceRequiered:
+                    type: object
+                    properties:
+                        value:
+                            type: boolean
+                            description: reference requiered value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                referenceAllowed:
+                    type: object
+                    properties:
+                        value:
+                            type: boolean
+                            description: reference allowed value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                graduation:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: Populated graduation values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                course:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated course values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                country:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated country values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                city:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated city values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                state:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated state values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                institution:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated institution values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                support:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated support values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                referenceDetail:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated reference details values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                nationality:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated nationality values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                nationalityDetail:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated nationality details values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                requirement:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated requirement values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                religion:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated religion values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                collegeGraduationState:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated collegeGraduationState values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                commitment:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated commitment values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+                                    description:
+                                        type: object
+                                        properties:
+                                            DE:
+                                                type: string
+                                            EN:
+                                                type: string
+                                            FR:
+                                                type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                advancement:
+                    type: object
+                    properties:
+                        value:
+                            type: object
+                            description: populated advancement values
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                advancementDetail:
+                    type: object
+                    properties:
+                        value:
+                            type: object
+                            description: populated advancement details values
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                advancementTime:
+                    type: object
+                    properties:
+                        value:
+                            type: object
+                            description: populated advancement time values
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
+                                description:
+                                    type: object
+                                    properties:
+                                        DE:
+                                            type: string
+                                        EN:
+                                            type: string
+                                        FR:
+                                            type: string
 paths:
     /scholarships/{id}:
         get:
@@ -138,10 +1526,25 @@ paths:
             produces:
                 - 'application/json'
             parameters:
-                - in: 'path'
-                  name: 'id'
-                  description: 'Scholarship ID'
+                - in: 'body'
                   required: true
+                  name: 'body'
+                  description: scholarship data to create new scholarship
+                  schema:
+                      type: object
+                      properties:
+                          occupation:
+                              type: array
+                              items:
+                                  type: string
+                          graduation:
+                              type: array
+                              items:
+                                  type: string
+                          course:
+                              type: array
+                              items:
+                                  type: string
             responses:
                 '200':
                     description: 'Scholarship ID'
