@@ -4,6 +4,7 @@ import dbUser from '../database/user';
 import { hash } from '../../helpers/hash';
 import { signToken } from '../../helpers/token';
 import IUser from 'interfaces/user';
+import { joiRegister } from '../../models/joi/register';
 
 export const getToken = async (req: Request, res: Response) => {
     try {
@@ -14,7 +15,7 @@ export const getToken = async (req: Request, res: Response) => {
         const response = await dbUser.getUserDataByMail(data.email);
 
         if (!response || response.password !== givenPasswordHashed) {
-            return res.status(400).json({
+            return res.status(401).json({
                 message: 'Wrong username password combination'
             });
         }
@@ -82,4 +83,23 @@ export const addUser = (userData: IUser): Promise<any> => {
             })
             .catch((e) => reject(e));
     });
+};
+
+export const register = async (req: Request, res: Response) => {
+    try {
+        const userData: IUser = await joiRegister.validateAsync(req.body);
+        await dbUser.checkEmailAlreadyInUse(userData.email).then(() => {
+            dbUser.addUserToDB(userData).then((userID) => {
+                signToken(userID._id).then((result) =>
+                    res.status(200).json({
+                        jwt: result
+                    })
+                );
+            });
+        });
+    } catch (error) {
+        return res.status(400).json({
+            message: error.message
+        });
+    }
 };

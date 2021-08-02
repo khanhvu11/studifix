@@ -65,7 +65,7 @@ router.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 /** ROUTES */
-router.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+router.use('/api/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 router.use('/api/user', userRoutes);
 router.use('/api/data', dataRoutes);
 router.use('/api/scholarships', scholarshipRoutes);

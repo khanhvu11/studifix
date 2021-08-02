@@ -3,6 +3,11 @@ import { filterScholarships } from '../controllers/business/scholarship';
 
 const router = express.Router();
 
-router.post('/scholarship', filterScholarships); // should be [GET], but due to ammount and complexity of data not possible.
+/**
+ * Normally you would use an get with query params to filter scholarships, but due to ammount and complexity of data
+ * we descided to do it that way. This part isn't REST conform.
+ * Todo: rework filter process and use query params
+ */
+router.post('/scholarship', filterScholarships);
 
 export = router;

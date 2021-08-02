@@ -8,10 +8,6 @@ info:
     license:
         name: 'Apache 2.0'
         url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-host: '/localhost/'
-basePath: '/api'
-schemes:
-    - 'http'
 
 tags:
     - name: 'Scholarship'
@@ -1491,7 +1487,7 @@ components:
                                 label:
                                     type: string
 paths:
-    /scholarships/{id}:
+    /api/scholarships/{id}:
         get:
             tags:
                 - 'Scholarship'
@@ -1514,7 +1510,7 @@ paths:
                                 $ref: '#/components/schemas/Scholarship'
                 '405':
                     description: 'Invalid input'
-    /scholarships:
+    /api/scholarships:
         post:
             tags:
                 - 'Scholarship'
@@ -1523,26 +1519,357 @@ paths:
                 - 'application/json'
             produces:
                 - 'application/json'
-            parameters:
-                - in: 'body'
-                  required: true
-                  name: 'body'
-                  description: scholarship data to create new scholarship
-                  schema:
-                      type: object
-                      properties:
-                          occupation:
-                              type: array
-                              items:
-                                  type: string
-                          graduation:
-                              type: array
-                              items:
-                                  type: string
-                          course:
-                              type: array
-                              items:
-                                  type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            required:
+                                - name
+                                - responsible
+                                - provider
+                            type: object
+                            properties:
+                                name:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: string
+                                responsible:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: string
+                                provider:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: string
+                                link:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: string
+                                semesterMin:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                semesterMax:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                occupation:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                graduation:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                course:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                country:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                city:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                state:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                institution:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                support:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                supportYet:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: boolean
+                                referenceRequiered:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: boolean
+                                referenceAllowed:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: boolean
+                                referenceDetail:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                ageMin:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                ageMax:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                nationality:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                nationalityDetail:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                requirement:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                religion:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                collegeGraduation:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                collegeGraduationState:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                jobTrainingGraduation:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                uniGraduation:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                specialJobExperience:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                sideJobAllowed:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: boolean
+                                currentJobHours:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                imgURL:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: string
+                                commitment:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                advancement:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: object
+                                            properties:
+                                                title:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
+                                                description:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
+                                advancementDetail:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: object
+                                            properties:
+                                                title:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
+                                                description:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
+                                advancementTime:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: object
+                                            properties:
+                                                title:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
+                                                description:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
+
             responses:
                 '200':
                     description: 'Scholarship ID'
@@ -1554,7 +1881,7 @@ paths:
                                     id:
                                         type: string
                                         description: 'Scholarship ID'
-    /filterdata:
+    /api/data/filterdata:
         get:
             tags:
                 - 'Data'
@@ -1570,7 +1897,7 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/FilterData'
-    /applicationdata:
+    /api/data/applicationdata:
         get:
             tags:
                 - 'Data'
@@ -1586,3 +1913,303 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/ApplicationData'
+    /api/application:
+        post:
+            tags:
+                - 'Application'
+            summary: 'Apply for a new scholarship'
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            parameters:
+                - in: 'body'
+                  required: true
+                  name: 'body'
+                  description: User, scholarship and provider data together with filter data by user is needed to apply for a scholarship
+                  schema:
+                      required:
+                          - scholarship
+                      type: object
+                      properties:
+                          scholarship:
+                              description: scholarship ID
+                              type: string
+                          user:
+                              description: user ID
+                              type: string
+                          provider:
+                              description: provider ID
+                              type: string
+                          FilterData:
+                              type: object
+                              description: Given filter data to save with application
+                              properties:
+                                  semester:
+                                      type: number
+                                  workExperience:
+                                      type: number
+                                  sidejobHours:
+                                      type: number
+                                  collegeGrade:
+                                      type: number
+                                  jobGrade:
+                                      type: number
+                                  uniGrade:
+                                      type: number
+                                  nationality:
+                                      type: array
+                                      items:
+                                          type: string
+                                  nationalityDetail:
+                                      type: array
+                                      items:
+                                          type: string
+                                  requirement:
+                                      type: array
+                                      items:
+                                          type: string
+                                  religion:
+                                      type: array
+                                      items:
+                                          type: string
+                                  occupation:
+                                      type: array
+                                      items:
+                                          type: string
+                                  graduation:
+                                      type: array
+                                      items:
+                                          type: string
+                                  course:
+                                      type: array
+                                      items:
+                                          type: string
+                                  commitment:
+                                      type: array
+                                      items:
+                                          type: string
+                                  support:
+                                      type: array
+                                      items:
+                                          type: string
+                                  reference:
+                                      type: array
+                                      items:
+                                          type: string
+                                  state:
+                                      type: array
+                                      items:
+                                          type: string
+                                  supportYet:
+                                      type: boolean
+            responses:
+                '200':
+                    description: 'Application ID'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+    /api/user/login:
+        post:
+            tags:
+                - 'User'
+            summary: 'Login with existing account'
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            required:
+                                - email
+                                - password
+                            type: object
+                            properties:
+                                email:
+                                    type: string
+                                password:
+                                    type: string
+            responses:
+                '200':
+                    description: 'JWT'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    JWT:
+                                        type: string
+    /api/user/register:
+        post:
+            tags:
+                - 'User'
+            summary: 'Register new user'
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                firstName:
+                                    type: string
+                                lastName:
+                                    type: string
+                                dateOfBirth:
+                                    type: string
+                                placeOfBirth:
+                                    description: id of city object in city collection
+                                    type: string
+                                countryOfBirth:
+                                    description: id of country object in city collection
+                                    type: string
+                                gender:
+                                    description: id of gender object in city collection
+                                    type: string
+                                familyStatus:
+                                    description: id of family status object in city collection
+                                    type: string
+                                country:
+                                    description: id of country object in city collection
+                                    type: string
+                                city:
+                                    description: id of city object in city collection
+                                    type: string
+                                street:
+                                    type: string
+                                number:
+                                    type: string
+                                ZIP:
+                                    type: number
+                                email:
+                                    type: string
+                                mobile:
+                                    type: string
+            responses:
+                '200':
+                    description: 'User ID'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+    /api/filter/scholarships:
+        post:
+            tags:
+                - 'Filter'
+            summary: 'Filter Scholarships'
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            parameters:
+                - in: 'body'
+                  required: true
+                  name: 'body'
+                  schema:
+                      type: object
+                      properties:
+                          commitment:
+                              type: array
+                              nullable: true
+                              description: array of object ID's
+                              items:
+                                  type: string
+                          occupation:
+                              type: array
+                              description: array of object ID's
+                              items:
+                                  type: string
+                          graduation:
+                              type: array
+                              description: array of object ID's
+                              items:
+                                  type: string
+                          course:
+                              type: array
+                              description: array of object ID's
+                              items:
+                                  type: string
+                          support:
+                              type: array
+                              nullable: true
+                              description: array of object ID's
+                              items:
+                                  type: string
+                          state:
+                              type: array
+                              nullable: true
+                              description: array of object ID's
+                              items:
+                                  type: string
+                          nationality:
+                              type: array
+                              description: array of object ID's
+                              items:
+                                  type: string
+                          religion:
+                              type: array
+                              description: array of object ID's
+                              items:
+                                  type: string
+                          requirement:
+                              type: array
+                              nullable: true
+                              description: array of object ID's
+                              items:
+                                  type: string
+                          reference:
+                              type: array
+                              nullable: true
+                              description: array of object ID's
+                              items:
+                                  type: string
+                          nationalityDetail:
+                              type: array
+                              nullable: true
+                              description: array of object ID's
+                              items:
+                                  type: string
+                          supportYet:
+                              type: string
+                          workExperience:
+                              type: number
+                              nullable: true
+                          sidejobHours:
+                              type: number
+                              nullable: true
+                          collegeGrade:
+                              type: number
+                              nullable: true
+                          jobGrade:
+                              type: number
+                              nullable: true
+                          uniGrade:
+                              type: number
+                              nullable: true
+                          semester:
+                              type: number
+                          age:
+                              type: number
+            responses:
+                '200':
+                    description: 'Array of matching scholarships'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: '#/components/schemas/Scholarship'
