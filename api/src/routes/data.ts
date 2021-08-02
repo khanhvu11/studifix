@@ -3,7 +3,7 @@ import { resolveFilterData, resolveApplicationData } from '../controllers/busine
 
 const router = express.Router();
 
-router.get('/filterdata', resolveFilterData);
-router.get('/applicationdata', resolveApplicationData);
+router.get('/filter', resolveFilterData);
+router.get('/application', resolveApplicationData);
 
 export = router;

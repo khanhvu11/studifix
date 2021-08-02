@@ -1881,7 +1881,7 @@ paths:
                                     id:
                                         type: string
                                         description: 'Scholarship ID'
-    /api/data/filterdata:
+    /api/data/filter:
         get:
             tags:
                 - 'Data'
@@ -1897,7 +1897,7 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/FilterData'
-    /api/data/applicationdata:
+    /api/data/application:
         get:
             tags:
                 - 'Data'

@@ -6,6 +6,12 @@ import { signToken } from '../../helpers/token';
 import IUser from 'interfaces/user';
 import { joiRegister } from '../../models/joi/register';
 
+/**
+ * Generates Token when user credentials are valid
+ * @param req contains user login data
+ * @param res jwt
+ * @returns in case of an error returns message to client
+ */
 export const getToken = async (req: Request, res: Response) => {
     try {
         const data = await joiLogin.validateAsync(req.body);
@@ -33,41 +39,13 @@ export const getToken = async (req: Request, res: Response) => {
     }
 };
 
-// const addUser = async (req: Request, res: Response) => {
-//     try {
-//         /** Validate User Input and create User Object*/
-//         //TODO: remove value from password error
-//         const data = await joiRegister.validateAsync(req.body);
-
-//         /** Hash password and delete duplicate after validating password */
-//         data.password = hash.hash(data.password);
-//         delete data['repeatPassword'];
-
-//         /** Check if email is in use */
-//         const mailInUse = await dbUser.checkEmailAlreadyInUse(data.email);
-//         if (mailInUse) {
-//             return res.status(409).json({
-//                 message: 'Email already in Use'
-//             });
-//         }
-//         /** Add User to DB */
-//         const result = await dbUser.addUserToDB(data);
-
-//         /** If fullfilled generate JWT with userID. Encrypt with hashed user password */
-//         await tokens.signToken(result._id).then((result) =>
-//             res.status(200).json({
-//                 message: 'User successfully added to DB.',
-//                 jwt: result
-//             })
-//         );
-//     } catch (error) {
-//         /** Catch all errors for default */
-//         return res.status(500).json({
-//             message: error.message
-//         });
-//     }
-// };
-
+/**
+ * Adds user from application process to handle application and registering in one step.
+ * Right now there are two methods to handle registering.
+ * Todo: combine both methods and handle registering in one method.
+ * @param userData
+ * @returns
+ */
 export const addUser = (userData: IUser): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         /** Check if email is in use */
@@ -85,9 +63,21 @@ export const addUser = (userData: IUser): Promise<any> => {
     });
 };
 
+/**
+ * Registers user via simple register route
+ * Todo: add password to user schema. Right now we are adding a user without password.
+ * @param req contains all user data
+ * @param res replys JWT to user
+ * @returns in case of an error returns error message
+ */
 export const register = async (req: Request, res: Response) => {
     try {
         const userData: IUser = await joiRegister.validateAsync(req.body);
+
+        /*  Hash password and delete duplicate after validating password 
+            data.password = hash.hash(data.password)
+            delete data['repeatPassword'] */
+
         await dbUser.checkEmailAlreadyInUse(userData.email).then(() => {
             dbUser.addUserToDB(userData).then((userID) => {
                 signToken(userID._id).then((result) =>
