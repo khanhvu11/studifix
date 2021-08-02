@@ -4,10 +4,17 @@ import logging from './config/logging';
 import config from './config/config';
 import userRoutes from './routes/user';
 import dataRoutes from './routes/data';
+import scholarshipRoutes from './routes/scholarship';
+import applicationRoutes from './routes/application';
+import filterRoutes from './routes/filter';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import swaggerUI from 'swagger-ui-express';
-import { specs } from './config/swagger';
+import YAML from 'yamljs';
+
+const path = require('path');
+const swagger_path = path.resolve(__dirname, './swagger.yaml');
+const swaggerDocument = YAML.load(swagger_path);
 
 const LOCATION = 'Server';
 const router = express();
@@ -58,9 +65,12 @@ router.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 /** ROUTES */
-router.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs));
-router.use('/api/users', userRoutes);
+router.use('/api/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+router.use('/api/user', userRoutes);
 router.use('/api/data', dataRoutes);
+router.use('/api/scholarships', scholarshipRoutes);
+router.use('/api/application', applicationRoutes);
+router.use('/api/filter', filterRoutes);
 
 /** ERRORS */
 router.use((req: Request, res: Response, next: NextFunction) => {
