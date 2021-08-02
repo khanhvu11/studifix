@@ -1508,8 +1508,8 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/Scholarship'
-                '405':
-                    description: 'Invalid input'
+                '400':
+                    description: 'Bad request'
     /api/scholarships:
         post:
             tags:
@@ -1922,97 +1922,90 @@ paths:
                 - 'application/json'
             produces:
                 - 'application/json'
-            parameters:
-                - in: 'body'
-                  required: true
-                  name: 'body'
-                  description: User, scholarship and provider data together with filter data by user is needed to apply for a scholarship
-                  schema:
-                      required:
-                          - scholarship
-                      type: object
-                      properties:
-                          scholarship:
-                              description: scholarship ID
-                              type: string
-                          user:
-                              description: user ID
-                              type: string
-                          provider:
-                              description: provider ID
-                              type: string
-                          FilterData:
-                              type: object
-                              description: Given filter data to save with application
-                              properties:
-                                  semester:
-                                      type: number
-                                  workExperience:
-                                      type: number
-                                  sidejobHours:
-                                      type: number
-                                  collegeGrade:
-                                      type: number
-                                  jobGrade:
-                                      type: number
-                                  uniGrade:
-                                      type: number
-                                  nationality:
-                                      type: array
-                                      items:
-                                          type: string
-                                  nationalityDetail:
-                                      type: array
-                                      items:
-                                          type: string
-                                  requirement:
-                                      type: array
-                                      items:
-                                          type: string
-                                  religion:
-                                      type: array
-                                      items:
-                                          type: string
-                                  occupation:
-                                      type: array
-                                      items:
-                                          type: string
-                                  graduation:
-                                      type: array
-                                      items:
-                                          type: string
-                                  course:
-                                      type: array
-                                      items:
-                                          type: string
-                                  commitment:
-                                      type: array
-                                      items:
-                                          type: string
-                                  support:
-                                      type: array
-                                      items:
-                                          type: string
-                                  reference:
-                                      type: array
-                                      items:
-                                          type: string
-                                  state:
-                                      type: array
-                                      items:
-                                          type: string
-                                  supportYet:
-                                      type: boolean
+            requestBody:
+                required: true
+                description: User, scholarship and provider data together with filter data by user is needed to apply for a scholarship
+                content:
+                    application/json:
+                        schema:
+                            required:
+                                - scholarship
+                            type: object
+                            properties:
+                                scholarship:
+                                    description: scholarship ID
+                                    type: string
+                                user:
+                                    description: user ID
+                                    type: string
+                                provider:
+                                    description: provider ID
+                                    type: string
+                                FilterData:
+                                    type: object
+                                    description: Given filter data to save with application
+                                    properties:
+                                        semester:
+                                            type: number
+                                        workExperience:
+                                            type: number
+                                        sidejobHours:
+                                            type: number
+                                        collegeGrade:
+                                            type: number
+                                        jobGrade:
+                                            type: number
+                                        uniGrade:
+                                            type: number
+                                        nationality:
+                                            type: array
+                                            items:
+                                                type: string
+                                        nationalityDetail:
+                                            type: array
+                                            items:
+                                                type: string
+                                        requirement:
+                                            type: array
+                                            items:
+                                                type: string
+                                        religion:
+                                            type: array
+                                            items:
+                                                type: string
+                                        occupation:
+                                            type: array
+                                            items:
+                                                type: string
+                                        graduation:
+                                            type: array
+                                            items:
+                                                type: string
+                                        course:
+                                            type: array
+                                            items:
+                                                type: string
+                                        commitment:
+                                            type: array
+                                            items:
+                                                type: string
+                                        support:
+                                            type: array
+                                            items:
+                                                type: string
+                                        reference:
+                                            type: array
+                                            items:
+                                                type: string
+                                        state:
+                                            type: array
+                                            items:
+                                                type: string
+                                        supportYet:
+                                            type: boolean
             responses:
                 '200':
-                    description: 'Application ID'
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                properties:
-                                    id:
-                                        type: string
+                    description: OK
     /api/user/login:
         post:
             tags:
@@ -2115,95 +2108,98 @@ paths:
                 - 'application/json'
             produces:
                 - 'application/json'
-            parameters:
-                - in: 'body'
-                  required: true
-                  name: 'body'
-                  schema:
-                      type: object
-                      properties:
-                          commitment:
-                              type: array
-                              nullable: true
-                              description: array of object ID's
-                              items:
-                                  type: string
-                          occupation:
-                              type: array
-                              description: array of object ID's
-                              items:
-                                  type: string
-                          graduation:
-                              type: array
-                              description: array of object ID's
-                              items:
-                                  type: string
-                          course:
-                              type: array
-                              description: array of object ID's
-                              items:
-                                  type: string
-                          support:
-                              type: array
-                              nullable: true
-                              description: array of object ID's
-                              items:
-                                  type: string
-                          state:
-                              type: array
-                              nullable: true
-                              description: array of object ID's
-                              items:
-                                  type: string
-                          nationality:
-                              type: array
-                              description: array of object ID's
-                              items:
-                                  type: string
-                          religion:
-                              type: array
-                              description: array of object ID's
-                              items:
-                                  type: string
-                          requirement:
-                              type: array
-                              nullable: true
-                              description: array of object ID's
-                              items:
-                                  type: string
-                          reference:
-                              type: array
-                              nullable: true
-                              description: array of object ID's
-                              items:
-                                  type: string
-                          nationalityDetail:
-                              type: array
-                              nullable: true
-                              description: array of object ID's
-                              items:
-                                  type: string
-                          supportYet:
-                              type: string
-                          workExperience:
-                              type: number
-                              nullable: true
-                          sidejobHours:
-                              type: number
-                              nullable: true
-                          collegeGrade:
-                              type: number
-                              nullable: true
-                          jobGrade:
-                              type: number
-                              nullable: true
-                          uniGrade:
-                              type: number
-                              nullable: true
-                          semester:
-                              type: number
-                          age:
-                              type: number
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                filterData:
+                                    type: object
+                                    properties:
+                                        commitment:
+                                            type: array
+                                            nullable: true
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        occupation:
+                                            type: array
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        graduation:
+                                            type: array
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        course:
+                                            type: array
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        support:
+                                            type: array
+                                            nullable: true
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        state:
+                                            type: array
+                                            nullable: true
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        nationality:
+                                            type: array
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        religion:
+                                            type: array
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        requirement:
+                                            type: array
+                                            nullable: true
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        reference:
+                                            type: array
+                                            nullable: true
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        nationalityDetail:
+                                            type: array
+                                            nullable: true
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        supportYet:
+                                            type: string
+                                        workExperience:
+                                            type: number
+                                            nullable: true
+                                        sidejobHours:
+                                            type: number
+                                            nullable: true
+                                        collegeGrade:
+                                            type: number
+                                            nullable: true
+                                        jobGrade:
+                                            type: number
+                                            nullable: true
+                                        uniGrade:
+                                            type: number
+                                            nullable: true
+                                        semester:
+                                            type: number
+                                        age:
+                                            type: number
             responses:
                 '200':
                     description: 'Array of matching scholarships'
