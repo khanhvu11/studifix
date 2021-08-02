@@ -21,7 +21,7 @@ function Filter({ cls, labels, func, lang, obj }) {
   const [error, setError] = useState('');
 
   useEffect(()=>{
-    window.scrollTo(0, 0);
+   /*  window.scrollTo(0, 0); */
   }, [])
 
   // function for showing next category
