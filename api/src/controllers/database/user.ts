@@ -1,6 +1,11 @@
 import user from '../../interfaces/user';
 import UserSchema from '../../models/user/user';
 
+/**
+ * Trying to get user by id
+ * @param email given mail by user
+ * @returns if there is an user returns error | empty array
+ */
 const checkEmailAlreadyInUse = (email: string): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         UserSchema.findOne({ email })
@@ -18,6 +23,11 @@ const checkEmailAlreadyInUse = (email: string): Promise<any> => {
     });
 };
 
+/**
+ * Adds new user to database
+ * @param userData all user relevant data
+ * @returns user id | error
+ */
 const addUserToDB = (userData: user): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         UserSchema.create(userData)
@@ -30,6 +40,11 @@ const addUserToDB = (userData: user): Promise<any> => {
     });
 };
 
+/**
+ * Read user data by mail
+ * @param email user given mail
+ * @returns user data | error
+ */
 const getUserDataByMail = (email: string): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         UserSchema.findOne({ email })
@@ -43,38 +58,4 @@ const getUserDataByMail = (email: string): Promise<any> => {
     });
 };
 
-const getUserDataByID = (_id: string): Promise<any> => {
-    return new Promise(async (resolve, reject) => {
-        const populate = [
-            'occupations',
-            'responsible',
-            'graduations',
-            'religions',
-            'commitments',
-            'provider',
-            'country',
-            'city',
-            'state',
-            'institution',
-            'nationalities',
-            'referenceDetails',
-            'courses',
-            'requirements',
-            'supports'
-        ];
-        var pQuery = [{ path: 'scholarships.scholarship', populate }];
-
-        UserSchema.findOne({ _id })
-            .populate(pQuery)
-            .exec()
-            .then((results) => {
-                // console.log(results?.scholarships);
-                resolve(results);
-            })
-            .catch((error) => {
-                reject(error);
-            });
-    });
-};
-
-export default { checkEmailAlreadyInUse, addUserToDB, getUserDataByMail, getUserDataByID };
+export default { checkEmailAlreadyInUse, addUserToDB, getUserDataByMail };

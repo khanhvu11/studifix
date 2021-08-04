@@ -8,6 +8,8 @@ const router = express.Router();
  * we descided to do it that way. This part isn't REST conform.
  * Todo: rework filter process and use query params. Also see comments in scholarship routes.
  */
+
+// starts all with '/filter'
 router.post('/scholarships', filterScholarships);
 
 export = router;
