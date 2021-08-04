@@ -82,9 +82,3 @@ router.use((req: Request, res: Response, next: NextFunction) => {
 /** SERVER */
 const httpServer = http.createServer(router);
 httpServer.listen(config.server.port, () => logging.info(LOCATION, `Server running on ${config.server.hostname}:${config.server.port}`));
-function extended(
-    extended: any,
-    arg1: boolean
-): import('express-serve-static-core').RequestHandler<import('express-serve-static-core').ParamsDictionary, any, any, import('qs').ParsedQs, Record<string, any>> {
-    throw new Error('Function not implemented.');
-}

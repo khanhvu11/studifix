@@ -2,6 +2,11 @@ import { IFilterData } from '../interfaces/filterData';
 import { ObjectId as mongoObjectIdType } from 'mongoose';
 const { ObjectId } = require('mongodb');
 
+/**
+ * Refactors array of string to array of ObjectIDs so that mongo db can work with the data
+ * @param idList list of ObjectIds from different categories
+ * @returns refactored idList | [String] -> [ObjectId]
+ */
 export const refactorIDs = (idList: string[]): any[] => {
     let tempArray: mongoObjectIdType[] = [];
 
@@ -12,6 +17,17 @@ export const refactorIDs = (idList: string[]): any[] => {
     return tempArray;
 };
 
+/**
+ * Checks for every category if any value is given and then combines them in a big object.
+ * We're using the mongoose syntax to filter data:
+ * Filter object for mongoose : {$and: [<ArrayOfFilterCommands>]}  | $and ==> every filter command must match
+ * ArrayOfFilterCommands: {$or: [<ArrayOfExactFilterValues>]} | Each category can eigther have a null value or an object with {$in: [ids]}
+ * $in ==> stands for one of.
+ * The search object is then used to do the db request.
+ * sometimes we're using $lt and $gt which stands for greater and littler than and is used to compare numbers to evaluate if the value is in range.
+ * @param idLists object with all categories and associated ids
+ * @returns filter object
+ */
 export const scholarshipFilterqueryGenerator = (idLists: IFilterData): any => {
     let tempArray = [];
 
