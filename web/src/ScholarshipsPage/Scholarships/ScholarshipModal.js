@@ -22,7 +22,7 @@ export default function ScholarshipModal({scholarship, usr_selection, show, onHi
   useEffect(()=>{
 
     //get scholarship      
-    fetch(URL + `/api/data/scholarship/${scholarship._id}`)
+    fetch(URL + `/api/scholarship/${scholarship._id}`)
     .then((response) => {
       // check for error response
       if (!response.ok) {
