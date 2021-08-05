@@ -37,7 +37,7 @@ function ApplyingMain(props) {
   
   // to review page
   var toReview = () => {
-    fetch(URL + '/api/data/application', {
+    fetch(URL + '/api/application', {
       method: 'POST',
       body: JSON.stringify({
         scholarship: props.scholarshipId,

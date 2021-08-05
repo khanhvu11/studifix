@@ -42,7 +42,7 @@ export default function ApplyingProcess(props) {
         window.scrollTo(0, 0);
 
         //get selectiondata      
-        fetch(URL + '/api/data/applicationdata')
+        fetch(URL + '/api/data/application')
         .then((response) => response.json())
         .then((items) => {
             setApplicationData(items.applicationData);
