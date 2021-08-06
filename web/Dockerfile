@@ -10,7 +10,10 @@ RUN npm install
 
 COPY . ./
 
-ENV REACT_APP_API_URL_PREFIX=http://localhost
+# Quick Fix
+# ENV REACT_APP_API_URL_PREFIX=http://localhost
+ENV REACT_APP_API_URL_PREFIX=http://studifix.mi.hdm-stuttgart.de
+
 
 CMD ["npm", "start"]    
 
