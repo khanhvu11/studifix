@@ -8,6 +8,8 @@ const router = express.Router();
  * Todo: change route in front and backend to [GET] and filter scholarships via query params.
  * Todo: problem is that you can filter by more than one value per attribute.
  */
+
+// scholarships routes | starts all with '/scholarships'
 router.get('/:_id', getScholarshipDetails);
 router.post('/', addNewScholarship);
 

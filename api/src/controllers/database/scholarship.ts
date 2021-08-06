@@ -7,6 +7,7 @@ import LocalizationSchema from '../../models/components/localization';
 import { scholarshipFilterqueryGenerator } from '../../helpers/dataBase';
 import { populationLocalizationsGenerator, populationValuesGenerator } from '../../helpers/population';
 
+// fixed values to set population paths for object values
 const populationValues = [
     'institution',
     'occupation',
@@ -27,6 +28,7 @@ const populationValues = [
     'provider'
 ];
 
+// fixed values to set population paths for localizations
 const populationLocalizations = [
     'link',
     'semester',
@@ -61,6 +63,10 @@ const populationLocalizations = [
     'advancementTime'
 ];
 
+/**
+ * Reads filter data from mongo db and populates the given values
+ * @returns filter data | error
+ */
 export const getFilterDataFromDB = (): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         console.log('request');
@@ -89,6 +95,10 @@ export const getFilterDataFromDB = (): Promise<any> => {
     });
 };
 
+/**
+ * Reads filter data from mongo db and populates the given values
+ * @returns application data | error
+ */
 export const getApplicationDataFromDB = (): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         let filter: any = {};
@@ -109,6 +119,11 @@ export const getApplicationDataFromDB = (): Promise<any> => {
     });
 };
 
+/**
+ * Reads all scholarships according to the users filter preferences from mongo db and populates it by given population values
+ * @param userInput object with user preferences
+ * @returns array of matching scholarships | error
+ */
 export const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         let filter = scholarshipFilterqueryGenerator(userInput.filterData);
@@ -125,6 +140,11 @@ export const filterScholarshipsByUserInput = (userInput: any = {}): Promise<any>
     });
 };
 
+/**
+ * Reads only one scholarship by given id
+ * @param _id scholarship id
+ * @returns one matching scholarship
+ */
 export const getScholarshipByID = (_id: string): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         ScholarshipSchema.findOne({ _id }, { _id: 0, name: 1, link: 1, state: 1, advancementDetail: 1, advancementTime: 1, institution: 1, imgURL: 1 })
@@ -139,6 +159,11 @@ export const getScholarshipByID = (_id: string): Promise<any> => {
     });
 };
 
+/**
+ * Adds a new entry to scholarship collection
+ * @param scholarshipData user given scholarship data
+ * @returns scholarship id
+ */
 export const addScholarshipToBD = (scholarshipData: {}): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         ScholarshipSchema.create(scholarshipData)
@@ -149,12 +174,17 @@ export const addScholarshipToBD = (scholarshipData: {}): Promise<any> => {
     });
 };
 
+/**
+ * Gets array of all localizations and converts it into an object.
+ * @returns object of localizations
+ */
 export const getLocalizations = (): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         LocalizationSchema.find({}, { _id: 0 })
             .exec()
             .then((result) => {
                 const tempObj: any = {};
+                // get label of every element in array and fills all content by this name into an object
                 result.map((local: any) => {
                     tempObj[local.label] = local;
                 });
@@ -164,6 +194,11 @@ export const getLocalizations = (): Promise<any> => {
     });
 };
 
+/**
+ * Add a new application to mongo db
+ * @param application application data given by user and collected from database
+ * @returns application id
+ */
 export const addNewApplication = (application: any): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         ApplicationSchema.create(application)
@@ -174,6 +209,11 @@ export const addNewApplication = (application: any): Promise<any> => {
     });
 };
 
+/**
+ * Reads provider id from scholarships collection by scholarship id
+ * @param scholarshipID given id by user
+ * @returns provider id
+ */
 export const getProviderByScholarshipID = (scholarshipID: any): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         ScholarshipSchema.findOne({ _id: scholarshipID }, { provider: 1, _id: 0 })
@@ -184,6 +224,11 @@ export const getProviderByScholarshipID = (scholarshipID: any): Promise<any> => 
     });
 };
 
+/**
+ * Reads application by id and populates given values and removes version, updated timestamp and id
+ * @param _id given application id
+ * @returns One application
+ */
 export const getApplicationByID = (_id: string): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         ApplicationSchema.findOne({ _id }, { updatedAt: 0, __v: 0, _id: 0 })
