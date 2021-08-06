@@ -18,11 +18,12 @@ export default function ScholarshipModal({scholarship, usr_selection, show, onHi
 
   const [scholarshipModal, setScholarshipModal] = useState({})
   const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
+  const scholarshipInformation = ['link', 'state', 'institution', 'advancementDetail', 'advancementTime']
 
   useEffect(()=>{
 
     //get scholarship      
-    fetch(URL + `/api/scholarship/${scholarship._id}`)
+    fetch(URL + `/api/scholarships/${scholarship._id}`)
     .then((response) => {
       // check for error response
       if (!response.ok) {
@@ -54,7 +55,7 @@ export default function ScholarshipModal({scholarship, usr_selection, show, onHi
             case null: return <p>Keine Beschränkung</p>
             case true: return <p>Ja</p>
             case false: return <p>Nein</p>
-            default: return <p>{category.value}</p>
+            default: /* return <p>{category.value}</p> */ return null
         }
       }
     }
@@ -102,7 +103,8 @@ export default function ScholarshipModal({scholarship, usr_selection, show, onHi
             </button>
            </div>
           <div className="scholarshipModal__content">
-            {scholarshipModal && Object.keys(scholarshipModal).map((key,id) => scholarshipModal[key].localization?
+            {/* Object.keys(scholarshipModal) */}
+            {scholarshipModal && scholarshipInformation.map((key,id) => scholarshipModal[key] && scholarshipModal[key].localization?
               <ul key={id}>
                   <li>{addingLogo(key)}<h3>{scholarshipModal[key].localization.title.DE}</h3></li>
                   {(Array.isArray(scholarshipModal[key].value))? iterateArray(scholarshipModal[key].value):(typeof scholarshipModal[key].value !=='object' ||  scholarship[key].value === null)? notArrayValue(scholarship[key], key):(scholarship[key].value.title && <p>{scholarship[key].value.title.DE}</p>)||<p>{scholarship[key].value.name}</p>}
