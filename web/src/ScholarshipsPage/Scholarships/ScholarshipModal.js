@@ -1,22 +1,25 @@
-import React, { useEffect, useState } from 'react'
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
-import {Link} from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faExternalLinkAlt,
   faGlobeEurope,
   faUniversity,
   faMoneyCheckAlt,
-  faCalendarAlt
+  faCalendarAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
+import './scholarshipModal.css';
 
-import './scholarshipModal.css'
-
-export default function ScholarshipModal({scholarship, usr_selection, show, onHide}) {
-
-  const [scholarshipModal, setScholarshipModal] = useState({})
+export default function ScholarshipModal({
+  scholarship,
+  usr_selection,
+  show,
+  onHide,
+}) {
+  const [scholarshipModal, setScholarshipModal] = useState({});
   const URL = process.env.REACT_APP_API_URL_PREFIX || 'http://localhost';
   const scholarshipInformation = ['link', 'state', 'institution', 'advancementDetail', 'advancementTime']
 
@@ -32,14 +35,13 @@ export default function ScholarshipModal({scholarship, usr_selection, show, onHi
         return Promise.reject(error);
       }
 
-      return response.json()
-    })
-    .then((items) => {
-      console.log(items)
-      setScholarshipModal(items.scholarship);
-    });
-
-  }, [URL])
+        return response.json();
+      })
+      .then((items) => {
+        console.log(items);
+        setScholarshipModal(items.scholarship);
+      });
+  }, [URL]);
 
   console.log(scholarshipModal)
     // get value of category, which is an array
@@ -59,21 +61,47 @@ export default function ScholarshipModal({scholarship, usr_selection, show, onHi
         }
       }
     }
-    // append logo before every text
-    var addingLogo = (key) => {
-      switch(key){
-        case 'link': return <div className='modalIcon'><FontAwesomeIcon icon={faExternalLinkAlt} /></div>
-        case 'state': return <div className='modalIcon'><FontAwesomeIcon icon={faGlobeEurope} /></div>
-        case 'institution': return <div className='modalIcon'><FontAwesomeIcon icon={faUniversity} /></div>
-        case 'advancementDetail': return <div className='modalIcon'><FontAwesomeIcon icon={faMoneyCheckAlt} /></div>
-        case 'advancementTime': return <div className='modalIcon'><FontAwesomeIcon icon={faCalendarAlt} /></div>
-        default: return null
-      }
+  // append logo before every text
+  var addingLogo = (key) => {
+    switch (key) {
+      case 'link':
+        return (
+          <div className="modalIcon">
+            <FontAwesomeIcon icon={faExternalLinkAlt} />
+          </div>
+        );
+      case 'state':
+        return (
+          <div className="modalIcon">
+            <FontAwesomeIcon icon={faGlobeEurope} />
+          </div>
+        );
+      case 'institution':
+        return (
+          <div className="modalIcon">
+            <FontAwesomeIcon icon={faUniversity} />
+          </div>
+        );
+      case 'advancementDetail':
+        return (
+          <div className="modalIcon">
+            <FontAwesomeIcon icon={faMoneyCheckAlt} />
+          </div>
+        );
+      case 'advancementTime':
+        return (
+          <div className="modalIcon">
+            <FontAwesomeIcon icon={faCalendarAlt} />
+          </div>
+        );
+      default:
+        return null;
     }
+  };
 
-    return (
-      scholarshipModal &&
-        <Modal
+  return (
+    scholarshipModal && (
+      <Modal
         show={show}
         onHide={onHide}
         size="xl"
@@ -109,14 +137,17 @@ export default function ScholarshipModal({scholarship, usr_selection, show, onHi
                   <li>{addingLogo(key)}<h3>{scholarshipModal[key].localization.title.DE}</h3></li>
                   {(Array.isArray(scholarshipModal[key].value))? iterateArray(scholarshipModal[key].value):(typeof scholarshipModal[key].value !=='object' ||  scholarship[key].value === null)? notArrayValue(scholarship[key], key):(scholarship[key].value.title && <p>{scholarship[key].value.title.DE}</p>)||<p>{scholarship[key].value.name}</p>}
               </ul>:null)
-          }
+            }
           </div>
-        </div>
+          </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant='secondary' onClick={onHide}>Close</Button>
+          <Button variant="secondary" onClick={onHide}>
+            Close
+          </Button>
           {/* <Button variant='primary'><Link to={{pathname:'/applying', state:{scholarship, usr_selection}}}>Bewerb dich jetzt</Link></Button> */}
         </Modal.Footer>
       </Modal>
     )
+  );
 }

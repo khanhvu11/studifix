@@ -12,6 +12,7 @@ import cors from 'cors';
 import swaggerUI from 'swagger-ui-express';
 import YAML from 'yamljs';
 
+// get path and load swagger.yaml
 const path = require('path');
 const swagger_path = path.resolve(__dirname, './swagger.yaml');
 const swaggerDocument = YAML.load(swagger_path);
@@ -19,9 +20,7 @@ const swaggerDocument = YAML.load(swagger_path);
 const LOCATION = 'Server';
 const router = express();
 
-/** CONNECT TO DB */
-console.log(config.mongo.url);
-
+// set cors options
 const options: cors.CorsOptions = {
     allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token'],
     credentials: true,
@@ -30,8 +29,10 @@ const options: cors.CorsOptions = {
     preflightContinue: false
 };
 
+// apply cors options
 router.use(cors(options));
 
+// connect to mongo db via mongoose
 mongoose
     .connect(config.mongo.url, config.mongo.options)
     .then(() => {
@@ -41,6 +42,7 @@ mongoose
         logging.error(LOCATION, error.message, error);
     });
 
+// use router to log all incoming and outgoing requests/responses
 router.use((req: Request, res: Response, next: NextFunction) => {
     logging.info(LOCATION, `METHOD - [${req.method}], URL - [${req.url}], IP - [${req.socket.remoteAddress}]`);
 
@@ -50,7 +52,7 @@ router.use((req: Request, res: Response, next: NextFunction) => {
     next();
 });
 
-/** RULES */
+// set rules for express service
 router.use(express.json({ limit: '20mb' }) as RequestHandler);
 router.use(express.urlencoded({ extended: true, limit: '20mb' }) as RequestHandler);
 
@@ -64,7 +66,7 @@ router.use((req: Request, res: Response, next: NextFunction) => {
     next();
 });
 
-/** ROUTES */
+// all available routes
 router.use('/api/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 router.use('/api/user', userRoutes);
 router.use('/api/data', dataRoutes);
@@ -72,19 +74,12 @@ router.use('/api/scholarships', scholarshipRoutes);
 router.use('/api/application', applicationRoutes);
 router.use('/api/filter', filterRoutes);
 
-/** ERRORS */
+// default response (404)
 router.use((req: Request, res: Response, next: NextFunction) => {
     const error = new Error('not found');
-
     return res.status(404).json({ message: error.message });
 });
 
-/** SERVER */
+// start express server
 const httpServer = http.createServer(router);
 httpServer.listen(config.server.port, () => logging.info(LOCATION, `Server running on ${config.server.hostname}:${config.server.port}`));
-function extended(
-    extended: any,
-    arg1: boolean
-): import('express-serve-static-core').RequestHandler<import('express-serve-static-core').ParamsDictionary, any, any, import('qs').ParsedQs, Record<string, any>> {
-    throw new Error('Function not implemented.');
-}

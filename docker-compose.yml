@@ -33,6 +33,5 @@ services:
     build:
       context: ./proxy
       dockerfile: Dockerfile
-    restart: always
     ports:
       - '80:80'

@@ -1,3 +1,9 @@
+/**
+ * this file is used to reduce code when logging precise information instead of only firing console logs
+ * we can describe logs as info, debugs, warnings or errors
+ */
+
+// create timestamp
 const timestamp = (): string => {
     return new Date().toISOString();
 };

@@ -9,7 +9,7 @@ import { joiRegister } from '../../models/joi/register';
 /**
  * Generates Token when user credentials are valid
  * @param req contains user login data
- * @param res jwt
+ * @param res Jason Web Token
  * @returns in case of an error returns message to client
  */
 export const getToken = async (req: Request, res: Response) => {
@@ -44,7 +44,7 @@ export const getToken = async (req: Request, res: Response) => {
  * Right now there are two methods to handle registering.
  * Todo: combine both methods and handle registering in one method.
  * @param userData
- * @returns
+ * @returns user id or error
  */
 export const addUser = (userData: IUser): Promise<any> => {
     return new Promise(async (resolve, reject) => {
