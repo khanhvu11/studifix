@@ -9,6 +9,7 @@ import { populationLocalizationsGenerator, populationValuesGenerator } from '../
 
 // fixed values to set population paths for object values
 const populationValues = [
+    'advancement',
     'institution',
     'occupation',
     'graduation',
@@ -56,6 +57,7 @@ const populationLocalizations = [
     'nationality',
     'nationalityDetail',
     'requirement',
+    'responsible',
     'commitment',
     'imgURL',
     'advancement',
