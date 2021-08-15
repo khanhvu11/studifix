@@ -8,7 +8,7 @@ import TextInput from './TextInput'
 import ListType from '../Review/ListType'
 import CheckBox from './Checkbox' */
 
-import Filter from './ApplyingMain/ApplyingMain';
+import ApplyingMain from './ApplyingMain/ApplyingMain';
 import NavBar from './NavBar/NavBar';
 
 import Navbar from '../ScholarshipsPage/Navbar/Navbar'
@@ -32,6 +32,7 @@ export default function ApplyingProcess(props) {
     const [applicationData, setApplicationData] = useState({})
 
     const language = 'DE';
+    //group categories, e.g: first name and last name into Name, ...
     const [groupName, setGroupName] = useState('');
     const groupNameList = ['Name', 'Geburtsdatum', 'Adresse', 'Kontaktdaten', 'Familienstand']
 
@@ -41,7 +42,7 @@ export default function ApplyingProcess(props) {
         window.scrollTo(0, 0);
 
         //get selectiondata      
-        fetch(URL + '/api/data/applicationdata')
+        fetch(URL + '/api/data/application')
         .then((response) => response.json())
         .then((items) => {
             setApplicationData(items.applicationData);
@@ -72,7 +73,7 @@ export default function ApplyingProcess(props) {
         }
     } */
 
-
+    //if no data is sent back, go back to filter page
     if(typeof state === 'undefined'){
         history.push({
             pathname: '/'
@@ -84,7 +85,7 @@ export default function ApplyingProcess(props) {
                     <h1><span>Studi</span>fix</h1>
                     <Navbar/>
             </div>
-            <div>Please go back to filter process and select your scholarship</div>
+            <div>Please go back to ApplyingMain process and select your scholarship</div>
             <Footer/>
         </div>
         ) */
@@ -105,7 +106,7 @@ export default function ApplyingProcess(props) {
                 lang={language} 
                 groupNameList={groupNameList} 
                 />
-            {applicationData && <Filter
+            {applicationData && <ApplyingMain
                 groupName={groupName}
                 setGroupName={_setGroupName}
                 lang={language}

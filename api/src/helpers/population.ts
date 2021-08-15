@@ -1,73 +1,47 @@
-import { populationLocalizationsGenerator, populationValuesGenerator } from './dataBase';
+/**
+ * Merges incoming words with special ending '.value' to be used as an populator for mongo db
+ * @param attributes attribute names
+ * @returns array of new attribute names
+ */
+export const populationValuesGenerator = (attributes: string[]): string => {
+    let tempArr: string[] = [];
 
-export const populateScholarshipsValues = (): {} => {
-    const values = [
-        'institution',
-        'occupation',
-        'graduation',
-        'course',
-        'country',
-        'city',
-        'state',
-        'collegeGraduationState',
-        'nationality',
-        'nationalityDetail',
-        'religion',
-        'commitment',
-        'support',
-        'requirement',
-        'referenceDetail',
-        'responsible',
-        'provider'
-    ];
+    attributes.map((attr) => {
+        tempArr.push(attr + '.value');
+    });
 
-    return populationValuesGenerator(values);
+    return tempArr.join(' ');
 };
 
-export const populateScholarshipsLocals = (): {} => {
-    const localizations = [
-        'link',
-        'semester',
-        'referenceRequiered',
-        'referenceAllowed',
-        'age',
-        'collegeGraduation',
-        'collegeGraduationState',
-        'jobTrainingGraduation',
-        'uniGraduation',
-        'sideJobAllowed',
-        'currentJobHours',
-        'specialJobExperience',
-        'course',
-        'country',
-        'city',
-        'state',
-        'institution',
-        'graduation',
-        'occupation',
-        'religion',
-        'support',
-        'provider',
-        'referenceDetail',
-        'nationality',
-        'nationalityDetail',
-        'requirement',
-        'commitment',
-        'imgURL',
-        'advancement',
-        'advancementDetail',
-        'advancementTime'
-    ];
+/**
+ * Merges incoming words with special ending '.localization' to be used as an populator for mongo db
+ * @param attributes attribute names
+ * @returns array of new attribute names
+ */
+export const populationLocalizationsGenerator = (attributes: string[]): string => {
+    let tempArr: string[] = [];
 
-    return populationLocalizationsGenerator(localizations);
+    attributes.map((attr) => {
+        tempArr.push(attr + '.localization');
+    });
+
+    return tempArr.join(' ');
 };
 
+/**
+ * Gives population values to populate specific paths in db
+ * @returns population values
+ */
 export const populateScholarshipDetailValues = (): {} => {
     const values = ['advancementDetail', 'advancementTime', 'state', 'institution'];
 
     return populationValuesGenerator(values);
 };
 
+/**
+ * Gives population values to populate specific paths in db
+ * @returns population values
+ */
 export const populateScholarshipsDetailLocals = (): {} => {
     const localizations = ['link', 'advancementDetail', 'advancementTime', 'state', 'name', 'institution'];
 

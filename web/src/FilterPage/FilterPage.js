@@ -22,10 +22,10 @@ export default function FilterPage() {
   console.log(URL);
   // get filterData from Backend
   useEffect(() => {
-    window.scrollTo(0, 0);
+    /* window.scrollTo(0, 0); */
     /* https://studifix-mock-api-default-rtdb.europe-west1.firebasedatabase.app/.json */
     /* http://localhost:4000/data/filterdata */
-    fetch(URL + '/api/data/filterdata')
+    fetch(URL + '/api/data/filter')
       //fetch('http://studifix.mi.hdm-stuttgart.de/api/data/filterdata')
       .then((response) => response.json())
       .then((items) => {
@@ -65,7 +65,7 @@ export default function FilterPage() {
           obj={listCat}
         />
       )}
-      <div className="footer footer-sm">
+      <div data-testid='footer' className="footer footer-sm">
         {/* <button type='submit' className="btn btn-primary btn-lg">Submit</button> */}
         <div className="support">
           <p>

@@ -21,7 +21,7 @@ function Filter({ cls, labels, func, lang, obj }) {
   const [error, setError] = useState('');
 
   useEffect(()=>{
-    window.scrollTo(0, 0);
+   /*  window.scrollTo(0, 0); */
   }, [])
 
   // function for showing next category
@@ -88,7 +88,7 @@ function Filter({ cls, labels, func, lang, obj }) {
 
     // fetch('http://studifix.mi.hdm-stuttgart.de/api/data/filter/scholarships', {
       if(!error){
-        fetch(URL + '/api/data/filter/scholarships', {
+        fetch(URL + '/api/filter/scholarships', {
           method: 'POST',
           body: JSON.stringify({ filterData: result }),
           headers: { 'Content-type': 'application/json' },

@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+// All variables are default set in case there is no env. var.
 const MONGO_PREFIX = 'mongodb';
 const MONGO_USERNAME = process.env.MONGO_USERNAME || 'root';
 const MONGO_PASSWORD = process.env.MONGO_USERNAME || 'password';
@@ -12,6 +13,7 @@ const DB_NAME = 'studifix';
 const SERVER_HOSTNAME = process.env.SERVER_HOSTNAME || 'localhost';
 const SERVER_PORT = 4000;
 
+// Options for database
 const MONGO_OPTIONS = {
     useUnifiedTopology: true,
     useNewUrlParser: true,
@@ -23,6 +25,7 @@ const MONGO_OPTIONS = {
     authSource: 'admin'
 };
 
+// mongo db connection data
 const MONGO = {
     host: MONGO_HOST,
     password: MONGO_PASSWORD,

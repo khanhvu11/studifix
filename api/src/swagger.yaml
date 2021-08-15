@@ -1,0 +1,2211 @@
+openapi: 3.0.0
+info:
+    description: 'All Routes according Studifix Backend'
+    version: '3.0.0'
+    title: 'Studifix'
+    contact:
+        email: 'lf054@hdm-stuttgart.de'
+    license:
+        name: 'Apache 2.0'
+        url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+
+tags:
+    - name: 'Scholarship'
+      description: 'Everything about scholarships'
+    - name: 'Application'
+      description: 'Everything about Applications'
+    - name: 'User'
+      description: 'Everything about Users'
+    - name: 'Data'
+      description: 'Everything about Data processing'
+    - name: 'Filter'
+      description: 'Everything about Filtering'
+
+components:
+    schemas:
+        Title:
+            type: object
+            properties:
+                DE:
+                    type: string
+                EN:
+                    type: string
+                FR:
+                    type: string
+        Description:
+            type: object
+            properties:
+                DE:
+                    type: string
+                EN:
+                    type: string
+                FR:
+                    type: string
+        DescriptionDetail:
+            type: object
+            properties:
+                DE:
+                    type: string
+                EN:
+                    type: string
+                FR:
+                    type: string
+
+        FilterData:
+            type: object
+            properties:
+                semester:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                collegeGrade:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                jobGrade:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                uniGrade:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                workExperience:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                sidejobHours:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                supportYet:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                age:
+                    type: object
+                    properties:
+                        values:
+                            type: string
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                nationality:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                nationalityDetail:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                religion:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                requirement:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                occupation:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                course:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                        dependence:
+                            type: string
+                commitment:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                support:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                reference:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                country:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                state:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                city:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                graduation:
+                    type: object
+                    properties:
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        mandatory:
+                            type: boolean
+                        multiselect:
+                            type: boolean
+                        dependence:
+                            type: string
+
+        ApplicationData:
+            type: object
+            properties:
+                firstName:
+                    type: object
+                    properties:
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+
+                lastName:
+                    type: object
+                    properties:
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+
+                dateOfBirth:
+                    type: object
+                    properties:
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+
+                street:
+                    type: object
+                    properties:
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+
+                number:
+                    type: object
+                    properties:
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+
+                ZIP:
+                    type: object
+                    properties:
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+
+                mail:
+                    type: object
+                    properties:
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+
+                mobile:
+                    type: object
+                    properties:
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+
+                placeOfBirth:
+                    type: object
+                    properties:
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                countryOfBirth:
+                    type: object
+                    properties:
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                gender:
+                    type: object
+                    properties:
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                familyStatus:
+                    type: object
+                    properties:
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                country:
+                    type: object
+                    properties:
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                city:
+                    type: object
+                    properties:
+                        title:
+                            $ref: '#/components/schemas/Title'
+                        description:
+                            $ref: '#/components/schemas/Description'
+                        descriptionDetail:
+                            $ref: '#/components/schemas/DescriptionDetail'
+                        values:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+        Scholarship:
+            type: object
+            required:
+                - name
+                - link
+            properties:
+                id:
+                    type: string
+                    description: The auto-generated id of scholarship
+                name:
+                    type: string
+                    description: The Scholarships Name
+                link:
+                    type: object
+                    properties:
+                        value:
+                            type: string
+                            description: The Scholarships Link
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+                occupation:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: Populated occupation values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                responsible:
+                    type: object
+                    properties:
+                        value:
+                            type: object
+                            description: responsible employee value
+                            properties:
+                                id:
+                                    type: string
+                                firstName:
+                                    type: string
+                                position:
+                                    type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                provider:
+                    type: object
+                    properties:
+                        value:
+                            type: object
+                            description: provider name value
+                            properties:
+                                id:
+                                    type: string
+                                name:
+                                    type: string
+                                link:
+                                    type: string
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+                semesterMin:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: minimal semester value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+                semesterMax:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: maximal semester value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                ageMin:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: minimal age value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                ageMax:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: maximal age value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                collegeGraduation:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: college graduation value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                jobTrainingGraduation:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: job training graduation value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                uniGraduation:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: uni graduation value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                specialJobExperience:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: special job experience value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                sideJobAllowed:
+                    type: object
+                    properties:
+                        value:
+                            type: boolean
+                            description: side job allowed value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                currentJobHours:
+                    type: object
+                    properties:
+                        value:
+                            type: number
+                            description: current job hours value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                imgURL:
+                    type: object
+                    properties:
+                        value:
+                            type: string
+                            description: img URL value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                supportYet:
+                    type: object
+                    properties:
+                        value:
+                            type: boolean
+                            description: supported yet value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                referenceRequiered:
+                    type: object
+                    properties:
+                        value:
+                            type: boolean
+                            description: reference requiered value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                referenceAllowed:
+                    type: object
+                    properties:
+                        value:
+                            type: boolean
+                            description: reference allowed value
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                graduation:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: Populated graduation values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+                                    dependentOn:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                id:
+                                                    type: string
+                                                title:
+                                                    $ref: '#/components/schemas/Title'
+                                                description:
+                                                    $ref: '#/components/schemas/Description'
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                course:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated course values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+                                    dependentOn:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                id:
+                                                    type: string
+                                                title:
+                                                    $ref: '#/components/schemas/Title'
+                                                description:
+                                                    $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                country:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated country values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                city:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated city values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                state:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated state values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                institution:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated institution values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                support:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated support values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                referenceDetail:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated reference details values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                nationality:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated nationality values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+                nationalityDetail:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated nationality details values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                requirement:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated requirement values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                religion:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated religion values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                collegeGraduationState:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated collegeGraduationState values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                commitment:
+                    type: object
+                    properties:
+                        value:
+                            type: array
+                            description: populated commitment values
+                            items:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    title:
+                                        $ref: '#/components/schemas/Title'
+                                    description:
+                                        $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                advancement:
+                    type: object
+                    properties:
+                        value:
+                            type: object
+                            description: populated advancement values
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                advancementDetail:
+                    type: object
+                    properties:
+                        value:
+                            type: object
+                            description: populated advancement details values
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+
+                advancementTime:
+                    type: object
+                    properties:
+                        value:
+                            type: object
+                            description: populated advancement time values
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+
+                        localization:
+                            type: object
+                            properties:
+                                title:
+                                    $ref: '#/components/schemas/Title'
+                                description:
+                                    $ref: '#/components/schemas/Description'
+                                label:
+                                    type: string
+paths:
+    /api/scholarships/{id}:
+        get:
+            tags:
+                - 'Scholarship'
+            summary: "Get specific Scholarship from DB by it's ID"
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            parameters:
+                - in: 'path'
+                  name: 'id'
+                  description: 'Scholarship ID'
+                  required: true
+            responses:
+                '200':
+                    description: 'Specific Scholarship'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Scholarship'
+                '400':
+                    description: 'Bad request'
+    /api/scholarships:
+        post:
+            tags:
+                - 'Scholarship'
+            summary: 'Add new scholarship to DB'
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            required:
+                                - name
+                                - responsible
+                                - provider
+                            type: object
+                            properties:
+                                name:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: string
+                                responsible:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: string
+                                provider:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: string
+                                link:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: string
+                                semesterMin:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                semesterMax:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                occupation:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                graduation:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                course:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                country:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                city:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                state:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                institution:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                support:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                supportYet:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: boolean
+                                referenceRequiered:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: boolean
+                                referenceAllowed:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: boolean
+                                referenceDetail:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                ageMin:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                ageMax:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                nationality:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                nationalityDetail:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                requirement:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                religion:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                collegeGraduation:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                collegeGraduationState:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                jobTrainingGraduation:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                uniGraduation:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                specialJobExperience:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                sideJobAllowed:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: boolean
+                                currentJobHours:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: number
+                                imgURL:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: string
+                                commitment:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: array
+                                            items:
+                                                type: string
+                                advancement:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: object
+                                            properties:
+                                                title:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
+                                                description:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
+                                advancementDetail:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: object
+                                            properties:
+                                                title:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
+                                                description:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
+                                advancementTime:
+                                    type: object
+                                    properties:
+                                        localization:
+                                            type: string
+                                        value:
+                                            type: object
+                                            properties:
+                                                title:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
+                                                description:
+                                                    type: object
+                                                    properties:
+                                                        DE:
+                                                            type: string
+                                                        EN:
+                                                            type: string
+                                                        FR:
+                                                            type: string
+
+            responses:
+                '200':
+                    description: 'Scholarship ID'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                        description: 'Scholarship ID'
+    /api/data/filter:
+        get:
+            tags:
+                - 'Data'
+            summary: 'Get all filter data for filter process'
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            responses:
+                '200':
+                    description: 'Filter data'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/FilterData'
+    /api/data/application:
+        get:
+            tags:
+                - 'Data'
+            summary: 'Get all application data for filter process'
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            responses:
+                '200':
+                    description: 'Application data'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/ApplicationData'
+    /api/application:
+        post:
+            tags:
+                - 'Application'
+            summary: 'Apply for a new scholarship'
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            requestBody:
+                required: true
+                description: User, scholarship and provider data together with filter data by user is needed to apply for a scholarship
+                content:
+                    application/json:
+                        schema:
+                            required:
+                                - scholarship
+                            type: object
+                            properties:
+                                scholarship:
+                                    description: scholarship ID
+                                    type: string
+                                user:
+                                    description: user ID
+                                    type: string
+                                provider:
+                                    description: provider ID
+                                    type: string
+                                FilterData:
+                                    type: object
+                                    description: Given filter data to save with application
+                                    properties:
+                                        semester:
+                                            type: number
+                                        workExperience:
+                                            type: number
+                                        sidejobHours:
+                                            type: number
+                                        collegeGrade:
+                                            type: number
+                                        jobGrade:
+                                            type: number
+                                        uniGrade:
+                                            type: number
+                                        nationality:
+                                            type: array
+                                            items:
+                                                type: string
+                                        nationalityDetail:
+                                            type: array
+                                            items:
+                                                type: string
+                                        requirement:
+                                            type: array
+                                            items:
+                                                type: string
+                                        religion:
+                                            type: array
+                                            items:
+                                                type: string
+                                        occupation:
+                                            type: array
+                                            items:
+                                                type: string
+                                        graduation:
+                                            type: array
+                                            items:
+                                                type: string
+                                        course:
+                                            type: array
+                                            items:
+                                                type: string
+                                        commitment:
+                                            type: array
+                                            items:
+                                                type: string
+                                        support:
+                                            type: array
+                                            items:
+                                                type: string
+                                        reference:
+                                            type: array
+                                            items:
+                                                type: string
+                                        state:
+                                            type: array
+                                            items:
+                                                type: string
+                                        supportYet:
+                                            type: boolean
+            responses:
+                '200':
+                    description: OK
+    /api/user/login:
+        post:
+            tags:
+                - 'User'
+            summary: 'Login with existing account'
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            required:
+                                - email
+                                - password
+                            type: object
+                            properties:
+                                email:
+                                    type: string
+                                password:
+                                    type: string
+            responses:
+                '200':
+                    description: 'JWT'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    JWT:
+                                        type: string
+    /api/user/register:
+        post:
+            tags:
+                - 'User'
+            summary: 'Register new user'
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                firstName:
+                                    type: string
+                                lastName:
+                                    type: string
+                                dateOfBirth:
+                                    type: string
+                                placeOfBirth:
+                                    description: id of city object in city collection
+                                    type: string
+                                countryOfBirth:
+                                    description: id of country object in city collection
+                                    type: string
+                                gender:
+                                    description: id of gender object in city collection
+                                    type: string
+                                familyStatus:
+                                    description: id of family status object in city collection
+                                    type: string
+                                country:
+                                    description: id of country object in city collection
+                                    type: string
+                                city:
+                                    description: id of city object in city collection
+                                    type: string
+                                street:
+                                    type: string
+                                number:
+                                    type: string
+                                ZIP:
+                                    type: number
+                                email:
+                                    type: string
+                                mobile:
+                                    type: string
+            responses:
+                '200':
+                    description: 'User ID'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+    /api/filter/scholarships:
+        post:
+            tags:
+                - 'Filter'
+            summary: 'Filter Scholarships'
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                filterData:
+                                    type: object
+                                    properties:
+                                        commitment:
+                                            type: array
+                                            nullable: true
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        occupation:
+                                            type: array
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        graduation:
+                                            type: array
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        course:
+                                            type: array
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        support:
+                                            type: array
+                                            nullable: true
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        state:
+                                            type: array
+                                            nullable: true
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        nationality:
+                                            type: array
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        religion:
+                                            type: array
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        requirement:
+                                            type: array
+                                            nullable: true
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        reference:
+                                            type: array
+                                            nullable: true
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        nationalityDetail:
+                                            type: array
+                                            nullable: true
+                                            description: array of object ID's
+                                            items:
+                                                type: string
+                                        supportYet:
+                                            type: string
+                                        workExperience:
+                                            type: number
+                                            nullable: true
+                                        sidejobHours:
+                                            type: number
+                                            nullable: true
+                                        collegeGrade:
+                                            type: number
+                                            nullable: true
+                                        jobGrade:
+                                            type: number
+                                            nullable: true
+                                        uniGrade:
+                                            type: number
+                                            nullable: true
+                                        semester:
+                                            type: number
+                                        age:
+                                            type: number
+            responses:
+                '200':
+                    description: 'Array of matching scholarships'
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: '#/components/schemas/Scholarship'

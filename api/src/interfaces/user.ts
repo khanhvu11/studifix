@@ -17,12 +17,3 @@ export default interface IUser extends Document {
     email: string;
     familyStatus: string;
 }
-
-interface IEducation {
-    geography: string;
-    maths: string;
-    PE: string;
-    english: string;
-    IT: string;
-    science: string;
-}

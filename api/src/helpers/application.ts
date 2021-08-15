@@ -1,6 +1,14 @@
-import { IFilterData } from 'interfaces/data';
+import { IFilterData } from 'interfaces/filterData';
 
-export const combineDataForApplication = (scholarship: string, userID: string, providerID: string, filterData: any): Promise<any> => {
+/**
+ *  Combines id's with current filter data.
+ * @param scholarship scholarship id from scholarships user collection
+ * @param userID users id from db user collection
+ * @param providerID providers id from db provider collection
+ * @param filterData all filter data input by user
+ * @returns combined object with all three id's and filter input
+ */
+export const combineDataForApplication = (scholarship: string, userID: string, providerID: string, filterData: IFilterData): Promise<any> => {
     return new Promise(async (resolve, reject) => {
         interface ICombined {
             filterData: IFilterData;

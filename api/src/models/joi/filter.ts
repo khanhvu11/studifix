@@ -22,8 +22,9 @@ export const joiFilterParams = Joi.object({
         uniGrade: [Joi.number().min(1).max(6).required(true), null],
         semester: Joi.number().min(0).max(30).required(true),
         age: Joi.number().min(1).max(99).required(true)
-
         // country: [Joi.array().items(Joi.string().min(24).max(24)).required(true), null],
         // city: [Joi.array().items(Joi.string().min(24).max(24)).required(true), null],
     }
-});
+})
+    .required()
+    .min(1);
