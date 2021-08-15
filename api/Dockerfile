@@ -1,4 +1,4 @@
-FROM node:14 as base
+FROM node:latest as base
 
 WORKDIR /home/node/app
 
@@ -12,4 +12,4 @@ FROM base as production
 
 ENV NODE_PATH=./build
 
-RUN npm build
+RUN npm run build
