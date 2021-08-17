@@ -1,7 +1,7 @@
 up:
 	docker-compose up --build -d
 
-down: 
+down:
 	docker-compose down
 
 up-prod:
