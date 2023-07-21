@@ -3,7 +3,7 @@ Studifix
 
 ## Members
 - Viktoria Valentinova | vv011
-- Duy Khanh Vu | dv029
+- Khanh Vu | dv029
 - Luca Fehmel | lf054
 
 ## Introduction
